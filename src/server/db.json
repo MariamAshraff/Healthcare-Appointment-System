@@ -1,0 +1,1583 @@
+{
+    "users": [
+        {
+            "id": "1",
+            "name": "Admin User",
+            "email": "admin@health.com",
+            "password": "admin123",
+            "phone": "01000000000",
+            "role": "admin",
+            "createdAt": "2026-01-01"
+        },
+        {
+            "id": "2",
+            "name": "Dr. Ahmed Hassan",
+            "email": "ahmed@doctor.com",
+            "password": "doctor123",
+            "phone": "01011111111",
+            "role": "doctor",
+            "specialization": "Cardiology",
+            "experience": 10,
+            "bio": "Experienced cardiologist with 10 years in heart care.",
+            "availableSlots": [
+                {
+                    "day": "Sunday",
+                    "startTime": "09:00",
+                    "endTime": "09:30",
+                    "isBooked": false
+                },
+                {
+                    "day": "Sunday",
+                    "startTime": "09:30",
+                    "endTime": "10:00",
+                    "isBooked": false
+                },
+                {
+                    "day": "Sunday",
+                    "startTime": "10:00",
+                    "endTime": "10:30",
+                    "isBooked": true
+                },
+                {
+                    "day": "Tuesday",
+                    "startTime": "14:00",
+                    "endTime": "14:30",
+                    "isBooked": false
+                },
+                {
+                    "day": "Tuesday",
+                    "startTime": "14:30",
+                    "endTime": "15:00",
+                    "isBooked": false
+                }
+            ],
+            "rating": 4.8,
+            "reviewCount": 120,
+            "createdAt": "2026-01-15"
+        },
+        {
+            "id": "3",
+            "name": "Dr. Sara Mohamed",
+            "email": "sara@doctor.com",
+            "password": "doctor123",
+            "phone": "01022222222",
+            "role": "doctor",
+            "specialization": "Dermatology",
+            "experience": 7,
+            "bio": "Skin care specialist focused on treating acne, eczema, and cosmetic dermatology.",
+            "availableSlots": [
+                {
+                    "day": "Monday",
+                    "startTime": "10:00",
+                    "endTime": "10:30",
+                    "isBooked": false
+                },
+                {
+                    "day": "Monday",
+                    "startTime": "10:30",
+                    "endTime": "11:00",
+                    "isBooked": false
+                },
+                {
+                    "day": "Wednesday",
+                    "startTime": "13:00",
+                    "endTime": "13:30",
+                    "isBooked": false
+                }
+            ],
+            "rating": 4.5,
+            "reviewCount": 85,
+            "createdAt": "2026-02-01"
+        },
+        {
+            "id": "4",
+            "name": "Mohamed Ali",
+            "email": "mohamed@patient.com",
+            "password": "patient123",
+            "phone": "01033333333",
+            "role": "patient",
+            "createdAt": "2026-03-01"
+        },
+        {
+            "id": "5",
+            "name": "Fatma Ibrahim",
+            "email": "fatma@patient.com",
+            "password": "patient123",
+            "phone": "01044444444",
+            "role": "patient",
+            "createdAt": "2026-03-10"
+        },
+        {
+            "id": "6",
+            "name": "Dr. Khaled Youssef",
+            "email": "khaled.y@doctor.com",
+            "password": "doctor123",
+            "phone": "01050000001",
+            "role": "doctor",
+            "specialization": "Orthopedic Surgeon",
+            "experience": 12,
+            "bio": "Specialist in bone fractures and joint replacement.",
+            "availableSlots": [
+                {
+                    "day": "Saturday",
+                    "startTime": "10:00",
+                    "endTime": "11:00",
+                    "isBooked": false
+                },
+                {
+                    "day": "Saturday",
+                    "startTime": "11:00",
+                    "endTime": "12:00",
+                    "isBooked": false
+                },
+                {
+                    "day": "Monday",
+                    "startTime": "16:00",
+                    "endTime": "17:00",
+                    "isBooked": false
+                },
+                {
+                    "day": "Wednesday",
+                    "startTime": "16:00",
+                    "endTime": "17:00",
+                    "isBooked": false
+                }
+            ],
+            "rating": 4.9,
+            "reviewCount": 200,
+            "createdAt": "2026-01-05"
+        },
+        {
+            "id": "7",
+            "name": "Dr. Mona El-Sayed",
+            "email": "mona.s@doctor.com",
+            "password": "doctor123",
+            "phone": "01050000002",
+            "role": "doctor",
+            "specialization": "Pediatrician",
+            "experience": 8,
+            "bio": "Caring for infants and children with a friendly approach.",
+            "availableSlots": [
+                {
+                    "day": "Sunday",
+                    "startTime": "09:00",
+                    "endTime": "10:00",
+                    "isBooked": false
+                },
+                {
+                    "day": "Tuesday",
+                    "startTime": "09:00",
+                    "endTime": "10:00",
+                    "isBooked": false
+                },
+                {
+                    "day": "Thursday",
+                    "startTime": "09:00",
+                    "endTime": "10:00",
+                    "isBooked": false
+                }
+            ],
+            "rating": 4.7,
+            "reviewCount": 150,
+            "createdAt": "2026-01-10"
+        },
+        {
+            "id": "8",
+            "name": "Dr. Hany Ramzy",
+            "email": "hany.r@doctor.com",
+            "password": "doctor123",
+            "phone": "01050000003",
+            "role": "doctor",
+            "specialization": "Gynecologist",
+            "experience": 15,
+            "bio": "Expert in maternal-fetal medicine and reproductive health.",
+            "availableSlots": [
+                {
+                    "day": "Monday",
+                    "startTime": "12:00",
+                    "endTime": "13:00",
+                    "isBooked": false
+                },
+                {
+                    "day": "Wednesday",
+                    "startTime": "12:00",
+                    "endTime": "13:00",
+                    "isBooked": false
+                },
+                {
+                    "day": "Friday",
+                    "startTime": "10:00",
+                    "endTime": "11:00",
+                    "isBooked": false
+                }
+            ],
+            "rating": 4.8,
+            "reviewCount": 180,
+            "createdAt": "2026-01-12"
+        },
+        {
+            "id": "9",
+            "name": "Dr. Nadia Kamal",
+            "email": "nadia.k@doctor.com",
+            "password": "doctor123",
+            "phone": "01050000004",
+            "role": "doctor",
+            "specialization": "Psychiatrist",
+            "experience": 20,
+            "bio": "Specializing in anxiety, depression, and family therapy.",
+            "availableSlots": [
+                {
+                    "day": "Saturday",
+                    "startTime": "18:00",
+                    "endTime": "19:00",
+                    "isBooked": false
+                },
+                {
+                    "day": "Tuesday",
+                    "startTime": "18:00",
+                    "endTime": "19:00",
+                    "isBooked": false
+                },
+                {
+                    "day": "Thursday",
+                    "startTime": "18:00",
+                    "endTime": "19:00",
+                    "isBooked": false
+                }
+            ],
+            "rating": 4.9,
+            "reviewCount": 310,
+            "createdAt": "2026-01-15"
+        },
+        {
+            "id": "10",
+            "name": "Dr. Tarek Fouad",
+            "email": "tarek.f@doctor.com",
+            "password": "doctor123",
+            "phone": "01050000005",
+            "role": "doctor",
+            "specialization": "Neurosurgeon",
+            "experience": 25,
+            "bio": "Advanced brain and spinal surgery expert.",
+            "availableSlots": [
+                {
+                    "day": "Sunday",
+                    "startTime": "08:00",
+                    "endTime": "10:00",
+                    "isBooked": false
+                },
+                {
+                    "day": "Wednesday",
+                    "startTime": "08:00",
+                    "endTime": "10:00",
+                    "isBooked": false
+                }
+            ],
+            "rating": 5.0,
+            "reviewCount": 90,
+            "createdAt": "2026-01-18"
+        },
+        {
+            "id": "11",
+            "name": "Dr. Laila Helmy",
+            "email": "laila.h@doctor.com",
+            "password": "doctor123",
+            "phone": "01050000006",
+            "role": "doctor",
+            "specialization": "Oncologist",
+            "experience": 11,
+            "bio": "Compassionate care for cancer treatment and therapy.",
+            "availableSlots": [
+                {
+                    "day": "Monday",
+                    "startTime": "09:00",
+                    "endTime": "10:30",
+                    "isBooked": false
+                },
+                {
+                    "day": "Thursday",
+                    "startTime": "09:00",
+                    "endTime": "10:30",
+                    "isBooked": false
+                }
+            ],
+            "rating": 4.6,
+            "reviewCount": 115,
+            "createdAt": "2026-01-20"
+        },
+        {
+            "id": "12",
+            "name": "Dr. Amgad Refaat",
+            "email": "amgad.r@doctor.com",
+            "password": "doctor123",
+            "phone": "01050000007",
+            "role": "doctor",
+            "specialization": "Pulmonologist",
+            "experience": 9,
+            "bio": "Respiratory system expert, treating asthma and COPD.",
+            "availableSlots": [
+                {
+                    "day": "Tuesday",
+                    "startTime": "14:00",
+                    "endTime": "15:30",
+                    "isBooked": false
+                },
+                {
+                    "day": "Thursday",
+                    "startTime": "14:00",
+                    "endTime": "15:30",
+                    "isBooked": false
+                }
+            ],
+            "rating": 4.5,
+            "reviewCount": 78,
+            "createdAt": "2026-01-22"
+        },
+        {
+            "id": "13",
+            "name": "Dr. Sherif Gad",
+            "email": "sherif.g@doctor.com",
+            "password": "doctor123",
+            "phone": "01050000008",
+            "role": "doctor",
+            "specialization": "Urologist",
+            "experience": 14,
+            "bio": "Specialist in kidney stones and urinary tract health.",
+            "availableSlots": [
+                {
+                    "day": "Sunday",
+                    "startTime": "17:00",
+                    "endTime": "18:30",
+                    "isBooked": false
+                },
+                {
+                    "day": "Wednesday",
+                    "startTime": "17:00",
+                    "endTime": "18:30",
+                    "isBooked": false
+                }
+            ],
+            "rating": 4.7,
+            "reviewCount": 130,
+            "createdAt": "2026-01-25"
+        },
+        {
+            "id": "14",
+            "name": "Dr. Yasmin Nour",
+            "email": "yasmin.n@doctor.com",
+            "password": "doctor123",
+            "phone": "01050000009",
+            "role": "doctor",
+            "specialization": "Cardiologist",
+            "experience": 6,
+            "bio": "Focusing on preventative cardiology and heart health.",
+            "availableSlots": [
+                {
+                    "day": "Monday",
+                    "startTime": "11:00",
+                    "endTime": "12:00",
+                    "isBooked": false
+                },
+                {
+                    "day": "Wednesday",
+                    "startTime": "11:00",
+                    "endTime": "12:00",
+                    "isBooked": false
+                }
+            ],
+            "rating": 4.4,
+            "reviewCount": 60,
+            "createdAt": "2026-01-28"
+        },
+        {
+            "id": "15",
+            "name": "Dr. Ibrahim Salem",
+            "email": "ibrahim.s@doctor.com",
+            "password": "doctor123",
+            "phone": "01050000010",
+            "role": "doctor",
+            "specialization": "Orthopedic Surgeon",
+            "experience": 18,
+            "bio": "Sports medicine and ligament reconstruction specialist.",
+            "availableSlots": [
+                {
+                    "day": "Tuesday",
+                    "startTime": "10:00",
+                    "endTime": "12:00",
+                    "isBooked": false
+                },
+                {
+                    "day": "Thursday",
+                    "startTime": "10:00",
+                    "endTime": "12:00",
+                    "isBooked": false
+                }
+            ],
+            "rating": 4.9,
+            "reviewCount": 240,
+            "createdAt": "2026-02-01"
+        },
+        {
+            "id": "16",
+            "name": "Dr. Fatma Zaki",
+            "email": "fatma.z@doctor.com",
+            "password": "doctor123",
+            "phone": "01050000011",
+            "role": "doctor",
+            "specialization": "Pediatrician",
+            "experience": 5,
+            "bio": "Dedicated to child health and vaccination programs.",
+            "availableSlots": [
+                {
+                    "day": "Saturday",
+                    "startTime": "09:00",
+                    "endTime": "11:00",
+                    "isBooked": false
+                },
+                {
+                    "day": "Monday",
+                    "startTime": "09:00",
+                    "endTime": "11:00",
+                    "isBooked": false
+                }
+            ],
+            "rating": 4.5,
+            "reviewCount": 45,
+            "createdAt": "2026-02-05"
+        },
+        {
+            "id": "17",
+            "name": "Dr. Omar Bassiouny",
+            "email": "omar.b@doctor.com",
+            "password": "doctor123",
+            "phone": "01050000012",
+            "role": "doctor",
+            "specialization": "Gynecologist",
+            "experience": 13,
+            "bio": "Expert in fertility treatments and obstetric care.",
+            "availableSlots": [
+                {
+                    "day": "Sunday",
+                    "startTime": "14:00",
+                    "endTime": "16:00",
+                    "isBooked": false
+                },
+                {
+                    "day": "Thursday",
+                    "startTime": "14:00",
+                    "endTime": "16:00",
+                    "isBooked": false
+                }
+            ],
+            "rating": 4.7,
+            "reviewCount": 110,
+            "createdAt": "2026-02-08"
+        },
+        {
+            "id": "18",
+            "name": "Dr. Sara Magdy",
+            "email": "sara.m@doctor.com",
+            "password": "doctor123",
+            "phone": "01050000013",
+            "role": "doctor",
+            "specialization": "Psychiatrist",
+            "experience": 10,
+            "bio": "Psychotherapy and mental health consultant.",
+            "availableSlots": [
+                {
+                    "day": "Monday",
+                    "startTime": "15:00",
+                    "endTime": "17:00",
+                    "isBooked": false
+                },
+                {
+                    "day": "Wednesday",
+                    "startTime": "15:00",
+                    "endTime": "17:00",
+                    "isBooked": false
+                }
+            ],
+            "rating": 4.6,
+            "reviewCount": 88,
+            "createdAt": "2026-02-10"
+        },
+        {
+            "id": "19",
+            "name": "Dr. Mahmoud Fawzy",
+            "email": "mahmoud.f@doctor.com",
+            "password": "doctor123",
+            "phone": "01050000014",
+            "role": "doctor",
+            "specialization": "Neurosurgeon",
+            "experience": 16,
+            "bio": "Specialist in neuro-oncology and spine disorders.",
+            "availableSlots": [
+                {
+                    "day": "Tuesday",
+                    "startTime": "08:00",
+                    "endTime": "10:30",
+                    "isBooked": false
+                },
+                {
+                    "day": "Thursday",
+                    "startTime": "08:00",
+                    "endTime": "10:30",
+                    "isBooked": false
+                }
+            ],
+            "rating": 4.8,
+            "reviewCount": 125,
+            "createdAt": "2026-02-12"
+        },
+        {
+            "id": "20",
+            "name": "Dr. Hana Ezzat",
+            "email": "hana.e@doctor.com",
+            "password": "doctor123",
+            "phone": "01050000015",
+            "role": "doctor",
+            "specialization": "Oncologist",
+            "experience": 12,
+            "bio": "Hematology and oncology specialist.",
+            "availableSlots": [
+                {
+                    "day": "Sunday",
+                    "startTime": "11:00",
+                    "endTime": "13:00",
+                    "isBooked": false
+                },
+                {
+                    "day": "Wednesday",
+                    "startTime": "11:00",
+                    "endTime": "13:00",
+                    "isBooked": false
+                }
+            ],
+            "rating": 4.7,
+            "reviewCount": 94,
+            "createdAt": "2026-02-15"
+        },
+        {
+            "id": "21",
+            "name": "Dr. Ahmed Gamal",
+            "email": "ahmed.g@doctor.com",
+            "password": "doctor123",
+            "phone": "01050000016",
+            "role": "doctor",
+            "specialization": "Pulmonologist",
+            "experience": 7,
+            "bio": "Treating critical lung conditions and sleep apnea.",
+            "availableSlots": [
+                {
+                    "day": "Monday",
+                    "startTime": "13:00",
+                    "endTime": "15:00",
+                    "isBooked": false
+                },
+                {
+                    "day": "Thursday",
+                    "startTime": "13:00",
+                    "endTime": "15:00",
+                    "isBooked": false
+                }
+            ],
+            "rating": 4.4,
+            "reviewCount": 55,
+            "createdAt": "2026-02-18"
+        },
+        {
+            "id": "22",
+            "name": "Dr. Eman Adel",
+            "email": "eman.a@doctor.com",
+            "password": "doctor123",
+            "phone": "01050000017",
+            "role": "doctor",
+            "specialization": "Urologist",
+            "experience": 10,
+            "bio": "Expert in pediatric urology and robotic surgery.",
+            "availableSlots": [
+                {
+                    "day": "Tuesday",
+                    "startTime": "16:00",
+                    "endTime": "18:00",
+                    "isBooked": false
+                },
+                {
+                    "day": "Friday",
+                    "startTime": "09:00",
+                    "endTime": "11:00",
+                    "isBooked": false
+                }
+            ],
+            "rating": 4.6,
+            "reviewCount": 82,
+            "createdAt": "2026-02-20"
+        },
+        {
+            "id": "23",
+            "name": "Dr. Mostafa Bakr",
+            "email": "mostafa.b@doctor.com",
+            "password": "doctor123",
+            "phone": "01050000018",
+            "role": "doctor",
+            "specialization": "Cardiologist",
+            "experience": 22,
+            "bio": "Senior consultant in interventional cardiology.",
+            "availableSlots": [
+                {
+                    "day": "Saturday",
+                    "startTime": "12:00",
+                    "endTime": "14:00",
+                    "isBooked": false
+                },
+                {
+                    "day": "Wednesday",
+                    "startTime": "12:00",
+                    "endTime": "14:00",
+                    "isBooked": false
+                }
+            ],
+            "rating": 5.0,
+            "reviewCount": 400,
+            "createdAt": "2026-02-22"
+        },
+        {
+            "id": "24",
+            "name": "Dr. Reem Saleh",
+            "email": "reem.s@doctor.com",
+            "password": "doctor123",
+            "phone": "01050000019",
+            "role": "doctor",
+            "specialization": "Orthopedic Surgeon",
+            "experience": 9,
+            "bio": "Specializing in hand and upper limb surgery.",
+            "availableSlots": [
+                {
+                    "day": "Sunday",
+                    "startTime": "10:00",
+                    "endTime": "12:00",
+                    "isBooked": false
+                },
+                {
+                    "day": "Tuesday",
+                    "startTime": "10:00",
+                    "endTime": "12:00",
+                    "isBooked": false
+                }
+            ],
+            "rating": 4.7,
+            "reviewCount": 76,
+            "createdAt": "2026-02-25"
+        },
+        {
+            "id": "25",
+            "name": "Dr. Kareem Aziz",
+            "email": "kareem.a@doctor.com",
+            "password": "doctor123",
+            "phone": "01050000020",
+            "role": "doctor",
+            "specialization": "Pediatrician",
+            "experience": 14,
+            "bio": "Pediatric cardiologist and general health expert.",
+            "availableSlots": [
+                {
+                    "day": "Monday",
+                    "startTime": "14:00",
+                    "endTime": "16:00",
+                    "isBooked": false
+                },
+                {
+                    "day": "Wednesday",
+                    "startTime": "14:00",
+                    "endTime": "16:00",
+                    "isBooked": false
+                }
+            ],
+            "rating": 4.8,
+            "reviewCount": 190,
+            "createdAt": "2026-03-01"
+        },
+        {
+            "id": "26",
+            "name": "Dr. Aliaa Hamed",
+            "email": "aliaa.h@doctor.com",
+            "password": "doctor123",
+            "phone": "01050000021",
+            "role": "doctor",
+            "specialization": "Gynecologist",
+            "experience": 10,
+            "bio": "Laparoscopic surgery and women wellness.",
+            "availableSlots": [
+                {
+                    "day": "Tuesday",
+                    "startTime": "11:00",
+                    "endTime": "13:00",
+                    "isBooked": false
+                },
+                {
+                    "day": "Thursday",
+                    "startTime": "11:00",
+                    "endTime": "13:00",
+                    "isBooked": false
+                }
+            ],
+            "rating": 4.6,
+            "reviewCount": 85,
+            "createdAt": "2026-03-03"
+        },
+        {
+            "id": "27",
+            "name": "Dr. Walid Amin",
+            "email": "walid.a@doctor.com",
+            "password": "doctor123",
+            "phone": "01050000022",
+            "role": "doctor",
+            "specialization": "Psychiatrist",
+            "experience": 12,
+            "bio": "Expert in addiction medicine and recovery.",
+            "availableSlots": [
+                {
+                    "day": "Sunday",
+                    "startTime": "19:00",
+                    "endTime": "21:00",
+                    "isBooked": false
+                },
+                {
+                    "day": "Wednesday",
+                    "startTime": "19:00",
+                    "endTime": "21:00",
+                    "isBooked": false
+                }
+            ],
+            "rating": 4.7,
+            "reviewCount": 112,
+            "createdAt": "2026-03-05"
+        },
+        {
+            "id": "28",
+            "name": "Dr. Noha Maher",
+            "email": "noha.m@doctor.com",
+            "password": "doctor123",
+            "phone": "01050000023",
+            "role": "doctor",
+            "specialization": "Neurosurgeon",
+            "experience": 11,
+            "bio": "Focusing on pediatric neurosurgery.",
+            "availableSlots": [
+                {
+                    "day": "Monday",
+                    "startTime": "10:00",
+                    "endTime": "13:00",
+                    "isBooked": false
+                },
+                {
+                    "day": "Thursday",
+                    "startTime": "10:00",
+                    "endTime": "13:00",
+                    "isBooked": false
+                }
+            ],
+            "rating": 4.6,
+            "reviewCount": 68,
+            "createdAt": "2026-03-07"
+        },
+        {
+            "id": "29",
+            "name": "Dr. Said Galal",
+            "email": "said.g@doctor.com",
+            "password": "doctor123",
+            "phone": "01050000024",
+            "role": "doctor",
+            "specialization": "Oncologist",
+            "experience": 17,
+            "bio": "Consultant of radiotherapy and surgical oncology.",
+            "availableSlots": [
+                {
+                    "day": "Tuesday",
+                    "startTime": "09:00",
+                    "endTime": "11:00",
+                    "isBooked": false
+                },
+                {
+                    "day": "Friday",
+                    "startTime": "09:00",
+                    "endTime": "11:00",
+                    "isBooked": false
+                }
+            ],
+            "rating": 4.9,
+            "reviewCount": 210,
+            "createdAt": "2026-03-09"
+        },
+        {
+            "id": "30",
+            "name": "Dr. Fatma Nour",
+            "email": "fatma.n@doctor.com",
+            "password": "doctor123",
+            "phone": "01050000025",
+            "role": "doctor",
+            "specialization": "Pulmonologist",
+            "experience": 8,
+            "bio": "Expert in pulmonary hypertension and lung fibrosis.",
+            "availableSlots": [
+                {
+                    "day": "Sunday",
+                    "startTime": "14:00",
+                    "endTime": "16:00",
+                    "isBooked": false
+                },
+                {
+                    "day": "Wednesday",
+                    "startTime": "14:00",
+                    "endTime": "16:00",
+                    "isBooked": false
+                }
+            ],
+            "rating": 4.5,
+            "reviewCount": 42,
+            "createdAt": "2026-03-11"
+        },
+        {
+            "id": "31",
+            "name": "Dr. Osama Hafez",
+            "email": "osama.h@doctor.com",
+            "password": "doctor123",
+            "phone": "01050000026",
+            "role": "doctor",
+            "specialization": "Urologist",
+            "experience": 13,
+            "bio": "Specialist in male infertility and urogenital health.",
+            "availableSlots": [
+                {
+                    "day": "Monday",
+                    "startTime": "16:00",
+                    "endTime": "18:00",
+                    "isBooked": false
+                },
+                {
+                    "day": "Thursday",
+                    "startTime": "16:00",
+                    "endTime": "18:00",
+                    "isBooked": false
+                }
+            ],
+            "rating": 4.7,
+            "reviewCount": 105,
+            "createdAt": "2026-03-13"
+        },
+        {
+            "id": "32",
+            "name": "Dr. May El-Ghandour",
+            "email": "may.g@doctor.com",
+            "password": "doctor123",
+            "phone": "01050000027",
+            "role": "doctor",
+            "specialization": "Cardiologist",
+            "experience": 11,
+            "bio": "Electro-physiology and heart rhythm specialist.",
+            "availableSlots": [
+                {
+                    "day": "Tuesday",
+                    "startTime": "13:00",
+                    "endTime": "15:00",
+                    "isBooked": false
+                },
+                {
+                    "day": "Thursday",
+                    "startTime": "13:00",
+                    "endTime": "15:00",
+                    "isBooked": false
+                }
+            ],
+            "rating": 4.8,
+            "reviewCount": 118,
+            "createdAt": "2026-03-15"
+        },
+        {
+            "id": "33",
+            "name": "Dr. Bassem Wahba",
+            "email": "bassem.w@doctor.com",
+            "password": "doctor123",
+            "phone": "01050000028",
+            "role": "doctor",
+            "specialization": "Orthopedic Surgeon",
+            "experience": 20,
+            "bio": "Spinal deformity and scoliosis surgery expert.",
+            "availableSlots": [
+                {
+                    "day": "Saturday",
+                    "startTime": "11:00",
+                    "endTime": "14:00",
+                    "isBooked": false
+                },
+                {
+                    "day": "Wednesday",
+                    "startTime": "11:00",
+                    "endTime": "14:00",
+                    "isBooked": false
+                }
+            ],
+            "rating": 4.9,
+            "reviewCount": 350,
+            "createdAt": "2026-03-17"
+        },
+        {
+            "id": "34",
+            "name": "Dr. Dina Shaker",
+            "email": "dina.s@doctor.com",
+            "password": "doctor123",
+            "phone": "01050000029",
+            "role": "doctor",
+            "specialization": "Pediatrician",
+            "experience": 7,
+            "bio": "Specialist in pediatric nutrition and growth.",
+            "availableSlots": [
+                {
+                    "day": "Sunday",
+                    "startTime": "09:00",
+                    "endTime": "11:00",
+                    "isBooked": false
+                },
+                {
+                    "day": "Tuesday",
+                    "startTime": "09:00",
+                    "endTime": "11:00",
+                    "isBooked": false
+                }
+            ],
+            "rating": 4.6,
+            "reviewCount": 64,
+            "createdAt": "2026-03-19"
+        },
+        {
+            "id": "35",
+            "name": "Dr. Magdy Yacoub Jr.",
+            "email": "magdy.jr@doctor.com",
+            "password": "doctor123",
+            "phone": "01050000030",
+            "role": "doctor",
+            "specialization": "Cardiologist",
+            "experience": 5,
+            "bio": "Heart transplant and structural heart disease.",
+            "availableSlots": [
+                {
+                    "day": "Monday",
+                    "startTime": "08:00",
+                    "endTime": "10:00",
+                    "isBooked": false
+                },
+                {
+                    "day": "Thursday",
+                    "startTime": "08:00",
+                    "endTime": "10:00",
+                    "isBooked": false
+                }
+            ],
+            "rating": 4.9,
+            "reviewCount": 40,
+            "createdAt": "2026-03-21"
+        },
+        {
+            "id": "36",
+            "name": "Dr. Heba Roushdy",
+            "email": "heba.r@doctor.com",
+            "password": "doctor123",
+            "phone": "01050000031",
+            "role": "doctor",
+            "specialization": "Gynecologist",
+            "experience": 16,
+            "bio": "High-risk pregnancy and ultrasound specialist.",
+            "availableSlots": [
+                {
+                    "day": "Tuesday",
+                    "startTime": "15:00",
+                    "endTime": "17:00",
+                    "isBooked": false
+                },
+                {
+                    "day": "Friday",
+                    "startTime": "10:00",
+                    "endTime": "12:00",
+                    "isBooked": false
+                }
+            ],
+            "rating": 4.8,
+            "reviewCount": 160,
+            "createdAt": "2026-03-23"
+        },
+        {
+            "id": "37",
+            "name": "Dr. Amr Diab",
+            "email": "amr.d@doctor.com",
+            "password": "doctor123",
+            "phone": "01050000032",
+            "role": "doctor",
+            "specialization": "Psychiatrist",
+            "experience": 9,
+            "bio": "Child and adolescent mental health expert.",
+            "availableSlots": [
+                {
+                    "day": "Saturday",
+                    "startTime": "16:00",
+                    "endTime": "18:00",
+                    "isBooked": false
+                },
+                {
+                    "day": "Wednesday",
+                    "startTime": "16:00",
+                    "endTime": "18:00",
+                    "isBooked": false
+                }
+            ],
+            "rating": 4.5,
+            "reviewCount": 72,
+            "createdAt": "2026-03-25"
+        },
+        {
+            "id": "38",
+            "name": "Dr. Karim Fouad",
+            "email": "karim.f@doctor.com",
+            "password": "doctor123",
+            "phone": "01050000033",
+            "role": "doctor",
+            "specialization": "Neurosurgeon",
+            "experience": 14,
+            "bio": "Minimally invasive spine surgery.",
+            "availableSlots": [
+                {
+                    "day": "Sunday",
+                    "startTime": "11:00",
+                    "endTime": "13:00",
+                    "isBooked": false
+                },
+                {
+                    "day": "Tuesday",
+                    "startTime": "11:00",
+                    "endTime": "13:00",
+                    "isBooked": false
+                }
+            ],
+            "rating": 4.7,
+            "reviewCount": 89,
+            "createdAt": "2026-03-27"
+        },
+        {
+            "id": "39",
+            "name": "Dr. Salma Khalil",
+            "email": "salma.k@doctor.com",
+            "password": "doctor123",
+            "phone": "01050000034",
+            "role": "doctor",
+            "specialization": "Oncologist",
+            "experience": 10,
+            "bio": "Breast cancer research and treatment.",
+            "availableSlots": [
+                {
+                    "day": "Monday",
+                    "startTime": "09:00",
+                    "endTime": "11:00",
+                    "isBooked": false
+                },
+                {
+                    "day": "Wednesday",
+                    "startTime": "09:00",
+                    "endTime": "11:00",
+                    "isBooked": false
+                }
+            ],
+            "rating": 4.8,
+            "reviewCount": 102,
+            "createdAt": "2026-03-29"
+        },
+        {
+            "id": "40",
+            "name": "Dr. Ahmed Ezz",
+            "email": "ahmed.e@doctor.com",
+            "password": "doctor123",
+            "phone": "01050000035",
+            "role": "doctor",
+            "specialization": "Pulmonologist",
+            "experience": 12,
+            "bio": "Intensive care and lung physiology.",
+            "availableSlots": [
+                {
+                    "day": "Tuesday",
+                    "startTime": "17:00",
+                    "endTime": "19:00",
+                    "isBooked": false
+                },
+                {
+                    "day": "Thursday",
+                    "startTime": "17:00",
+                    "endTime": "19:00",
+                    "isBooked": false
+                }
+            ],
+            "rating": 4.6,
+            "reviewCount": 91,
+            "createdAt": "2026-03-30"
+        },
+        {
+            "id": "41",
+            "name": "Dr. Ola Mansour",
+            "email": "ola.m@doctor.com",
+            "password": "doctor123",
+            "phone": "01050000036",
+            "role": "doctor",
+            "specialization": "Urologist",
+            "experience": 6,
+            "bio": "General urology and bladder health.",
+            "availableSlots": [
+                {
+                    "day": "Sunday",
+                    "startTime": "10:00",
+                    "endTime": "12:00",
+                    "isBooked": false
+                },
+                {
+                    "day": "Wednesday",
+                    "startTime": "10:00",
+                    "endTime": "12:00",
+                    "isBooked": false
+                }
+            ],
+            "rating": 4.4,
+            "reviewCount": 38,
+            "createdAt": "2026-04-01"
+        },
+        {
+            "id": "42",
+            "name": "Dr. Fady Mikhail",
+            "email": "fady.m@doctor.com",
+            "password": "doctor123",
+            "phone": "01050000037",
+            "role": "doctor",
+            "specialization": "Cardiologist",
+            "experience": 15,
+            "bio": "Heart failure management and vascular medicine.",
+            "availableSlots": [
+                {
+                    "day": "Monday",
+                    "startTime": "14:00",
+                    "endTime": "16:00",
+                    "isBooked": false
+                },
+                {
+                    "day": "Thursday",
+                    "startTime": "14:00",
+                    "endTime": "16:00",
+                    "isBooked": false
+                }
+            ],
+            "rating": 4.9,
+            "reviewCount": 175,
+            "createdAt": "2026-04-02"
+        },
+        {
+            "id": "43",
+            "name": "Dr. Ghada Abdelkader",
+            "email": "ghada.a@doctor.com",
+            "password": "doctor123",
+            "phone": "01050000038",
+            "role": "doctor",
+            "specialization": "Orthopedic Surgeon",
+            "experience": 13,
+            "bio": "Shoulder and knee arthroscopy expert.",
+            "availableSlots": [
+                {
+                    "day": "Tuesday",
+                    "startTime": "09:00",
+                    "endTime": "11:00",
+                    "isBooked": false
+                },
+                {
+                    "day": "Friday",
+                    "startTime": "09:00",
+                    "endTime": "11:00",
+                    "isBooked": false
+                }
+            ],
+            "rating": 4.7,
+            "reviewCount": 114,
+            "createdAt": "2026-04-03"
+        },
+        {
+            "id": "44",
+            "name": "Dr. Hassan El-Banna",
+            "email": "hassan.b@doctor.com",
+            "password": "doctor123",
+            "phone": "01050000039",
+            "role": "doctor",
+            "specialization": "Pediatrician",
+            "experience": 19,
+            "bio": "General pediatrics and neonatal intensive care.",
+            "availableSlots": [
+                {
+                    "day": "Saturday",
+                    "startTime": "10:00",
+                    "endTime": "13:00",
+                    "isBooked": false
+                },
+                {
+                    "day": "Wednesday",
+                    "startTime": "10:00",
+                    "endTime": "13:00",
+                    "isBooked": false
+                }
+            ],
+            "rating": 4.9,
+            "reviewCount": 260,
+            "createdAt": "2026-04-04"
+        },
+        {
+            "id": "45",
+            "name": "Dr. Mariam Farouk",
+            "email": "mariam.f@doctor.com",
+            "password": "doctor123",
+            "phone": "01050000040",
+            "role": "doctor",
+            "specialization": "Gynecologist",
+            "experience": 9,
+            "bio": "Women's health education and primary care.",
+            "availableSlots": [
+                {
+                    "day": "Sunday",
+                    "startTime": "12:00",
+                    "endTime": "14:00",
+                    "isBooked": false
+                },
+                {
+                    "day": "Tuesday",
+                    "startTime": "12:00",
+                    "endTime": "14:00",
+                    "isBooked": false
+                }
+            ],
+            "rating": 4.6,
+            "reviewCount": 82,
+            "createdAt": "2026-04-05"
+        },
+        {
+            "id": "46",
+            "name": "Ali Hassan",
+            "email": "ali.h@patient.com",
+            "password": "patient123",
+            "phone": "01060000001",
+            "role": "patient",
+            "createdAt": "2026-04-10"
+        },
+        {
+            "id": "47",
+            "name": "Zainab Ahmed",
+            "email": "zainab.a@patient.com",
+            "password": "patient123",
+            "phone": "01060000002",
+            "role": "patient",
+            "createdAt": "2026-04-11"
+        },
+        {
+            "id": "48",
+            "name": "Omar Khaled",
+            "email": "omar.k@patient.com",
+            "password": "patient123",
+            "phone": "01060000003",
+            "role": "patient",
+            "createdAt": "2026-04-12"
+        },
+        {
+            "id": "49",
+            "name": "Lina Mahmoud",
+            "email": "lina.m@patient.com",
+            "password": "patient123",
+            "phone": "01060000004",
+            "role": "patient",
+            "createdAt": "2026-04-13"
+        },
+        {
+            "id": "50",
+            "name": "Youssef Ibrahim",
+            "email": "youssef.i@patient.com",
+            "password": "patient123",
+            "phone": "01060000005",
+            "role": "patient",
+            "createdAt": "2026-04-14"
+        },
+        {
+            "id": "51",
+            "name": "Nour El-Din",
+            "email": "nour.e@patient.com",
+            "password": "patient123",
+            "phone": "01060000006",
+            "role": "patient",
+            "createdAt": "2026-04-15"
+        },
+        {
+            "id": "52",
+            "name": "Mariam Said",
+            "email": "mariam.s@patient.com",
+            "password": "patient123",
+            "phone": "01060000007",
+            "role": "patient",
+            "createdAt": "2026-04-16"
+        },
+        {
+            "id": "53",
+            "name": "Mostafa Amgad",
+            "email": "mostafa.a@patient.com",
+            "password": "patient123",
+            "phone": "01060000008",
+            "role": "patient",
+            "createdAt": "2026-04-17"
+        },
+        {
+            "id": "54",
+            "name": "Salma Tarek",
+            "email": "salma.t@patient.com",
+            "password": "patient123",
+            "phone": "01060000009",
+            "role": "patient",
+            "createdAt": "2026-04-18"
+        },
+        {
+            "id": "55",
+            "name": "Kareem Hamdy",
+            "email": "kareem.h@patient.com",
+            "password": "patient123",
+            "phone": "01060000010",
+            "role": "patient",
+            "createdAt": "2026-04-19"
+        },
+        {
+            "id": "56",
+            "name": "Hana Yasser",
+            "email": "hana.y@patient.com",
+            "password": "patient123",
+            "phone": "01060000011",
+            "role": "patient",
+            "createdAt": "2026-04-20"
+        },
+        {
+            "id": "57",
+            "name": "Sherif Mounir",
+            "email": "sherif.m@patient.com",
+            "password": "patient123",
+            "phone": "01060000012",
+            "role": "patient",
+            "createdAt": "2026-04-21"
+        },
+        {
+            "id": "58",
+            "name": "Aya Roushdy",
+            "email": "aya.r@patient.com",
+            "password": "patient123",
+            "phone": "01060000013",
+            "role": "patient",
+            "createdAt": "2026-04-22"
+        },
+        {
+            "id": "59",
+            "name": "Walid Gamal",
+            "email": "walid.g@patient.com",
+            "password": "patient123",
+            "phone": "01060000014",
+            "role": "patient",
+            "createdAt": "2026-04-23"
+        },
+        {
+            "id": "60",
+            "name": "Dina Fouad",
+            "email": "dina.f@patient.com",
+            "password": "patient123",
+            "phone": "01060000015",
+            "role": "patient",
+            "createdAt": "2026-04-24"
+        },
+        {
+            "id": "61",
+            "name": "Hany Adel",
+            "email": "hany.a@patient.com",
+            "password": "patient123",
+            "phone": "01060000016",
+            "role": "patient",
+            "createdAt": "2026-04-25"
+        },
+        {
+            "id": "62",
+            "name": "Eman Reda",
+            "email": "eman.r@patient.com",
+            "password": "patient123",
+            "phone": "01060000017",
+            "role": "patient",
+            "createdAt": "2026-04-26"
+        },
+        {
+            "id": "63",
+            "name": "Tamer Hosny",
+            "email": "tamer.h@patient.com",
+            "password": "patient123",
+            "phone": "01060000018",
+            "role": "patient",
+            "createdAt": "2026-04-27"
+        },
+        {
+            "id": "64",
+            "name": "Ghada Adel",
+            "email": "ghada.a2@patient.com",
+            "password": "patient123",
+            "phone": "01060000019",
+            "role": "patient",
+            "createdAt": "2026-04-28"
+        },
+        {
+            "id": "65",
+            "name": "Maged El-Kedwany",
+            "email": "maged.k@patient.com",
+            "password": "patient123",
+            "phone": "01060000020",
+            "role": "patient",
+            "createdAt": "2026-04-29"
+        },
+        {
+            "id": "66",
+            "name": "Asmaa Galal",
+            "email": "asmaa.g@patient.com",
+            "password": "patient123",
+            "phone": "01060000021",
+            "role": "patient",
+            "createdAt": "2026-04-30"
+        },
+        {
+            "id": "67",
+            "name": "Mohamed Emam",
+            "email": "mohamed.e@patient.com",
+            "password": "patient123",
+            "phone": "01060000022",
+            "role": "patient",
+            "createdAt": "2026-05-01"
+        },
+        {
+            "id": "68",
+            "name": "Yasmine Sabri",
+            "email": "yasmine.s@patient.com",
+            "password": "patient123",
+            "phone": "01060000023",
+            "role": "patient",
+            "createdAt": "2026-05-02"
+        },
+        {
+            "id": "69",
+            "name": "Ahmed Helmy",
+            "email": "ahmed.h2@patient.com",
+            "password": "patient123",
+            "phone": "01060000024",
+            "role": "patient",
+            "createdAt": "2026-05-03"
+        },
+        {
+            "id": "70",
+            "name": "Mona Zaki",
+            "email": "mona.z@patient.com",
+            "password": "patient123",
+            "phone": "01060000025",
+            "role": "patient",
+            "createdAt": "2026-05-04"
+        },
+        {
+            "id": "71",
+            "name": "Amir Karara",
+            "email": "amir.k@patient.com",
+            "password": "patient123",
+            "phone": "01060000026",
+            "role": "patient",
+            "createdAt": "2026-05-05"
+        },
+        {
+            "id": "72",
+            "name": "Nelly Karim",
+            "email": "nelly.k@patient.com",
+            "password": "patient123",
+            "phone": "01060000027",
+            "role": "patient",
+            "createdAt": "2026-05-06"
+        },
+        {
+            "id": "73",
+            "name": "Bassem Youssef",
+            "email": "bassem.y@patient.com",
+            "password": "patient123",
+            "phone": "01060000028",
+            "role": "patient",
+            "createdAt": "2026-05-07"
+        },
+        {
+            "id": "74",
+            "name": "Hend Sabri",
+            "email": "hend.s@patient.com",
+            "password": "patient123",
+            "phone": "01060000029",
+            "role": "patient",
+            "createdAt": "2026-05-08"
+        },
+        {
+            "id": "75",
+            "name": "Dhafer L'Abidine",
+            "email": "dhafer.l@patient.com",
+            "password": "patient123",
+            "phone": "01060000030",
+            "role": "patient",
+            "createdAt": "2026-05-09"
+        }
+    ],
+    "appointments": [
+        {
+            "id": "1",
+            "patientId": "4",
+            "doctorId": "2",
+            "date": "2026-04-10",
+            "timeSlot": "09:00 - 09:30",
+            "status": "confirmed",
+            "notes": "Regular checkup",
+            "createdAt": "2026-03-25"
+        },
+        {
+            "id": "2",
+            "patientId": "5",
+            "doctorId": "3",
+            "date": "2026-04-12",
+            "timeSlot": "10:00 - 10:30",
+            "status": "pending",
+            "notes": "Skin rash consultation",
+            "createdAt": "2026-03-28"
+        }
+    ],
+    "prescriptions": [
+        {
+            "id": "1",
+            "appointmentId": "1",
+            "patientId": "4",
+            "doctorId": "2",
+            "medications": [
+                {
+                    "name": "Aspirin",
+                    "dosage": "100mg",
+                    "frequency": "Once daily",
+                    "duration": "30 days"
+                }
+            ],
+            "diagnosis": "Mild hypertension",
+            "notes": "Monitor blood pressure weekly",
+            "createdAt": "2026-04-10"
+        }
+    ],
+    "medicalRecords": [
+        {
+            "id": "1",
+            "patientId": "4",
+            "doctorId": "2",
+            "appointmentId": "1",
+            "diagnosis": "Mild hypertension",
+            "notes": "Patient advised to reduce salt intake and exercise regularly.",
+            "date": "2026-04-10"
+        }
+    ]
+}
