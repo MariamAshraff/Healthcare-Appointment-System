@@ -984,7 +984,8 @@
       "phone": "01060000011",
       "role": "patient",
       "avatar": "images/patient/4.webp",
-      "createdAt": "2026-04-20"
+      "createdAt": "2026-04-20",
+      "isActive": false
     },
     {
       "id": "57",
