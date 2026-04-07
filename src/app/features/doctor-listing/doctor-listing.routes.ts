@@ -4,11 +4,11 @@ import { DoctorDetail } from "./doctor-detail/doctor-detail";
 
 export const DOCTOR_LIST_ROUTES: Routes = [
   {
-    path: 'doctor-list',
+    path: '',
     component: DoctorList
   },
   {
-    path: 'doctor-details',
+    path: 'details/:id',
     component: DoctorDetail
   }
 ];

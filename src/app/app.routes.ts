@@ -1,14 +1,12 @@
+// app.routes.ts
 import { Routes } from '@angular/router';
-import { DoctorList } from './features/doctor-listing/doctor-list/doctor-list';
 
 export const routes: Routes = [
+  { path: '', redirectTo: 'admin', pathMatch: 'full' },
   {
-    path: '',
-    component: DoctorList
+    path: 'admin',
+    loadChildren: () => import('./features/admin/admin.routes').then(m => m.ADMIN_ROUTES)
   },
-  {
-    path: 'doctors',
-    loadChildren: () => import('./features/doctor-listing/doctor-listing.routes')
-      .then(m => m.DOCTOR_LIST_ROUTES)
-  },
+
+
 ];
