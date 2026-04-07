@@ -7,4 +7,5 @@ export interface IUser {
   role: 'patient' | 'doctor' | 'admin';
   avatar?: string;
   createdAt: string;
+  isActive?: boolean; //for deactivatePatient
 }
