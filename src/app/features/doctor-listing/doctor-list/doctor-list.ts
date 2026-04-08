@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { DoctorService } from '../../../core/service/doctor-service';
 import { IDoctor } from '../../../core/models/doctor';
+import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-doctor-list',
-  imports: [CommonModule],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './doctor-list.html',
   styleUrl: './doctor-list.css',
 })
@@ -14,22 +15,42 @@ export class DoctorList implements OnInit {
   doctors: IDoctor[] = [];
   doctorsCount = 0;
 
-  constructor(private _DoctorService: DoctorService) { }
-  ngOnInit(): void {
-    this._DoctorService.getAllDoctors().subscribe({
-      next: (data) => {
-        this.doctors = data;
-      },
-      error: (err) => {
-        console.error("Failed to load doctors. Please try again later.");
-      }
-    });
+  private fb = inject(FormBuilder);
+  filterForm: FormGroup = this.fb.group({
+    fullName: [''],
+    spec: [''],
+    maxPrice: [null as number | null],
+    day: ['']
+  });
 
-    this._DoctorService.Doctors$.subscribe({
-      next: (count) => {
-        this.doctorsCount = count;
-      }
+  constructor(private _DoctorService: DoctorService) { }
+
+  ngOnInit(): void {
+    this.loadAllDoctors();
+    this._DoctorService.Doctors$.subscribe(count => this.doctorsCount = count);
+    this.filterForm.valueChanges.subscribe(() => {
+      this.applyFilters();
     });
+  }
+
+  loadAllDoctors() {
+    this._DoctorService.getAllDoctors().subscribe(data => this.doctors = data);
+  }
+
+  applyFilters() {
+    const { fullName, spec, maxPrice, day } = this.filterForm.value;
+
+    this._DoctorService.getDoctorsByFilters('', {
+      fullName: fullName || undefined,
+      spec: spec || undefined,
+      maxPrice: maxPrice || undefined,
+      day: day || undefined
+    }).subscribe(data => this.doctors = data);
+  }
+
+  resetFilters() {
+    this.filterForm.reset();
+    this.loadAllDoctors();
   }
 
 }
