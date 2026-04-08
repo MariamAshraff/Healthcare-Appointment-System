@@ -69,11 +69,44 @@
   color: var(--mediva-purple);
 }
 
-/* الزر الأساسي (مثل New Doctor) بتدرج لوني */
+.btn-primary-gradient {
+  background: linear-gradient(135deg, var(--mediva-blue), var(--mediva-purple));
+  color: rgb(15, 13, 13);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.dropdown-menu {
+  animation: slideIn 0.2s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-menu input,
+.dropdown-menu select {
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.dropdown-menu label {
+  margin-bottom: 5px;
+}
+
 .btn-primary-gradient {
   background: linear-gradient(135deg, var(--mediva-blue), var(--mediva-purple));
   color: white;
   border: none;
-  padding: 10px 20px;
-  border-radius: 10px;
+  font-weight: 600;
 }

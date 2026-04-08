@@ -56,7 +56,7 @@ export class DoctorService {
       url += `&name_contains=${term}`;
     }
     if (filters.fullName) {
-      url += `&name=${filters.fullName}`;
+      url += `&name_contains=${filters.fullName}`;
     }
     if (filters.spec) {
       url += `&specialization=${filters.spec}`;
