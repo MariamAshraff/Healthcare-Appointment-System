@@ -1,0 +1,54 @@
+:host {
+  display: block;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+.appointment-row {
+  transition: background-color 0.2s ease;
+  min-height: 80px;
+}
+
+.appointment-row:hover {
+  background-color: #f8faff !important;
+}
+
+.doctor-name {
+  color: #4e44e7;
+}
+
+.bg-success-light {
+  background-color: #e6f7ef;
+}
+.bg-primary-light {
+  background-color: #e7eefd;
+}
+.bg-warning-light {
+  background-color: #fff8ec;
+}
+.bg-danger-light {
+  background-color: #fbe9e9;
+}
+
+.col-datetime {
+  width: 20%;
+}
+.col-patient {
+  width: 25%;
+}
+.col-doctor {
+  width: 25%;
+}
+.col-mode {
+  width: 15%;
+}
+.col-status {
+  width: 15%;
+}
+
+.rounded-circle {
+  border: 2px solid #f0f0f0;
+}
+.clickable {
+  cursor: pointer;
+  color: blue;
+}
