@@ -7,6 +7,7 @@ import { DoctorList } from './features/doctor-listing/doctor-list/doctor-list';
 import { DoctorDetail } from './features/doctor-listing/doctor-detail/doctor-detail';
 import { authGuard } from './core/guards/auth-guard';
 import { roleGuard } from './core/guards/role-guard';
+import { Home } from './features/home/home';
 
 export const routes: Routes = [
   {
@@ -14,6 +15,10 @@ export const routes: Routes = [
     pathMatch: 'full',
     canActivate: [authGuard],
     loadComponent: () => import('./features/auth/login/login').then(m => m.Login)
+  },
+  {
+    path: 'home',
+    component: Home
   },
   {
     path: 'admin',

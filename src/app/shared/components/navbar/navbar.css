@@ -61,3 +61,26 @@
   font-size: 14px;
   padding: 8px 15px;
 }
+.nav-link-custom {
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.nav-link-custom.active {
+  background-color: #eef2ff;
+  color: #6366f1;
+}
+
+.btn-dark {
+  background-color: #1a1a1a;
+  border: none;
+}
+
+.rounded-pill {
+  border-radius: 50px !important;
+}
