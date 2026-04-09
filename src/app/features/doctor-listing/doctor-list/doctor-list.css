@@ -4,17 +4,73 @@
   --mediva-pink: #f2b6d7;
   --dark-blue: #2c3e50;
   --soft-gray: #f8faff;
+  --header-height: 70px;
+}
+
+.header {
+  height: var(--header-height);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1050;
+  background-color: #ffffff;
+}
+
+.main-wrapper {
+  padding-top: var(--header-height);
 }
 
 .bg-light-soft {
   background-color: var(--soft-gray);
 }
 
+.profile-img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border: 2px solid #eee;
+}
+
+.btn-ai-gradient {
+  background: linear-gradient(to right, #2e59d9, #1cc88a);
+  color: white;
+  border: none;
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+
+.sidebar {
+  width: 260px;
+  min-height: calc(100vh - var(--header-height));
+  transition: all 0.3s ease;
+  background-color: #ffffff;
+}
+
+.sidebar .nav-link {
+  color: #6c757d !important;
+  font-weight: 500;
+  padding: 12px 15px;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+.sidebar .nav-link:hover {
+  background-color: #f8f9fa;
+  color: #2e59d9 !important;
+}
+
+.sidebar .nav-link.active {
+  background-color: #f0f4ff;
+  color: #2e59d9 !important;
+  font-weight: 600;
+}
+
 .doctor-card {
   border-radius: 16px;
   border: 1px solid #eee;
   transition: all 0.3s ease;
-  background-color: #fff;
+  background-color: #ffffff;
 }
 
 .doctor-card:hover {
@@ -22,15 +78,15 @@
   box-shadow: 0 10px 20px rgba(155, 152, 242, 0.15) !important;
 }
 
-.text-dark-blue {
-  color: var(--dark-blue);
-}
-
 .avatar-wrapper img {
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 12px;
   border: 2px solid var(--soft-gray);
+}
+
+.text-dark-blue {
+  color: var(--dark-blue);
 }
 
 .text-purple {
@@ -41,27 +97,26 @@
   color: #6c63ff;
 }
 
-.btn-options {
-  color: #ccc;
-  transition: color 0.2s;
+.btn-primary-gradient {
+  background: linear-gradient(135deg, #6a96f1, #837ff0);
+  color: #ffffff !important;
+  border: none;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 10px;
+  transition: opacity 0.2s;
 }
 
-.btn-options:hover {
-  color: var(--mediva-blue);
+.btn-primary-gradient:hover {
+  opacity: 0.9;
+  color: #ffffff;
 }
 
 .btn-outline-purple {
   color: var(--mediva-purple);
   border: 1px solid rgba(155, 152, 242, 0.3);
   border-radius: 10px;
-  background-color: transparent;
   transition: all 0.2s;
-}
-
-.btn-outline-purple:hover {
-  background-color: var(--soft-gray);
-  border-color: var(--mediva-purple);
-  color: var(--dark-blue);
 }
 
 .badge.bg-purple-light {
@@ -69,16 +124,9 @@
   color: var(--mediva-purple);
 }
 
-.btn-primary-gradient {
-  background: linear-gradient(135deg, var(--mediva-blue), var(--mediva-purple));
-  color: rgb(15, 13, 13);
-  border: none;
-  padding: 10px 20px;
-  border-radius: 10px;
-}
-
 .dropdown-menu {
   animation: slideIn 0.2s ease-out;
+  border-radius: 16px;
 }
 
 @keyframes slideIn {
@@ -91,22 +139,4 @@
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-.dropdown-menu input,
-.dropdown-menu select {
-  padding: 10px;
-  border-radius: 8px;
-  font-size: 0.9rem;
-}
-
-.dropdown-menu label {
-  margin-bottom: 5px;
-}
-
-.btn-primary-gradient {
-  background: linear-gradient(135deg, var(--mediva-blue), var(--mediva-purple));
-  color: white;
-  border: none;
-  font-weight: 600;
 }
