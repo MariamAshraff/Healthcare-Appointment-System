@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, map, Observable } from 'rxjs';
 import { environment } from '../../../environments/environment.development';
 import { IAppointment } from '../models/appointment';
 
@@ -24,11 +24,19 @@ export class AppointmentService {
   }
 
   getAllByPatientId(patientId: string): Observable<IAppointment[]> {
-  return this.http.get<IAppointment[]>(`${environment.baseUrl}/appointments?patientId=${patientId}`);
+    return this.http.get<IAppointment[]>(`${environment.baseUrl}/appointments`).pipe(
+      map(appointments =>
+        appointments.filter(app => String(app.patientId) === String(patientId))
+      )
+    );
   }
 
   getAllByDoctorId(doctorId: string): Observable<IAppointment[]> {
-    return this.http.get<IAppointment[]>(`${environment.baseUrl}/appointments?doctorId=${doctorId}`);
+    return this.http.get<IAppointment[]>(`${environment.baseUrl}/appointments`).pipe(
+      map(appointments =>
+        appointments.filter(app => String(app.doctorId) === String(doctorId))
+      )
+    );
   }
 
   getById(id: string): Observable<IAppointment> {
