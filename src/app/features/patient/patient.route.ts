@@ -6,6 +6,7 @@ import { Main } from "./main/main";
 import { DoctorList } from "../doctor-listing/doctor-list/doctor-list";
 import { DoctorDetail } from "../doctor-listing/doctor-detail/doctor-detail";
 import { PatientProfile } from "./profile/patient-profile/patient-profile";
+import { AppointmentForm } from "./appointment-form/appointment-form";
 
 export const PATIENT_ROUTES: Routes = [
   {
@@ -16,9 +17,10 @@ export const PATIENT_ROUTES: Routes = [
       { path: 'dashboard', component: Dashboard },
       { path: 'appointments', component: Appointments },
       { path: 'doctors', component: DoctorList },
-      { path: 'doctor-details/:id', component: DoctorDetail },
+      { path: 'doctor/:id', component: DoctorDetail },
       { path: 'prescriptions', component: Prescriptions },
-      { path: 'patients/:id', component: PatientProfile }
+      { path: 'patients/:id', component: PatientProfile },
+      { path: 'appointmentForm/:id', component: AppointmentForm },
     ]
   }
 ];

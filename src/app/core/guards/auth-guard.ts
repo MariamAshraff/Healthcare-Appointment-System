@@ -5,25 +5,26 @@ import { ToastrService } from 'ngx-toastr';
 
 export const authGuard: CanActivateFn = (route, state) => {
   const authService = inject(AuthService);
-  const _route = inject(Router);
   const toastr = inject(ToastrService);
+  const _router = inject(Router);
 
-  console.log(authService.isAuthenticated());
-  if (authService.isAuthenticated()) {
+  const isAuthenticated = authService.isAuthenticated();
+  const isLoginPage = state.url === '/login';
 
-    if (state.url === '/' || state.url === '/login') {
+  if (isAuthenticated) {
+    if (isLoginPage || state.url === '/') {
       const role = authService.getRole();
-      _route.navigate([`/${role}`]);
+      _router.navigate([`/${role}`]);
       return false;
     }
     return true;
-  }
-  else {
-    if (state.url !== '/login') {
-      toastr.error('You must be logged in to access this page.', 'Access Denied');
-      _route.navigate(['/login']);
-      return false;
+  } else {
+    if (isLoginPage) {
+      return true;
     }
-    return true;
+    toastr.error('You must be logged in to access this page.', 'Access Denied');
+    _router.navigate(['/login']);
+    return false;
   }
+
 };

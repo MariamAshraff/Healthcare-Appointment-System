@@ -3,6 +3,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { DoctorService } from '../../../core/service/doctor-service';
 import { IDoctor } from '../../../core/models/doctor';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-doctor-list',
@@ -23,7 +24,7 @@ export class DoctorList implements OnInit {
     day: ['']
   });
 
-  constructor(private _DoctorService: DoctorService) { }
+  constructor(private _DoctorService: DoctorService, private router: Router) { }
 
   ngOnInit(): void {
     this.loadAllDoctors();
@@ -51,6 +52,10 @@ export class DoctorList implements OnInit {
   resetFilters() {
     this.filterForm.reset();
     this.loadAllDoctors();
+  }
+
+  GoToDoctorDetails(id: string) {
+    this.router.navigate(['/patient/doctor', id]);
   }
 
 }
