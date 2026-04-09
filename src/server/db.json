@@ -60,6 +60,7 @@
       "password": "patient123",
       "phone": "01033333333",
       "role": "patient",
+      "avatar": "images/patient/8.webp",
       "createdAt": "2026-03-01"
     },
     {
@@ -69,6 +70,7 @@
       "password": "patient123",
       "phone": "01044444444",
       "role": "patient",
+      "avatar": "images/patient/user-02.jpg",
       "createdAt": "2026-03-10"
     },
     {

@@ -1,0 +1,24 @@
+.login-container {
+  min-height: 100vh;
+  background-color: #f4f7fe;
+  background-image: radial-gradient(#7ba8f822 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.btn-primary-gradient {
+  background: linear-gradient(135deg, #2e59d9, #9b98f2);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  transition: transform 0.2s;
+}
+
+.btn-primary-gradient:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0 3px rgba(46, 89, 217, 0.1);
+  background-color: #fff !important;
+}

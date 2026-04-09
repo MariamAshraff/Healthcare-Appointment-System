@@ -1,0 +1,63 @@
+.header {
+  height: 70px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.btn-ai {
+  background: linear-gradient(to right, #2e59d9, #1cc88a);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-weight: 600;
+}
+
+.profile-img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border: 2px solid #eee;
+}
+
+.sidebar {
+  width: 260px;
+  min-height: calc(100vh - 70px);
+  transition: all 0.3s ease;
+}
+
+.menu-title {
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.sidebar .nav-link {
+  color: #6c757d !important;
+  font-weight: 500;
+  padding: 12px 15px;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+.sidebar .nav-link:hover {
+  background-color: #f8f9fa;
+  color: #2e59d9 !important;
+}
+
+.sidebar .nav-link.active {
+  background-color: #f0f4ff;
+  color: #2e59d9 !important;
+  font-weight: 600;
+}
+
+.sub-menu-custom {
+  border-left: 1px dashed #dee2e6;
+  margin-left: 20px;
+  padding-left: 10px;
+}
+
+.sub-menu-custom .nav-link {
+  font-size: 14px;
+  padding: 8px 15px;
+}
