@@ -32,11 +32,9 @@
               <p class="text-muted small mb-0">Consultation Charge</p>
               <h3 class="fw-bold text-purple-dark">${{ doctor.price }} <span class="fs-6 fw-normal text-muted">/
                   Visit</span></h3>
-              @if((authService.user$ | async)?.role === 'patient'){
               <button class="btn btn-primary-gradient px-4 mt-2"
                 [routerLink]="['/patient/appointmentForm', doctor.id]">Book
                 Appointment</button>
-              }
             </div>
           </div>
         </div>
