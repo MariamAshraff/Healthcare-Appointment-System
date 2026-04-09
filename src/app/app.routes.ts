@@ -9,16 +9,67 @@ import { authGuard } from './core/guards/auth-guard';
 import { roleGuard } from './core/guards/role-guard';
 import { Home } from './features/home/home';
 
+// export const routes: Routes = [
+//   {
+//     path: '',
+//     pathMatch: 'full',
+//     redirectTo: 'login',
+//   },
+//   {
+//     path: 'admin',
+//     canActivate: [authGuard],
+//     canMatch: [roleGuard],
+//     data: { expectedRoles: ['admin'] },
+//     loadChildren: () => import('./features/admin/admin.routes').then(m => m.ADMIN_ROUTES),
+//   },
+
+//   {
+//     path: 'doctor',
+//     canActivate: [authGuard],
+//     canMatch: [roleGuard],
+//     data: { expectedRoles: ['doctor'] },
+//     loadChildren: () => import('./features/doctor/doctor.route').then(m => m.DOCTOR_ROUTES)
+//   },
+
+//   {
+//     path: 'patient',
+//     canActivate: [authGuard],
+//     canMatch: [roleGuard],
+//     data: { expectedRoles: ['patient'] },
+//     loadChildren: () => import('./features/patient/patient.route').then(m => m.PATIENT_ROUTES)
+//   },
+
+//   {
+//     path: 'login',
+//     // canActivate: [authGuard],
+//     loadComponent: () => import('./features/auth/login/login').then(m => m.Login)
+//   },
+
+
+//   { path: '**', redirectTo: 'login' }
+// ];
+
 export const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    canActivate: [authGuard],
+    redirectTo: 'home'
+  },
+  {
+    path: 'login',
     loadComponent: () => import('./features/auth/login/login').then(m => m.Login)
   },
   {
     path: 'home',
     component: Home
+  },
+  {
+    path: 'doctors',
+    component: DoctorList
+  },
+  {
+    path: 'doctor/:id',
+    component: DoctorDetail
   },
   {
     path: 'admin',
@@ -27,7 +78,6 @@ export const routes: Routes = [
     data: { expectedRoles: ['admin'] },
     loadChildren: () => import('./features/admin/admin.routes').then(m => m.ADMIN_ROUTES),
   },
-
   {
     path: 'doctor',
     canActivate: [authGuard],
@@ -35,7 +85,6 @@ export const routes: Routes = [
     data: { expectedRoles: ['doctor'] },
     loadChildren: () => import('./features/doctor/doctor.route').then(m => m.DOCTOR_ROUTES)
   },
-
   {
     path: 'patient',
     canActivate: [authGuard],
@@ -43,13 +92,5 @@ export const routes: Routes = [
     data: { expectedRoles: ['patient'] },
     loadChildren: () => import('./features/patient/patient.route').then(m => m.PATIENT_ROUTES)
   },
-
-  {
-    path: 'login',
-    canActivate: [authGuard],
-    loadComponent: () => import('./features/auth/login/login').then(m => m.Login)
-  },
-
-
   { path: '**', redirectTo: 'login' }
 ];

@@ -55,9 +55,15 @@
         <li>
           <h6 class="dropdown-header">User Settings</h6>
         </li>
-        <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" routerLink="/profile">
-            <i class="bi bi-person text-muted"></i> My Profile</a>
+        @if (authService.user$ | async; as currentUser) {
+        <li>
+          <a class="dropdown-item d-flex align-items-center gap-2 py-2"
+            [routerLink]="['/' + currentUser.role + '/details', currentUser.id]">
+            <i class="bi bi-person text-muted"></i> My Profile
+          </a>
         </li>
+        }
+
         <li>
           <hr class="dropdown-divider">
         </li>

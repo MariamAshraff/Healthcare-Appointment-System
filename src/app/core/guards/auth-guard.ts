@@ -5,25 +5,39 @@ import { ToastrService } from 'ngx-toastr';
 
 export const authGuard: CanActivateFn = (route, state) => {
   const authService = inject(AuthService);
-  const _route = inject(Router);
+  const _router = inject(Router);
   const toastr = inject(ToastrService);
 
-  console.log(authService.isAuthenticated());
   if (authService.isAuthenticated()) {
-
-    if (state.url === '/' || state.url === '/login') {
-      const role = authService.getRole();
-      _route.navigate([`/${role}`]);
-      return false;
-    }
     return true;
-  }
-  else {
-    if (state.url !== '/login') {
-      toastr.error('You must be logged in to access this page.', 'Access Denied');
-      _route.navigate(['/login']);
-      return false;
-    }
-    return true;
+  } else {
+    toastr.error('You must be logged in to access this page.', 'Access Denied');
+    _router.navigate(['/login']);
+    return false;
   }
 };
+// export const authGuard: CanActivateFn = (route, state) => {
+//   const authService = inject(AuthService);
+//   const toastr = inject(ToastrService);
+//   const _router = inject(Router);
+
+//   const isAuthenticated = authService.isAuthenticated();
+//   const isLoginPage = state.url === '/login';
+
+//   if (isAuthenticated) {
+//     if (isLoginPage || state.url === '/') {
+//       const role = authService.getRole();
+//       _router.navigate([`/${role}`]);
+//       return false;
+//     }
+//     return true;
+//   } else {
+//     if (isLoginPage) {
+//       return true;
+//     }
+//     toastr.error('You must be logged in to access this page.', 'Access Denied');
+//     _router.navigate(['/login']);
+//     return false;
+//   }
+
+// };
