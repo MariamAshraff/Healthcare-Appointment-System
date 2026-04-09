@@ -8,6 +8,7 @@ import { IDoctor } from '../../../core/models/doctor';
 import { AuthService } from '../../../core/service/auth-service';
 import { IUser } from '../../../core/models/user';
 import { IAppointment } from '../../../core/models/appointment';
+import { AppointmentService } from '../../../core/service/appointment-service';
 
 @Component({
   selector: 'app-appointment-form',
@@ -27,7 +28,8 @@ export class AppointmentForm {
     private authService: AuthService,
     private toast: ToastrService,
     private fb: FormBuilder,
-    private router: Router
+    private router: Router,
+    private appointmentService: AppointmentService
   ) {
     this.appointmentForm = this.fb.group({
       date: ['', Validators.required],
@@ -66,6 +68,7 @@ export class AppointmentForm {
         ...this.appointmentForm.value
       };
 
+      this.appointmentService.add(appointmentData);
       this.toast.success('Your appointment has been booked!', 'Success');
       this.appointmentForm.reset();
       this.router.navigateByUrl(`/patient/appointments`);
