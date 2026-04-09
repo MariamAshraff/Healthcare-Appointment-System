@@ -53,7 +53,7 @@ export const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'login'
+    redirectTo: 'home'
   },
   {
     path: 'login',
@@ -62,6 +62,14 @@ export const routes: Routes = [
   {
     path: 'home',
     component: Home
+  },
+  {
+    path: 'doctors',
+    component: DoctorList
+  },
+  {
+    path: 'doctor/:id',
+    component: DoctorDetail
   },
   {
     path: 'admin',

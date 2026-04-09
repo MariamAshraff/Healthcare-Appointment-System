@@ -4,6 +4,7 @@ import { DoctorService } from '../../../core/service/doctor-service';
 import { IDoctor } from '../../../core/models/doctor';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../../../core/service/auth-service';
 
 @Component({
   selector: 'app-doctor-list',
@@ -24,7 +25,9 @@ export class DoctorList implements OnInit {
     day: ['']
   });
 
-  constructor(private _DoctorService: DoctorService, private router: Router) { }
+  constructor(private _DoctorService: DoctorService, private router: Router,
+    private authService: AuthService
+  ) { }
 
   ngOnInit(): void {
     this.loadAllDoctors();
@@ -55,7 +58,10 @@ export class DoctorList implements OnInit {
   }
 
   GoToDoctorDetails(id: string) {
-    this.router.navigate(['/patient/doctor', id]);
+    if (this.authService.isAuthenticated()) {
+      this.router.navigate(['/patient/doctor', id]);
+    }
+    this.router.navigate(['/doctor', id]);
   }
 
 }
