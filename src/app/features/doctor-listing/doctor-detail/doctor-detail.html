@@ -1,1 +1,119 @@
-<p>doctor-detail works!</p>
+<div class="container-fluid py-4 bg-light-soft" *ngIf="doctor">
+  <nav aria-label="breadcrumb" class="mb-4">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="/patient/doctors" class="text-decoration-none">Doctors</a></li>
+      <li class="breadcrumb-item active">{{ doctor.name }}</li>
+    </ol>
+  </nav>
+
+  <div class="card border-0 shadow-sm mb-4 overflow-hidden" style="border-radius: 20px;">
+    <div class="card-body p-4">
+      <div class="row align-items-center">
+        <div class="col-md-auto text-center mb-3 mb-md-0">
+          <img [src]="doctor.avatar || 'assets/images/default-doctor.webp'" class="rounded-4 shadow-sm object-fit-cover"
+            style="width: 150px; height: 150px; border: 4px solid #f8faff;">
+        </div>
+        <div class="col-md ms-md-4">
+          <div class="d-flex justify-content-between align-items-start">
+            <div>
+              <h2 class="fw-bold text-dark-blue mb-1">{{ doctor.name }}</h2>
+              <p class="text-purple fw-medium mb-2">{{ doctor.specialization }}</p>
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <span class="badge bg-purple-light text-purple px-3 py-2">
+                  <i class="bi bi-star-fill me-1 text-warning"></i> {{ doctor.rating }} ({{ doctor.reviewCount }}
+                  Reviews)
+                </span>
+                <span class="text-muted small"><i class="bi bi-geo-alt me-1"></i> Clinic : Downtown Medical
+                  Clinic</span>
+              </div>
+            </div>
+            <div class="text-md-end">
+              <p class="text-muted small mb-0">Consultation Charge</p>
+              <h3 class="fw-bold text-purple-dark">${{ doctor.price }} <span class="fs-6 fw-normal text-muted">/
+                  Visit</span></h3>
+              <button class="btn btn-primary-gradient px-4 mt-2"
+                [routerLink]="['/patient/appointmentForm', doctor.id]">Book
+                Appointment</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-4">
+    <div class="col-lg-8">
+      <div class="card border-0 shadow-sm mb-4" style="border-radius: 16px;">
+        <div class="card-header bg-white border-0 pt-4 px-4">
+          <h5 class="fw-bold mb-0">Availability</h5>
+        </div>
+        <div class="card-body px-4 pb-4">
+          <div class="table-responsive">
+            <table class="table table-borderless align-middle">
+              <thead class="bg-light">
+                <tr>
+                  <th class="py-3 px-3" style="border-radius: 10px 0 0 10px;">Day</th>
+                  <th class="py-3">Time Slots</th>
+                  <th class="py-3 text-end" style="border-radius: 0 10px 10px 0;">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let slot of doctor.availableSlots" class="border-bottom-dashed">
+                  <td class="py-3 px-3 fw-bold text-dark-blue">{{ slot.day }}</td>
+                  <td class="py-3 text-muted">{{ slot.startTime }} - {{ slot.endTime }}</td>
+                  <td class="py-3 text-end">
+                    <span [class]="slot.isBooked ? 'text-danger' : 'text-success'">
+                      {{ slot.isBooked ? 'Not Available' : 'Available' }}
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="card border-0 shadow-sm" style="border-radius: 16px;">
+        <div class="card-body p-4">
+          <h5 class="fw-bold mb-3">Short Bio</h5>
+          <p class="text-secondary lh-lg mb-0">{{ doctor.bio }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <div class="card border-0 shadow-sm" style="border-radius: 16px;">
+        <div class="card-body p-4">
+          <h5 class="fw-bold mb-4">Doctor Information</h5>
+          <div class="d-flex align-items-center mb-4">
+            <div class="icon-box bg-light text-purple rounded-3 p-3 me-3">
+              <i class="bi bi-telephone"></i>
+            </div>
+            <div>
+              <p class="text-muted small mb-0">Phone Number</p>
+              <p class="fw-bold mb-0">{{ doctor.phone }}</p>
+            </div>
+          </div>
+          <div class="d-flex align-items-center mb-4">
+            <div class="icon-box bg-light text-purple rounded-3 p-3 me-3">
+              <i class="bi bi-envelope"></i>
+            </div>
+            <div>
+              <p class="text-muted small mb-0">Email Address</p>
+              <p class="fw-bold mb-0">{{ doctor.email }}</p>
+            </div>
+          </div>
+          <div class="d-flex align-items-center mb-0">
+            <div class="icon-box bg-light text-purple rounded-3 p-3 me-3">
+              <i class="bi bi-briefcase"></i>
+            </div>
+            <div>
+              <p class="text-muted small mb-0">Experience</p>
+              <p class="fw-bold mb-0">{{ doctor.experience }} Years +</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
