@@ -1,11 +1,43 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { AppointmentCard } from '../appointment-card/appointment-card';
+import { AppointmentService } from '../../../core/service/appointment-service';
+import { IAppointment } from '../../../core/models/appointment';
+import { AuthService } from '../../../core/service/auth-service';
+import { IUser } from '../../../core/models/user';
+import { IDoctor } from '../../../core/models/doctor';
+import { DoctorService } from '../../../core/service/doctor-service';
 
 @Component({
   selector: 'app-appointments',
-  imports: [],
+  imports: [CommonModule, AppointmentCard],
   templateUrl: './appointments.html',
   styleUrl: './appointments.css',
 })
-export class Appointments {
+export class Appointments implements OnInit {
+  appointments: IAppointment[] | null = null
+  user?: IUser;
+  doctors?: IDoctor[];
 
+
+  constructor(private appointmentService: AppointmentService,
+    private authService: AuthService,
+    private doctorService: DoctorService
+  ) {
+  }
+  ngOnInit(): void {
+    this.authService.user$.subscribe({
+      next: (user) => {
+        if (user) {
+          this.user = user as IUser;
+          this.appointmentService.getAllByPatientId(this.user.id).subscribe({
+            next: (data) => {
+              this.appointments = data;
+            }
+          });
+        }
+      }
+    })
+
+  }
 }

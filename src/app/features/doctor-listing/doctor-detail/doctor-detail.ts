@@ -4,6 +4,7 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { IDoctor } from '../../../core/models/doctor';
 import { DoctorService } from '../../../core/service/doctor-service';
 import { ToastrService } from 'ngx-toastr';
+import { AuthService } from '../../../core/service/auth-service';
 
 @Component({
   selector: 'app-doctor-detail',
@@ -17,7 +18,8 @@ export class DoctorDetail implements OnInit {
 
   constructor(private doctorService: DoctorService,
     private activateRoute: ActivatedRoute,
-    private toast: ToastrService
+    private toast: ToastrService,
+    public authService: AuthService
   ) { }
   ngOnInit(): void {
     this.id = this.activateRoute.snapshot.paramMap.get('id') || '';

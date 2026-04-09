@@ -19,7 +19,7 @@ export const PATIENT_ROUTES: Routes = [
       { path: 'doctors', component: DoctorList },
       { path: 'doctor/:id', component: DoctorDetail },
       { path: 'prescriptions', component: Prescriptions },
-      { path: 'patients/:id', component: PatientProfile },
+      { path: 'details/:id', component: PatientProfile },
       { path: 'appointmentForm/:id', component: AppointmentForm },
     ]
   }

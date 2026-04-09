@@ -3,11 +3,11 @@ import { AuthService } from '../../../core/service/auth-service';
 import { IUser } from '../../../core/models/user';
 import { IDoctor } from '../../../core/models/doctor';
 import { CommonModule } from '@angular/common';
-import { Router, RouterOutlet } from "@angular/router";
+import { Router, RouterLink, RouterOutlet } from "@angular/router";
 
 @Component({
   selector: 'app-navbar',
-  imports: [CommonModule, RouterOutlet],
+  imports: [CommonModule, RouterOutlet, RouterLink],
   templateUrl: './navbar.html',
   styleUrl: './navbar.css',
 })

@@ -1,4 +1,5 @@
-<div class="container-fluid py-4 bg-light-soft" *ngIf="doctor">
+@if(doctor){
+<div class="container-fluid py-4 bg-light-soft">
   <nav aria-label="breadcrumb" class="mb-4">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a routerLink="/patient/doctors" class="text-decoration-none">Doctors</a></li>
@@ -31,9 +32,11 @@
               <p class="text-muted small mb-0">Consultation Charge</p>
               <h3 class="fw-bold text-purple-dark">${{ doctor.price }} <span class="fs-6 fw-normal text-muted">/
                   Visit</span></h3>
+              @if((authService.user$ | async)?.role === 'patient'){
               <button class="btn btn-primary-gradient px-4 mt-2"
                 [routerLink]="['/patient/appointmentForm', doctor.id]">Book
                 Appointment</button>
+              }
             </div>
           </div>
         </div>
@@ -58,7 +61,8 @@
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let slot of doctor.availableSlots" class="border-bottom-dashed">
+                @for (slot of doctor.availableSlots; track $index) {
+                <tr class="border-bottom-dashed">
                   <td class="py-3 px-3 fw-bold text-dark-blue">{{ slot.day }}</td>
                   <td class="py-3 text-muted">{{ slot.startTime }} - {{ slot.endTime }}</td>
                   <td class="py-3 text-end">
@@ -67,6 +71,8 @@
                     </span>
                   </td>
                 </tr>
+                }
+
               </tbody>
             </table>
           </div>
@@ -117,3 +123,4 @@
     </div>
   </div>
 </div>
+}

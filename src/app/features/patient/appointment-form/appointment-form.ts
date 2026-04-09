@@ -60,6 +60,7 @@ export class AppointmentForm {
 
   onSubmit() {
     if (this.appointmentForm.valid && this.doctor && this.patient) {
+      const selectedSlotValue = this.appointmentForm.value.timeSlot;
       const appointmentData: IAppointment = {
         patientId: this.patient.id,
         doctorId: this.doctor.id,
@@ -67,11 +68,31 @@ export class AppointmentForm {
         createdAt: new Date().toISOString(),
         ...this.appointmentForm.value
       };
+      const updatedSlots = this.doctor.availableSlots.map(slot => {
+        const slotRange = `${slot.startTime} - ${slot.endTime}`;
+        if (slotRange === selectedSlotValue) {
+          return { ...slot, isBooked: true };
+        }
+        return slot;
+      });
 
-      this.appointmentService.add(appointmentData);
-      this.toast.success('Your appointment has been booked!', 'Success');
-      this.appointmentForm.reset();
-      this.router.navigateByUrl(`/patient/appointments`);
+      this.appointmentService.add(appointmentData).subscribe({
+        next: () => {
+          this.doctorService.updateDoctor(this.doctor!.id, { availableSlots: updatedSlots }).subscribe({
+            next: () => {
+              this.toast.success('Your appointment has been booked and doctor schedule updated!', 'Success');
+              this.appointmentForm.reset();
+              this.router.navigateByUrl(`/patient/appointments`);
+            },
+            error: () => {
+              this.toast.warning('Appointment booked, but failed to update doctor schedule.');
+            }
+          });
+        },
+        error: () => {
+          this.toast.error('Something went wrong. Please try again.');
+        }
+      });
 
     } else {
       this.toast.warning('Please complete the form and ensure you are logged in.');
