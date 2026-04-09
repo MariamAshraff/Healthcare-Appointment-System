@@ -33,16 +33,13 @@
 }
 
 .col-datetime {
-  width: 30%;
+  width: 33.33333333%;
 }
 
 .col-doctor {
-  width: 30%;
+  width: 50%;
 }
 
-.col-mode {
-  width: 15%;
-}
 
 .col-status {
   width: 25%;
@@ -55,4 +52,17 @@
 .clickable {
   cursor: pointer;
   color: blue;
+}
+
+.clickable-profile {
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.clickable-profile:hover {
+  opacity: 0.8;
+}
+
+.doctor-name:hover {
+  text-decoration: underline;
 }
