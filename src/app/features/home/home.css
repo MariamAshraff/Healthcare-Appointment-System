@@ -3,6 +3,7 @@
   min-height: 80vh;
   overflow: hidden;
 }
+
 .container-status {
   background: #f7f7f78f;
   min-height: 80vh;
@@ -54,6 +55,7 @@
   margin-left: auto;
   margin-right: auto;
 }
+
 .glass-info,
 .glass-stats {
   position: absolute;
@@ -166,20 +168,24 @@
   background-color: #222;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
+
 .heart-beat {
   width: 150px;
   animation: beat 1s infinite;
 }
 
 @keyframes beat {
+
   0%,
   100% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.1);
   }
 }
+
 .doctors-section {
   font-family: 'Segoe UI', Tahoma, sans-serif;
 }
@@ -188,9 +194,8 @@
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
-  /* flex-wrap: nowrap; عشان يفضلوا جنب بعض زي الصورة */
-  overflow-x: auto; /* للموبايل عشان ميبوظش الديزاين */
-  scrollbar-width: none; /* إخفاء السكرول بار */
+  overflow-x: auto;
+  scrollbar-width: none;
 }
 
 .doctors-flex::-webkit-scrollbar {

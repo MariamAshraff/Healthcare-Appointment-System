@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterModule, RouterOutlet } from '@angular/router';
+import { Router, RouterModule, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-main',
@@ -10,7 +10,14 @@ import { RouterModule, RouterOutlet } from '@angular/router';
 })
 export class Main {
   isDoctorsOpen = false;
-
+  constructor(private router: Router) {
+    this.router.events.subscribe(() => {
+      const menu = document.getElementById('adminSidebar');
+      if (menu && menu.classList.contains('show')) {
+        menu.classList.remove('show');
+      }
+    });
+  }
   toggleDoctors() {
     this.isDoctorsOpen = !this.isDoctorsOpen;
   }

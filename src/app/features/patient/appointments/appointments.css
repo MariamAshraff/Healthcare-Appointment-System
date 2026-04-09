@@ -19,7 +19,3 @@ app-appointment-card:not(:last-child) {
     display: none;
   }
 }
-
-.psts {
-  padding-left: 13rem !important;
-}
