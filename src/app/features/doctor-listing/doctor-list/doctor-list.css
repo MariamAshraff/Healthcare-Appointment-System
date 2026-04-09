@@ -135,3 +135,16 @@
     transform: translateY(0);
   }
 }
+
+.clickable-profile {
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.clickable-profile:hover {
+  opacity: 0.8;
+}
+
+.doctor-name:hover {
+  text-decoration: underline;
+}

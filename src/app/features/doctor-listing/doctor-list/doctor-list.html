@@ -81,7 +81,7 @@
   </div>
   <div class="row g-4">
     @for (doctor of doctors; track doctor.id) {
-    <div class="col-12 col-md-6 col-lg-4" (click)="GoToDoctorDetails(doctor.id)">
+    <div class="col-12 col-md-6 col-lg-4 clickable-profile" (click)="GoToDoctorDetails(doctor.id)">
       <div class="card doctor-card border-0 shadow-sm h-100 position-relative p-3">
 
         <button class="btn btn-options position-absolute top-0 end-0 m-3">
@@ -99,7 +99,7 @@
             </div>
 
             <div class="col-8 ps-2 text-start">
-              <h5 class="card-title fw-bold text-dark-blue mb-1 text-truncate">
+              <h5 class="card-title doctor-name fw-bold text-dark-blue mb-1 text-truncate">
                 {{ doctor.name }}
               </h5>
 
