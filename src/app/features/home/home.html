@@ -140,3 +140,97 @@
     </div>
   </div>
 </section>
+<section class="info-section py-5">
+  <div class="container py-5">
+
+    <div class="row align-items-center mb-5 pb-5">
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <h2 class="display-5 fw-bold text-dark mb-4">Empowering Your Mind <br> and Emotional Health</h2>
+        <p class="text-secondary mb-4" style="max-width: 500px;">
+          Discover personalized support, expert guidance, and tools to help you manage stress, improve emotional balance, and build resilience for a healthier, more fulfilling mental and emotional life.
+        </p>
+
+        <ul class="list-unstyled mb-4">
+          <li class="d-flex align-items-center gap-2 mb-2">
+            <i class="bi bi-check-circle-fill text-primary"></i> Guidance you can trust
+          </li>
+          <li class="d-flex align-items-center gap-2 mb-2">
+            <i class="bi bi-check-circle-fill text-primary"></i> Skills for life success
+          </li>
+          <li class="d-flex align-items-center gap-2 mb-2">
+            <i class="bi bi-check-circle-fill text-primary"></i> Strategies to feel better
+          </li>
+        </ul>
+
+        <button class="btn btn-dark rounded-pill px-4 py-2 fw-semibold d-inline-flex align-items-center gap-2">
+          Join Us <i class="bi bi-arrow-right-circle-fill"></i>
+        </button>
+      </div>
+      <div class="col-lg-6 text-center">
+        <img src="heart.png" class=" heart-beat img-fluid" alt="Medical Checkup">
+      </div>
+
+    </div>
+
+    <div class="row align-items-center flex-row-reverse">
+      <div class="col-lg-6 mb-4 mb-lg-0 ps-lg-5">
+        <h2 class="display-5 fw-bold text-dark mb-4">Reasons to <br> Choose Psyczi</h2>
+        <p class="text-secondary mb-4" style="max-width: 500px;">
+          Discover personalized support, expert guidance, and tools to help you manage stress, improve emotional balance, and build resilience.
+        </p>
+
+        <ul class="list-unstyled mb-4">
+          <li class="d-flex align-items-center gap-2 mb-2">
+            <i class="bi bi-check-circle-fill text-primary"></i> Absolutely Free of Charge
+          </li>
+          <li class="d-flex align-items-center gap-2 mb-2">
+            <i class="bi bi-check-circle-fill text-primary"></i> Qualified Therapist
+          </li>
+          <li class="d-flex align-items-center gap-2 mb-2">
+            <i class="bi bi-check-circle-fill text-primary"></i> Personalized Dashboard
+          </li>
+          <li class="d-flex align-items-center gap-2 mb-2">
+            <i class="bi bi-check-circle-fill text-primary"></i> Convenient
+          </li>
+        </ul>
+
+        <button class="btn btn-dark rounded-pill px-4 py-2 fw-semibold d-inline-flex align-items-center gap-2">
+          Get Started <i class="bi bi-arrow-right-circle-fill"></i>
+        </button>
+      </div>
+      <div class="col-lg-6 text-center">
+        <img src="smile.jpg" class="img-fluid rounded-5 shadow-sm" alt="Mental Health Support">
+      </div>
+    </div>
+
+  </div>
+</section>
+<section class="doctors-section py-5 bg-white text-center">
+  <div class="container py-5">
+
+    <h2 class="display-5 fw-bold text-dark mb-5">
+      Your Health, Our Mission <br> Every Step of the Way
+    </h2>
+
+    <div class="doctors-flex d-flex align-items-center justify-content-center gap-3 mb-5 px-3">
+
+      @for (doctor of doctors; track doctor.id) {
+        <div class="doctor-image-wrapper shadow-sm">
+          <img [src]="doctor.avatar"
+               [alt]="doctor.name"
+               class="doctor-img ">
+        </div>
+
+      } @empty {
+        <p class="text-muted">Loading our expert team...</p>
+      }
+
+    </div>
+
+    <button class="btn btn-outline-dark rounded-pill px-4 py-2 fw-semibold d-inline-flex align-items-center gap-2" routerLink="/doctors">
+      See All
+      <i class="bi bi-arrow-up-right-circle-fill fs-5"></i>
+    </button>
+
+  </div>
+</section>
