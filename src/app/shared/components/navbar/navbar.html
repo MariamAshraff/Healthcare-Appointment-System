@@ -1,12 +1,18 @@
 <header class="header d-flex align-items-center justify-content-between px-4 shadow-sm bg-white">
   <div class="header-left d-flex align-items-center">
     <div class="logo-wrapper me-4">
-      <img src="images/logo.png" width="120" alt="Preclinic Logo">
+      <img src="" width="120" alt="Preclinic Logo">
     </div>
-    <button class="btn btn-light rounded-circle sidebar-toggle shadow-sm">
+    <!-- <button class="btn btn-light rounded-circle sidebar-toggle shadow-sm">
       <i class="bi bi-list"></i>
-    </button>
+    </button> -->
   </div>
+  <nav class="d-none d-lg-flex gap-4 ms-5">
+      <a routerLink="/home" routerLinkActive="active" class="nav-link-custom">Home</a>
+      <a routerLink="/about" routerLinkActive="active" class="nav-link-custom">About</a>
+      <a routerLink="/services"  routerLinkActive="active"class="nav-link-custom">Services</a>
+      <a routerLink="/doctors" routerLinkActive="active" class="nav-link-custom">Doctors</a>
+    </nav>
 
   <div class="header-right d-flex align-items-center gap-3">
     <div class="search-bar position-relative d-none d-lg-block">
