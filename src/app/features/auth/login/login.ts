@@ -23,6 +23,10 @@ export class Login {
   ) { }
 
   ngOnInit(): void {
+    if (this.authService.isAuthenticated()) {
+      const role = this.authService.getRole();
+      this.router.navigate([`/${role}`]);
+    }
     this.initForm();
   }
 

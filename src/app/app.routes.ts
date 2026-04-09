@@ -51,12 +51,11 @@ import { roleGuard } from './core/guards/role-guard';
 export const routes: Routes = [
   {
     path: '',
-    canActivate: [authGuard],
-    loadComponent: () => import('./features/auth/login/login').then(m => m.Login)
+    pathMatch: 'full',
+    redirectTo: 'login'
   },
   {
     path: 'login',
-    canActivate: [authGuard],
     loadComponent: () => import('./features/auth/login/login').then(m => m.Login)
   },
   {
