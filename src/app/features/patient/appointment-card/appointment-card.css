@@ -66,3 +66,30 @@
 .doctor-name:hover {
   text-decoration: underline;
 }
+
+.small-text {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.dropdown-item {
+  transition: background-color 0.2s;
+}
+
+.dropdown-item:hover {
+  background-color: #f8faff;
+}
+
+.btn-primary-gradient {
+  background: linear-gradient(135deg, #6a96f1, #837ff0);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.btn-primary-gradient:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}

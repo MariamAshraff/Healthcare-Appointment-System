@@ -44,13 +44,13 @@
           "day": "Tuesday",
           "startTime": "14:00",
           "endTime": "14:30",
-          "isBooked": true
+          "isBooked": false
         },
         {
           "day": "Tuesday",
           "startTime": "14:30",
           "endTime": "15:00",
-          "isBooked": false
+          "isBooked": true
         }
       ],
       "rating": 4.8,
@@ -80,7 +80,7 @@
           "day": "Monday",
           "startTime": "10:30",
           "endTime": "11:00",
-          "isBooked": false
+          "isBooked": true
         },
         {
           "day": "Wednesday",
@@ -178,13 +178,13 @@
           "day": "Tuesday",
           "startTime": "09:00",
           "endTime": "10:00",
-          "isBooked": false
+          "isBooked": true
         },
         {
           "day": "Thursday",
           "startTime": "09:00",
           "endTime": "10:00",
-          "isBooked": false
+          "isBooked": true
         }
       ],
       "rating": 4.7,
@@ -208,13 +208,13 @@
           "day": "Monday",
           "startTime": "12:00",
           "endTime": "13:00",
-          "isBooked": false
+          "isBooked": true
         },
         {
           "day": "Wednesday",
           "startTime": "12:00",
           "endTime": "13:00",
-          "isBooked": false
+          "isBooked": true
         },
         {
           "day": "Friday",
@@ -532,36 +532,6 @@
       "rating": 4.6,
       "reviewCount": 88,
       "createdAt": "2026-02-10"
-    },
-    {
-      "id": "19",
-      "name": "Dr. Mahmoud Fawzy",
-      "email": "mahmoud.f@doctor.com",
-      "password": "doctor123",
-      "phone": "01050000014",
-      "role": "doctor",
-      "price": 300,
-      "specialization": "Neurosurgeon",
-      "experience": 16,
-      "bio": "Specialist in neuro-oncology and spine disorders.",
-      "avatar": "images/doctors/1.webp",
-      "availableSlots": [
-        {
-          "day": "Tuesday",
-          "startTime": "08:00",
-          "endTime": "10:30",
-          "isBooked": false
-        },
-        {
-          "day": "Thursday",
-          "startTime": "08:00",
-          "endTime": "10:30",
-          "isBooked": false
-        }
-      ],
-      "rating": 4.8,
-      "reviewCount": 125,
-      "createdAt": "2026-02-12"
     },
     {
       "id": "20",
@@ -1667,16 +1637,6 @@
       "createdAt": "2026-03-28"
     },
     {
-      "id": "3",
-      "patientId": "51",
-      "doctorId": "2",
-      "date": "2026-04-15",
-      "timeSlot": "09:30 - 10:00",
-      "status": "confirmed",
-      "notes": "Heart check",
-      "createdAt": "2026-04-01"
-    },
-    {
       "id": "4",
       "patientId": "52",
       "doctorId": "7",
@@ -1700,41 +1660,11 @@
       "patientId": "4",
       "doctorId": "2",
       "status": "pending",
-      "createdAt": "2026-04-09T17:35:32.269Z",
-      "date": "2026-04-24",
-      "timeSlot": "14:00 - 14:30",
-      "notes": "",
-      "id": "ECg7pcqDMXQ"
-    },
-    {
-      "patientId": "4",
-      "doctorId": "2",
-      "status": "pending",
       "createdAt": "2026-04-09T17:46:44.689Z",
-      "date": "2026-04-10",
-      "timeSlot": "14:00 - 14:30",
-      "notes": "",
-      "id": "_sl0t4DINFo"
-    },
-    {
-      "patientId": "4",
-      "doctorId": "2",
-      "status": "pending",
-      "createdAt": "2026-04-09T17:49:28.528Z",
-      "date": "2026-04-10",
+      "date": "2026-04-18",
       "timeSlot": "09:30 - 10:00",
       "notes": "",
-      "id": "4OEmqS8hd20"
-    },
-    {
-      "patientId": "4",
-      "doctorId": "2",
-      "status": "pending",
-      "createdAt": "2026-04-09T19:30:18.078Z",
-      "date": "2026-04-15",
-      "timeSlot": "10:00 - 10:30",
-      "notes": "",
-      "id": "tnphlEdDzjI"
+      "id": "_sl0t4DINFo"
     },
     {
       "patientId": "52",
@@ -1745,6 +1675,34 @@
       "timeSlot": "09:00 - 10:30",
       "notes": "",
       "id": "zXXifVdmcvo"
+    },
+    {
+      "patientId": "4",
+      "doctorId": "3",
+      "status": "pending",
+      "createdAt": "2026-04-10T12:22:36.797Z",
+      "date": "2026-04-23",
+      "timeSlot": "10:30 - 11:00",
+      "notes": "",
+      "id": "fD9_NQfzpKY"
+    },
+    {
+      "date": "2026-04-17",
+      "timeSlot": "09:00 - 10:00",
+      "patientId": "4",
+      "doctorId": "7",
+      "status": "pending",
+      "createdAt": "2026-04-10T16:41:02.810Z",
+      "id": "r1Lusknv2BU"
+    },
+    {
+      "date": "2026-04-18",
+      "timeSlot": "12:00 - 13:00",
+      "patientId": "4",
+      "doctorId": "8",
+      "status": "pending",
+      "createdAt": "2026-04-10T16:43:13.489Z",
+      "id": "b_QhArgibK4"
     }
   ],
   "prescriptions": [
@@ -1767,7 +1725,7 @@
     },
     {
       "id": "2",
-      "appointmentId": "3",
+      "appointmentId": null,
       "patientId": "51",
       "doctorId": "2",
       "medications": [
@@ -1814,7 +1772,7 @@
       "id": "2",
       "patientId": "51",
       "doctorId": "2",
-      "appointmentId": "3",
+      "appointmentId": null,
       "diagnosis": "Arrhythmia",
       "notes": "Follow up after 2 weeks",
       "date": "2026-04-15"

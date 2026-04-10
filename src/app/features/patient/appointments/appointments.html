@@ -11,7 +11,7 @@
     <div class="card-body p-0">
       @if(appointments && appointments.length > 0){
       @for (item of appointments; track item.id) {
-      <app-appointment-card [appointment]="item"></app-appointment-card>
+      <app-appointment-card [appointment]="item" (OnDelete)="ReloadData()"></app-appointment-card>
       }
       } @else {
       <div class="text-center py-5 bg-light">

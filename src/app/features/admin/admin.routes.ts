@@ -13,7 +13,7 @@ export const ADMIN_ROUTES: Routes = [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: Dashboard },
       { path: 'doctors', component: DoctorList },
-      { path: 'doctor-details/:id', component: DoctorDetail },
+      { path: 'doctor/:id', component: DoctorDetail },
       { path: 'appointments', component: Appointment }
     ]
   }

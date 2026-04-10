@@ -1,58 +1,86 @@
-<div class="card border-0 shadow-sm" style="border-radius: 20px; background-color: #ffffff;">
-  <div class="card-header bg-white border-0 pt-4 px-4">
-    <div class="d-flex align-items-center">
-      <div class="icon-circle bg-purple-light text-purple me-3">
-        <i class="bi bi-calendar-plus fs-4"></i>
+<div class="container py-5 bg-light-soft min-vh-100">
+  <div class="row justify-content-center">
+    <div class="col-md-7 col-lg-6">
+      <div class="card border-0 shadow-lg p-2" style="border-radius: 24px;">
+        <div class="card-body p-4">
+
+          <div class="text-center mb-4">
+            <h2 class="fw-bold text-dark-blue">
+              {{ isEditMode ? 'Edit Your Appointment' : 'Book New Appointment' }}
+            </h2>
+            <p class="text-muted small">Please fill in the details below to secure your slot</p>
+          </div>
+
+          @if (selectedDoctor) {
+          <div class="d-flex align-items-center p-3 mb-4 rounded-4"
+            style="background-color: rgba(155, 152, 242, 0.08); border: 1px solid rgba(155, 152, 242, 0.1);">
+            <div class="avatar-wrapper me-3">
+              <img [src]="selectedDoctor.avatar || 'assets/images/default-doctor.webp'" class="rounded-circle shadow-sm"
+                width="65" height="65" style="object-fit: cover; border: 2px solid white;">
+            </div>
+            <div>
+              <h5 class="mb-0 fw-bold text-dark-blue">{{ selectedDoctor.name }}</h5>
+              <div class="text-purple small fw-medium">{{ selectedDoctor.specialization }}</div>
+              <div class="mt-1">
+                <span class="badge bg-white text-dark shadow-sm py-1 px-2" style="font-size: 0.7rem;">
+                  <i class="bi bi-star-fill text-warning me-1"></i> {{ selectedDoctor.rating }} Rating
+                </span>
+              </div>
+            </div>
+          </div>
+          }
+
+          <form [formGroup]="appointmentForm" (ngSubmit)="onSubmit()">
+
+            <div class="mb-3">
+              <label class="form-label small fw-bold text-secondary ms-1">
+                <i class="bi bi-calendar3 me-1"></i> Select Date
+              </label>
+              <input type="date" formControlName="date"
+                class="form-control form-control-lg border-0 bg-light rounded-3 shadow-none custom-input" [min]="today">
+            </div>
+
+            <div class="mb-4">
+              <label class="form-label small fw-bold text-secondary ms-1">
+                <i class="bi bi-clock me-1"></i> Choose Time Slot
+              </label>
+              <select formControlName="timeSlot"
+                class="form-select form-select-lg border-0 bg-light rounded-3 shadow-none custom-input">
+                <option value="" disabled selected>Select an available slot</option>
+
+                @if (selectedDoctor?.availableSlots) {
+                @for (slot of selectedDoctor?.availableSlots; track $index) {
+                <option [value]="slot.startTime + ' - ' + slot.endTime" [disabled]="slot.isBooked && !isEditMode">
+                  {{ slot.startTime }} - {{ slot.endTime }} {{ slot.isBooked ? '(Booked)' : '' }}
+                </option>
+                }
+                } @else {
+                <option value="09:00 AM - 10:00 AM">09:00 AM - 10:00 AM</option>
+                <option value="11:00 AM - 12:00 PM">11:00 AM - 12:00 PM</option>
+                <option value="02:00 PM - 03:00 PM">02:00 PM - 03:00 PM</option>
+                <option value="04:00 PM - 05:00 PM">04:00 PM - 05:00 PM</option>
+                }
+              </select>
+            </div>
+
+            <div class="row g-3 mt-2">
+              <div class="col-6">
+                <button type="button" class="btn btn-light w-100 py-3 fw-bold rounded-3"
+                  (click)="router.navigate(['/patient/appointments'])">
+                  Cancel
+                </button>
+              </div>
+              <div class="col-6">
+                <button type="submit" class="btn btn-primary-gradient w-100 py-3 fw-bold rounded-3 shadow"
+                  [disabled]="appointmentForm.invalid">
+                  {{ isEditMode ? 'Update' : 'Confirm' }}
+                </button>
+              </div>
+            </div>
+
+          </form>
+        </div>
       </div>
-      <h5 class="fw-bold mb-0 text-dark-blue">Book an Appointment</h5>
     </div>
-  </div>
-
-  <div class="card-body p-4">
-    <form [formGroup]="appointmentForm" (ngSubmit)="onSubmit()">
-      <div class="row g-4">
-        <div class="col-md-6">
-          <label class="form-label small fw-bold text-muted">Appointment Date</label>
-          <div class="input-group">
-            <span class="input-group-text bg-light border-0"><i class="bi bi-calendar3 text-purple"></i></span>
-            <input type="date" formControlName="date" class="form-control bg-light border-0 py-2">
-          </div>
-        </div>
-
-        <div class="col-md-6">
-          <label class="form-label small fw-bold text-muted">Available Slots</label>
-          <div class="input-group">
-            <span class="input-group-text bg-light border-0"><i class="bi bi-clock text-purple"></i></span>
-            <select formControlName="timeSlot" class="form-select bg-light border-0 py-2">
-              <option value="">Select a time slot</option>
-              <option *ngFor="let slot of doctor?.availableSlots" [value]="slot.startTime + ' - ' + slot.endTime"
-                [disabled]="slot.isBooked">
-                {{ slot.day }}: {{ slot.startTime }} - {{ slot.endTime }}
-                {{ slot.isBooked ? '(Reserved)' : '' }}
-              </option>
-            </select>
-          </div>
-        </div>
-
-        <div class="col-12">
-          <label class="form-label small fw-bold text-muted">Additional Notes</label>
-          <textarea formControlName="notes" class="form-control bg-light border-0" rows="4"
-            placeholder="Describe your condition or specific requirements..."></textarea>
-        </div>
-
-        <div class="col-12">
-          <div class="p-3 rounded-3 bg-light-soft mb-3 border border-dashed text-center" *ngIf="doctor">
-            <p class="small text-muted mb-0">Consultation fee for <strong>{{ doctor.name }}</strong> is
-              <span class="text-purple-dark fw-bold">${{ doctor.price }}</span>
-            </p>
-          </div>
-
-          <button type="submit" [disabled]="appointmentForm.invalid"
-            class="btn btn-primary-gradient w-100 py-3 fw-bold">
-            Confirm and Book Now
-          </button>
-        </div>
-      </div>
-    </form>
   </div>
 </div>

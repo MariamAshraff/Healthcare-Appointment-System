@@ -26,6 +26,12 @@ export class Appointments implements OnInit {
   ) {
   }
   ngOnInit(): void {
+    this.loading();
+  }
+  ReloadData() {
+    this.loading();
+  }
+  private loading() {
     this.authService.user$.subscribe({
       next: (user) => {
         if (user) {
@@ -38,6 +44,5 @@ export class Appointments implements OnInit {
         }
       }
     })
-
   }
 }
