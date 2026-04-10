@@ -17,85 +17,138 @@ import { AppointmentService } from '../../../core/service/appointment-service';
   styleUrl: './appointment-form.css',
 })
 export class AppointmentForm {
-  doctor?: IDoctor;
-  id: string = '';
-  patient?: IUser;
-  appointmentForm: FormGroup;
+  // doctor?: IDoctor;
+  // id: string = '';
+  // patient?: IUser;
+  // appointmentForm: FormGroup;
 
 
   constructor(private doctorService: DoctorService,
-    private activateRoute: ActivatedRoute,
+    private route: ActivatedRoute,
     private authService: AuthService,
     private toast: ToastrService,
     private fb: FormBuilder,
-    private router: Router,
+    public router: Router,
     private appointmentService: AppointmentService
-  ) {
-    this.appointmentForm = this.fb.group({
-      date: ['', Validators.required],
-      timeSlot: ['', Validators.required],
-      notes: ['']
-    });
-  }
+  ) { }
+
+  appointmentForm!: FormGroup;
+  isEditMode = false;
+  selectedDoctor: IDoctor | null = null;
+  currentUserId?: string = '';
+  today: string = new Date().toISOString().split('T')[0];
+
   ngOnInit(): void {
-    this.id = this.activateRoute.snapshot.paramMap.get('id') || '';
-    this.doctorService.getDoctorById(this.id).subscribe({
-      next: (data) => {
-        this.doctor = data;
-      },
-      error: (err) => {
-        this.toast.error('Failed to load Doctor details. Please try again later.', 'Access Denied');
+    this.authService.user$.subscribe({
+      next: (user) => {
+        this.currentUserId = user?.id
       }
     });
 
-    this.authService.user$.subscribe({
-      next: (user) => {
-        this.patient = user as IUser;
+    this.initForm();
+
+    const idFromUrl = this.route.snapshot.paramMap.get('id');
+
+    if (idFromUrl) {
+      this.checkIfEditOrAdd(idFromUrl);
+    }
+  }
+
+  initForm() {
+    this.appointmentForm = this.fb.group({
+      date: ['', [Validators.required]],
+      timeSlot: ['', [Validators.required]],
+    });
+  }
+
+  checkIfEditOrAdd(id: string) {
+    this.appointmentService.getById(id).subscribe({
+      next: (appointment) => {
+        this.isEditMode = true;
+        this.appointmentForm.patchValue(appointment);
+        this.loadDoctorInfo(appointment.doctorId);
       },
-      error: err => {
-        this.toast.error('Failed to load Patient details. Please try again later.', 'Access Denied');
+      error: () => {
+        this.isEditMode = false;
+        this.loadDoctorInfo(id);
       }
-    })
+    });
+  }
+
+  loadDoctorInfo(doctorId: string) {
+    this.doctorService.getDoctorById(doctorId).subscribe({
+      next: (doc) => {
+        this.selectedDoctor = doc;
+        this.appointmentForm.patchValue({ doctorId: doc.id });
+      }
+    });
   }
 
   onSubmit() {
-    if (this.appointmentForm.valid && this.doctor && this.patient) {
-      const selectedSlotValue = this.appointmentForm.value.timeSlot;
+    if (this.appointmentForm.invalid || !this.selectedDoctor || !this.currentUserId) {
+      this.toast.warning('Please complete the form and ensure you are logged in.');
+      return;
+    }
+
+    const formData = this.appointmentForm.value;
+    const selectedSlotValue = formData.timeSlot;
+
+    if (!this.isEditMode) {
       const appointmentData: IAppointment = {
-        patientId: this.patient.id,
-        doctorId: this.doctor.id,
+        ...formData,
+        patientId: this.currentUserId,
+        doctorId: this.selectedDoctor.id,
         status: 'pending',
-        createdAt: new Date().toISOString(),
-        ...this.appointmentForm.value
+        createdAt: new Date().toISOString()
       };
-      const updatedSlots = this.doctor.availableSlots.map(slot => {
-        const slotRange = `${slot.startTime} - ${slot.endTime}`;
-        if (slotRange === selectedSlotValue) {
-          return { ...slot, isBooked: true };
-        }
-        return slot;
-      });
 
       this.appointmentService.add(appointmentData).subscribe({
         next: () => {
-          this.doctorService.updateDoctor(this.doctor!.id, { availableSlots: updatedSlots }).subscribe({
-            next: () => {
-              this.toast.success('Your appointment has been booked and doctor schedule updated!', 'Success');
-              this.appointmentForm.reset();
-              this.router.navigateByUrl(`/patient/appointments`);
-            },
-            error: () => {
-              this.toast.warning('Appointment booked, but failed to update doctor schedule.');
-            }
+          const updatedSlots = this.selectedDoctor!.availableSlots.map(slot => {
+            const slotRange = `${slot.startTime} - ${slot.endTime}`;
+            if (slotRange === selectedSlotValue) return { ...slot, isBooked: true };
+            return slot;
           });
-        },
-        error: () => {
-          this.toast.error('Something went wrong. Please try again.');
+          this.updateDoctorSlots(updatedSlots, 'Appointment booked successfully!');
         }
       });
-
-    } else {
-      this.toast.warning('Please complete the form and ensure you are logged in.');
     }
+    else {
+      const id = this.route.snapshot.paramMap.get('id')!;
+      this.appointmentService.getById(id).subscribe((oldApp) => {
+        const appointmentData: IAppointment = {
+          ...oldApp,
+          ...formData
+        };
+
+        this.appointmentService.update(appointmentData).subscribe({
+          next: () => {
+            const updatedSlots = this.selectedDoctor!.availableSlots.map(slot => {
+              const slotRange = `${slot.startTime} - ${slot.endTime}`;
+              if (slotRange === selectedSlotValue) return { ...slot, isBooked: true };
+              if (slotRange === oldApp.timeSlot && selectedSlotValue !== oldApp.timeSlot) return { ...slot, isBooked: false };
+              return slot;
+            });
+            this.updateDoctorSlots(updatedSlots, 'Appointment updated successfully!');
+          }
+        });
+      });
+    }
+    //
   }
+
+  private updateDoctorSlots(updatedSlots: any[], successMessage: string) {
+    this.doctorService.updateDoctor(this.selectedDoctor!.id, { availableSlots: updatedSlots }).subscribe({
+      next: () => {
+        this.toast.success(successMessage);
+        this.appointmentForm.reset();
+        this.router.navigateByUrl(`/patient/appointments`);
+      },
+      error: () => {
+        this.toast.warning('Process completed, but doctor schedule update failed.');
+        this.router.navigateByUrl(`/patient/appointments`);
+      }
+    });
+  }
+
 }

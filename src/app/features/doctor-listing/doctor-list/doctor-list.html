@@ -81,19 +81,44 @@
   </div>
   <div class="row g-4">
     @for (doctor of doctors; track doctor.id) {
-    <div class="col-12 col-md-6 col-lg-4 clickable-profile" (click)="GoToDoctorDetails(doctor.id)">
-      <div class="card doctor-card border-0 shadow-sm h-100 position-relative p-3">
+    <!-- <div class="col-12 col-md-6 col-lg-4 clickable-profile" [routerLink]="['/${role}/doctor', doctor.id]"> -->
+    <!--['/' + currentUser.role + '/details', currentUser.id]-->
+    <div class="col-12 col-md-6 col-xxl-4 position-relative">
+      <div class="card doctor-card border-0 shadow-sm h-100 p-3 clickable-profile"
+        [routerLink]="['/' + role + '/doctor', doctor.id]">
 
-        <button class="btn btn-options position-absolute top-0 end-0 m-3">
-          <i class="bi bi-three-dots-vertical"></i>
-        </button>
+        @if(role == 'admin'){
+        <div class="dropdown position-absolute top-0 end-0 m-3" (click)="$event.stopPropagation()">
+          <button class="btn btn-options p-0 border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-three-dots-vertical text-muted fs-5"></i>
+          </button>
 
-        <div class="card-body p-0">
+          <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0 py-1" style="min-width: 120px;">
+            <li>
+              <button class="dropdown-item py-1 px-3 d-flex align-items-center" (click)="onEdit(doctor.id)">
+                <i class="bi bi-pencil me-2 text-primary" style="font-size: 0.8rem;"></i>
+                <span class="small-text" style="font-size: 0.85rem;">Edit</span>
+              </button>
+            </li>
+            <li>
+              <hr class="dropdown-divider my-1 opacity-50">
+            </li>
+            <li>
+              <button class="dropdown-item py-1 px-3 d-flex align-items-center text-danger"
+                (click)="onDelete(doctor.id)">
+                <i class="bi bi-trash3 me-2" style="font-size: 0.8rem;"></i>
+                <span class="small-text" style="font-size: 0.85rem;">Remove</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+        }
+
+        <div class="card-body p-0 mt-2">
           <div class="row align-items-center">
-
             <div class="col-4 px-2">
               <div class="avatar-wrapper">
-                <img [src]="doctor.avatar || 'images/default-doctor.webp'" class="img-fluid rounded-4 shadow-sm"
+                <img [src]="doctor.avatar || 'assets/images/default-doctor.webp'" class="img-fluid rounded-4 shadow-sm"
                   [alt]="doctor.name">
               </div>
             </div>
@@ -102,10 +127,7 @@
               <h5 class="card-title doctor-name fw-bold text-dark-blue mb-1 text-truncate">
                 {{ doctor.name }}
               </h5>
-
-              <p class="text-muted small mb-1 text-truncate">
-                {{ doctor.specialization }}
-              </p>
+              <p class="text-muted small mb-1 text-truncate">{{ doctor.specialization }}</p>
 
               <div class="d-flex align-items-center mb-2">
                 <i class="bi bi-star-fill text-warning me-1 small"></i>
@@ -116,28 +138,24 @@
               <div class="info-section">
                 <div class="d-flex align-items-center mb-1 small text-secondary">
                   <i class="bi bi-calendar-event me-2 text-purple"></i>
-                  <span>Available :
+                  <span>Available:
                     <span class="fw-medium text-dark">
-                      @if (doctor.availableSlots && doctor.availableSlots.length > 0) {
-                      {{ doctor.availableSlots[0].day }}
-                      } @else {
-                      No slots
-                      }
+                      {{ (doctor.availableSlots && doctor.availableSlots.length > 0) ? doctor.availableSlots[0].day :
+                      'No slots' }}
                     </span>
                   </span>
                 </div>
                 <div class="d-flex align-items-center small text-secondary">
                   <i class="bi bi-cash-stack me-2 text-purple"></i>
-                  <span>Starts From :
-                    <span class="fw-bold text-purple-dark">${{ doctor.price || 0 }}</span>
-                  </span>
+                  <span>Starts From: <span class="fw-bold text-purple-dark">${{ doctor.price || 0 }}</span></span>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <button class="btn btn-outline-purple position-absolute bottom-0 end-0 m-3 p-1">
+        <button class="btn btn-outline-purple position-absolute bottom-0 end-0 m-3 p-1"
+          (click)="$event.stopPropagation()" [routerLink]="['/patient/appointmentForm', doctor.id]">
           <i class="bi bi-calendar-check fs-5"></i>
         </button>
       </div>
