@@ -1284,36 +1284,6 @@
       "createdAt": "2026-04-04"
     },
     {
-      "id": "45",
-      "name": "Dr. Mariam Farouk",
-      "email": "mariam.f@doctor.com",
-      "password": "doctor123",
-      "phone": "01050000040",
-      "role": "doctor",
-      "price": 350,
-      "specialization": "Gynecologist",
-      "experience": 9,
-      "avatar": "images/doctors/12.webp",
-      "bio": "Women's health education and primary care.",
-      "availableSlots": [
-        {
-          "day": "Sunday",
-          "startTime": "12:00",
-          "endTime": "14:00",
-          "isBooked": false
-        },
-        {
-          "day": "Tuesday",
-          "startTime": "12:00",
-          "endTime": "14:00",
-          "isBooked": false
-        }
-      ],
-      "rating": 4.6,
-      "reviewCount": 82,
-      "createdAt": "2026-04-05"
-    },
-    {
       "id": "46",
       "name": "Ali Hassan",
       "email": "ali.h@patient.com",
@@ -1462,7 +1432,8 @@
       "phone": "01060000015",
       "role": "patient",
       "avatar": "images/patient/1.webp",
-      "createdAt": "2026-04-24"
+      "createdAt": "2026-04-24",
+      "isActive": false
     },
     {
       "id": "61",
@@ -1492,7 +1463,8 @@
       "phone": "01060000018",
       "role": "patient",
       "avatar": "images/patient/10.webp",
-      "createdAt": "2026-04-27"
+      "createdAt": "2026-04-27",
+      "isActive": true
     },
     {
       "id": "64",
@@ -1612,7 +1584,8 @@
       "phone": "01060000030",
       "role": "patient",
       "avatar": "images/patient/7.webp",
-      "createdAt": "2026-05-09"
+      "createdAt": "2026-05-09",
+      "isActive": false
     }
   ],
   "appointments": [
@@ -1661,7 +1634,7 @@
       "doctorId": "2",
       "status": "pending",
       "createdAt": "2026-04-09T17:46:44.689Z",
-      "date": "2026-04-18",
+      "date": "2026-04-29",
       "timeSlot": "09:30 - 10:00",
       "notes": "",
       "id": "_sl0t4DINFo"
@@ -1758,96 +1731,96 @@
       "createdAt": "2026-04-16"
     },
     {
-  "id": "4",
-  "appointmentId": "_sl0t4DINFo",
-  "patientId": "4",
-  "doctorId": "2",
-  "medications": [
-    {
-      "name": "Aspirin",
-      "dosage": "75mg",
-      "frequency": "Once daily",
-      "duration": "30 days"
+      "id": "4",
+      "appointmentId": "_sl0t4DINFo",
+      "patientId": "4",
+      "doctorId": "2",
+      "medications": [
+        {
+          "name": "Aspirin",
+          "dosage": "75mg",
+          "frequency": "Once daily",
+          "duration": "30 days"
+        },
+        {
+          "name": "Atorvastatin",
+          "dosage": "10mg",
+          "frequency": "Once daily",
+          "duration": "30 days"
+        }
+      ],
+      "diagnosis": "Early hypertension",
+      "notes": "Reduce salt and monitor BP",
+      "createdAt": "2026-04-10"
     },
     {
-      "name": "Atorvastatin",
-      "dosage": "10mg",
-      "frequency": "Once daily",
-      "duration": "30 days"
-    }
-  ],
-  "diagnosis": "Early hypertension",
-  "notes": "Reduce salt and monitor BP",
-  "createdAt": "2026-04-10"
-},
-{
-  "id": "5",
-  "appointmentId": "4OEmqS8hd20",
-  "patientId": "4",
-  "doctorId": "2",
-  "medications": [
+      "id": "5",
+      "appointmentId": "4OEmqS8hd20",
+      "patientId": "4",
+      "doctorId": "2",
+      "medications": [
+        {
+          "name": "Bisoprolol",
+          "dosage": "2.5mg",
+          "frequency": "Once daily",
+          "duration": "14 days"
+        }
+      ],
+      "diagnosis": "Mild arrhythmia",
+      "notes": "Avoid caffeine",
+      "createdAt": "2026-04-10"
+    },
     {
-      "name": "Bisoprolol",
-      "dosage": "2.5mg",
-      "frequency": "Once daily",
-      "duration": "14 days"
-    }
-  ],
-  "diagnosis": "Mild arrhythmia",
-  "notes": "Avoid caffeine",
-  "createdAt": "2026-04-10"
-},
-{
-  "id": "6",
-  "appointmentId": "tnphlEdDzjI",
-  "patientId": "4",
-  "doctorId": "2",
-  "medications": [
+      "id": "6",
+      "appointmentId": "tnphlEdDzjI",
+      "patientId": "4",
+      "doctorId": "2",
+      "medications": [
+        {
+          "name": "Clopidogrel",
+          "dosage": "75mg",
+          "frequency": "Once daily",
+          "duration": "21 days"
+        }
+      ],
+      "diagnosis": "Risk of clotting",
+      "notes": "Follow up after 3 weeks",
+      "createdAt": "2026-04-15"
+    },
     {
-      "name": "Clopidogrel",
-      "dosage": "75mg",
-      "frequency": "Once daily",
-      "duration": "21 days"
-    }
-  ],
-  "diagnosis": "Risk of clotting",
-  "notes": "Follow up after 3 weeks",
-  "createdAt": "2026-04-15"
-},
-{
-  "id": "7",
-  "appointmentId": "2",
-  "patientId": "50",
-  "doctorId": "3",
-  "medications": [
+      "id": "7",
+      "appointmentId": "2",
+      "patientId": "50",
+      "doctorId": "3",
+      "medications": [
+        {
+          "name": "Hydrocortisone cream",
+          "dosage": "Apply twice daily",
+          "frequency": "Twice daily",
+          "duration": "7 days"
+        }
+      ],
+      "diagnosis": "Skin rash",
+      "notes": "Avoid irritants",
+      "createdAt": "2026-04-12"
+    },
     {
-      "name": "Hydrocortisone cream",
-      "dosage": "Apply twice daily",
-      "frequency": "Twice daily",
-      "duration": "7 days"
+      "id": "8",
+      "appointmentId": "5",
+      "patientId": "53",
+      "doctorId": "6",
+      "medications": [
+        {
+          "name": "Ibuprofen",
+          "dosage": "400mg",
+          "frequency": "Every 8 hours",
+          "duration": "5 days"
+        }
+      ],
+      "diagnosis": "Knee inflammation",
+      "notes": "Rest and apply ice",
+      "createdAt": "2026-04-17"
     }
-  ],
-  "diagnosis": "Skin rash",
-  "notes": "Avoid irritants",
-  "createdAt": "2026-04-12"
-},
-{
-  "id": "8",
-  "appointmentId": "5",
-  "patientId": "53",
-  "doctorId": "6",
-  "medications": [
-    {
-      "name": "Ibuprofen",
-      "dosage": "400mg",
-      "frequency": "Every 8 hours",
-      "duration": "5 days"
-    }
-  ],
-  "diagnosis": "Knee inflammation",
-  "notes": "Rest and apply ice",
-  "createdAt": "2026-04-17"
-}
   ],
   "medicalRecords": [
     {
@@ -1878,50 +1851,50 @@
       "date": "2026-04-16"
     },
     {
-  "id": "4",
-  "patientId": "4",
-  "doctorId": "2",
-  "appointmentId": "_sl0t4DINFo",
-  "diagnosis": "Early hypertension",
-  "notes": "Patient advised to reduce salt intake",
-  "date": "2026-04-10"
-},
-{
-  "id": "5",
-  "patientId": "4",
-  "doctorId": "2",
-  "appointmentId": "4OEmqS8hd20",
-  "diagnosis": "Mild arrhythmia",
-  "notes": "Follow up ECG recommended",
-  "date": "2026-04-10"
-},
-{
-  "id": "6",
-  "patientId": "4",
-  "doctorId": "2",
-  "appointmentId": "tnphlEdDzjI",
-  "diagnosis": "Risk of clotting",
-  "notes": "Monitor symptoms closely",
-  "date": "2026-04-15"
-},
-{
-  "id": "7",
-  "patientId": "50",
-  "doctorId": "3",
-  "appointmentId": "2",
-  "diagnosis": "Skin rash",
-  "notes": "Likely allergic reaction",
-  "date": "2026-04-12"
-},
-{
-  "id": "8",
-  "patientId": "53",
-  "doctorId": "6",
-  "appointmentId": "5",
-  "diagnosis": "Knee inflammation",
-  "notes": "Avoid heavy activity",
-  "date": "2026-04-17"
-}
+      "id": "4",
+      "patientId": "4",
+      "doctorId": "2",
+      "appointmentId": "_sl0t4DINFo",
+      "diagnosis": "Early hypertension",
+      "notes": "Patient advised to reduce salt intake",
+      "date": "2026-04-10"
+    },
+    {
+      "id": "5",
+      "patientId": "4",
+      "doctorId": "2",
+      "appointmentId": "4OEmqS8hd20",
+      "diagnosis": "Mild arrhythmia",
+      "notes": "Follow up ECG recommended",
+      "date": "2026-04-10"
+    },
+    {
+      "id": "6",
+      "patientId": "4",
+      "doctorId": "2",
+      "appointmentId": "tnphlEdDzjI",
+      "diagnosis": "Risk of clotting",
+      "notes": "Monitor symptoms closely",
+      "date": "2026-04-15"
+    },
+    {
+      "id": "7",
+      "patientId": "50",
+      "doctorId": "3",
+      "appointmentId": "2",
+      "diagnosis": "Skin rash",
+      "notes": "Likely allergic reaction",
+      "date": "2026-04-12"
+    },
+    {
+      "id": "8",
+      "patientId": "53",
+      "doctorId": "6",
+      "appointmentId": "5",
+      "diagnosis": "Knee inflammation",
+      "notes": "Avoid heavy activity",
+      "date": "2026-04-17"
+    }
   ],
   "$schema": "./node_modules/json-server/schema.json"
 }

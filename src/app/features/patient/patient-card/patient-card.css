@@ -1,0 +1,48 @@
+.patient-card {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  border-radius: 15px;
+  background-color: #ffffff;
+}
+
+.patient-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
+.avatar-container img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border: 2px solid #f8f9fa;
+}
+
+.bg-success-light {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.bg-danger-light {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+.patient-details i {
+  font-size: 0.9rem;
+}
+
+.text-primary {
+  color: #5d5fef !important;
+}
+
+.btn-outline-primary {
+  color: #5d5fef;
+  border-color: #5d5fef;
+}
+
+.btn-outline-primary:hover {
+  background-color: #5d5fef !important;
+  color: white !important;
+  border-color: #5d5fef !important;
+}
