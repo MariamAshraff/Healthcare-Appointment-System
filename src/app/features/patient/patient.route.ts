@@ -16,6 +16,7 @@ export const PATIENT_ROUTES: Routes = [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: Dashboard },
       { path: 'appointments', component: Appointments },
+      { path: 'prescriptions', component: Prescriptions },
       { path: 'doctors', component: DoctorList },
       { path: 'doctor/:id', component: DoctorDetail },
       { path: 'prescriptions', component: Prescriptions },

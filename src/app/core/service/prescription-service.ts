@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, map, Observable } from 'rxjs';
 import { Prescription } from '../models/prescription';
 import { environment } from '../../../environments/environment.development';
 
@@ -19,6 +19,13 @@ export class PrescriptionService {
 
   getAll(): Observable<Prescription[]> {
     return this.http.get<Prescription[]>(`${environment.baseUrl}/prescriptions`);
+  }
+  getAllByPatientId(patientId: string): Observable<Prescription[]> {
+    return this.http.get<Prescription[]>(`${environment.baseUrl}/prescriptions`).pipe(
+      map(prescriptions =>
+        prescriptions.filter(app => String(app.patientId) === String(patientId))
+      )
+    );
   }
 
   getById(id: string): Observable<Prescription> {
