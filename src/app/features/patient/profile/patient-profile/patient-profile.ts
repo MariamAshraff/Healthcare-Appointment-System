@@ -3,6 +3,7 @@ import { IUser } from './../../../../core/models/user';
 import { PatientService } from './../../../../core/service/patient-service';
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../../../core/service/auth-service';
 
 @Component({
   selector: 'app-patient-profile',
@@ -11,22 +12,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './patient-profile.css',
 })
 export class PatientProfile implements OnInit {
-  /**
-   *
-   */
+
   patient: IUser | null = null;;
-  constructor( private patientService: PatientService,private route: ActivatedRoute) {
+  constructor( private patientService: PatientService,private route: ActivatedRoute,
+    private authService: AuthService,
+  ) {
 
   }
-  ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id') || 'null';
-    if (id !=null)
-    {
-       this.patientService.getById(id).subscribe({
-        next: (data) => this.patient = data,
-        error: (err) => console.error('Error fetching patient', err)
-    });
-    }
-
+   ngOnInit(): void {
+    this.authService.user$.subscribe({
+      next: (user) => {
+        if (user) {
+          this.patient = user as IUser;
+          this.patientService.getById(this.patient.id).subscribe({
+            next: (data) => {
+              this.patient = data;
+            }
+          });
+        }
+      }
+    })
   }
 }
