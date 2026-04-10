@@ -63,14 +63,7 @@ export const routes: Routes = [
     path: 'home',
     component: Home
   },
-  {
-    path: 'doctors',
-    component: DoctorList
-  },
-  {
-    path: 'doctor/:id',
-    component: DoctorDetail
-  },
+
   {
     path: 'admin',
     canActivate: [authGuard],
@@ -92,5 +85,14 @@ export const routes: Routes = [
     data: { expectedRoles: ['patient'] },
     loadChildren: () => import('./features/patient/patient.route').then(m => m.PATIENT_ROUTES)
   },
+  {
+    path: 'doctors',
+    component: DoctorList
+  },
+  {
+    path: 'doctor/:id',
+    component: DoctorDetail
+  },
   { path: '**', redirectTo: 'login' }
+
 ];

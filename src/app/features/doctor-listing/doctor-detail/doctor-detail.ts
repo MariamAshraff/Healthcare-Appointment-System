@@ -28,7 +28,7 @@ export class DoctorDetail implements OnInit {
         this.doctor = data;
       },
       error: (err) => {
-        this.toast.error('Failed to load product details. Please try again later.', 'Access Denied')
+        this.toast.error('Failed to load Doctor details. Please try again later.', 'Access Denied')
         // alert('Failed to load product details. Please try again later.');
         // console.error('Error fetching product details:', err);
       }
