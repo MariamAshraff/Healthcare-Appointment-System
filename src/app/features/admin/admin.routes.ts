@@ -4,6 +4,8 @@ import { DoctorList } from "../doctor-listing/doctor-list/doctor-list";
 import { Dashboard } from "./dashboard/dashboard";
 import { Appointment } from "./appointment/appointment";
 import { Main } from "./main/main";
+import { PatientsList } from "../patient/patients-list/patients-list";
+import { PatientProfile } from "../patient/profile/patient-profile/patient-profile";
 
 export const ADMIN_ROUTES: Routes = [
   {
@@ -13,8 +15,10 @@ export const ADMIN_ROUTES: Routes = [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: Dashboard },
       { path: 'doctors', component: DoctorList },
+      { path: 'patients', component: PatientsList },
       { path: 'doctor/:id', component: DoctorDetail },
-      { path: 'appointments', component: Appointment }
+      { path: 'appointments', component: Appointment },
+      { path: 'patients/:id', component: PatientProfile },
     ]
   }
 ];

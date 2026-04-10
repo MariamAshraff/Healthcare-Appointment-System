@@ -11,19 +11,41 @@ import { AuthService } from '../../../../core/service/auth-service';
   templateUrl: './patient-profile.html',
   styleUrl: './patient-profile.css',
 })
+
 export class PatientProfile implements OnInit {
 
-  patient: IUser | null = null;;
-  constructor( private patientService: PatientService,private route: ActivatedRoute,
-    private authService: AuthService,
-  ) {
+  patient: IUser | null = null;
+  isAdmin:boolean=false
 
-  }
-   ngOnInit(): void {
+  constructor(
+    private patientService: PatientService,
+    private route: ActivatedRoute,
+    private authService: AuthService,
+  ) {}
+
+  ngOnInit(): void {
+
+    const idFromRoute = this.route.snapshot.paramMap.get('id');
+
     this.authService.user$.subscribe({
       next: (user) => {
-        if (user) {
+        if (!user) return;
+
+        const isAdminOrDoctor =
+          user.role === 'admin' || user.role === 'doctor';
+        if(user.role=='admin')
+          this.isAdmin=true
+
+        if (idFromRoute && isAdminOrDoctor) {
+          this.patientService.getById(idFromRoute).subscribe({
+            next: (data) => {
+              this.patient = data;
+            }
+          });
+        }
+        else {
           this.patient = user as IUser;
+
           this.patientService.getById(this.patient.id).subscribe({
             next: (data) => {
               this.patient = data;
@@ -31,6 +53,36 @@ export class PatientProfile implements OnInit {
           });
         }
       }
-    })
+    });
   }
+deactivatePatient(id: string) {
+  if (!this.patient) return;
+
+  const updatedPatient = {
+    ...this.patient,
+    isActive: false
+  };
+
+  this.patientService.update(updatedPatient).subscribe({
+    next: (data) => {
+      this.patient = data;
+    }
+  });
 }
+  activatePatient(id: string) {
+  if (!this.patient) return;
+
+  const updatedPatient = {
+    ...this.patient,
+    isActive: true
+  };
+
+  this.patientService.update(updatedPatient).subscribe({
+    next: (data) => {
+      this.patient = data;
+    }
+  });
+}
+}
+
+

@@ -44,8 +44,11 @@ export class PatientService {
   getDeactivePatients(): Observable<IUser[]> {
   return this.http.get<IUser[]>(`${environment.baseUrl}/users?isActive=false`);
   }
-  update(patient: IUser): Observable<IUser> {
-    return this.http.put<IUser>(`${environment.baseUrl}/users`, patient);
-  }
+ update(patient: IUser): Observable<IUser> {
+  return this.http.put<IUser>(
+    `${environment.baseUrl}/users/${patient.id}`,
+    patient
+  );
+}
 
 }
