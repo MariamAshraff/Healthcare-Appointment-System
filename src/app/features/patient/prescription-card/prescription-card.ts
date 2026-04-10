@@ -7,6 +7,7 @@ import { RouterLink, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-prescription-card',
+  standalone: true,
   imports: [CommonModule, RouterLink, RouterModule],
   templateUrl: './prescription-card.html',
   styleUrl: './prescription-card.css',
