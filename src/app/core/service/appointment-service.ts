@@ -51,7 +51,7 @@ export class AppointmentService {
     return this.http.put<IAppointment>(`${environment.baseUrl}/appointments/${appointment.id}`, appointment);
   }
 
-  delete(id: string): Observable<any> {
+  delete(id?: string): Observable<any> {
     return this.http.delete(`${environment.baseUrl}/appointments/${id}`);
   }
 

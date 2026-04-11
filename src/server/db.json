@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "id": "1",
+      "id": "111",
       "name": "Admin User",
       "email": "admin@health.com",
       "password": "admin123",
@@ -10,7 +10,7 @@
       "createdAt": "2026-01-01"
     },
     {
-      "id": "2",
+      "id": "222",
       "name": "Dr. Ahmed Hassan",
       "email": "ahmed@doctor.com",
       "password": "doctor123",
@@ -38,13 +38,13 @@
           "day": "Sunday",
           "startTime": "10:00",
           "endTime": "10:30",
-          "isBooked": true
+          "isBooked": false
         },
         {
           "day": "Tuesday",
           "startTime": "14:00",
           "endTime": "14:30",
-          "isBooked": false
+          "isBooked": true
         },
         {
           "day": "Tuesday",
@@ -58,7 +58,7 @@
       "createdAt": "2026-01-15"
     },
     {
-      "id": "3",
+      "id": "333",
       "name": "Dr. Sara Mohamed",
       "email": "sara@doctor.com",
       "password": "doctor123",
@@ -74,7 +74,7 @@
           "day": "Monday",
           "startTime": "10:00",
           "endTime": "10:30",
-          "isBooked": true
+          "isBooked": false
         },
         {
           "day": "Monday",
@@ -346,7 +346,7 @@
           "day": "Thursday",
           "startTime": "14:00",
           "endTime": "15:30",
-          "isBooked": false
+          "isBooked": true
         }
       ],
       "rating": 4.5,
@@ -1592,7 +1592,7 @@
     {
       "id": "1",
       "patientId": "49",
-      "doctorId": "2",
+      "doctorId": "222",
       "date": "2026-04-10",
       "timeSlot": "09:00 - 09:30",
       "status": "confirmed",
@@ -1602,7 +1602,7 @@
     {
       "id": "2",
       "patientId": "50",
-      "doctorId": "3",
+      "doctorId": "333",
       "date": "2026-04-12",
       "timeSlot": "10:00 - 10:30",
       "status": "pending",
@@ -1631,7 +1631,7 @@
     },
     {
       "patientId": "4",
-      "doctorId": "2",
+      "doctorId": "222",
       "status": "pending",
       "createdAt": "2026-04-09T17:46:44.689Z",
       "date": "2026-04-29",
@@ -1651,7 +1651,7 @@
     },
     {
       "patientId": "4",
-      "doctorId": "3",
+      "doctorId": "333",
       "status": "pending",
       "createdAt": "2026-04-10T12:22:36.797Z",
       "date": "2026-04-23",
@@ -1660,22 +1660,22 @@
       "id": "fD9_NQfzpKY"
     },
     {
-      "date": "2026-04-17",
-      "timeSlot": "09:00 - 10:00",
+      "date": "2026-04-23",
+      "timeSlot": "14:00 - 15:30",
       "patientId": "4",
-      "doctorId": "7",
+      "doctorId": "12",
       "status": "pending",
-      "createdAt": "2026-04-10T16:41:02.810Z",
-      "id": "r1Lusknv2BU"
+      "createdAt": "2026-04-11T00:38:39.801Z",
+      "id": "EpX3iX6t-e8"
     },
     {
-      "date": "2026-04-18",
-      "timeSlot": "12:00 - 13:00",
+      "date": "2026-04-12",
+      "timeSlot": "09:30 - 10:00",
       "patientId": "4",
-      "doctorId": "8",
+      "doctorId": "222",
       "status": "pending",
-      "createdAt": "2026-04-10T16:43:13.489Z",
-      "id": "b_QhArgibK4"
+      "createdAt": "2026-04-11T01:51:26.210Z",
+      "id": "199OJoQhE9E"
     }
   ],
   "prescriptions": [
@@ -1683,7 +1683,7 @@
       "id": "1",
       "appointmentId": "1",
       "patientId": "49",
-      "doctorId": "2",
+      "doctorId": "222",
       "medications": [
         {
           "name": "Aspirin",
@@ -1700,7 +1700,7 @@
       "id": "2",
       "appointmentId": null,
       "patientId": "51",
-      "doctorId": "2",
+      "doctorId": "222",
       "medications": [
         {
           "name": "Bisoprolol",
@@ -1826,7 +1826,7 @@
     {
       "id": "1",
       "patientId": "49",
-      "doctorId": "2",
+      "doctorId": "222",
       "appointmentId": "1",
       "diagnosis": "Mild hypertension",
       "notes": "Reduce salt intake",
@@ -1835,7 +1835,7 @@
     {
       "id": "2",
       "patientId": "51",
-      "doctorId": "2",
+      "doctorId": "222",
       "appointmentId": null,
       "diagnosis": "Arrhythmia",
       "notes": "Follow up after 2 weeks",

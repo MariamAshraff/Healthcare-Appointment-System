@@ -5,6 +5,7 @@ import { Schedule } from "./schedule/schedule";
 import { Appointments } from "./appointments/appointments";
 import { Main } from "./main/main";
 import { DoctorDetail } from "../doctor-listing/doctor-detail/doctor-detail";
+import { PatientProfile } from "../patient/profile/patient-profile/patient-profile";
 
 export const DOCTOR_ROUTES: Routes = [
   {
@@ -17,6 +18,7 @@ export const DOCTOR_ROUTES: Routes = [
       { path: 'schedule/:id', component: Schedule },
       { path: 'prescriptions', component: Prescriptions },
       { path: 'details/:id', component: DoctorDetail },
+      { path: 'patient/:id', component: PatientProfile },
     ]
   }
 ];

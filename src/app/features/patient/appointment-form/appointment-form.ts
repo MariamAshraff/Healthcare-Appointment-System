@@ -37,6 +37,7 @@ export class AppointmentForm {
   selectedDoctor: IDoctor | null = null;
   currentUserId?: string = '';
   today: string = new Date().toISOString().split('T')[0];
+  filteredSlots: any[] = [];
 
   ngOnInit(): void {
     this.authService.user$.subscribe({
@@ -59,8 +60,31 @@ export class AppointmentForm {
       date: ['', [Validators.required]],
       timeSlot: ['', [Validators.required]],
     });
-  }
 
+    this.appointmentForm.get('date')?.valueChanges.subscribe(value => {
+      this.filterSlotsByDate(value);
+    });
+  }
+  getAvailableDaysNames(): string[] {
+    if (!this.selectedDoctor) return [];
+    return [...new Set(this.selectedDoctor.availableSlots.filter(s => s.isBooked === false).map(s => s.day))];
+  }
+  filterSlotsByDate(dateString: string) {
+    if (!dateString || !this.selectedDoctor) {
+      this.filteredSlots = [];
+      return;
+    }
+
+    const selectedDate = new Date(dateString);
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const dayName = days[selectedDate.getDay()];
+
+    this.filteredSlots = this.selectedDoctor.availableSlots.filter(slot =>
+      slot.day === dayName && slot.isBooked === false
+    );
+
+    this.appointmentForm.get('timeSlot')?.setValue('');
+  }
   checkIfEditOrAdd(id: string) {
     this.appointmentService.getById(id).subscribe({
       next: (appointment) => {
@@ -80,6 +104,10 @@ export class AppointmentForm {
       next: (doc) => {
         this.selectedDoctor = doc;
         this.appointmentForm.patchValue({ doctorId: doc.id });
+        const currentDate = this.appointmentForm.get('date')?.value;
+        if (currentDate) {
+          this.filterSlotsByDate(currentDate);
+        }
       }
     });
   }
@@ -92,6 +120,10 @@ export class AppointmentForm {
 
     const formData = this.appointmentForm.value;
     const selectedSlotValue = formData.timeSlot;
+
+    const selectedDate = new Date(formData.date);
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const selectedDayName = days[selectedDate.getDay()];
 
     if (!this.isEditMode) {
       const appointmentData: IAppointment = {
@@ -106,7 +138,7 @@ export class AppointmentForm {
         next: () => {
           const updatedSlots = this.selectedDoctor!.availableSlots.map(slot => {
             const slotRange = `${slot.startTime} - ${slot.endTime}`;
-            if (slotRange === selectedSlotValue) return { ...slot, isBooked: true };
+            if (slotRange === selectedSlotValue && slot.day === selectedDayName) return { ...slot, isBooked: true };
             return slot;
           });
           this.updateDoctorSlots(updatedSlots, 'Appointment booked successfully!');
@@ -116,6 +148,8 @@ export class AppointmentForm {
     else {
       const id = this.route.snapshot.paramMap.get('id')!;
       this.appointmentService.getById(id).subscribe((oldApp) => {
+        const oldDate = new Date(oldApp.date);
+        const oldDayName = days[oldDate.getDay()];
         const appointmentData: IAppointment = {
           ...oldApp,
           ...formData
@@ -125,8 +159,12 @@ export class AppointmentForm {
           next: () => {
             const updatedSlots = this.selectedDoctor!.availableSlots.map(slot => {
               const slotRange = `${slot.startTime} - ${slot.endTime}`;
-              if (slotRange === selectedSlotValue) return { ...slot, isBooked: true };
-              if (slotRange === oldApp.timeSlot && selectedSlotValue !== oldApp.timeSlot) return { ...slot, isBooked: false };
+              if (slotRange === selectedSlotValue && slot.day === selectedDayName) return { ...slot, isBooked: true };
+              if (slotRange === oldApp.timeSlot && slot.day === oldDayName) {
+                if (selectedSlotValue !== oldApp.timeSlot || selectedDayName !== oldDayName) {
+                  return { ...slot, isBooked: false };
+                }
+              }
               return slot;
             });
             this.updateDoctorSlots(updatedSlots, 'Appointment updated successfully!');
