@@ -9,13 +9,13 @@
     </button> -->
   </div>
   <nav class="d-none d-lg-flex gap-4 ms-5">
-    <a routerLink="/home" routerLinkActive="active" class="nav-link-custom">Home</a>
-    <a routerLink="/about" routerLinkActive="active" class="nav-link-custom">About</a>
-    <a routerLink="/services" routerLinkActive="active" class="nav-link-custom">Services</a>
-    <a routerLink="/doctors" routerLinkActive="active" class="nav-link-custom">Doctors</a>
+      <a routerLink="/home" routerLinkActive="active" class="nav-link-custom">Home</a>
+      <a routerLink="/about" routerLinkActive="active" class="nav-link-custom">About</a>
+      <a routerLink="/services"  routerLinkActive="active"class="nav-link-custom">Services</a>
+      <a routerLink="/doctors" routerLinkActive="active" class="nav-link-custom">Doctors</a>
 
 
-  </nav>
+    </nav>
 
   <div class="header-right d-flex align-items-center gap-3">
     <div class="search-bar position-relative d-none d-lg-block">
@@ -30,59 +30,10 @@
 
     <div class="header-icons d-flex gap-2">
       <button class="btn btn-icon-round"><i class="bi bi-calendar4-event"></i></button>
-      <!-- <button class="btn btn-icon-round position-relative">
+      <button class="btn btn-icon-round position-relative">
         <i class="bi bi-bell"></i>
         <span class="notification-badge"></span>
-      </button> -->
-      <div class="dropdown">
-        <button class="btn btn-icon-round position-relative" role="button" data-bs-toggle="dropdown"
-          aria-expanded="false">
-          <i class="bi bi-bell"></i>
-          @if (unreadCount > 0) {
-          <span class="notification-badge">{{ unreadCount }}</span>
-          }
-        </button>
-
-        <ul class="dropdown-menu dropdown-menu-end shadow border-0 mt-2 py-0 notification-dropdown">
-          <li class="p-3 border-bottom d-flex justify-content-between align-items-center bg-light rounded-top">
-            <h6 class="mb-0 fw-bold">Notifications</h6>
-            <span class="badge bg-primary rounded-pill small">{{ unreadCount }} New</span>
-          </li>
-
-          <div class="notification-items" style="max-height: 350px; overflow-y: auto;">
-            @for (notif of notifications; track notif.id) {
-            <li>
-              <a class="dropdown-item p-3 border-bottom d-flex gap-3 align-items-start"
-                [class.bg-unread]="notif.status === 'unread'" style="white-space: normal;">
-                <div class="notif-icon-circle"
-                  [ngClass]="notif.type === 'appointment_booked' ? 'bg-success-light' : 'bg-info-light'">
-                  <i class="bi"
-                    [ngClass]="notif.type === 'appointment_booked' ? 'bi-calendar-check text-success' : 'bi-arrow-repeat text-info'"></i>
-                </div>
-                <div class="flex-grow-1">
-                  <p class="mb-1 small text-dark fw-medium">{{ notif.message }}</p>
-                  <span class="text-muted d-block" style="font-size: 11px;">
-                    <i class="bi bi-clock me-1"></i>{{ notif.createdAt | date:'shortTime' }}
-                  </span>
-                </div>
-              </a>
-            </li>
-            } @empty {
-            <li class="p-4 text-center text-muted">
-              <i class="bi bi-bell-slash d-block fs-4 mb-2"></i>
-              <p class="small mb-0">No notifications yet</p>
-            </li>
-            }
-          </div>
-
-          <li>
-            <a class="dropdown-item text-center py-2 small fw-bold text-primary rounded-bottom" style="cursor: pointer;"
-              [routerLink]="['/'+ role +'/all-notifications']">
-              View All Notifications
-            </a>
-          </li>
-        </ul>
-      </div>
+      </button>
       <button class="btn btn-icon-round"><i class="bi bi-chat-dots"></i></button>
     </div>
 
