@@ -1,5 +1,5 @@
 @if(!isDeactive){
-<div class="container py-5 bg-light-soft min-vh-100">
+<div class="container py-5 bg-light-soft min-vh-100 fade-in-up">
   <div class="row justify-content-center">
     <div class="col-md-7 col-lg-6">
       <div class="card border-0 shadow-lg p-2" style="border-radius: 24px;">
@@ -13,11 +13,11 @@
           </div>
 
           @if (selectedDoctor) {
-          <div class="d-flex align-items-center p-3 mb-4 rounded-4"
-            style="background-color: rgba(155, 152, 242, 0.08); border: 1px solid rgba(155, 152, 242, 0.1);">
+          <div class="d-flex align-items-center p-3 mb-4 rounded-4 price-container"
+            style="background-color: rgba(162, 155, 254, 0.08); border: 1px solid rgba(162, 155, 254, 0.1);">
             <div class="avatar-wrapper me-3">
-              <img [src]="selectedDoctor.avatar || 'assets/images/default-doctor.webp'" class="rounded-circle shadow-sm"
-                width="65" height="65" style="object-fit: cover; border: 2px solid white;">
+              <img [src]="selectedDoctor.avatar || 'assets/images/default-doctor.webp'" class="doctor-img shadow-sm"
+                width="65" height="65">
             </div>
             <div>
               <h5 class="mb-0 fw-bold text-dark-blue">{{ selectedDoctor.name }}</h5>
@@ -33,62 +33,32 @@
 
           <form [formGroup]="appointmentForm" (ngSubmit)="onSubmit()">
 
-            <!-- <div class="mb-3">
-              <label class="form-label small fw-bold text-secondary ms-1">
-                <i class="bi bi-calendar3 me-1"></i> Select Date
-              </label>
-              <input type="date" formControlName="date"
-                class="form-control form-control-lg border-0 bg-light rounded-3 shadow-none custom-input" [min]="today">
-            </div>
-
-            <div class="mb-4">
-              <label class="form-label small fw-bold text-secondary ms-1">
-                <i class="bi bi-clock me-1"></i> Choose Time Slot
-              </label>
-              <select formControlName="timeSlot"
-                class="form-select form-select-lg border-0 bg-light rounded-3 shadow-none custom-input">
-                <option value="" disabled selected>Select an available slot</option>
-
-                @if (selectedDoctor?.availableSlots) {
-                @for (slot of selectedDoctor?.availableSlots; track $index) {
-                <option [value]="slot.startTime + ' - ' + slot.endTime" [disabled]="slot.isBooked && !isEditMode">
-                  {{ slot.startTime }} - {{ slot.endTime }} {{ slot.isBooked ? '(Booked)' : '' }}
-                </option>
-                }
-                } @else {
-                <option value="09:00 AM - 10:00 AM">09:00 AM - 10:00 AM</option>
-                <option value="11:00 AM - 12:00 PM">11:00 AM - 12:00 PM</option>
-                <option value="02:00 PM - 03:00 PM">02:00 PM - 03:00 PM</option>
-                <option value="04:00 PM - 05:00 PM">04:00 PM - 05:00 PM</option>
-                }
-              </select>
-            </div> -->
             <div class="mb-3">
-              <label class="form-label">Select Date</label>
-              <input type="date" formControlName="date" class="form-control" [min]="today">
+              <label class="form-label small fw-bold text-secondary ms-1">Select Date</label>
+              <input type="date" formControlName="date"
+                class="form-control form-control-lg border-0 bg-light rounded-3 shadow-none" [min]="today">
 
               @if(selectedDoctor){
               <div class="mt-2">
                 <small class="text-muted">
                   Available on:
                   @for (day of getAvailableDaysNames(); track $index) {
-                  <span class="badge bg-light text-dark me-1">
+                  <span class="badge bg-purple-light me-1">
                     {{ day }}
                   </span>
                   }
                 </small>
               </div>
               }
-
             </div>
 
             <div class="mb-4">
               <label class="form-label small fw-bold text-secondary ms-1">
-                <i class="bi bi-clock me-1"></i> Choose Time Slot
+                <i class="bi bi-clock me-1 text-purple"></i> Choose Time Slot
               </label>
 
               <select formControlName="timeSlot"
-                class="form-select form-select-lg border-0 bg-light rounded-3 shadow-none custom-input">
+                class="form-select form-select-lg border-0 bg-light rounded-3 shadow-none">
 
                 @if (filteredSlots.length > 0) {
                 <option value="" disabled selected>Select an available slot</option>
@@ -107,12 +77,13 @@
               </select>
 
               @if (appointmentForm.get('date')?.value && filteredSlots.length === 0) {
-              <div class="text-danger small mt-2 ms-1 animate__animated animate__fadeIn">
+              <div class="text-danger small mt-2 ms-1 animate__animated animate__shakeX">
                 <i class="bi bi-exclamation-circle me-1"></i>
                 Sorry, the doctor is not available on this day.
               </div>
               }
             </div>
+
             <div class="row g-3 mt-2">
               <div class="col-6">
                 <button type="button" class="btn btn-light w-100 py-3 fw-bold rounded-3"
@@ -135,19 +106,20 @@
   </div>
 </div>
 }@else {
-  <div class="container py-5 min-vh-100 d-flex align-items-center justify-content-center">
-      <div class="text-center p-5 bg-white shadow-sm rounded-4 border">
-          <div class="mb-4">
-              <i class="bi bi-shield-lock text-danger display-1"></i>
-          </div>
-          <h3 class="fw-bold text-dark">Account Deactivated</h3>
-          <p class="text-muted mx-auto" style="max-width: 400px;">
-              You cannot book appointments right now. Please reach out to our support team to reactivate your account.
-          </p>
-          <div class="mt-4 p-3 bg-light rounded-3">
-              <p class="mb-1 fw-bold"><i class="bi bi-telephone me-2"></i> 01099823</p>
-              <p class="mb-0 fw-bold"><i class="bi bi-envelope me-2"></i> support@medical.com</p>
-          </div>
-      </div>
+<div class="container py-5 min-vh-100 d-flex align-items-center justify-content-center bg-light-soft">
+  <div class="deactive-container p-5 text-center fade-in-up shadow-sm">
+    <div class="deactive-icon-wrapper mb-4">
+      <i class="bi bi-shield-lock-fill display-1"></i>
+    </div>
+    <h2 class="deactive-title mb-3">Account Deactivated</h2>
+    <p class="deactive-text mb-4">
+      You cannot book appointments right now. Please reach out to our support team to reactivate your account.
+    </p>
+    <div class="support-contact-box">
+      <p class="mb-2 fw-bold"><i class="bi bi-telephone-fill"></i> 01099823</p>
+      <p class="mb-0 fw-bold"><i class="bi bi-envelope-paper-fill"></i> support@medical.com</p>
+    </div>
+    <button class="btn btn-primary-gradient mt-4 px-5" (click)="router.navigate(['/'])">Back to Home</button>
   </div>
+</div>
 }

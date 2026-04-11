@@ -30,12 +30,6 @@
         },
         {
           "day": "Sunday",
-          "startTime": "09:30",
-          "endTime": "10:00",
-          "isBooked": false
-        },
-        {
-          "day": "Sunday",
           "startTime": "10:00",
           "endTime": "10:30",
           "isBooked": true
@@ -51,6 +45,27 @@
           "startTime": "14:30",
           "endTime": "15:00",
           "isBooked": true
+        },
+        {
+          "day": "Friday",
+          "startTime": "13:20",
+          "endTime": "13:35",
+          "session": "Evening",
+          "isBooked": false
+        },
+        {
+          "day": "Friday",
+          "startTime": "09:00",
+          "endTime": "10:00",
+          "session": "Morning",
+          "isBooked": false
+        },
+        {
+          "day": "Sunday",
+          "startTime": "09:30",
+          "endTime": "10:00",
+          "session": "Morning",
+          "isBooked": false
         }
       ],
       "rating": 4.8,
@@ -86,7 +101,7 @@
           "day": "Wednesday",
           "startTime": "13:00",
           "endTime": "13:30",
-          "isBooked": false
+          "isBooked": true
         }
       ],
       "rating": 4.5,
@@ -730,13 +745,13 @@
           "day": "Tuesday",
           "startTime": "11:00",
           "endTime": "13:00",
-          "isBooked": true
+          "isBooked": false
         },
         {
           "day": "Thursday",
           "startTime": "11:00",
           "endTime": "13:00",
-          "isBooked": false
+          "isBooked": true
         }
       ],
       "rating": 4.6,
@@ -1669,7 +1684,7 @@
       "id": "yETkR00ycsw"
     },
     {
-      "date": "2026-04-21",
+      "date": "2026-04-16",
       "timeSlot": "11:00 - 13:00",
       "patientId": "4",
       "doctorId": "26",
@@ -1694,6 +1709,15 @@
       "status": "pending",
       "createdAt": "2026-04-11T12:37:49.196Z",
       "id": "4YAAekZdIVo"
+    },
+    {
+      "date": "2026-04-15",
+      "timeSlot": "13:00 - 13:30",
+      "patientId": "4",
+      "doctorId": "3",
+      "status": "pending",
+      "createdAt": "2026-04-11T19:49:43.502Z",
+      "id": "XDKtcSVu__w"
     }
   ],
   "prescriptions": [
@@ -2046,6 +2070,60 @@
       "status": "unread",
       "createdAt": "2026-04-11T17:17:57.561Z",
       "id": "BNobfp9RFwE"
+    },
+    {
+      "recipientId": "3",
+      "message": "Patient Mohamed Ali has booked an appointment with you on 2026-04-13.",
+      "type": "appointment_booked",
+      "appointmentId": "XDKtcSVu__w",
+      "status": "unread",
+      "createdAt": "2026-04-11T19:49:43.546Z",
+      "id": "WChl2i272F8"
+    },
+    {
+      "recipientId": "111",
+      "message": "New booking: Patient Mohamed Ali has booked an appointment with Dr. Sara Mohamed on 2026-04-13.",
+      "type": "appointment_booked",
+      "appointmentId": "XDKtcSVu__w",
+      "status": "unread",
+      "createdAt": "2026-04-11T19:49:43.618Z",
+      "id": "ut8rFxXwY94"
+    },
+    {
+      "recipientId": "26",
+      "message": "Patient Mohamed Ali has updated the appointment date/time to 2026-04-16 at 11:00 - 13:00.",
+      "type": "appointment_updated",
+      "appointmentId": "XJ_TQgHGg9Y",
+      "status": "unread",
+      "createdAt": "2026-04-11T19:56:31.113Z",
+      "id": "DnliNurWwyM"
+    },
+    {
+      "recipientId": "111",
+      "message": "Appointment Update: Patient Mohamed Ali & Dr. Aliaa Hamed. Updated by: patient. Status: pending.",
+      "type": "appointment_updated",
+      "appointmentId": "XJ_TQgHGg9Y",
+      "status": "unread",
+      "createdAt": "2026-04-11T19:56:31.185Z",
+      "id": "k_Gr4GTvsms"
+    },
+    {
+      "recipientId": "3",
+      "message": "Patient Mohamed Ali has updated the appointment date/time to 2026-04-15 at 13:00 - 13:30.",
+      "type": "appointment_updated",
+      "appointmentId": "XDKtcSVu__w",
+      "status": "unread",
+      "createdAt": "2026-04-11T19:56:46.402Z",
+      "id": "Vb6ywJcnKyE"
+    },
+    {
+      "recipientId": "111",
+      "message": "Appointment Update: Patient Mohamed Ali & Dr. Sara Mohamed. Updated by: patient. Status: pending.",
+      "type": "appointment_updated",
+      "appointmentId": "XDKtcSVu__w",
+      "status": "unread",
+      "createdAt": "2026-04-11T19:56:46.408Z",
+      "id": "rlgJTxIO4p4"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

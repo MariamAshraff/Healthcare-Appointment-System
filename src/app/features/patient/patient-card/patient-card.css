@@ -1,48 +1,59 @@
 .patient-card {
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
-  border-radius: 15px;
-  background-color: #ffffff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+  border-radius: 20px !important;
+  background-color: #ffffff !important;
+  border: 1px solid #f1f5f9 !important;
 }
 
 .patient-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08) !important;
+  transform: translateY(-5px) !important;
+  box-shadow: 0 10px 25px rgba(162, 155, 254, 0.2) !important;
+  background-color: #f3f0ff !important;
 }
 
 .avatar-container img {
-  width: 70px;
-  height: 70px;
-  object-fit: cover;
-  border: 2px solid #f8f9fa;
+  width: 70px !important;
+  height: 70px !important;
+  object-fit: cover !important;
+  border: 3px solid white !important;
+  border-radius: 15px !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;
 }
 
 .bg-success-light {
-  background-color: #e8f5e9;
-  color: #2e7d32;
+  background-color: rgba(34, 197, 94, 0.1) !important;
+  color: #16a34a !important;
+  font-weight: 600 !important;
 }
 
 .bg-danger-light {
-  background-color: #ffebee;
-  color: #c62828;
+  background-color: rgba(255, 118, 172, 0.1) !important;
+  color: #ff76ac !important;
+  font-weight: 600 !important;
 }
 
 .patient-details i {
-  font-size: 0.9rem;
+  font-size: 0.9rem !important;
+  color: #a29bfe !important;
 }
 
 .text-primary {
-  color: #5d5fef !important;
+  color: #a29bfe !important;
+  font-weight: 700 !important;
 }
 
 .btn-outline-primary {
-  color: #5d5fef;
-  border-color: #5d5fef;
+  color: #a29bfe !important;
+  border: 2px solid #a29bfe !important;
+  border-radius: 12px !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
 }
 
 .btn-outline-primary:hover {
-  background-color: #5d5fef !important;
+  background: linear-gradient(135deg, #a29bfe 0%, #ff76ac 100%) !important;
   color: white !important;
-  border-color: #5d5fef !important;
+  border-color: transparent !important;
+  transform: scale(1.05) !important;
+  box-shadow: 0 5px 15px rgba(162, 155, 254, 0.4) !important;
 }

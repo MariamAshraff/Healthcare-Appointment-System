@@ -4,34 +4,58 @@
 }
 
 .appointment-row {
-  transition: background-color 0.2s ease;
+  transition: all 0.2s ease;
   min-height: 80px;
+  overflow: visible !important;
+  position: relative !important;
+  z-index: 1;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  border: 1px solid transparent;
 }
 
 .appointment-row:hover {
-  background-color: #f8faff !important;
+  background-color: #fdf2f4 !important;
+  border-color: #f9c5d1 !important;
+  transform: translateX(5px);
+}
+
+.appointment-row:has(.show) {
+  z-index: 9999 !important;
 }
 
 .doctor-name {
-  color: #4e44e7;
+  color: #8e85eb !important;
+  font-weight: 600;
+}
+
+.doctor-name:hover {
+  text-decoration: underline;
+  color: #a29bfe !important;
+}
+
+/* Status Badges Colors */
+.bg-primary-light {
+  background-color: #eef2ff !important;
+  color: #a29bfe !important;
 }
 
 .bg-success-light {
-  background-color: #e6f7ef;
-}
-
-.bg-primary-light {
-  background-color: #e7eefd;
+  background-color: #e6f7ef !important;
+  color: #1cc88a !important;
 }
 
 .bg-warning-light {
-  background-color: #fff8ec;
+  background-color: #fff9db !important;
+  color: #fab005 !important;
 }
 
 .bg-danger-light {
-  background-color: #fbe9e9;
+  background-color: #fbe9e9 !important;
+  color: #ff7675 !important;
 }
 
+/* Layout Columns */
 .col-datetime {
   width: 33.33333333%;
 }
@@ -40,18 +64,14 @@
   width: 50%;
 }
 
-
 .col-status {
   width: 25%;
 }
 
+/* Elements Styling */
 .rounded-circle {
-  border: 2px solid #f0f0f0;
-}
-
-.clickable {
-  cursor: pointer;
-  color: blue;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 8px rgba(162, 155, 254, 0.2);
 }
 
 .clickable-profile {
@@ -63,85 +83,37 @@
   opacity: 0.8;
 }
 
-.doctor-name:hover {
-  text-decoration: underline;
-}
-
 .small-text {
   font-size: 0.85rem;
   font-weight: 500;
+  color: #6c757d;
 }
 
-.dropdown-item {
-  transition: background-color 0.2s;
-}
-
-.dropdown-item:hover {
-  background-color: #f8faff;
-}
-
+/* Buttons & Dropdowns */
 .btn-primary-gradient {
-  background: linear-gradient(135deg, #6a96f1, #837ff0);
-  color: white;
-  border: none;
+  background: linear-gradient(135deg, #a29bfe, #ff76ac) !important;
+  color: white !important;
+  border: none !important;
   border-radius: 10px;
   font-size: 0.9rem;
   font-weight: 600;
+  box-shadow: 0 4px 10px rgba(162, 155, 254, 0.2);
 }
 
 .btn-primary-gradient:hover {
   opacity: 0.9;
   transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(162, 155, 254, 0.3);
 }
 
-.bg-warning-light {
-  background-color: #fff9db !important;
-  color: #fab005 !important;
+.btn-light.rounded-circle:hover {
+  background: #a29bfe !important;
+  color: white !important;
+  border-color: #a29bfe !important;
 }
 
-.bg-primary-light {
-  background-color: #e7f5ff !important;
-  color: #228be6 !important;
-}
-
-.appointment-row {
-  transition: background-color 0.2s ease;
-  min-height: 80px;
-  overflow: visible !important;
-  position: relative;
-}
-
-.appointment-row:has(.show) {
-  z-index: 1050 !important;
-}
-
-.dropdown-menu {
-  z-index: 1100 !important;
-  margin-top: 0 !important;
-}
-
-.col-datetime {
-  width: 33.33333333%;
-}
-
-.col-doctor {
-  width: 50%;
-}
-
-.col-status {
-  width: 25%;
-}
-
-.appointment-row {
-  transition: background-color 0.2s ease;
-  min-height: 80px;
-  overflow: visible !important;
-  position: relative !important;
-  z-index: 1;
-}
-
-.appointment-row:has(.show) {
-  z-index: 9999 !important;
+.btn-light.rounded-circle:hover i {
+  color: white !important;
 }
 
 .dropdown-menu {
@@ -150,4 +122,31 @@
   margin-top: 5px !important;
   right: 0 !important;
   left: auto !important;
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.2s ease-out;
+}
+
+.dropdown-item {
+  transition: background-color 0.2s;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+}
+
+.dropdown-item:hover {
+  background-color: #fdeef1;
+  color: #ff76ac;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

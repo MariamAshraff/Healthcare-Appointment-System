@@ -8,15 +8,19 @@
 }
 
 .text-purple {
-  color: #9b98f2;
+  color: #a29bfe;
 }
 
 .text-purple-dark {
-  color: #6c63ff;
+  background: linear-gradient(135deg, #a29bfe, #ff76ac);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
 }
 
 .bg-purple-light {
-  background-color: rgba(155, 152, 242, 0.1);
+  background-color: #fdeef1;
+  color: #ff76ac;
 }
 
 .border-bottom-dashed {
@@ -30,11 +34,18 @@
   align-items: center;
   justify-content: center;
   font-size: 1.1rem;
+  background-color: #f0f4ff;
+  color: #a29bfe;
+  border-radius: 12px;
 }
 
 .doctor-img {
   width: 140px;
   height: 140px;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 4px solid #ffffff !important;
+  box-shadow: 0 8px 20px rgba(162, 155, 254, 0.15);
 }
 
 @media (max-width: 767.98px) {
@@ -49,34 +60,75 @@
 }
 
 .btn-primary-gradient {
-  background: linear-gradient(135deg, #6a96f1, #837ff0);
+  background: linear-gradient(135deg, #a29bfe, #ff76ac) !important;
   color: #ffffff !important;
   border: none;
   font-weight: 600;
-  padding: 10px 20px;
+  padding: 12px 25px;
   border-radius: 12px;
-  transition: all 0.2s;
+  transition: all 0.3s ease;
   white-space: nowrap;
   max-width: fit-content;
+  box-shadow: 0 4px 15px rgba(162, 155, 254, 0.2);
 }
 
 .btn-primary-gradient:hover {
   opacity: 0.9;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(106, 150, 241, 0.3);
+  box-shadow: 0 6px 20px rgba(162, 155, 254, 0.3);
 }
 
 .breadcrumb-item a {
-  color: #9b98f2;
+  color: #a29bfe;
+  text-decoration: none;
 }
 
-.table-responsive {
-  border: none;
+.price-container {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 18px;
+  border: 1px solid #f0f0f0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02);
 }
-
 
 @media (max-width: 767.98px) {
   .btn-primary-gradient {
     max-width: 100%;
   }
+}
+
+.availability-card {
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.availability-header {
+  background: linear-gradient(135deg, #9795f0 0%, #f9c5d1 100%);
+  color: white;
+  padding: 15px 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.slot-row {
+  transition: background 0.2s;
+  border-bottom: 1px dashed #eee;
+}
+
+.slot-row:hover {
+  background-color: #fdf2f4;
+}
+
+.badge.bg-success-subtle {
+  background-color: #e6f7ef !important;
+  color: #1cc88a !important;
+}
+
+.badge.bg-danger-subtle {
+  background-color: #fbe9e9 !important;
+  color: #ff7675 !important;
 }

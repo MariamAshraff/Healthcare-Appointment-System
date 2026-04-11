@@ -4,51 +4,153 @@
 }
 
 .appointment-row {
-  transition: background-color 0.2s ease;
+  transition: all 0.2s ease;
   min-height: 80px;
+  overflow: visible !important;
+  position: relative !important;
+  z-index: 1;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  border: 1px solid transparent;
 }
 
 .appointment-row:hover {
-  background-color: #f8faff !important;
+  background-color: #fdf2f4 !important;
+  border-color: #f9c5d1 !important;
+  transform: translateX(5px);
 }
 
-.doctor-name {
-  color: #4e44e7;
-}
-
-.bg-success-light {
-  background-color: #e6f7ef;
-}
-.bg-primary-light {
-  background-color: #e7eefd;
-}
-.bg-warning-light {
-  background-color: #fff8ec;
-}
-.bg-danger-light {
-  background-color: #fbe9e9;
+.appointment-row:has(.show) {
+  z-index: 9999 !important;
 }
 
 .col-datetime {
-  width: 20%;
+  width: 20% !important;
 }
+
 .col-patient {
-  width: 25%;
+  width: 30% !important;
 }
+
 .col-doctor {
-  width: 25%;
+  width: 30% !important;
 }
-.col-mode {
-  width: 15%;
-}
+
 .col-status {
-  width: 15%;
+  width: 20% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+}
+
+
+.doctor-name {
+  color: #8e85eb !important;
+  font-weight: 600;
+}
+
+.doctor-name:hover {
+  text-decoration: underline;
+  color: #a29bfe !important;
+}
+
+.bg-primary-light {
+  background-color: #eef2ff !important;
+  color: #a29bfe !important;
+}
+
+.bg-success-light {
+  background-color: #e6f7ef !important;
+  color: #1cc88a !important;
+}
+
+.bg-warning-light {
+  background-color: #fff9db !important;
+  color: #fab005 !important;
+}
+
+.bg-danger-light {
+  background-color: #fbe9e9 !important;
+  color: #ff7675 !important;
 }
 
 .rounded-circle {
-  border: 2px solid #f0f0f0;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 8px rgba(162, 155, 254, 0.2);
 }
-.clickable {
+
+.clickable-profile {
   cursor: pointer;
-  color: blue;
+  transition: opacity 0.2s ease;
+}
+
+.clickable-profile:hover {
+  opacity: 0.8;
+}
+
+.small-text {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #6c757d;
+}
+
+.btn-primary-gradient {
+  background: linear-gradient(135deg, #a29bfe, #ff76ac) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(162, 155, 254, 0.2);
+}
+
+.btn-primary-gradient:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(162, 155, 254, 0.3);
+}
+
+.btn-light.rounded-circle:hover {
+  background: #a29bfe !important;
+  color: white !important;
+  border-color: #a29bfe !important;
+}
+
+.btn-light.rounded-circle:hover i {
+  color: white !important;
+}
+
+.dropdown-menu {
+  z-index: 10000 !important;
+  position: absolute !important;
+  margin-top: 5px !important;
+  right: 0 !important;
+  left: auto !important;
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.2s ease-out;
+}
+
+.dropdown-item {
+  transition: background-color 0.2s;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+}
+
+.dropdown-item:hover {
+  background-color: #fdeef1;
+  color: #ff76ac;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

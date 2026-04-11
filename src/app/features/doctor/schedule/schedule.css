@@ -1,0 +1,153 @@
+.main-card {
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.card-header-gradient {
+  background: linear-gradient(135deg, #9795f0 0%, #f9c5d1 100%);
+}
+
+.day-btn {
+  background: transparent;
+  border: 2px solid transparent;
+  padding: 8px 20px;
+  border-radius: 12px;
+  color: #6c757d;
+  font-weight: 600;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+
+.day-btn:hover {
+  background: #fdf2f4;
+  color: #a29bfe;
+}
+
+.day-btn.active {
+  background: #fdeef1;
+  color: #a29bfe;
+  border-color: #a29bfe;
+}
+
+.btn-primary-gradient {
+  background: linear-gradient(135deg, #ff76ac, #a29bfe);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.btn-primary-gradient:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.text-primary {
+  color: #a29bfe !important;
+}
+
+.slot-card {
+  background: white;
+  border: 1px solid #f0f0f0;
+  padding: 12px 18px;
+  border-radius: 15px;
+  min-width: 220px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.slot-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.session-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #fdcb6e;
+}
+
+.session-dot.morning {
+  background: #00cec9;
+}
+
+.btn-delete {
+  background: none;
+  border: none;
+  color: #ff7675;
+  transition: 0.2s;
+  padding: 0 5px;
+}
+
+.btn-delete:hover {
+  color: #d63031;
+  transform: scale(1.2);
+}
+
+.btn-save {
+  background: #a29bfe;
+  color: white;
+  border: none;
+  transition: 0.3s;
+}
+
+.btn-save:hover {
+  background: #8e85eb;
+  transform: scale(1.02);
+}
+
+.animate-in {
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.x-small {
+  font-size: 0.7rem;
+}
+
+.morning-bg {
+  background-color: #e3f2fd;
+  color: #0ea5e9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 10px;
+}
+
+.evening-bg {
+  background-color: #f3e8ff;
+  color: #a855f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 10px;
+}
+
+.morning-border {
+  border-left: 4px solid #0ea5e9 !important;
+}
+
+.evening-border {
+  border-left: 4px solid #a855f7 !important;
+}
+
+
+.session-icon-wrapper i {
+  font-size: 1.2rem;
+}

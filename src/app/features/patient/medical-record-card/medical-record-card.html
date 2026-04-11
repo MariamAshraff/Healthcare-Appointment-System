@@ -1,14 +1,15 @@
 <div class="card h-100 border-0 shadow-sm medical-record-card">
 
-  <div class="doctor-header p-3 border-bottom d-flex align-items-center justify-content-between bg-white">
+  <div class="doctor-header p-3 border-bottom d-flex align-items-center justify-content-between">
     <div class="d-flex align-items-center cursor-pointer" [routerLink]="['/doctor', doctor?.id]">
       <div class="avatar-sm me-3">
-        <img [src]="doctor?.avatar"
-             class="rounded-circle shadow-sm border"
-             width="45" height="45" style="object-fit: cover;">
+        <img [src]="doctor?.avatar" class="rounded-circle shadow-sm border" width="45" height="45"
+          style="object-fit: cover;">
       </div>
       <div>
-        <h6 class="mb-0 fw-bold text-dark" [routerLink]="['/details', doctor?.id]">{{ doctor?.name || 'Loading Doctor...' }}</h6>
+        <h6 class="mb-0 fw-bold text-dark" [routerLink]="['/details', doctor?.id]">
+          {{ doctor?.name || 'Loading Doctor...' }}
+        </h6>
         <span class="text-primary-soft x-small fw-medium">{{ doctor?.specialization | uppercase }}</span>
       </div>
     </div>
@@ -20,9 +21,9 @@
   <div class="card-body p-4">
     <div class="d-flex justify-content-between align-items-center mb-3">
       <span class="record-date">
-        <i class="bi bi-calendar3 me-1"></i> {{ medicalCard.date | date:'mediumDate' }}
+        <i class="bi bi-calendar3 me-1 color-primary"></i> {{ medicalCard.date | date:'mediumDate' }}
       </span>
-      <span class="badge bg-light text-muted fw-normal">ID: #{{ medicalCard.id.substring(0, 8) }}</span>
+      <span class="badge bg-purple-light fw-normal">ID: #{{ medicalCard.id.substring(0, 8) }}</span>
     </div>
 
     <div class="diagnosis-box mb-4">

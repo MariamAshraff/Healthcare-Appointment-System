@@ -5,12 +5,11 @@
 
   <div class="col-patient flex-grow-1">
     <div class="d-flex align-items-center">
-      <img [src]="patient?.avatar"
-           class="rounded-circle me-3 border"
-           alt="Patient"
-           style="width: 45px; height: 45px; object-fit: cover;">
+      <img [src]="patient?.avatar" class="rounded-circle me-3 border" alt="Patient"
+        style="width: 45px; height: 45px; object-fit: cover;">
       <div>
-        <div class="fw-bold text-dark clickable" [routerLink]="['/patients', patient?.id]">{{ patient?.name || 'Loading...' }}</div>
+        <div class="fw-bold text-dark clickable" [routerLink]="['/patients', patient?.id]">{{ patient?.name ||
+          'Loading...' }}</div>
         <div class="text-muted small">{{ patient?.phone }}</div>
       </div>
     </div>
@@ -18,10 +17,8 @@
 
   <div class="col-doctor flex-grow-1">
     <div class="d-flex align-items-center">
-      <img [src]="doctor?.avatar"
-           class="rounded-circle me-3 border"
-           alt="Doctor"
-           style="width: 45px; height: 45px; object-fit: cover;">
+      <img [src]="doctor?.avatar" class="rounded-circle me-3 border" alt="Doctor"
+        style="width: 45px; height: 45px; object-fit: cover;">
       <div>
         <div class="fw-bold doctor-name">Dr. {{ doctor?.name }}</div>
         <div class="text-muted small">{{ doctor?.specialization }}</div>
