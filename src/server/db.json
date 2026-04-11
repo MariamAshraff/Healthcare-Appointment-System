@@ -340,7 +340,7 @@
           "day": "Tuesday",
           "startTime": "14:00",
           "endTime": "15:30",
-          "isBooked": false
+          "isBooked": true
         },
         {
           "day": "Thursday",
@@ -730,7 +730,7 @@
           "day": "Tuesday",
           "startTime": "11:00",
           "endTime": "13:00",
-          "isBooked": false
+          "isBooked": true
         },
         {
           "day": "Thursday",
@@ -856,7 +856,7 @@
           "day": "Wednesday",
           "startTime": "14:00",
           "endTime": "16:00",
-          "isBooked": false
+          "isBooked": true
         }
       ],
       "rating": 4.5,
@@ -1622,9 +1622,9 @@
     {
       "patientId": "4",
       "doctorId": "2",
-      "status": "pending",
+      "status": "completed",
       "createdAt": "2026-04-09T17:46:44.689Z",
-      "date": "2026-04-29",
+      "date": "2026-04-11",
       "timeSlot": "09:30 - 10:00",
       "notes": "",
       "id": "_sl0t4DINFo"
@@ -1666,6 +1666,33 @@
       "status": "pending",
       "createdAt": "2026-04-11T09:19:28.804Z",
       "id": "yETkR00ycsw"
+    },
+    {
+      "date": "2026-04-21",
+      "timeSlot": "11:00 - 13:00",
+      "patientId": "4",
+      "doctorId": "26",
+      "status": "pending",
+      "createdAt": "2026-04-11T10:01:58.643Z",
+      "id": "XJ_TQgHGg9Y"
+    },
+    {
+      "date": "2026-04-29",
+      "timeSlot": "14:00 - 16:00",
+      "patientId": "51",
+      "doctorId": "30",
+      "status": "pending",
+      "createdAt": "2026-04-11T10:03:07.868Z",
+      "id": "owkv9GO-ngE"
+    },
+    {
+      "date": "2026-04-21",
+      "timeSlot": "14:00 - 15:30",
+      "patientId": "49",
+      "doctorId": "12",
+      "status": "pending",
+      "createdAt": "2026-04-11T12:37:49.196Z",
+      "id": "4YAAekZdIVo"
     }
   ],
   "prescriptions": [
@@ -1810,6 +1837,57 @@
       "diagnosis": "Knee inflammation",
       "notes": "Rest and apply ice",
       "createdAt": "2026-04-17"
+    },
+    {
+      "appointmentId": "1",
+      "patientId": "49",
+      "doctorId": "2",
+      "diagnosis": "Test",
+      "notes": "",
+      "medications": [
+        {
+          "name": "test",
+          "dosage": "3672",
+          "frequency": "r7843",
+          "duration": "yu43i"
+        }
+      ],
+      "createdAt": "2026-04-11",
+      "id": "ghY6Ki9vmVs"
+    },
+    {
+      "appointmentId": "1",
+      "patientId": "49",
+      "doctorId": "2",
+      "diagnosis": "Heart attack",
+      "notes": "",
+      "medications": [
+        {
+          "name": "test",
+          "dosage": "test",
+          "frequency": "once daily",
+          "duration": "30 day"
+        }
+      ],
+      "createdAt": "2026-04-11",
+      "id": "RDUdTTvnNZ0"
+    },
+    {
+      "appointmentId": "1",
+      "patientId": "49",
+      "doctorId": "2",
+      "diagnosis": "Test",
+      "notes": "eating egg",
+      "medications": [
+        {
+          "name": "kdllds",
+          "dosage": "hdbhj",
+          "frequency": "30",
+          "duration": "30"
+        }
+      ],
+      "createdAt": "2026-04-11",
+      "id": "-9AS54ZOg2w"
     }
   ],
   "medicalRecords": [

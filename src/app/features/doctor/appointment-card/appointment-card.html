@@ -40,6 +40,15 @@
             <span class="small-text">Edit</span>
           </button>
         </li>
+
+        @if(CanAddPrescription){
+           <li>
+          <button class="dropdown-item py-1 px-3 d-flex align-items-center" (click)="AddPrescription(appointment.id)">
+            <i class="bi bi-pencil-square me-2 text-primary" style="font-size: 0.8rem;"></i>
+            <span class="small-text">Add prescription</span>
+          </button>
+        </li>
+        }
         <li>
           <hr class="dropdown-divider my-1 opacity-50">
         </li>
