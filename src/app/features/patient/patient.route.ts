@@ -9,6 +9,7 @@ import { PatientProfile } from "./profile/patient-profile/patient-profile";
 import { AppointmentForm } from "./appointment-form/appointment-form";
 import { PrescriptionDetails } from "./prescription-details/prescription-details";
 import { MedicalRecordList } from "./medical-record-list/medical-record-list";
+import { AllNotifications } from "../all-notifications/all-notifications";
 
 export const PATIENT_ROUTES: Routes = [
   {
@@ -23,9 +24,10 @@ export const PATIENT_ROUTES: Routes = [
       //{ path: 'medicalRecords/:id', component: MedicalRecordList },
       { path: 'doctors', component: DoctorList },
       { path: 'doctor/:id', component: DoctorDetail },
-      { path: 'prescriptions/:id', component: PrescriptionDetails},
+      { path: 'prescriptions/:id', component: PrescriptionDetails },
       { path: 'details/:id', component: PatientProfile },
       { path: 'appointmentForm/:id', component: AppointmentForm },
+      { path: 'all-notifications', component: AllNotifications }
 
     ]
   }

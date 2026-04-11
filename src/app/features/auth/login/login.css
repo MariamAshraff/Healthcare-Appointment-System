@@ -6,6 +6,7 @@
   position: relative;
   overflow: hidden;
 }
+
 .animation-wrapper {
   position: absolute;
   width: 100%;
@@ -37,14 +38,17 @@
     left: -200px;
     opacity: 1;
   }
+
   45% {
     opacity: 1;
   }
+
   50% {
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: 0;
   }
+
   100% {
     left: 50%;
     transform: translate(-50%, -50%);
@@ -58,14 +62,17 @@
     transform: translate(-50%, -50%);
     opacity: 0;
   }
+
   50% {
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: 0;
   }
+
   55% {
     opacity: 1;
   }
+
   100% {
     left: calc(100% + 200px);
     opacity: 1;
