@@ -21,6 +21,7 @@ export const DOCTOR_ROUTES: Routes = [
       { path: 'prescriptions', component: Prescriptions },
       { path: 'details/:id', component: DoctorDetail },
       { path: 'patient/:id', component: PatientProfile },
+      { path: 'all-notifications', component: AllNotifications }
       { path: 'prescriptionForm/:id', component: PrescriptionForm },
     ]
   }

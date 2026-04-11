@@ -74,51 +74,28 @@ export class AppointmentCard implements OnInit {
 
     this.appointmentService.delete(this.appointment.id).subscribe({
       next: () => {
-        this.Toast.error('Delete Successfully')
-        this.updateDoctorAvailability();
+        this.Toast.error('Delete Successfully');
         this.OnDelete.emit();
       },
       error: () => this.Toast.error('Failed to delete appointment')
     });
   }
 
-  private updateDoctorAvailability() {
-    // if (!this.patient || !this.patient) {
-    //   this.OnDelete.emit();
-    //   return;
-    // }
+  updateStatus(newStatus: 'pending' | 'confirmed' | 'completed' | 'cancelled') {
+    if (!this.appointment.id) return;
 
-    // const updatedDoctor = { ...this.doctor };
+    const updatedAppointment: IAppointment = { ...this.appointment, status: newStatus };
 
-    // const [appStart, appEnd] = this.appointment.timeSlot.split(' - ');
-
-    // const appointmentDate = new Date(this.appointment.date);
-    // const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    // const appointmentDay = days[appointmentDate.getDay()];
-
-    // const slotIndex = updatedDoctor.availableSlots.findIndex((s: any) =>
-    //   s.day === appointmentDay &&
-    //   s.startTime === appStart &&
-    //   s.endTime === appEnd
-    // );
-
-    // if (slotIndex > -1) {
-    //   updatedDoctor.availableSlots[slotIndex].isBooked = false;
-
-    //   this.doctorService.updateDoctor(updatedDoctor.id, updatedDoctor).subscribe({
-    //     next: () => {
-    //       this.Toast.success('Appointment cancelled and slot is free now');
-    //       this.OnDelete.emit();
-    //     },
-    //     error: (err) => {
-    //       console.error('Error updating doctor slot:', err);
-    //       this.OnDelete.emit();
-    //     }
-    //   });
-    // } else {
-    //   console.warn('Matching slot not found for day/time comparison');
-    //   this.OnDelete.emit();
-    // }
+    this.appointmentService.update(updatedAppointment).subscribe({
+      next: () => {
+        this.appointment.status = newStatus;
+        this.Toast.success(`Appointment marked as ${newStatus}`);
+      },
+      error: (err) => {
+        console.error(err);
+        this.Toast.error('Failed to update status');
+      }
+    });
   }
 
 }

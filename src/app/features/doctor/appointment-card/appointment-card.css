@@ -93,3 +93,13 @@
   opacity: 0.9;
   transform: translateY(-1px);
 }
+
+.bg-warning-light {
+  background-color: #fff9db !important;
+  color: #fab005 !important;
+}
+
+.bg-primary-light {
+  background-color: #e7f5ff !important;
+  color: #228be6 !important;
+}
