@@ -1321,7 +1321,8 @@
       "phone": "01060000004",
       "role": "patient",
       "avatar": "images/patient/4.webp",
-      "createdAt": "2026-04-13"
+      "createdAt": "2026-04-13",
+      "isActive": false
     },
     {
       "id": "50",

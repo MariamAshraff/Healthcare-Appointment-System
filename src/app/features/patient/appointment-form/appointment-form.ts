@@ -1,3 +1,4 @@
+import { PatientService } from './../../../core/service/patient-service';
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
@@ -29,23 +30,37 @@ export class AppointmentForm {
     private toast: ToastrService,
     private fb: FormBuilder,
     public router: Router,
-    private appointmentService: AppointmentService
+    private appointmentService: AppointmentService,
+    private PatientService:PatientService
   ) { }
 
   appointmentForm!: FormGroup;
   isEditMode = false;
   selectedDoctor: IDoctor | null = null;
   currentUserId?: string = '';
+  isDeactive:boolean=false
   today: string = new Date().toISOString().split('T')[0];
   filteredSlots: any[] = [];
+  user!:IUser
 
   ngOnInit(): void {
     this.authService.user$.subscribe({
       next: (user) => {
         this.currentUserId = user?.id
+        if(user){
+          this.PatientService.getById(user?.id).subscribe({
+             next: (user) => {
+               if(user?.isActive==false){
+                this.isDeactive=true;
+              }
+              else
+                this.isDeactive=false
+             }
+
+        })}
+        console.log(user?.isActive,this.user,user?.id)
       }
     });
-
     this.initForm();
 
     const idFromUrl = this.route.snapshot.paramMap.get('id');
@@ -172,7 +187,6 @@ export class AppointmentForm {
         });
       });
     }
-    //
   }
 
   private updateDoctorSlots(updatedSlots: any[], successMessage: string) {
