@@ -1,3 +1,4 @@
+@if(!isDeactive){
 <div class="container py-5 bg-light-soft min-vh-100">
   <div class="row justify-content-center">
     <div class="col-md-7 col-lg-6">
@@ -133,3 +134,20 @@
     </div>
   </div>
 </div>
+}@else {
+  <div class="container py-5 min-vh-100 d-flex align-items-center justify-content-center">
+      <div class="text-center p-5 bg-white shadow-sm rounded-4 border">
+          <div class="mb-4">
+              <i class="bi bi-shield-lock text-danger display-1"></i>
+          </div>
+          <h3 class="fw-bold text-dark">Account Deactivated</h3>
+          <p class="text-muted mx-auto" style="max-width: 400px;">
+              You cannot book appointments right now. Please reach out to our support team to reactivate your account.
+          </p>
+          <div class="mt-4 p-3 bg-light rounded-3">
+              <p class="mb-1 fw-bold"><i class="bi bi-telephone me-2"></i> 01099823</p>
+              <p class="mb-0 fw-bold"><i class="bi bi-envelope me-2"></i> support@medical.com</p>
+          </div>
+      </div>
+  </div>
+}
