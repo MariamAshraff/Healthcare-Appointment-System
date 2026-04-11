@@ -10,7 +10,7 @@
       "createdAt": "2026-01-01"
     },
     {
-      "id": "222",
+      "id": "2",
       "name": "Dr. Ahmed Hassan",
       "email": "ahmed@doctor.com",
       "password": "doctor123",
@@ -32,13 +32,13 @@
           "day": "Sunday",
           "startTime": "09:30",
           "endTime": "10:00",
-          "isBooked": true
+          "isBooked": false
         },
         {
           "day": "Sunday",
           "startTime": "10:00",
           "endTime": "10:30",
-          "isBooked": false
+          "isBooked": true
         },
         {
           "day": "Tuesday",
@@ -58,11 +58,11 @@
       "createdAt": "2026-01-15"
     },
     {
-      "id": "333",
+      "id": "3",
       "name": "Dr. Sara Mohamed",
       "email": "sara@doctor.com",
       "password": "doctor123",
-      "phone": "01022222222",
+      "phone": "0102222",
       "role": "doctor",
       "price": 500,
       "specialization": "Dermatology",
@@ -220,7 +220,7 @@
           "day": "Friday",
           "startTime": "10:00",
           "endTime": "11:00",
-          "isBooked": false
+          "isBooked": true
         }
       ],
       "rating": 4.8,
@@ -346,7 +346,7 @@
           "day": "Thursday",
           "startTime": "14:00",
           "endTime": "15:30",
-          "isBooked": true
+          "isBooked": false
         }
       ],
       "rating": 4.5,
@@ -1592,22 +1592,12 @@
     {
       "id": "1",
       "patientId": "49",
-      "doctorId": "222",
+      "doctorId": "2",
       "date": "2026-04-10",
       "timeSlot": "09:00 - 09:30",
       "status": "confirmed",
       "notes": "Regular checkup",
       "createdAt": "2026-03-25"
-    },
-    {
-      "id": "2",
-      "patientId": "50",
-      "doctorId": "333",
-      "date": "2026-04-12",
-      "timeSlot": "10:00 - 10:30",
-      "status": "pending",
-      "notes": "Skin rash consultation",
-      "createdAt": "2026-03-28"
     },
     {
       "id": "4",
@@ -1631,7 +1621,7 @@
     },
     {
       "patientId": "4",
-      "doctorId": "222",
+      "doctorId": "2",
       "status": "pending",
       "createdAt": "2026-04-09T17:46:44.689Z",
       "date": "2026-04-29",
@@ -1651,7 +1641,7 @@
     },
     {
       "patientId": "4",
-      "doctorId": "333",
+      "doctorId": "3",
       "status": "pending",
       "createdAt": "2026-04-10T12:22:36.797Z",
       "date": "2026-04-23",
@@ -1660,22 +1650,22 @@
       "id": "fD9_NQfzpKY"
     },
     {
-      "date": "2026-04-23",
-      "timeSlot": "14:00 - 15:30",
+      "date": "2026-04-17",
+      "timeSlot": "10:00 - 11:00",
       "patientId": "4",
-      "doctorId": "12",
+      "doctorId": "8",
       "status": "pending",
-      "createdAt": "2026-04-11T00:38:39.801Z",
-      "id": "EpX3iX6t-e8"
+      "createdAt": "2026-04-11T08:37:43.841Z",
+      "id": "PYFj8Vmx-hM"
     },
     {
       "date": "2026-04-12",
-      "timeSlot": "09:30 - 10:00",
+      "timeSlot": "10:00 - 10:30",
       "patientId": "4",
-      "doctorId": "222",
+      "doctorId": "2",
       "status": "pending",
-      "createdAt": "2026-04-11T01:51:26.210Z",
-      "id": "199OJoQhE9E"
+      "createdAt": "2026-04-11T09:19:28.804Z",
+      "id": "yETkR00ycsw"
     }
   ],
   "prescriptions": [
@@ -1683,7 +1673,7 @@
       "id": "1",
       "appointmentId": "1",
       "patientId": "49",
-      "doctorId": "222",
+      "doctorId": "2",
       "medications": [
         {
           "name": "Aspirin",
@@ -1700,7 +1690,7 @@
       "id": "2",
       "appointmentId": null,
       "patientId": "51",
-      "doctorId": "222",
+      "doctorId": "2",
       "medications": [
         {
           "name": "Bisoprolol",
@@ -1826,7 +1816,7 @@
     {
       "id": "1",
       "patientId": "49",
-      "doctorId": "222",
+      "doctorId": "2",
       "appointmentId": "1",
       "diagnosis": "Mild hypertension",
       "notes": "Reduce salt intake",
@@ -1835,7 +1825,7 @@
     {
       "id": "2",
       "patientId": "51",
-      "doctorId": "222",
+      "doctorId": "2",
       "appointmentId": null,
       "diagnosis": "Arrhythmia",
       "notes": "Follow up after 2 weeks",
