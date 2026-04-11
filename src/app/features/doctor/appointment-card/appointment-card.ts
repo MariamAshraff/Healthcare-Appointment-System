@@ -16,6 +16,9 @@ import { ToastrService } from 'ngx-toastr';
   styleUrl: './appointment-card.css',
 })
 export class AppointmentCard implements OnInit {
+
+  CanAddPrescription: boolean=false
+
   @Input() appointment!: IAppointment;
   @Output() OnDelete = new EventEmitter()
   patient: IUser | null = null;
@@ -26,20 +29,34 @@ export class AppointmentCard implements OnInit {
     private Toast: ToastrService,
     private route: Router
   ) { }
-  ngOnInit(): void {
 
+
+  ngOnInit(): void {
     if (this.appointment && this.appointment.patientId) {
       this.patientService.getById(this.appointment.patientId).subscribe({
         next: (data) => {
           this.patient = data;
+
         },
         error: (err) => console.error('Error fetching doctor details', err)
       });
     }
+    const selectedDate = new Date(this.appointment.date);
+    const today = new Date();
+     today.setHours(0, 0, 0, 0);
+     selectedDate.setHours(0, 0, 0, 0);
+     if((this.appointment.status=='completed' || this.appointment.status=='confirmed')&&selectedDate<=today){
+      this.CanAddPrescription=true
+    }
+    else
+      this.CanAddPrescription=false
   }
 
   onEdit(id?: string) {
     this.route.navigate(['/patient/appointmentForm', id]);
+  }
+  AddPrescription(id?: string){
+    this.route.navigate(['/doctor/prescriptionForm', id]);
   }
   onDelete(id: string | undefined) {
     this.appointmentService.delete(id!).subscribe({

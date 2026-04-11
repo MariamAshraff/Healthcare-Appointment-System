@@ -12,15 +12,11 @@
       </div>
     </div>
   </div>
-  <div class="col-status flex-grow-1  d-flex align-items-center ">
-   <span>#{{prescription.id}}</span>
-  </div>
   <div class="d-flex align-items-center justify-content-end">
-     <button [routerLink]="['/patient/prescriptions', prescription.id]" class="btn btn-view-booking w-100 py-2">
-            <span>View</span>
-            <i class="bi bi-arrow-right ms-2"></i>
-        </button>
-  </div>
+    <button [routerLink]="['/patient/prescriptions', prescription.id]" class="btn btn-modern-view">
+        View prescription
+    </button>
+</div>
 
 
 </div>

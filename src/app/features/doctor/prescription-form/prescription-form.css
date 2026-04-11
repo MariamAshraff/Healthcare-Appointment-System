@@ -1,0 +1,113 @@
+.custom-gradient {
+  background: linear-gradient(135deg, #4361ee 30%, #ffc2d7 30%, #fef3f6c1 100%) !important;
+  color: white;
+}
+.blue-text {
+  color: #4361ee;
+}
+
+.header-icon-circle {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  font-size: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.section-number {
+  width: 35px;
+  height: 35px;
+  background-color: #4361ee;
+  color: white !important;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-right: 15px;
+  box-shadow: 0 3px 6px rgba(67, 97, 238, 0.2);
+}
+
+.section-title {
+  color: #2b2d42;
+  font-weight: 700;
+}
+
+.med-card {
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef !important;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.med-card:hover {
+  border-color: #4361ee !important;
+  background-color: #ffffff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.btn-submit-custom {
+  background-color: #4361ee !important;
+  color: white !important;
+  border: none !important;
+  padding: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  border-radius: 10px;
+}
+
+.btn-submit-custom:hover:not(:disabled) {
+  background-color: #3a0ca3 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(67, 97, 238, 0.4);
+}
+
+.btn-submit-custom:disabled {
+  background-color: #bdc3c7 !important;
+  cursor: not-allowed;
+}
+
+.custom-error-msg {
+  color: #e74c3c;
+  font-size: 0.85rem;
+  margin-top: 5px;
+  font-weight: 500;
+  display: block;
+  animation: shake 0.4s ease-in-out;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+.form-control.is-invalid {
+  border-color: #e74c3c !important;
+  background-color: #fffafa;
+}
+
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label {
+  color: #4361ee;
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.15);
+  border-color: #4361ee;
+}

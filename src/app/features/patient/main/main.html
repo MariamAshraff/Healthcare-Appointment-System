@@ -28,8 +28,9 @@
                   routerLinkActive="active"><i class="bi bi-file-earmark-medical-fill me-3"></i> My Prescriptions</a></li>
                    <li class="nav-item"><a class="nav-link d-flex align-items-center" routerLink="medicalRecords"
                   routerLinkActive="active"><i class="bi bi-file-earmark-medical-fill me-3"></i> My Medical Records</a></li>
-              <li class="nav-item"><a class="nav-link d-flex align-items-center" routerLink="/patient/details/4"
-                  routerLinkActive="active"><i class="bi bi-person-fill me-3"></i> My Profile</a></li>
+              <li class="nav-item"><a class="nav-link d-flex align-items-center"
+                  [routerLink]="['/patient/details/'+ (authService.user$ | async)?.id]" routerLinkActive="active"><i
+                    class="bi bi-person-fill me-3"></i> My Profile</a></li>
             </ul>
           </div>
         </nav>
