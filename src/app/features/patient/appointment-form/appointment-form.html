@@ -32,7 +32,7 @@
 
           <form [formGroup]="appointmentForm" (ngSubmit)="onSubmit()">
 
-            <div class="mb-3">
+            <!-- <div class="mb-3">
               <label class="form-label small fw-bold text-secondary ms-1">
                 <i class="bi bi-calendar3 me-1"></i> Select Date
               </label>
@@ -61,8 +61,57 @@
                 <option value="04:00 PM - 05:00 PM">04:00 PM - 05:00 PM</option>
                 }
               </select>
+            </div> -->
+            <div class="mb-3">
+              <label class="form-label">Select Date</label>
+              <input type="date" formControlName="date" class="form-control" [min]="today">
+
+              @if(selectedDoctor){
+              <div class="mt-2">
+                <small class="text-muted">
+                  Available on:
+                  @for (day of getAvailableDaysNames(); track $index) {
+                  <span class="badge bg-light text-dark me-1">
+                    {{ day }}
+                  </span>
+                  }
+                </small>
+              </div>
+              }
+
             </div>
 
+            <div class="mb-4">
+              <label class="form-label small fw-bold text-secondary ms-1">
+                <i class="bi bi-clock me-1"></i> Choose Time Slot
+              </label>
+
+              <select formControlName="timeSlot"
+                class="form-select form-select-lg border-0 bg-light rounded-3 shadow-none custom-input">
+
+                @if (filteredSlots.length > 0) {
+                <option value="" disabled selected>Select an available slot</option>
+                @for (slot of filteredSlots; track $index) {
+                <option [value]="slot.startTime + ' - ' + slot.endTime" [disabled]="slot.isBooked && !isEditMode">
+                  {{ slot.startTime }} - {{ slot.endTime }} {{ slot.isBooked ? '(Booked)' : '' }}
+                </option>
+                }
+                }
+                @else if (appointmentForm.get('date')?.value) {
+                <option value="" disabled selected>No available slots for this day</option>
+                }
+                @else {
+                <option value="" disabled selected>Please select a date first</option>
+                }
+              </select>
+
+              @if (appointmentForm.get('date')?.value && filteredSlots.length === 0) {
+              <div class="text-danger small mt-2 ms-1 animate__animated animate__fadeIn">
+                <i class="bi bi-exclamation-circle me-1"></i>
+                Sorry, the doctor is not available on this day.
+              </div>
+              }
+            </div>
             <div class="row g-3 mt-2">
               <div class="col-6">
                 <button type="button" class="btn btn-light w-100 py-3 fw-bold rounded-3"
