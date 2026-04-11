@@ -2,7 +2,7 @@
   <div class="row">
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm d-lg-none py-3 px-4">
       <div class="container-fluid p-0">
-        <h2 class="fw-bold text-primary m-0">Admin Panel</h2>
+        <h4 class="text-primary mb-0">Admin Panel</h4>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#adminSidebar">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -11,38 +11,50 @@
 
     <div class="container-fluid">
       <div class="row">
-        <nav id="adminSidebar" class="col-lg-2 d-lg-block bg-white sidebar shadow-sm collapse p-0 overflow-auto">
-          <div class="sidebar-sticky">
+        <nav id="adminSidebar" class="col-lg-2 d-lg-block sidebar shadow-sm collapse p-0 overflow-auto bg-white">
+          <div class="sidebar-sticky border-0">
             <div class="logo p-4 d-none d-lg-block">
-              <h2 class="fw-bold text-primary">Admin Panel</h2>
+              <h4 class="text-primary mb-0">Admin Panel</h4>
             </div>
 
-            <ul class="nav flex-column mt-2">
-              <li class="nav-item"><a class="nav-link d-flex align-items-center" routerLink="dashboard"
-                  routerLinkActive="active"><i class="bi bi-grid-fill me-3"></i> Dashboard</a></li>
-
-              <li class="nav-item">
-                <a class="nav-link d-flex justify-content-between align-items-center" (click)="toggleDoctors()"
-                  style="cursor: pointer;">
-                  <span><i class="bi bi-person-badge-fill me-3"></i> Doctors</span>
-                  <i class="bi" [ngClass]="isDoctorsOpen ? 'bi-chevron-down' : 'bi-chevron-right'"></i>
+            <ul class="nav flex-column px-3 mt-3">
+              <li class="nav-item mb-2">
+                <a class="nav-link d-flex align-items-center" routerLink="dashboard" routerLinkActive="active">
+                  <i class="bi bi-grid-fill me-2"></i> Dashboard
                 </a>
-                @if (isDoctorsOpen) {
-                <ul class="nav flex-column ms-3 sub-menu">
-                  <li class="nav-item"><a class="nav-link" routerLink="doctors" routerLinkActive="active"
-                      [routerLinkActiveOptions]="{exact: true}">Doctors List</a></li>
-                  <li class="nav-item"><a class="nav-link" routerLink="add-doctor" routerLinkActive="active">Add
-                      Doctor</a></li>
-                  <li class="nav-item"><a class="nav-link" routerLink="doctor-details/1"
-                      routerLinkActive="active">Doctor Schedule</a></li>
-                </ul>
-                }
               </li>
 
-              <li class="nav-item"><a class="nav-link d-flex align-items-center" routerLink="patients"
-                  routerLinkActive="active"><i class="bi bi-people-fill me-3"></i> Patients</a></li>
-              <li class="nav-item"><a class="nav-link d-flex align-items-center" routerLink="appointments"
-                  routerLinkActive="active"><i class="bi bi-calendar-check-fill me-3"></i> Appointments</a></li>
+              <li class="nav-item mb-2">
+                <a class="nav-link d-flex justify-content-between align-items-center"
+                  (click)="isDoctorsOpen = !isDoctorsOpen" style="cursor: pointer;">
+                  <span><i class="bi bi-person-badge-fill me-2"></i> Doctors</span>
+                  <i class="bi ms-auto" [ngClass]="isDoctorsOpen ? 'bi-chevron-down' : 'bi-chevron-right'"
+                    style="font-size: 0.8rem;"></i>
+                </a>
+
+                <div class="collapse" [class.show]="isDoctorsOpen">
+                  <ul class="nav flex-column ms-4 small sub-menu">
+                    <li class="nav-item">
+                      <a class="nav-link py-2" routerLink="doctors" routerLinkActive="active">Doctors List</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link py-2" routerLink="add-doctor" routerLinkActive="active">Add Doctor</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="nav-item mb-2">
+                <a class="nav-link d-flex align-items-center" routerLink="patients" routerLinkActive="active">
+                  <i class="bi bi-people-fill me-2"></i> Patients
+                </a>
+              </li>
+
+              <li class="nav-item mb-2">
+                <a class="nav-link d-flex align-items-center" routerLink="appointments" routerLinkActive="active">
+                  <i class="bi bi-calendar-check-fill me-2"></i> Appointments
+                </a>
+              </li>
             </ul>
           </div>
         </nav>
@@ -54,3 +66,5 @@
         </main>
       </div>
     </div>
+  </div>
+</div>
