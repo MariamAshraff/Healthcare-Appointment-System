@@ -85,7 +85,7 @@
 
 .stats-section {
   font-family: 'Segoe UI', Tahoma, sans-serif;
-  background: #fffffff2;
+  background: #e3e4ff;
 }
 
 .stat-card {
@@ -175,7 +175,6 @@
 }
 
 @keyframes beat {
-
   0%,
   100% {
     transform: scale(1);
