@@ -3,19 +3,60 @@
 }
 
 .card {
-  border-radius: 12px;
-}
-
-app-appointment-card:not(:last-child) {
-  border-bottom: 1px solid #f0f0f0;
+  border-radius: 16px;
+  border: 1px solid #f0f0f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+  overflow: hidden;
 }
 
 .card-header {
-  background-color: #fcfcfd !important;
+  background: linear-gradient(135deg, #f8faff, #fdeef1) !important;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 15px 20px;
+}
+
+.card-header span {
+  color: #a29bfe;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+app-appointment-card:not(:last-child) {
+  border-bottom: 1px solid #f8f9fa;
+  display: block;
+}
+
+app-appointment-card:hover {
+  background-color: #fdf2f4;
 }
 
 @media (max-width: 991.98px) {
   .card-header {
     display: none;
   }
+
+  .card {
+    border: none;
+    background: transparent;
+    box-shadow: none;
+  }
+}
+
+.page-title {
+  color: #2c3e50;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.page-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(135deg, #a29bfe, #ff76ac);
+  border-radius: 3px;
 }

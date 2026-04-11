@@ -1,6 +1,6 @@
 :root {
   --mediva-blue: #7ba8f8;
-  --mediva-purple: #9b98f2;
+  --mediva-purple: #a29bfe;
   --mediva-pink: #f2b6d7;
   --dark-blue: #2c3e50;
   --soft-gray: #f8faff;
@@ -52,25 +52,26 @@
 
 .sidebar .nav-link:hover {
   background-color: #f8f9fa;
-  color: #2e59d9 !important;
+  color: #a29bfe !important;
 }
 
 .sidebar .nav-link.active {
   background-color: #f0f4ff;
-  color: #2e59d9 !important;
+  color: #a29bfe !important;
   font-weight: 600;
 }
 
 .doctor-card {
   border-radius: 16px;
-  border: 1px solid #eee;
+  border: 1px solid #f0f0f0 !important;
   transition: all 0.3s ease;
   background-color: #ffffff;
 }
 
 .doctor-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(155, 152, 242, 0.15) !important;
+  border-color: #a29bfe !important;
+  box-shadow: 0 10px 25px rgba(162, 155, 254, 0.1) !important;
 }
 
 .avatar-wrapper img {
@@ -85,38 +86,41 @@
 }
 
 .text-purple {
-  color: var(--mediva-purple);
+  color: #a29bfe !important;
 }
 
 .text-purple-dark {
-  color: #6c63ff;
+  color: #8e85eb !important;
 }
 
 .btn-primary-gradient {
-  background: linear-gradient(135deg, #6a96f1, #837ff0);
+  background: linear-gradient(135deg, #a29bfe, #ff76ac) !important;
   color: #ffffff !important;
-  border: none;
+  border: none !important;
   font-weight: 600;
   padding: 10px 20px;
   border-radius: 10px;
-  transition: opacity 0.2s;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(162, 155, 254, 0.3);
 }
 
 .btn-primary-gradient:hover {
   opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(162, 155, 254, 0.4);
   color: #ffffff;
 }
 
 .btn-outline-purple {
-  color: var(--mediva-purple);
-  border: 1px solid rgba(155, 152, 242, 0.3);
+  color: #a29bfe;
+  border: 1px solid rgba(162, 155, 254, 0.3);
   border-radius: 10px;
   transition: all 0.2s;
 }
 
 .badge.bg-purple-light {
-  background-color: rgba(155, 152, 242, 0.1);
-  color: var(--mediva-purple);
+  background-color: #fdeef1 !important;
+  color: #ff76ac !important;
 }
 
 .dropdown-menu {

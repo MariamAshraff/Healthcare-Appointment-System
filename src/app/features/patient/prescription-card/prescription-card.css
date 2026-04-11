@@ -4,32 +4,44 @@
 }
 
 .appointment-row {
-  transition: background-color 0.2s ease;
+  transition: all 0.2s ease;
   min-height: 80px;
+  border-radius: 12px;
 }
 
 .appointment-row:hover {
-  background-color: #f8faff !important;
+  background-color: #fdf2f4 !important;
+  transform: translateX(4px);
 }
 
 .doctor-name {
-  color: #4e44e7;
+  color: #8e85eb !important;
+  font-weight: 600;
+}
+
+.doctor-name:hover {
+  text-decoration: underline;
+  color: #a29bfe !important;
 }
 
 .bg-success-light {
-  background-color: #e6f7ef;
+  background-color: #e6f7ef !important;
+  color: #1cc88a !important;
 }
 
 .bg-primary-light {
-  background-color: #e7eefd;
+  background-color: #f0f4ff !important;
+  color: #a29bfe !important;
 }
 
 .bg-warning-light {
-  background-color: #fff8ec;
+  background-color: #fff9db !important;
+  color: #fab005 !important;
 }
 
 .bg-danger-light {
-  background-color: #fbe9e9;
+  background-color: #fbe9e9 !important;
+  color: #ff7675 !important;
 }
 
 .col-datetime {
@@ -42,7 +54,7 @@
 
 .clickable {
   cursor: pointer;
-  color: blue;
+  color: #a29bfe;
 }
 
 .clickable-profile {
@@ -54,25 +66,23 @@
   opacity: 0.8;
 }
 
-.doctor-name:hover {
-  text-decoration: underline;
-}
 .btn-modern-view {
-  background-color: #4361ee;
+  background: linear-gradient(135deg, #a29bfe, #ff76ac);
   color: white !important;
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 10px 24px;
-  font-weight: 400;
+  font-weight: 600;
   border: none;
   transition: all 0.3s ease;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 4px 12px rgba(162, 155, 254, 0.2);
 }
 
 .btn-modern-view:hover {
-  background-color: #354fcc;
+  opacity: 0.9;
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+  box-shadow: 0 6px 15px rgba(162, 155, 254, 0.3);
 }

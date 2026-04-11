@@ -55,9 +55,11 @@
   border-radius: 50%;
   border: 4px solid white;
 }
+
 .status-indicator.active {
   background-color: var(--status-active);
 }
+
 .status-indicator.inactive {
   background-color: var(--status-inactive);
 }
@@ -91,10 +93,12 @@
   color: var(--text-muted);
   transition: all 0.2s;
 }
+
 .btn-light-action:hover {
   background: #f1f5f9;
   color: var(--primary-color);
 }
+
 .btn-light-action:disabled {
   opacity: 0.5;
   cursor: not-allowed;
@@ -106,12 +110,15 @@
   letter-spacing: 0.5px;
   color: white;
 }
+
 .bg-patient {
   background-color: var(--patient-color);
 }
+
 .bg-doctor {
   background-color: var(--doctor-color);
 }
+
 .bg-admin {
   background-color: var(--admin-color);
 }
@@ -154,14 +161,17 @@
 .status-box {
   border: 1px solid #e2e8f0;
 }
+
 .bg-status-active {
   background-color: rgba(34, 197, 94, 0.05);
   border-color: rgba(34, 197, 94, 0.2);
 }
+
 .bg-status-inactive {
   background-color: rgba(239, 68, 68, 0.05);
   border-color: rgba(239, 68, 68, 0.2);
 }
+
 .bg-status-role {
   background-color: rgba(99, 102, 241, 0.05);
   border-color: rgba(99, 102, 241, 0.2);

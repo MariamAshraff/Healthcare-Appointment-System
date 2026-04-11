@@ -45,7 +45,7 @@ export class AppointmentCard implements OnInit {
     const today = new Date();
     today.setHours(0, 0, 0, 0);
     selectedDate.setHours(0, 0, 0, 0);
-    if ((this.appointment.status === 'completed' || this.appointment.status === 'confirmed') /*&& selectedDate <= today*/) {
+    if ((this.appointment.status === 'completed' || this.appointment.status === 'confirmed') && selectedDate <= today) {
       this.CanAddPrescription = true
     }
     else

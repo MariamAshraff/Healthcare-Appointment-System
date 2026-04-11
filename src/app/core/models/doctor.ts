@@ -15,4 +15,5 @@ export interface TimeSlot {
   startTime: string;
   endTime: string;
   isBooked: boolean;
+  session?: string;
 }

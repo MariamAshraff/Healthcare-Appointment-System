@@ -3,15 +3,19 @@
 }
 
 .text-purple {
-  color: #9b98f2;
+  color: #a29bfe !important;
 }
 
 .text-purple-dark {
-  color: #6c63ff;
+  background: linear-gradient(135deg, #a29bfe, #ff76ac);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
 }
 
 .bg-purple-light {
-  background-color: rgba(155, 152, 242, 0.1);
+  background-color: #fdeef1 !important;
+  color: #ff76ac !important;
 }
 
 .bg-light-soft {
@@ -25,13 +29,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #f0f4ff;
+  color: #a29bfe;
 }
 
 .form-control:focus,
 .form-select:focus {
   box-shadow: none;
   background-color: #ffffff !important;
-  border: 1px solid #9b98f2 !important;
+  border: 1px solid #a29bfe !important;
 }
 
 .border-dashed {
@@ -39,40 +45,44 @@
 }
 
 .btn-primary-gradient {
-  background: linear-gradient(135deg, #6a96f1, #837ff0);
+  background: linear-gradient(135deg, #a29bfe, #ff76ac) !important;
   color: #ffffff !important;
   border: none;
   border-radius: 12px;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(162, 155, 254, 0.3);
 }
 
 .btn-primary-gradient:hover:not(:disabled) {
   opacity: 0.9;
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(106, 150, 241, 0.3);
+  box-shadow: 0 8px 20px rgba(162, 155, 254, 0.4);
 }
 
 .btn-primary-gradient:disabled {
-  background: #cbd5e0;
+  background: #cbd5e0 !important;
   cursor: not-allowed;
+  box-shadow: none;
 }
+
 .deactive-container {
   background-color: #ffffff;
   border-radius: 24px;
   border: 1px solid #f0f0f0;
   transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
 }
 
 .deactive-icon-wrapper i {
-  color: #ef233c;
-  filter: drop-shadow(0 10px 15px rgba(239, 35, 60, 0.2));
+  color: #ff7675;
+  filter: drop-shadow(0 10px 15px rgba(255, 118, 117, 0.2));
   display: inline-block;
   margin-bottom: 20px;
 }
 
 .support-contact-box {
-  background-color: #f8faff;
-  border: 1px dashed #4361ee;
+  background-color: #fdf2f4;
+  border: 1px dashed #ff76ac;
   border-radius: 16px;
   padding: 20px;
   margin-top: 30px;
@@ -88,7 +98,7 @@
 }
 
 .support-contact-box i {
-  color: #4361ee;
+  color: #ff76ac;
   font-size: 1.2rem;
 }
 
@@ -114,6 +124,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);

@@ -3,19 +3,56 @@
 }
 
 .card {
-  border-radius: 12px;
-}
-
-app-appointment-card:not(:last-child) {
-  border-bottom: 1px solid #f0f0f0;
+  border-radius: 16px;
+  border: 1px solid #f0f0f0;
+  box-shadow: 0 4px 12px rgba(162, 155, 254, 0.05);
+  overflow: hidden;
+  background-color: #ffffff;
 }
 
 .card-header {
-  background-color: #fcfcfd !important;
+  background: linear-gradient(135deg, #f8faff 0%, #fdeef1 100%) !important;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 15px 20px;
+}
+
+.card-header span,
+.card-header h5 {
+  color: #a29bfe;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+app-appointment-card:not(:last-child) {
+  border-bottom: 1px solid #f8f9fa;
+  display: block;
+}
+
+app-appointment-card:hover {
+  background-color: #fdf2f4;
+  transition: background-color 0.3s ease;
 }
 
 @media (max-width: 991.98px) {
   .card-header {
     display: none;
   }
+
+  .card {
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+  }
+}
+
+.btn-add-appointment {
+  background: linear-gradient(135deg, #a29bfe, #ff76ac) !important;
+  color: #ffffff !important;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(162, 155, 254, 0.3);
 }
