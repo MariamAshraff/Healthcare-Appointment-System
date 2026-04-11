@@ -1,4 +1,4 @@
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink, RouterModule } from '@angular/router';
 import { IUser } from './../../../../core/models/user';
 import { PatientService } from './../../../../core/service/patient-service';
 import { CommonModule } from '@angular/common';
@@ -7,7 +7,7 @@ import { AuthService } from '../../../../core/service/auth-service';
 
 @Component({
   selector: 'app-patient-profile',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink,RouterModule],
   templateUrl: './patient-profile.html',
   styleUrl: './patient-profile.css',
 })
@@ -16,6 +16,8 @@ export class PatientProfile implements OnInit {
 
   patient: IUser | null = null;
   isAdmin:boolean=false
+
+  isDoctor:boolean=false
 
   constructor(
     private patientService: PatientService,
@@ -35,6 +37,9 @@ export class PatientProfile implements OnInit {
           user.role === 'admin' || user.role === 'doctor';
         if(user.role=='admin')
           this.isAdmin=true
+
+         if(user.role=='doctor')
+          this.isDoctor=true
 
         if (idFromRoute && isAdminOrDoctor) {
           this.patientService.getById(idFromRoute).subscribe({
