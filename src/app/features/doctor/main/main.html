@@ -22,8 +22,8 @@
                   routerLinkActive="active"><i class="bi bi-grid-fill me-3"></i> Dashboard</a></li>
               <li class="nav-item"><a class="nav-link d-flex align-items-center" routerLink="appointments"
                   routerLinkActive="active"><i class="bi bi-calendar-event-fill me-3"></i> Appointments</a></li>
-              <li class="nav-item"><a class="nav-link d-flex align-items-center" routerLink="prescriptions"
-                  routerLinkActive="active"><i class="bi bi-file-earmark-medical-fill me-3"></i> Prescriptions</a></li>
+              <!-- <li class="nav-item"><a class="nav-link d-flex align-items-center" routerLink="prescriptions"
+                  routerLinkActive="active"><i class="bi bi-file-earmark-medical-fill me-3"></i> Prescriptions</a></li> -->
               <li class="nav-item"><a class="nav-link d-flex align-items-center"
                   [routerLink]="['Schedule/' + (authService.user$ | async)?.id]" routerLinkActive="active"><i
                     class="bi bi-people-fill me-3"></i>My Schedule</a>

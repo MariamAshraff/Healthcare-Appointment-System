@@ -35,6 +35,12 @@
                   </button>
                 }
               }
+               @if(isDoctor) {
+                  <button class="btn btn-medical-history px-4 py-2 rounded-pill shadow-sm" [routerLink]="['/doctor/medicalRecords/', patient.id]">
+                    <i class="bi bi-clock-history me-2"></i>
+                    <span>View Medical History</span>
+                  </button>
+              }
               <button class="btn btn-primary-action px-4 rounded-pill shadow-sm">
                 <i class="bi bi-envelope-plus me-2"></i>Send Message
               </button>
