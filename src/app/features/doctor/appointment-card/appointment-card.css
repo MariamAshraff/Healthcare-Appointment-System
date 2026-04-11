@@ -93,3 +93,61 @@
   opacity: 0.9;
   transform: translateY(-1px);
 }
+
+.bg-warning-light {
+  background-color: #fff9db !important;
+  color: #fab005 !important;
+}
+
+.bg-primary-light {
+  background-color: #e7f5ff !important;
+  color: #228be6 !important;
+}
+
+.appointment-row {
+  transition: background-color 0.2s ease;
+  min-height: 80px;
+  overflow: visible !important;
+  position: relative;
+}
+
+.appointment-row:has(.show) {
+  z-index: 1050 !important;
+}
+
+.dropdown-menu {
+  z-index: 1100 !important;
+  margin-top: 0 !important;
+}
+
+.col-datetime {
+  width: 33.33333333%;
+}
+
+.col-doctor {
+  width: 50%;
+}
+
+.col-status {
+  width: 25%;
+}
+
+.appointment-row {
+  transition: background-color 0.2s ease;
+  min-height: 80px;
+  overflow: visible !important;
+  position: relative !important;
+  z-index: 1;
+}
+
+.appointment-row:has(.show) {
+  z-index: 9999 !important;
+}
+
+.dropdown-menu {
+  z-index: 10000 !important;
+  position: absolute !important;
+  margin-top: 5px !important;
+  right: 0 !important;
+  left: auto !important;
+}
