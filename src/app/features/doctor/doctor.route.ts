@@ -6,6 +6,7 @@ import { Appointments } from "./appointments/appointments";
 import { Main } from "./main/main";
 import { DoctorDetail } from "../doctor-listing/doctor-detail/doctor-detail";
 import { PatientProfile } from "../patient/profile/patient-profile/patient-profile";
+import { AllNotifications } from "../all-notifications/all-notifications";
 
 export const DOCTOR_ROUTES: Routes = [
   {
@@ -19,6 +20,7 @@ export const DOCTOR_ROUTES: Routes = [
       { path: 'prescriptions', component: Prescriptions },
       { path: 'details/:id', component: DoctorDetail },
       { path: 'patient/:id', component: PatientProfile },
+      { path: 'all-notifications', component: AllNotifications }
     ]
   }
 ];
