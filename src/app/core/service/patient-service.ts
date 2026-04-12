@@ -26,8 +26,8 @@ export class PatientService {
     return this.http.get<IUser>(`${environment.baseUrl}/users/${id}`);
   }
   Add(patient: IUser): Observable<IUser> {
-    patient.role="patient";
-    patient.isActive=true;
+    patient.role = "patient";
+    patient.isActive = true;
     return this.http.post<IUser>(`${environment.baseUrl}/users`, patient);
   }
 
@@ -54,20 +54,21 @@ export class PatientService {
     return this.http.delete(`${environment.baseUrl}/users/${id}`);
   }
   deactivate(id: string): Observable<IUser> {
-  return this.http.patch<IUser>(`${environment.baseUrl}/users/${id}`,{ isActive: false });
+    return this.http.patch<IUser>(`${environment.baseUrl}/users/${id}`, { isActive: false });
   }
 
   activate(id: string): Observable<IUser> {
-  return this.http.patch<IUser>(`${environment.baseUrl}/users/${id}`,{ isActive: true });
+    return this.http.patch<IUser>(`${environment.baseUrl}/users/${id}`, { isActive: true });
   }
 
   getDeactivePatients(): Observable<IUser[]> {
-  return this.http.get<IUser[]>(`${environment.baseUrl}/users?isActive=false`);
+    return this.http.get<IUser[]>(`${environment.baseUrl}/users?isActive=false`);
   }
- update(patient: IUser): Observable<IUser> {
-  return this.http.put<IUser>(
-    `${environment.baseUrl}/users/${patient.id}`,
-    patient
-  );
-}
+  update(patient: Partial<IUser>): Observable<IUser> {
+    return this.http.patch<IUser>(
+      `${environment.baseUrl}/users/${patient.id}`,
+      patient
+    );
+  }
+
 }

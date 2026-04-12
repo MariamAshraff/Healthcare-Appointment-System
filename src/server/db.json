@@ -26,13 +26,13 @@
           "day": "Sunday",
           "startTime": "09:00",
           "endTime": "09:30",
-          "isBooked": false
+          "isBooked": true
         },
         {
           "day": "Sunday",
           "startTime": "10:00",
           "endTime": "10:30",
-          "isBooked": false
+          "isBooked": true
         },
         {
           "day": "Tuesday",
@@ -51,25 +51,52 @@
           "startTime": "13:20",
           "endTime": "13:35",
           "session": "Evening",
-          "isBooked": false
+          "isBooked": true
         },
         {
           "day": "Friday",
           "startTime": "09:00",
           "endTime": "10:00",
           "session": "Morning",
-          "isBooked": false
+          "isBooked": true
         },
         {
           "day": "Sunday",
           "startTime": "09:30",
           "endTime": "10:00",
           "session": "Morning",
+          "isBooked": true
+        },
+        {
+          "day": "Tuesday",
+          "startTime": "20:00",
+          "endTime": "20:20",
+          "isBooked": false
+        },
+        {
+          "day": "Tuesday",
+          "startTime": "09:00",
+          "endTime": "09:20",
+          "session": "Evening",
+          "isBooked": false
+        },
+        {
+          "day": "Tuesday",
+          "startTime": "10:00",
+          "endTime": "10:20",
+          "session": "Morning",
+          "isBooked": false
+        },
+        {
+          "day": "Friday",
+          "startTime": "10:00",
+          "endTime": "10:20",
+          "session": "Morning",
           "isBooked": false
         }
       ],
       "rating": 4.8,
-      "reviewCount": 120,
+      "reviewCount": 121,
       "createdAt": "2026-01-15"
     },
     {
@@ -89,7 +116,7 @@
           "day": "Monday",
           "startTime": "10:00",
           "endTime": "10:30",
-          "isBooked": false
+          "isBooked": true
         },
         {
           "day": "Monday",
@@ -151,7 +178,7 @@
           "day": "Saturday",
           "startTime": "11:00",
           "endTime": "12:00",
-          "isBooked": false
+          "isBooked": true
         },
         {
           "day": "Monday",
@@ -1392,7 +1419,7 @@
     {
       "id": "55",
       "name": "Kareem Hamdy",
-      "email": "kareem.h@patient.com",
+      "email": "kareem.ha@patient.com",
       "password": "patient123",
       "phone": "01060000010",
       "role": "patient",
@@ -1821,6 +1848,69 @@
       "status": "pending",
       "createdAt": "2026-04-11T19:49:43.502Z",
       "id": "XDKtcSVu__w"
+    },
+    {
+      "date": "2026-04-12",
+      "timeSlot": "09:00 - 09:30",
+      "patientId": "4",
+      "doctorId": "2",
+      "status": "cancelled",
+      "createdAt": "2026-04-12T12:55:51.166Z",
+      "id": "MyIXKWVWliI"
+    },
+    {
+      "date": "2026-04-17",
+      "timeSlot": "13:20 - 13:35",
+      "patientId": "4",
+      "doctorId": "2",
+      "status": "completed",
+      "createdAt": "2026-04-12T12:56:22.615Z",
+      "id": "g_5KLzxONs4"
+    },
+    {
+      "date": "2026-04-13",
+      "timeSlot": "10:00 - 10:30",
+      "patientId": "4",
+      "doctorId": "3",
+      "status": "pending",
+      "createdAt": "2026-04-12T12:56:45.207Z",
+      "id": "K3rnjGPLMYA"
+    },
+    {
+      "date": "2026-04-12",
+      "timeSlot": "10:00 - 10:30",
+      "patientId": "4",
+      "doctorId": "2",
+      "status": "pending",
+      "createdAt": "2026-04-12T12:57:50.670Z",
+      "id": "NytU2iaeZwM"
+    },
+    {
+      "date": "2026-04-17",
+      "timeSlot": "09:00 - 10:00",
+      "patientId": "55",
+      "doctorId": "2",
+      "status": "confirmed",
+      "createdAt": "2026-04-12T12:59:49.956Z",
+      "id": "vBBd3KCk930"
+    },
+    {
+      "date": "2026-04-12",
+      "timeSlot": "09:30 - 10:00",
+      "patientId": "55",
+      "doctorId": "2",
+      "status": "pending",
+      "createdAt": "2026-04-12T13:00:10.858Z",
+      "id": "gf5GOxe5DQM"
+    },
+    {
+      "date": "2026-04-18",
+      "timeSlot": "11:00 - 12:00",
+      "patientId": "55",
+      "doctorId": "6",
+      "status": "pending",
+      "createdAt": "2026-04-12T13:00:32.762Z",
+      "id": "sdlj_L-aYCc"
     }
   ],
   "prescriptions": [
@@ -2227,6 +2317,204 @@
       "status": "unread",
       "createdAt": "2026-04-11T19:56:46.408Z",
       "id": "rlgJTxIO4p4"
+    },
+    {
+      "recipientId": "2",
+      "message": "Patient Mohamed Ali has booked an appointment with you on 2026-04-12.",
+      "type": "appointment_booked",
+      "appointmentId": "MyIXKWVWliI",
+      "status": "unread",
+      "createdAt": "2026-04-12T12:55:51.179Z",
+      "id": "gZO-fKQkNsE"
+    },
+    {
+      "recipientId": "111",
+      "message": "New booking: Patient Mohamed Ali has booked an appointment with Dr. Ahmed Hassan on 2026-04-12.",
+      "type": "appointment_booked",
+      "appointmentId": "MyIXKWVWliI",
+      "status": "unread",
+      "createdAt": "2026-04-12T12:55:51.185Z",
+      "id": "aTaVXczElgY"
+    },
+    {
+      "recipientId": "2",
+      "message": "Patient Mohamed Ali has booked an appointment with you on 2026-04-17.",
+      "type": "appointment_booked",
+      "appointmentId": "g_5KLzxONs4",
+      "status": "unread",
+      "createdAt": "2026-04-12T12:56:22.626Z",
+      "id": "n066vEw7ca0"
+    },
+    {
+      "recipientId": "111",
+      "message": "New booking: Patient Mohamed Ali has booked an appointment with Dr. Ahmed Hassan on 2026-04-17.",
+      "type": "appointment_booked",
+      "appointmentId": "g_5KLzxONs4",
+      "status": "unread",
+      "createdAt": "2026-04-12T12:56:22.974Z",
+      "id": "9yeZv2qhZnM"
+    },
+    {
+      "recipientId": "3",
+      "message": "Patient Mohamed Ali has booked an appointment with you on 2026-04-13.",
+      "type": "appointment_booked",
+      "appointmentId": "K3rnjGPLMYA",
+      "status": "unread",
+      "createdAt": "2026-04-12T12:56:45.220Z",
+      "id": "HY9yJQvf_os"
+    },
+    {
+      "recipientId": "111",
+      "message": "New booking: Patient Mohamed Ali has booked an appointment with Dr. Sara Mohamed on 2026-04-13.",
+      "type": "appointment_booked",
+      "appointmentId": "K3rnjGPLMYA",
+      "status": "unread",
+      "createdAt": "2026-04-12T12:56:45.234Z",
+      "id": "LVzcl2UXZh4"
+    },
+    {
+      "recipientId": "4",
+      "message": "Your appointment status with Dr. Ahmed Hassan has been updated to cancelled.",
+      "type": "status_changed",
+      "appointmentId": "MyIXKWVWliI",
+      "status": "unread",
+      "createdAt": "2026-04-12T12:57:12.368Z",
+      "id": "3GGDMhfErSs"
+    },
+    {
+      "recipientId": "111",
+      "message": "Appointment Update: Patient Mohamed Ali & Dr. Ahmed Hassan. Updated by: doctor. Status: cancelled.",
+      "type": "appointment_updated",
+      "appointmentId": "MyIXKWVWliI",
+      "status": "unread",
+      "createdAt": "2026-04-12T12:57:12.381Z",
+      "id": "5tufdrSt-M0"
+    },
+    {
+      "recipientId": "4",
+      "message": "Your appointment status with Dr. Ahmed Hassan has been updated to confirmed.",
+      "type": "status_changed",
+      "appointmentId": "g_5KLzxONs4",
+      "status": "unread",
+      "createdAt": "2026-04-12T12:57:21.706Z",
+      "id": "HD5WW3OPrWI"
+    },
+    {
+      "recipientId": "111",
+      "message": "Appointment Update: Patient Mohamed Ali & Dr. Ahmed Hassan. Updated by: doctor. Status: confirmed.",
+      "type": "appointment_updated",
+      "appointmentId": "g_5KLzxONs4",
+      "status": "unread",
+      "createdAt": "2026-04-12T12:57:21.711Z",
+      "id": "0s9rRxJNrwA"
+    },
+    {
+      "recipientId": "4",
+      "message": "Your appointment status with Dr. Ahmed Hassan has been updated to completed.",
+      "type": "status_changed",
+      "appointmentId": "g_5KLzxONs4",
+      "status": "unread",
+      "createdAt": "2026-04-12T12:57:28.793Z",
+      "id": "vKJ9WN3lG48"
+    },
+    {
+      "recipientId": "111",
+      "message": "Appointment Update: Patient Mohamed Ali & Dr. Ahmed Hassan. Updated by: doctor. Status: completed.",
+      "type": "appointment_updated",
+      "appointmentId": "g_5KLzxONs4",
+      "status": "unread",
+      "createdAt": "2026-04-12T12:57:28.798Z",
+      "id": "jtz3IxvPQQc"
+    },
+    {
+      "recipientId": "2",
+      "message": "Patient Mohamed Ali has booked an appointment with you on 2026-04-12.",
+      "type": "appointment_booked",
+      "appointmentId": "NytU2iaeZwM",
+      "status": "unread",
+      "createdAt": "2026-04-12T12:57:50.696Z",
+      "id": "zVNUcW9x8_k"
+    },
+    {
+      "recipientId": "111",
+      "message": "New booking: Patient Mohamed Ali has booked an appointment with Dr. Ahmed Hassan on 2026-04-12.",
+      "type": "appointment_booked",
+      "appointmentId": "NytU2iaeZwM",
+      "status": "unread",
+      "createdAt": "2026-04-12T12:57:50.702Z",
+      "id": "Olv4OIs-PlU"
+    },
+    {
+      "recipientId": "2",
+      "message": "Patient Kareem Hamdy has booked an appointment with you on 2026-04-17.",
+      "type": "appointment_booked",
+      "appointmentId": "vBBd3KCk930",
+      "status": "unread",
+      "createdAt": "2026-04-12T12:59:49.987Z",
+      "id": "w11kUenKJkA"
+    },
+    {
+      "recipientId": "111",
+      "message": "New booking: Patient Kareem Hamdy has booked an appointment with Dr. Ahmed Hassan on 2026-04-17.",
+      "type": "appointment_booked",
+      "appointmentId": "vBBd3KCk930",
+      "status": "unread",
+      "createdAt": "2026-04-12T12:59:49.992Z",
+      "id": "yD1TUHGpW_M"
+    },
+    {
+      "recipientId": "2",
+      "message": "Patient Kareem Hamdy has booked an appointment with you on 2026-04-12.",
+      "type": "appointment_booked",
+      "appointmentId": "gf5GOxe5DQM",
+      "status": "unread",
+      "createdAt": "2026-04-12T13:00:10.871Z",
+      "id": "e0DsgaojGnE"
+    },
+    {
+      "recipientId": "111",
+      "message": "New booking: Patient Kareem Hamdy has booked an appointment with Dr. Ahmed Hassan on 2026-04-12.",
+      "type": "appointment_booked",
+      "appointmentId": "gf5GOxe5DQM",
+      "status": "unread",
+      "createdAt": "2026-04-12T13:00:10.876Z",
+      "id": "1A9H_Li99tQ"
+    },
+    {
+      "recipientId": "6",
+      "message": "Patient Kareem Hamdy has booked an appointment with you on 2026-04-18.",
+      "type": "appointment_booked",
+      "appointmentId": "sdlj_L-aYCc",
+      "status": "unread",
+      "createdAt": "2026-04-12T13:00:32.776Z",
+      "id": "kUqWUS56fIs"
+    },
+    {
+      "recipientId": "111",
+      "message": "New booking: Patient Kareem Hamdy has booked an appointment with Dr. Khaled Youssef on 2026-04-18.",
+      "type": "appointment_booked",
+      "appointmentId": "sdlj_L-aYCc",
+      "status": "unread",
+      "createdAt": "2026-04-12T13:00:32.782Z",
+      "id": "umQMf6B1iDM"
+    },
+    {
+      "recipientId": "55",
+      "message": "Your appointment status with Dr. Ahmed Hassan has been updated to confirmed.",
+      "type": "status_changed",
+      "appointmentId": "vBBd3KCk930",
+      "status": "unread",
+      "createdAt": "2026-04-12T13:00:46.445Z",
+      "id": "lbtU4N_snwI"
+    },
+    {
+      "recipientId": "111",
+      "message": "Appointment Update: Patient Kareem Hamdy & Dr. Ahmed Hassan. Updated by: doctor. Status: confirmed.",
+      "type": "appointment_updated",
+      "appointmentId": "vBBd3KCk930",
+      "status": "unread",
+      "createdAt": "2026-04-12T13:00:46.454Z",
+      "id": "1Ssr-Kj2zcA"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

@@ -4,7 +4,7 @@
 }
 
 .card-header-gradient {
-  background: linear-gradient(135deg, #9795f0 0%, #f9c5d1 100%);
+  background: linear-gradient(135deg, #347bff 0%, #ff7ca8 100%);
 }
 
 .day-btn {
@@ -20,17 +20,17 @@
 
 .day-btn:hover {
   background: #fdf2f4;
-  color: #a29bfe;
+  color: #5b94ff;
 }
 
 .day-btn.active {
   background: #fdeef1;
-  color: #a29bfe;
-  border-color: #a29bfe;
+  color: #5b94ff;
+  border-color: #5b94ff;
 }
 
 .btn-primary-gradient {
-  background: linear-gradient(135deg, #ff76ac, #a29bfe);
+  background: linear-gradient(135deg, #ff7ca8, #347bff);
   color: white;
   border: none;
   border-radius: 10px;
@@ -43,7 +43,7 @@
 }
 
 .text-primary {
-  color: #a29bfe !important;
+  color: #5b94ff !important;
 }
 
 .slot-card {
@@ -86,14 +86,14 @@
 }
 
 .btn-save {
-  background: #a29bfe;
+  background: #5b94ff;
   color: white;
   border: none;
   transition: 0.3s;
 }
 
 .btn-save:hover {
-  background: #8e85eb;
+  background: #5b94ff;
   transform: scale(1.02);
 }
 
