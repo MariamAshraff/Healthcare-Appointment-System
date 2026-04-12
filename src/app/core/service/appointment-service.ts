@@ -83,4 +83,44 @@ export class AppointmentService {
     return this.http.delete(`${environment.baseUrl}/appointments/${id}`);
   }
 
+
+private isSameDay(date1: Date, date2: Date): boolean {
+  return (
+    date1.getDay() === date2.getDay() &&
+    date1.getMonth() === date2.getMonth() &&
+    date1.getFullYear() === date2.getFullYear()
+  );
+}
+
+getPastAppointments(appointments: IAppointment[]): IAppointment[] {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  return appointments.filter(app => {
+    const appDate = new Date(app.date);
+    appDate.setHours(0, 0, 0, 0);
+
+    return appDate < today;
+  });
+}
+
+getUpcomingAppointments(appointments: IAppointment[]): IAppointment[] {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  return appointments.filter(app => {
+    const appDate = new Date(app.date);
+    appDate.setHours(0, 0, 0, 0);
+
+    return appDate > today;
+  });
+}
+
+getTodayAppointments(appointments: IAppointment[]): IAppointment[] {
+  const today = new Date();
+
+  return appointments.filter(app =>
+    this.isSameDay(new Date(app.date), today)
+  );
+}
 }

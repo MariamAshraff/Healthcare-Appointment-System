@@ -35,6 +35,12 @@
           "isBooked": true
         },
         {
+          "day": "Sunday",
+          "startTime": "22:00",
+          "endTime": "23:30",
+          "isBooked": true
+        },
+        {
           "day": "Tuesday",
           "startTime": "14:00",
           "endTime": "14:30",
@@ -51,7 +57,7 @@
           "startTime": "13:20",
           "endTime": "13:35",
           "session": "Evening",
-          "isBooked": true
+          "isBooked": false
         },
         {
           "day": "Friday",
@@ -107,6 +113,11 @@
           "endTime": "11:00",
           "session": "Evening",
           "isBooked": false
+          "day": "Sunday",
+          "startTime": "14:22",
+          "endTime": "15:33",
+          "session": "Evening",
+          "isBooked": true
         }
       ],
       "rating": 4.8,
@@ -1711,41 +1722,6 @@
       "availableSlots": [],
       "id": "HmEWzUIMvHo",
       "name": "madona Magdy"
-    },
-    {
-      "name": "Islam Mohsen",
-      "email": "islam123@doctor.com",
-      "password": "dovtor123",
-      "specialization": "Oncologist",
-      "experience": 20,
-      "price": 1999,
-      "bio": "Agmed doctor",
-      "avatar": "data:image/webp;base64,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",
-      "role": "doctor",
-      "rating": 3,
-      "reviewCount": 2,
-      "availableSlots": [],
-      "id": "-SLTCfa0DNI"
-    },
-    {
-      "id": "TSrKweZ8sis",
-      "name": "Mohamed Ashraf",
-      "email": "mohamed123@patient.com",
-      "password": "123456",
-      "phone": "",
-      "role": "patient",
-      "createdAt": "2026-04-12T13:47:14.115Z",
-      "isActive": true
-    },
-    {
-      "id": "4XY1sMAVyWY",
-      "name": "Mariam Ashraf",
-      "email": "Mariam123@patient.com",
-      "password": "123456",
-      "phone": "",
-      "role": "patient",
-      "createdAt": "2026-04-12T14:30:23.758Z",
-      "isActive": true
     }
   ],
   "appointments": [
@@ -1873,15 +1849,6 @@
       "id": "MyIXKWVWliI"
     },
     {
-      "date": "2026-04-17",
-      "timeSlot": "13:20 - 13:35",
-      "patientId": "4",
-      "doctorId": "2",
-      "status": "completed",
-      "createdAt": "2026-04-12T12:56:22.615Z",
-      "id": "g_5KLzxONs4"
-    },
-    {
       "date": "2026-04-13",
       "timeSlot": "10:00 - 10:30",
       "patientId": "4",
@@ -1934,6 +1901,22 @@
       "status": "pending",
       "createdAt": "2026-04-12T20:09:47.595Z",
       "id": "lva4JlIQRPA"
+      "date": "2026-04-12",
+      "timeSlot": "22:00 - 23:30",
+      "patientId": "4",
+      "doctorId": "2",
+      "status": "pending",
+      "createdAt": "2026-04-12T17:02:40.037Z",
+      "id": "HUYLoJmtEMw"
+    },
+    {
+      "date": "2026-04-12",
+      "timeSlot": "14:22 - 15:33",
+      "patientId": "4",
+      "doctorId": "2",
+      "status": "pending",
+      "createdAt": "2026-04-12T17:08:45.869Z",
+      "id": "ITalhhh7l88"
     }
   ],
   "prescriptions": [
@@ -2363,7 +2346,7 @@
       "recipientId": "2",
       "message": "Patient Mohamed Ali has booked an appointment with you on 2026-04-17.",
       "type": "appointment_booked",
-      "appointmentId": "g_5KLzxONs4",
+      "appointmentId": null,
       "status": "unread",
       "createdAt": "2026-04-12T12:56:22.626Z",
       "id": "n066vEw7ca0"
@@ -2372,7 +2355,7 @@
       "recipientId": "111",
       "message": "New booking: Patient Mohamed Ali has booked an appointment with Dr. Ahmed Hassan on 2026-04-17.",
       "type": "appointment_booked",
-      "appointmentId": "g_5KLzxONs4",
+      "appointmentId": null,
       "status": "unread",
       "createdAt": "2026-04-12T12:56:22.974Z",
       "id": "9yeZv2qhZnM"
@@ -2417,7 +2400,7 @@
       "recipientId": "4",
       "message": "Your appointment status with Dr. Ahmed Hassan has been updated to confirmed.",
       "type": "status_changed",
-      "appointmentId": "g_5KLzxONs4",
+      "appointmentId": null,
       "status": "unread",
       "createdAt": "2026-04-12T12:57:21.706Z",
       "id": "HD5WW3OPrWI"
@@ -2426,7 +2409,7 @@
       "recipientId": "111",
       "message": "Appointment Update: Patient Mohamed Ali & Dr. Ahmed Hassan. Updated by: doctor. Status: confirmed.",
       "type": "appointment_updated",
-      "appointmentId": "g_5KLzxONs4",
+      "appointmentId": null,
       "status": "unread",
       "createdAt": "2026-04-12T12:57:21.711Z",
       "id": "0s9rRxJNrwA"
@@ -2435,7 +2418,7 @@
       "recipientId": "4",
       "message": "Your appointment status with Dr. Ahmed Hassan has been updated to completed.",
       "type": "status_changed",
-      "appointmentId": "g_5KLzxONs4",
+      "appointmentId": null,
       "status": "unread",
       "createdAt": "2026-04-12T12:57:28.793Z",
       "id": "vKJ9WN3lG48"
@@ -2444,7 +2427,7 @@
       "recipientId": "111",
       "message": "Appointment Update: Patient Mohamed Ali & Dr. Ahmed Hassan. Updated by: doctor. Status: completed.",
       "type": "appointment_updated",
-      "appointmentId": "g_5KLzxONs4",
+      "appointmentId": null,
       "status": "unread",
       "createdAt": "2026-04-12T12:57:28.798Z",
       "id": "jtz3IxvPQQc"
@@ -2574,6 +2557,40 @@
       "status": "unread",
       "createdAt": "2026-04-12T20:09:47.633Z",
       "id": "fIEVc2oMjCg"
+      "recipientId": "2",
+      "message": "Patient Mohamed Ali has booked an appointment with you on 2026-04-12.",
+      "type": "appointment_booked",
+      "appointmentId": "HUYLoJmtEMw",
+      "status": "unread",
+      "createdAt": "2026-04-12T17:02:40.084Z",
+      "id": "ANtQXbhSvSA"
+    },
+    {
+      "recipientId": "111",
+      "message": "New booking: Patient Mohamed Ali has booked an appointment with Dr. Ahmed Hassan on 2026-04-12.",
+      "type": "appointment_booked",
+      "appointmentId": "HUYLoJmtEMw",
+      "status": "unread",
+      "createdAt": "2026-04-12T17:02:40.093Z",
+      "id": "ZR7IfsLRMcA"
+    },
+    {
+      "recipientId": "2",
+      "message": "Patient Mohamed Ali has booked an appointment with you on 2026-04-12.",
+      "type": "appointment_booked",
+      "appointmentId": "ITalhhh7l88",
+      "status": "unread",
+      "createdAt": "2026-04-12T17:08:45.899Z",
+      "id": "AHYtOGWDH08"
+    },
+    {
+      "recipientId": "111",
+      "message": "New booking: Patient Mohamed Ali has booked an appointment with Dr. Ahmed Hassan on 2026-04-12.",
+      "type": "appointment_booked",
+      "appointmentId": "ITalhhh7l88",
+      "status": "unread",
+      "createdAt": "2026-04-12T17:08:45.908Z",
+      "id": "xalP72cRRi4"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

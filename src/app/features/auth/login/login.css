@@ -74,11 +74,11 @@
 }
 
 .before-img {
-  animation: moveBefore 10s ease-in-out infinite;
+  animation: moveBefore 10s ease-in infinite;
 }
 
 .after-img {
-  animation: moveAfter 10s ease-in-out infinite;
+  animation: moveAfter 10s ease-out infinite;
 }
 
 @keyframes moveBefore {

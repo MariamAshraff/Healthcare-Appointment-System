@@ -259,3 +259,9 @@
   color: #ffb100 !important;
   filter: drop-shadow(0 0 5px rgba(255, 177, 0, 0.4));
 }
+.playwrite-au-qld-pop {
+  font-family: 'Playwrite AU QLD', cursive !important;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
