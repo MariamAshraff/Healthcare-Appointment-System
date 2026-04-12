@@ -131,3 +131,25 @@
   background-color: #fbe9e9 !important;
   color: #ff7675 !important;
 }
+
+.cursor-pointer:hover {
+  transform: scale(1.2);
+  transition: transform 0.2s;
+  color: #ffb800 !important;
+}
+
+.stars-container i:hover~i {
+  color: #dee2e6 !important;
+}
+
+.stars-container i:hover {
+  transform: scale(1.2);
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.bi-star-fill {
+  filter: drop-shadow(0 0 2px rgba(255, 193, 7, 0.4));
+}

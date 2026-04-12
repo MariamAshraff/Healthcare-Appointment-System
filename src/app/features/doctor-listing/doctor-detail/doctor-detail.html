@@ -27,6 +27,32 @@
                 </span>
                 <span class="text-muted small"><i class="bi bi-geo-alt me-1"></i> Downtown Clinic</span>
               </div>
+              <!-- <div class="add-rating-section mt-2">
+                <p class="small text-muted mb-1">Rate this doctor:</p>
+                <div class="stars-container">
+                  @for (star of [1, 2, 3, 4, 5]; track star) {
+                  <i class="bi bi-star cursor-pointer me-1 text-warning" (click)="rateDoctor(star)"
+                    style="cursor: pointer; font-size: 1.2rem;"></i>
+                  }
+                </div>
+              </div> -->
+              <div class="add-rating-section mt-3 p-3 bg-white rounded-3 border border-dashed">
+                <p class="small fw-bold text-dark-blue mb-2">How was your experience?</p>
+                <div class="stars-container d-flex gap-1">
+                  @for (star of [1, 2, 3, 4, 5]; track star) {
+                  <i class="bi cursor-pointer" [class.bi-star-fill]="userRating >= star"
+                    [class.bi-star]="userRating < star" [class.text-warning]="userRating >= star"
+                    [class.text-muted]="userRating < star" (click)="rateDoctor(star)"
+                    style="font-size: 1.5rem; transition: all 0.2s ease;">
+                  </i>
+                  }
+                </div>
+                @if(userRating > 0) {
+                <p class="small text-purple mt-2 mb-0 animate__animated animate__fadeIn">
+                  You rated this doctor {{ userRating }} stars.
+                </p>
+                }
+              </div>
             </div>
             <div class="col-12 col-md-auto text-center text-md-end mt-3 mt-md-0">
               <div class="price-container shadow-sm text-center">
