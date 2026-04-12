@@ -234,3 +234,9 @@
     font-size: 12px !important;
   }
 }
+.playwrite-au-qld-pop {
+  font-family: 'Playwrite AU QLD', cursive !important;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
