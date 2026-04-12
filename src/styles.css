@@ -1,7 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+  font-family: 'Bitter', serif;
+}
+
 .tangerine-bold {
   font-family: 'Tangerine', cursive;
   font-weight: 700;
   font-style: normal;
   font-size: 70px;
+}
+
+.bitter-nav {
+  font-family: 'Bitter', serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
 }
