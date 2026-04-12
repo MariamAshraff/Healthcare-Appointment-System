@@ -1,4 +1,4 @@
-.sidebar {
+/* .sidebar {
   min-height: calc(100vh - 70px);
   background-color: #ffffff;
   z-index: 100;
@@ -112,4 +112,122 @@ h4.text-primary::after {
   font-weight: 700 !important;
   text-transform: uppercase;
   letter-spacing: 1px;
+} */
+.sidebar {
+  min-height: calc(100vh - 70px);
+  background-color: #ffffff;
+  z-index: 100;
+}
+
+.sidebar-logo-text {
+  background: linear-gradient(135deg, #a29bfe, #ff76ac);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 20px;
+  letter-spacing: 1px;
+}
+
+h4.text-primary {
+  background: linear-gradient(135deg, #a29bfe, #ff76ac);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.5px;
+  position: relative;
+  display: inline-block;
+  padding: 15px 20px;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+}
+
+h4.text-primary::after {
+  content: '';
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  width: 30px;
+  height: 3px;
+  background: linear-gradient(135deg, #a29bfe, #ff76ac);
+  border-radius: 2px;
+}
+
+.sidebar-sticky {
+  position: fixed;
+  top: 70px;
+  bottom: 0;
+  width: inherit;
+  min-width: inherit;
+  max-width: inherit;
+  overflow-y: auto;
+  border-right: 1px solid #f0f0f0;
+  background-color: #ffffff;
+  z-index: 1000;
+}
+
+.sidebar .nav-link {
+  color: #2c3e50 !important;
+  font-weight: 500;
+  padding: 12px 20px;
+  margin: 4px 12px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  text-decoration: none !important;
+  font-size: 0.95rem;
+}
+
+.sidebar .nav-link:hover {
+  background-color: #fdeef1 !important;
+  color: #ff76ac !important;
+  transform: translateX(5px);
+}
+
+.sidebar .nav-link.active {
+  background-color: #f0f4ff !important;
+  color: #a29bfe !important;
+  font-weight: 700;
+  border-left: 5px solid #a29bfe;
+}
+
+.bg-light-soft {
+  background-color: #f8faff;
+  min-height: 100vh;
+}
+
+@media (max-width: 991.98px) {
+
+  #patientSidebar,
+  #doctorSidebar,
+  #adminSidebar {
+    background-color: white !important;
+    position: absolute;
+    width: 100%;
+    z-index: 1050;
+    box-shadow: 0 10px 25px rgba(162, 155, 254, 0.1);
+    left: 0;
+  }
+
+  .nav-link {
+    padding: 15px 25px;
+    border-bottom: 1px solid #f8f9fa;
+    margin: 0 !important;
+    border-radius: 0 !important;
+  }
+
+  .sidebar .nav-link.active {
+    border-left: 8px solid #a29bfe;
+  }
+}
+
+.sidebar .nav-link i {
+  margin-right: 10px;
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+
+.sidebar .nav-link:hover i {
+  color: #ff76ac;
+}
+
+.sidebar .nav-link.active i {
+  color: #a29bfe;
 }
