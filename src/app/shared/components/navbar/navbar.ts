@@ -18,6 +18,7 @@ export class Navbar implements OnInit {
   unreadCount = 0;
   isClinicOpen = false;
   role?: string;
+  isLogin:boolean=false
 
   constructor(public authService: AuthService,
     private router: Router,
@@ -28,7 +29,10 @@ export class Navbar implements OnInit {
       if (user && user.id) {
         this.notifService.loadNotifications(user.id);
         this.role = user.role;
+        this.isLogin=true
       }
+      else
+        this.isLogin=false
       this.notifService.notifications$.subscribe(list => {
         console.log('Notifications loaded for this user:', list);
         this.notifications = list;

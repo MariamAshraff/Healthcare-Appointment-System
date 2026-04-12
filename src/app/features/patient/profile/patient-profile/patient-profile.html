@@ -8,7 +8,7 @@
 
           <div class="d-flex align-items-end profile-header-content">
             <div class="avatar-wrapper">
-              <img [src]="patient.avatar || 'assets/images/default-avatar.png'" class="profile-avatar border border-5 border-white shadow" alt="avatar">
+              <img [src]="patient.avatar || 'user.png'" class="profile-avatar border border-5 border-white shadow" alt="avatar">
               <span class="status-indicator" [ngClass]="{'active': patient.isActive, 'inactive': !patient.isActive}"></span>
             </div>
 
