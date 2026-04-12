@@ -1,71 +1,65 @@
 :root {
-  --mediva-purple: #a29bfe;
-  --mediva-pink: #ff76ac;
-  --soft-bg: #f8faff;
+  --mediva-purple: var(--text-primary-soft);
+  --mediva-pink: var(--secondary-accent);
+  --soft-bg: var(--bg-page);
 }
 
-/* الكارد بالكامل */
 .medical-record-card {
   border-radius: 20px !important;
   overflow: hidden;
-  background-color: #ffffff !important;
-  border: 1px solid #f0f0f0 !important;
+  background-color: var(--bg-card) !important;
+  border: 1px solid var(--border-light) !important;
   transition: all 0.3s ease;
 }
 
 .medical-record-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(162, 155, 254, 0.15) !important;
+  box-shadow: 0 12px 25px var(--bg-primary-soft) !important;
 }
 
-/* الهيدر اللي فيه اسم الدكتور */
 .doctor-header {
-  background-color: #ffffff !important;
-  border-bottom: 1px solid #f8f9fa !important;
+  background-color: var(--bg-card) !important;
+  border-bottom: 1px solid var(--border-extra-light) !important;
 }
 
-/* حل مشكلة النص الأسود في الـ Gradient */
 .text-purple-dark,
 .color-primary {
-  background: linear-gradient(135deg, #a29bfe, #ff76ac);
+  background: var(--primary-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
   font-weight: 700;
 }
 
-/* لو المتصفح مش بيدعم الـ clip text بنحط لون احتياطي عشان ميبقاش أسود */
 @supports not (-webkit-background-clip: text) {
 
   .text-purple-dark,
   .color-primary {
-    color: #a29bfe !important;
+    color: var(--text-primary-soft) !important;
   }
 }
 
 .text-primary-soft {
-  color: #a29bfe !important;
+  color: var(--text-primary-soft) !important;
 }
 
-/* البوكس الوردي اللي تحت */
 .bg-light-soft {
-  background-color: #fdf2f4 !important;
-  border: 1px solid #fdeef1 !important;
+  background-color: var(--bg-hover) !important;
+  border: 1px solid var(--border-hover) !important;
 }
 
 .bg-purple-light {
-  background-color: rgba(162, 155, 254, 0.1) !important;
-  color: #a29bfe !important;
+  background-color: var(--bg-primary-soft) !important;
+  color: var(--text-primary-soft) !important;
 }
 
 .record-date {
-  color: #7d8da1 !important;
+  color: var(--text-small) !important;
 }
 
-/* زرار عرض البروفايل */
 .btn-view-profile {
-  background-color: #f8faff !important;
-  color: #a29bfe !important;
+  background-color: var(--bg-page) !important;
+  color: var(--text-primary-soft) !important;
   border: none !important;
   border-radius: 50%;
   width: 35px;
@@ -74,6 +68,6 @@
 }
 
 .btn-view-profile:hover {
-  background-color: #a29bfe !important;
-  color: white !important;
+  background-color: var(--vibrant-blue) !important;
+  color: var(--text-on-btn) !important;
 }
