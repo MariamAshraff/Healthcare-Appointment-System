@@ -1,59 +1,59 @@
 .patient-card {
   transition: transform 0.2s ease, box-shadow 0.2s ease !important;
   border-radius: 20px !important;
-  background-color: #ffffff !important;
-  border: 1px solid #f1f5f9 !important;
+  background-color: var(--bg-card) !important;
+  border: 1px solid var(--patient-card-border) !important;
 }
 
 .patient-card:hover {
   transform: translateY(-5px) !important;
-  box-shadow: 0 10px 25px rgba(162, 155, 254, 0.2) !important;
-  background-color: #f3f0ff !important;
+  box-shadow: 0 10px 25px var(--patient-card-shadow) !important;
+  background-color: var(--patient-card-hover-bg) !important;
 }
 
 .avatar-container img {
   width: 70px !important;
   height: 70px !important;
   object-fit: cover !important;
-  border: 3px solid white !important;
+  border: 3px solid var(--bg-card) !important;
   border-radius: 15px !important;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 4px 10px var(--avatar-shadow) !important;
 }
 
 .bg-success-light {
-  background-color: rgba(34, 197, 94, 0.1) !important;
-  color: #16a34a !important;
+  background-color: var(--bg-success-soft) !important;
+  color: var(--text-success-soft) !important;
   font-weight: 600 !important;
 }
 
 .bg-danger-light {
-  background-color: rgba(255, 118, 172, 0.1) !important;
-  color: #ff76ac !important;
+  background-color: var(--bg-danger-soft) !important;
+  color: var(--secondary-accent) !important;
   font-weight: 600 !important;
 }
 
 .patient-details i {
   font-size: 0.9rem !important;
-  color: #a29bfe !important;
+  color: var(--text-primary-soft) !important;
 }
 
 .text-primary {
-  color: #a29bfe !important;
+  color: var(--text-primary-soft) !important;
   font-weight: 700 !important;
 }
 
 .btn-outline-primary {
-  color: #a29bfe !important;
-  border: 2px solid #a29bfe !important;
+  color: var(--text-primary-soft) !important;
+  border: 2px solid var(--text-primary-soft) !important;
   border-radius: 12px !important;
   font-weight: 600 !important;
   transition: all 0.3s ease !important;
 }
 
 .btn-outline-primary:hover {
-  background: linear-gradient(135deg, #a29bfe 0%, #ff76ac 100%) !important;
-  color: white !important;
+  background: linear-gradient(135deg, var(--text-primary-soft) 0%, var(--secondary-accent) 100%) !important;
+  color: var(--text-on-btn) !important;
   border-color: transparent !important;
   transform: scale(1.05) !important;
-  box-shadow: 0 5px 15px rgba(162, 155, 254, 0.4) !important;
+  box-shadow: 0 5px 15px var(--patient-btn-shadow) !important;
 }

@@ -10,38 +10,38 @@
 }
 
 .appointment-row:hover {
-  background-color: #fdf2f4 !important;
+  background-color: var(--bg-hover) !important;
   transform: translateX(4px);
 }
 
 .doctor-name {
-  color: #8e85eb !important;
+  color: var(--text-primary-soft) !important;
   font-weight: 600;
 }
 
 .doctor-name:hover {
   text-decoration: underline;
-  color: #a29bfe !important;
+  color: var(--text-primary-soft) !important;
 }
 
 .bg-success-light {
-  background-color: #e6f7ef !important;
-  color: #1cc88a !important;
+  background-color: var(--status-success-bg) !important;
+  color: var(--status-success-text) !important;
 }
 
 .bg-primary-light {
-  background-color: #f0f4ff !important;
-  color: #a29bfe !important;
+  background-color: var(--bg-nav-active) !important;
+  color: var(--text-primary-soft) !important;
 }
 
 .bg-warning-light {
-  background-color: #fff9db !important;
-  color: #fab005 !important;
+  background-color: var(--status-warning-bg) !important;
+  color: var(--status-warning-text) !important;
 }
 
 .bg-danger-light {
-  background-color: #fbe9e9 !important;
-  color: #ff7675 !important;
+  background-color: var(--status-danger-bg) !important;
+  color: var(--status-danger-text) !important;
 }
 
 .col-datetime {
@@ -54,7 +54,7 @@
 
 .clickable {
   cursor: pointer;
-  color: #a29bfe;
+  color: var(--text-primary-soft);
 }
 
 .clickable-profile {
@@ -67,8 +67,8 @@
 }
 
 .btn-modern-view {
-  background: linear-gradient(135deg, #a29bfe, #ff76ac);
-  color: white !important;
+  background: var(--primary-gradient);
+  color: var(--text-on-btn) !important;
   border-radius: 10px;
   padding: 10px 24px;
   font-weight: 600;
@@ -78,11 +78,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(162, 155, 254, 0.2);
+  box-shadow: 0 4px 12px var(--sidebar-shadow);
 }
 
 .btn-modern-view:hover {
   opacity: 0.9;
   transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(162, 155, 254, 0.3);
+  box-shadow: 0 6px 15px var(--sidebar-shadow);
 }

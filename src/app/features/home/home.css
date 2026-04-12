@@ -1,24 +1,24 @@
 .hero-container {
-  background: linear-gradient(135deg, #60a2fe 10%, #fccbdc 50%, #fef3f6a6 100%);
+  background: var(--hero-grad);
   min-height: 80vh;
   overflow: hidden;
 }
 
 .container-status {
-  background: #f7f7f78f;
+  background: var(--glass-bg);
   min-height: 80vh;
   overflow: hidden;
 }
 
 .btn-white {
-  background: white;
-  color: #1a1a1a;
+  background: var(--bg-card);
+  color: var(--deactive-title);
   border: none;
 }
 
 .btn-outline-white {
   border: 1px solid rgba(255, 255, 255, 0.5);
-  color: white;
+  color: var(--text-on-btn);
   backdrop-filter: blur(5px);
 }
 
@@ -26,7 +26,6 @@
   scrollbar-width: none;
   cursor: grab;
   display: flex;
-
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
@@ -42,7 +41,7 @@
   border-radius: 30px;
   overflow: hidden;
   position: relative;
-  border: 3px solid white;
+  border: 3px solid var(--bg-card);
 }
 
 .video-card video {
@@ -62,11 +61,11 @@
   bottom: 20px;
   left: 20px;
   right: 20px;
-  background: rgba(255, 255, 255, 0.4);
+  background: var(--glass-bg);
   backdrop-filter: blur(5px);
   padding: 15px;
   border-radius: 20px;
-  color: white;
+  color: var(--text-on-btn);
   border: 1px solid rgba(255, 255, 255, 0.2);
   width: 30%;
 }
@@ -74,7 +73,7 @@
 .progress-circle {
   width: 50px;
   height: 50px;
-  border: 3px solid white;
+  border: 3px solid var(--bg-card);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -85,25 +84,25 @@
 
 .stats-section {
   font-family: 'Segoe UI', Tahoma, sans-serif;
-  background: #e3e4ff;
+  background: var(--stats-bg);
 }
 
 .stat-card {
-  background: #ffffff;
-  border: 1px solid #f3f3f3 !important;
+  background: var(--bg-card);
+  border: 1px solid var(--border-extra-light) !important;
   transition: all 0.3s ease-in-out;
   min-height: 220px;
 }
 
 .stat-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 10px 30px var(--card-shadow) !important;
 }
 
 .icon-box {
   width: 42px;
   height: 42px;
-  background-color: #f8f9ff;
+  background-color: var(--bg-header-1);
   font-size: 1.25rem;
   position: absolute;
   top: 24px;
@@ -111,17 +110,17 @@
 }
 
 .text-purple {
-  color: #6f42c1;
+  color: var(--primary-accent);
 }
 
 .btn-dark {
-  background-color: #0c0c0c;
+  background-color: var(--deactive-title);
   padding: 10px 25px;
   border: none;
 }
 
 .btn-dark:hover {
-  background-color: #222;
+  background-color: var(--text-title);
 }
 
 .display-5 {
@@ -129,7 +128,7 @@
 }
 
 .info-section {
-  background-color: #ffffff;
+  background-color: var(--bg-card);
 }
 
 .info-section h2 {
@@ -149,7 +148,7 @@
 }
 
 .info-section .bi-check-circle-fill {
-  color: #72a6f7 !important;
+  color: var(--text-primary-soft) !important;
   font-size: 1.1rem;
 }
 
@@ -159,14 +158,14 @@
 }
 
 .btn-dark {
-  background-color: #0c0c0c;
+  background-color: var(--deactive-title);
   border: none;
   transition: all 0.3s;
 }
 
 .btn-dark:hover {
-  background-color: #222;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background-color: var(--text-title);
+  box-shadow: 0 5px 15px var(--card-shadow);
 }
 
 .heart-beat {
@@ -175,6 +174,7 @@
 }
 
 @keyframes beat {
+
   0%,
   100% {
     transform: scale(1);
@@ -206,14 +206,14 @@
   height: 180px;
   border-radius: 40px !important;
   overflow: hidden;
-  background-color: #f0f0f0;
-  border: 4px solid #fff;
+  background-color: var(--border-light);
+  border: 4px solid var(--bg-card);
   transition: all 0.3s ease;
 }
 
 /* .doctor-image-wrapper:hover {
   transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 15px 30px var(--card-shadow) !important;
   z-index: 10;
 } */
 
@@ -225,14 +225,14 @@
 }
 
 .btn-outline-dark {
-  border: 1.5px solid #1a1a1a;
-  color: #1a1a1a;
+  border: 1.5px solid var(--deactive-title);
+  color: var(--deactive-title);
   transition: all 0.3s;
 }
 
 .btn-outline-dark:hover {
-  background-color: #1a1a1a;
-  color: #fff;
+  background-color: var(--deactive-title);
+  color: var(--text-on-btn);
 }
 
 @media (max-width: 768px) {

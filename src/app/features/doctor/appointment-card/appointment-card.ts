@@ -17,7 +17,8 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class AppointmentCard implements OnInit {
 
-  CanAddPrescription: boolean = false
+  CanAddPrescription: boolean = false;
+  @Output() delete = new EventEmitter<string>();
 
   @Input() appointment!: IAppointment;
   @Output() OnDelete = new EventEmitter()
@@ -60,17 +61,17 @@ export class AppointmentCard implements OnInit {
   AddPrescription(id?: string) {
     this.route.navigate(['/doctor/prescriptionForm', id]);
   }
-  confirmDelete() {
-    if (!this.appointment.id || !this.appointment.doctorId) return;
+  // confirmDelete() {
+  //   if (!this.appointment.id || !this.appointment.doctorId) return;
 
-    this.appointmentService.delete(this.appointment.id).subscribe({
-      next: () => {
-        this.Toast.error('Delete Successfully');
-        this.OnDelete.emit();
-      },
-      error: () => this.Toast.error('Failed to delete appointment')
-    });
-  }
+  //   this.appointmentService.delete(this.appointment.id).subscribe({
+  //     next: () => {
+  //       this.Toast.error('Delete Successfully');
+  //       this.OnDelete.emit();
+  //     },
+  //     error: () => this.Toast.error('Failed to delete appointment')
+  //   });
+  // }
 
   updateStatus(newStatus: 'pending' | 'confirmed' | 'completed' | 'cancelled') {
     if (!this.appointment.id) return;
@@ -88,4 +89,14 @@ export class AppointmentCard implements OnInit {
       }
     });
   }
+
+  selectedAppointmentId?: string = '';
+
+  openDeleteModal(appointmentId: string | undefined) {
+    if (appointmentId) {
+      this.delete.emit(appointmentId);
+    }
+
+  }
+
 }

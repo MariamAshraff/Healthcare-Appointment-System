@@ -1,58 +1,58 @@
 .login-container {
   min-height: 100vh;
-  background-color: #f0f4f8;
+  background-color: var(--bg-page);
   position: relative;
   overflow: hidden;
 }
 
 .text-primary-blue {
-  color: #004691;
+  color: var(--brand-blue);
 }
 
 .custom-input {
-  border: 2px solid #e9ecef;
+  border: 2px solid var(--input-border);
   border-radius: 0 10px 10px 0;
   padding: 10px;
   transition: all 0.3s;
+  background-color: var(--bg-card);
+  color: var(--text-title);
 }
 
 .custom-input-icon {
-  border: 2px solid #e9ecef;
+  border: 2px solid var(--input-border);
   border-radius: 10px 0 0 10px;
-  color: #004691;
+  color: var(--brand-blue);
+  background-color: var(--bg-card);
 }
 
 .custom-input:focus,
-.custom-input:focus + .custom-input-icon {
-  border-color: #004691;
+.custom-input:focus+.custom-input-icon {
+  border-color: var(--brand-blue);
   box-shadow: none;
-  background-color: #fff !important;
+  background-color: var(--bg-card) !important;
 }
 
 .btn-blue {
-  background-color: #004691;
+  background-color: var(--brand-blue);
   color: white;
   border: none;
   border-radius: 10px;
-  transition:
-    transform 0.2s,
-    background-color 0.2s;
+  transition: transform 0.2s, background-color 0.2s;
 }
 
 .btn-blue:hover {
-  background-color: #0067d6;
+  background-color: var(--brand-blue-hover);
   transform: translateY(-1px);
   color: white;
 }
 
 .btn-blue:disabled {
-  background-color: #b1d6ff;
+  background-color: var(--brand-blue-disabled);
 }
 
-/* اللينك */
 .hover-link:hover {
   text-decoration: underline !important;
-  color: #0056b3 !important;
+  color: var(--brand-blue-hover) !important;
 }
 
 .animation-wrapper {
@@ -86,14 +86,17 @@
     left: -200px;
     opacity: 1;
   }
+
   45% {
     opacity: 1;
   }
+
   50% {
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: 0;
   }
+
   100% {
     left: 50%;
     transform: translate(-50%, -50%);
@@ -107,14 +110,17 @@
     transform: translate(-50%, -50%);
     opacity: 0;
   }
+
   50% {
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: 0;
   }
+
   55% {
     opacity: 1;
   }
+
   100% {
     left: calc(100% + 200px);
     opacity: 1;
@@ -122,8 +128,9 @@
 }
 
 .text-blue {
-  color: #004691;
+  color: var(--brand-blue);
 }
+
 .text-pink {
-  color: #ff1493;
+  color: var(--brand-pink);
 }

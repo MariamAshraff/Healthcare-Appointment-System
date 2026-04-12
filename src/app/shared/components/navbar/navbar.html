@@ -83,7 +83,18 @@
           </li>
         </ul>
       </div>
-      <button class="btn btn-icon-round"><i class="bi bi-chat-dots"></i></button>
+      <div class="header-icons d-flex gap-2 align-items-center">
+        <button class="btn btn-icon-round theme-toggle" (click)="toggleTheme()"
+          [title]="isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'">
+          <i class="bi"
+            [ngClass]="isDarkMode ? 'bi-sun-fill text-warning' : 'bi-moon-stars-fill text-primary-soft'"></i>
+        </button>
+
+        <div class="dropdown">
+        </div>
+
+        <button class="btn btn-icon-round"><i class="bi bi-chat-dots"></i></button>
+      </div>
     </div>
 
     @if(authService.isAuthenticated()){
@@ -126,7 +137,8 @@
     </div>
     }@else {
     <div class="d-flex align-items-center gap-2 ms-2 ps-3 border-start">
-      <a routerLink="/login" class="btn btn-login-outline d-flex align-items-center gap-2 px-4 py-2 rounded-pill shadow-sm">
+      <a routerLink="/login"
+        class="btn btn-login-outline d-flex align-items-center gap-2 px-4 py-2 rounded-pill shadow-sm">
         <i class="bi bi-box-arrow-in-right"></i>
         <span class="fw-bold small">LogIn</span>
       </a>

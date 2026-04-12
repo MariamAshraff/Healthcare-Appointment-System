@@ -5,6 +5,7 @@ import { IDoctor } from '../models/doctor';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { environment } from '../../../environments/environment.development';
+import { NotificationService } from './notification-service';
 
 @Injectable({
   providedIn: 'root',
@@ -13,7 +14,9 @@ export class AuthService {
   private userSubject = new BehaviorSubject<IUser | IDoctor | null>(null);
   user$ = this.userSubject.asObservable();
 
-  constructor(private http: HttpClient, private router: Router) {
+  constructor(private http: HttpClient, private router: Router,
+    private notifService: NotificationService
+  ) {
     this.loadUser();
   }
 
@@ -58,5 +61,25 @@ export class AuthService {
     localStorage.clear();
     this.userSubject.next(null);
     this.router.navigate(['/login']);
+  }
+
+  isDarkMode: boolean = false;
+
+  ngOnInit(): void {
+
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    this.isDarkMode = savedTheme === 'dark';
+    this.applyTheme(savedTheme);
+  }
+
+  toggleTheme() {
+    this.isDarkMode = !this.isDarkMode;
+    const newTheme = this.isDarkMode ? 'dark' : 'light';
+    localStorage.setItem('theme', newTheme);
+    this.applyTheme(newTheme);
+  }
+
+  private applyTheme(theme: string) {
+    document.documentElement.setAttribute('data-theme', theme);
   }
 }

@@ -1,9 +1,10 @@
 .custom-gradient {
-  background: linear-gradient(135deg, #4361ee 30%, #ffc2d7 30%, #fef3f6c1 100%) !important;
-  color: white;
+  background: linear-gradient(135deg, var(--vibrant-blue) 30%, var(--border-hover) 30%, var(--bg-hover) 100%) !important;
+  color: var(--text-on-btn);
 }
+
 .blue-text {
-  color: #4361ee;
+  color: var(--vibrant-blue);
 }
 
 .header-icon-circle {
@@ -22,25 +23,25 @@
 .section-number {
   width: 35px;
   height: 35px;
-  background-color: #4361ee;
-  color: white !important;
+  background-color: var(--vibrant-blue);
+  color: var(--text-on-btn) !important;
   border-radius: 10px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
   margin-right: 15px;
-  box-shadow: 0 3px 6px rgba(67, 97, 238, 0.2);
+  box-shadow: 0 3px 6px var(--card-shadow);
 }
 
 .section-title {
-  color: #2b2d42;
+  color: var(--text-title);
   font-weight: 700;
 }
 
 .med-card {
-  background-color: #f8f9fa;
-  border: 1px solid #e9ecef !important;
+  background-color: var(--input-bg);
+  border: 1px solid var(--border-light) !important;
   border-radius: 15px;
   padding: 20px;
   margin-bottom: 20px;
@@ -48,14 +49,14 @@
 }
 
 .med-card:hover {
-  border-color: #4361ee !important;
-  background-color: #ffffff;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  border-color: var(--vibrant-blue) !important;
+  background-color: var(--bg-card);
+  box-shadow: var(--card-shadow);
 }
 
 .btn-submit-custom {
-  background-color: #4361ee !important;
-  color: white !important;
+  background-color: var(--vibrant-blue) !important;
+  color: var(--text-on-btn) !important;
   border: none !important;
   padding: 15px;
   font-weight: 600;
@@ -65,18 +66,18 @@
 }
 
 .btn-submit-custom:hover:not(:disabled) {
-  background-color: #3a0ca3 !important;
+  background-color: var(--vibrant-blue-hover) !important;
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(67, 97, 238, 0.4);
+  box-shadow: 0 5px 15px var(--card-shadow);
 }
 
 .btn-submit-custom:disabled {
-  background-color: #bdc3c7 !important;
+  background-color: var(--brand-blue-disabled) !important;
   cursor: not-allowed;
 }
 
 .custom-error-msg {
-  color: #e74c3c;
+  color: var(--text-danger);
   font-size: 0.85rem;
   margin-top: 5px;
   font-weight: 500;
@@ -85,29 +86,32 @@
 }
 
 @keyframes shake {
+
   0%,
   100% {
     transform: translateX(0);
   }
+
   25% {
     transform: translateX(-5px);
   }
+
   75% {
     transform: translateX(5px);
   }
 }
 
 .form-control.is-invalid {
-  border-color: #e74c3c !important;
-  background-color: #fffafa;
+  border-color: var(--text-danger) !important;
+  background-color: var(--error-bg-soft);
 }
 
-.form-floating > .form-control:focus ~ label,
-.form-floating > .form-control:not(:placeholder-shown) ~ label {
-  color: #4361ee;
+.form-floating>.form-control:focus~label,
+.form-floating>.form-control:not(:placeholder-shown)~label {
+  color: var(--vibrant-blue);
 }
 
 .form-control:focus {
-  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.15);
-  border-color: #4361ee;
+  box-shadow: 0 0 0 3px var(--sidebar-shadow);
+  border-color: var(--vibrant-blue);
 }

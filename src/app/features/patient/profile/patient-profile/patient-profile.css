@@ -1,18 +1,3 @@
-:root {
-  --primary-color: #6366f1;
-  --primary-gradient: linear-gradient(135deg, #818cf8 0%, #6366f1 100%);
-  --medical-blue: #0ea5e9;
-  --bg-color: #f4f7fe;
-  --text-dark: #1e293b;
-  --text-muted: #64748b;
-
-  --status-active: #22c55e;
-  --status-inactive: #ef4444;
-  --patient-color: #06b6d4;
-  --doctor-color: #8b5cf6;
-  --admin-color: #f97316;
-}
-
 .profile-container {
   background-color: var(--bg-color);
   min-height: 100vh;

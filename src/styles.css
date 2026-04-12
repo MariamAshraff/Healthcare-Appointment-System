@@ -1,4 +1,226 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --bg-page: #f8faff;
+  --bg-card: #ffffff;
+  --bg-header-1: #f8faff;
+  --bg-header-2: #fdeef1;
+  --bg-hover: #fdf2f4;
+  --bg-nav-active: #f0f4ff;
+  --soft-bg: #f8faff;
+  --input-bg: #fcfcfc;
+  --stats-section-bg: #e3e4ff;
+  --error-bg-soft: #fffafa;
+  --morning-bg: #e3f2fd;
+  --evening-bg: #f3e8ff;
+  --btn-delete-bg: #fff1f2;
+
+  --text-title: #2c3e50;
+  --text-muted: #a29bfe;
+  --text-small: #6c757d;
+  --text-primary-soft: #4077dd;
+  --text-danger: #dc3545;
+  --text-on-btn: #ffffff;
+  --deactive-title: #2b2d42;
+  --notif-time: #94a3b8;
+  --morning-text: #0ea5e9;
+  --evening-text: #a855f7;
+
+  --primary-accent: #a29bfe;
+  --secondary-accent: #ff76ac;
+  --doctor-name-color: #8e85eb;
+
+  --brand-blue: #004691;
+  --brand-blue-hover: #0067d6;
+  --brand-blue-disabled: #b1d6ff;
+  --brand-pink: #ff1493;
+
+  --vibrant-blue: #4361ee;
+  --vibrant-blue-hover: #3a0ca3;
+
+  --mediva-purple: var(--text-primary-soft);
+  --mediva-pink: var(--secondary-accent);
+
+  --primary-gradient: linear-gradient(135deg, #4077dd, #ff76ac);
+  --hero-grad: linear-gradient(135deg, #60a2fe 10%, #fccbdc 50%, #fef3f6a6 100%);
+
+  --border-light: #f0f0f0;
+  --border-extra-light: #f8f9fa;
+  --border-hover: #f9c5d1;
+  --deactive-border: #f0f0f0;
+  --input-border: #e9ecef;
+
+  --card-shadow: rgba(0, 0, 0, 0.02);
+  --dropdown-shadow: rgba(0, 0, 0, 0.1);
+  --sidebar-shadow: rgba(162, 155, 254, 0.1);
+
+  --notif-dot-shadow: rgba(255, 118, 172, 0.5);
+  --bg-primary-soft: rgba(162, 155, 254, 0.1);
+  --glass-bg: rgba(255, 255, 255, 0.4);
+  --notif-unread: rgba(162, 155, 254, 0.08);
+
+  --status-primary-bg: #eef2ff;
+  --status-primary-text: #4d67fd;
+  --status-success-bg: #e6f7ef;
+  --status-success-text: #1cc88a;
+  --status-warning-bg: #fff9db;
+  --status-warning-text: #fab005;
+  --status-danger-bg: #fbe9e9;
+  --status-danger-text: #ff7675;
+
+  --bg-success-soft: rgba(34, 197, 94, 0.1);
+  --text-success-soft: #16a34a;
+  --medical-blue: #0ea5e9;
+  --bg-color: #f4f7fe;
+  --text-dark: #1e293b;
+
+  --status-active: #22c55e;
+  --status-inactive: #ef4444;
+  --patient-color: #06b6d4;
+  --doctor-color: #8b5cf6;
+  --admin-color: #f97316;
+
+  --header-bg: #ffffff;
+  --login-btn-color: #5b94ff;
+  --nav-link-color: #64748b;
+
+  --header-border: #f1f5f9;
+  --header-shadow: rgba(162, 155, 254, 0.05);
+
+  --btn-ai-gradient: linear-gradient(135deg, #a29bfe 0%, #ff76ac 100%);
+  --btn-ai-shadow: rgba(162, 155, 254, 0.3);
+  --btn-ai-shadow-hover: rgba(162, 155, 254, 0.4);
+
+  --profile-border: #f3f0ff;
+
+  --menu-title-color: #94a3b8;
+
+  --nav-active-bg: rgba(254, 155, 233, 0.1);
+  --nav-active-text: #5b94ff;
+
+  --submenu-border: rgba(162, 155, 254, 0.3);
+
+  --btn-dark-bg: #1e293b;
+
+  --notif-badge-shadow: rgba(255, 118, 172, 0.3);
+  --dropdown-shadow-strong: rgba(0, 0, 0, 0.1);
+
+  --notif-unread-soft: rgba(162, 155, 254, 0.05);
+  --bg-primary-soft-strong: rgba(162, 155, 254, 0.15);
+
+  --btn-login-shadow: rgba(91, 148, 255, 0.2);
+}
+
+[data-theme='dark'] {
+  --bg-page: #121212;
+  --bg-card: #1e1e1e;
+  --bg-header-1: #252525;
+  --bg-header-2: #2d2325;
+  --bg-hover: #322628;
+  --bg-nav-active: #283593;
+
+  --text-title: #ffffff;
+  --text-muted: #b2adff;
+  --text-small: #a0a0a0;
+
+  --border-light: #333333;
+  --border-extra-light: #2a2a2a;
+  --border-hover: #444444;
+
+  --card-shadow: rgba(0, 0, 0, 0.5);
+  --dropdown-shadow: rgba(0, 0, 0, 0.4);
+  --sidebar-shadow: rgba(0, 0, 0, 0.6);
+
+  --brand-blue: #60a5fa;
+  --brand-blue-hover: #93c5fd;
+  --brand-blue-disabled: #1e3a8a;
+  --brand-pink: #f472b6;
+
+  --bg-color: #0f172a;
+  --text-dark: #f1f5f9;
+  --text-muted: #94a3b8;
+
+  --primary-color: #818cf8;
+  --medical-blue: #38bdf8;
+
+  --status-active: #4ade80;
+  --status-inactive: #f87171;
+
+  --patient-color: #22d3ee;
+  --doctor-color: #a78bfa;
+  --admin-color: #fb923c;
+
+  --input-border: #444444;
+  --input-bg: #252525;
+
+  --notif-unread: rgba(162, 155, 254, 0.15);
+  --notif-time: #64748b;
+  --notif-dot-shadow: rgba(255, 118, 172, 0.8);
+
+  --status-primary-bg: #283593;
+  --status-primary-text: #8fb1ff;
+  --status-success-bg: #1b5e20;
+  --status-success-text: #81c784;
+  --status-warning-bg: #f57f17;
+  --status-warning-text: #ffd54f;
+  --status-danger-bg: #c62828;
+  --status-danger-text: #ef9a9a;
+
+  --bg-success-soft: rgba(34, 197, 94, 0.2);
+  --text-success-soft: #4ade80;
+  --bg-primary-soft: rgba(64, 119, 221, 0.2);
+  --text-primary-soft: #60a5fa;
+
+  --text-danger: #ff6b6b;
+  --btn-delete-bg: #3d1a1a;
+
+  --vibrant-blue: #758bff;
+  --vibrant-blue-hover: #a5b4ff;
+
+  --error-bg-soft: #2c1a1a;
+  --morning-bg: #0c2a42;
+  --morning-text: #38bdf8;
+  --evening-bg: #2d1b4d;
+  --evening-text: #c084fc;
+
+  --hero-grad: linear-gradient(135deg, #1e293b 10%, #4c1d95 50%, #121212 100%);
+  --stats-bg: #1a1a1a;
+  --glass-bg: rgba(30, 30, 30, 0.6);
+
+  --primary-gradient: linear-gradient(135deg, #8176f2, #e85a95);
+  --deactive-title: #ffffff;
+  --deactive-border: #333333;
+
+  --header-bg: #1e1e1e;
+  --login-btn-color: #8fb1ff;
+  --nav-link-color: #a0a0a0;
+
+  --header-border: #2a2a2a;
+  --header-shadow: rgba(0, 0, 0, 0.5);
+
+  --btn-ai-gradient: linear-gradient(135deg, #8176f2 0%, #e85a95 100%);
+  --btn-ai-shadow: rgba(129, 118, 242, 0.4);
+  --btn-ai-shadow-hover: rgba(129, 118, 242, 0.6);
+
+  --profile-border: #2a2a2a;
+
+  --menu-title-color: #64748b;
+
+  --nav-active-bg: rgba(255, 118, 172, 0.15);
+  --nav-active-text: #60a5fa;
+
+  --submenu-border: rgba(129, 118, 242, 0.4);
+
+  --btn-dark-bg: #0f172a;
+
+  --notif-badge-shadow: rgba(255, 118, 172, 0.5);
+  --dropdown-shadow-strong: rgba(0, 0, 0, 0.6);
+
+  --notif-unread-soft: rgba(129, 118, 242, 0.1);
+  --bg-primary-soft-strong: rgba(129, 118, 242, 0.25);
+
+  --btn-login-shadow: rgba(96, 165, 250, 0.3);
+}
+
+
 
 * {
   font-family: 'Bitter', serif;

@@ -1,52 +1,56 @@
 .register-container {
   min-height: 100vh;
-  background-color: #f0f4f8;
+  background-color: var(--bg-page);
   display: flex;
 }
 
 .register-card {
   width: 420px;
-  background: #ffffff;
+  background: var(--bg-card);
   border-radius: 20px;
-  border-top: 5px solid #004691;
+  border-top: 5px solid var(--brand-blue);
+  box-shadow: 0 10px 30px var(--card-shadow);
 }
 
 .text-pink {
-  color: #004691;
+  color: var(--brand-blue);
 }
+
 .text-blue {
-  color: #004691;
+  color: var(--brand-blue);
 }
+
 .custom-input {
-  border: 2px solid #e9ecef;
+  border: 2px solid var(--input-border);
   border-radius: 10px;
   padding: 10px;
   transition: all 0.3s;
+  background-color: var(--bg-card);
+  color: var(--text-title);
 }
 
 .custom-input:focus {
-  border-color: #004691;
+  border-color: var(--brand-blue);
   box-shadow: none;
+  background-color: var(--bg-card);
 }
 
 .btn-pink {
-  background-color: #004691;
-  color: white;
+  background-color: var(--brand-blue);
+  color: var(--text-on-btn);
   border: none;
   border-radius: 10px;
-  transition:
-    transform 0.2s,
-    background-color 0.2s;
+  transition: transform 0.2s, background-color 0.2s;
 }
 
 .btn-pink:hover {
-  background-color: #0067d6;
+  background-color: var(--brand-blue-hover);
   transform: translateY(-1px);
-  color: white;
+  color: var(--text-on-btn);
 }
 
 .custom-error-msg {
-  color: #dc3545;
+  color: var(--text-danger);
   font-size: 0.75rem;
   margin-top: 4px;
   display: block;
@@ -55,5 +59,5 @@
 
 a.text-blue:hover {
   text-decoration: underline !important;
-  color: #0056b3 !important;
+  color: var(--brand-blue-hover) !important;
 }

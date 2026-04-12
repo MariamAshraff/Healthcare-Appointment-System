@@ -93,6 +93,20 @@
           "endTime": "10:20",
           "session": "Morning",
           "isBooked": false
+        },
+        {
+          "day": "Monday",
+          "startTime": "09:00",
+          "endTime": "10:00",
+          "session": "Morning",
+          "isBooked": false
+        },
+        {
+          "day": "Monday",
+          "startTime": "10:00",
+          "endTime": "11:00",
+          "session": "Evening",
+          "isBooked": false
         }
       ],
       "rating": 4.8,
@@ -442,7 +456,7 @@
           "day": "Monday",
           "startTime": "11:00",
           "endTime": "12:00",
-          "isBooked": false
+          "isBooked": true
         },
         {
           "day": "Wednesday",
@@ -1809,7 +1823,7 @@
       "timeSlot": "10:00 - 10:30",
       "patientId": "4",
       "doctorId": "2",
-      "status": "confirmed",
+      "status": "cancelled",
       "createdAt": "2026-04-11T09:19:28.804Z",
       "id": "yETkR00ycsw"
     },
@@ -1911,6 +1925,15 @@
       "status": "pending",
       "createdAt": "2026-04-12T13:00:32.762Z",
       "id": "sdlj_L-aYCc"
+    },
+    {
+      "date": "2026-04-13",
+      "timeSlot": "11:00 - 12:00",
+      "patientId": "53",
+      "doctorId": "14",
+      "status": "pending",
+      "createdAt": "2026-04-12T20:09:47.595Z",
+      "id": "lva4JlIQRPA"
     }
   ],
   "prescriptions": [
@@ -2515,6 +2538,42 @@
       "status": "unread",
       "createdAt": "2026-04-12T13:00:46.454Z",
       "id": "1Ssr-Kj2zcA"
+    },
+    {
+      "recipientId": "4",
+      "message": "Your appointment status with Dr. Ahmed Hassan has been updated to cancelled.",
+      "type": "status_changed",
+      "appointmentId": "yETkR00ycsw",
+      "status": "unread",
+      "createdAt": "2026-04-12T18:40:05.195Z",
+      "id": "lm4WSUb3c6E"
+    },
+    {
+      "recipientId": "111",
+      "message": "Appointment Update: Patient Mohamed Ali & Dr. Ahmed Hassan. Updated by: doctor. Status: cancelled.",
+      "type": "appointment_updated",
+      "appointmentId": "yETkR00ycsw",
+      "status": "unread",
+      "createdAt": "2026-04-12T18:40:05.225Z",
+      "id": "2TDg10fh42E"
+    },
+    {
+      "recipientId": "14",
+      "message": "Patient Mostafa Amgad has booked an appointment with you on 2026-04-13.",
+      "type": "appointment_booked",
+      "appointmentId": "lva4JlIQRPA",
+      "status": "unread",
+      "createdAt": "2026-04-12T20:09:47.628Z",
+      "id": "kiRxgNDA4WM"
+    },
+    {
+      "recipientId": "111",
+      "message": "New booking: Patient Mostafa Amgad has booked an appointment with Dr. Yasmin Nour on 2026-04-13.",
+      "type": "appointment_booked",
+      "appointmentId": "lva4JlIQRPA",
+      "status": "unread",
+      "createdAt": "2026-04-12T20:09:47.633Z",
+      "id": "fIEVc2oMjCg"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
