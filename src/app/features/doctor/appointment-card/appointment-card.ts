@@ -61,17 +61,6 @@ export class AppointmentCard implements OnInit {
   AddPrescription(id?: string) {
     this.route.navigate(['/doctor/prescriptionForm', id]);
   }
-  // confirmDelete() {
-  //   if (!this.appointment.id || !this.appointment.doctorId) return;
-
-  //   this.appointmentService.delete(this.appointment.id).subscribe({
-  //     next: () => {
-  //       this.Toast.error('Delete Successfully');
-  //       this.OnDelete.emit();
-  //     },
-  //     error: () => this.Toast.error('Failed to delete appointment')
-  //   });
-  // }
 
   updateStatus(newStatus: 'pending' | 'confirmed' | 'completed' | 'cancelled') {
     if (!this.appointment.id) return;
