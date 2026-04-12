@@ -1,6 +1,6 @@
 :root {
   --mediva-blue: #7ba8f8;
-  --mediva-purple: #a29bfe;
+  --mediva-purple: #5b94ff;
   --mediva-pink: #f2b6d7;
   --dark-blue: #2c3e50;
   --soft-gray: #f8faff;
@@ -52,12 +52,12 @@
 
 .sidebar .nav-link:hover {
   background-color: #f8f9fa;
-  color: #a29bfe !important;
+  color: #5b94ff !important;
 }
 
 .sidebar .nav-link.active {
   background-color: #f0f4ff;
-  color: #a29bfe !important;
+  color: #5b94ff !important;
   font-weight: 600;
 }
 
@@ -70,7 +70,7 @@
 
 .doctor-card:hover {
   transform: translateY(-5px);
-  border-color: #a29bfe !important;
+  border-color: #5b94ff !important;
   box-shadow: 0 10px 25px rgba(162, 155, 254, 0.1) !important;
 }
 
@@ -86,15 +86,15 @@
 }
 
 .text-purple {
-  color: #a29bfe !important;
+  color: #5b94ff !important;
 }
 
 .text-purple-dark {
-  color: #8e85eb !important;
+  color: #5b94ff !important;
 }
 
 .btn-primary-gradient {
-  background: linear-gradient(135deg, #a29bfe, #ff76ac) !important;
+  background: linear-gradient(135deg, #5b94ff, #ff76ac) !important;
   color: #ffffff !important;
   border: none !important;
   font-weight: 600;
@@ -112,7 +112,7 @@
 }
 
 .btn-outline-purple {
-  color: #a29bfe;
+  color: #5b94ff;
   border: 1px solid rgba(162, 155, 254, 0.3);
   border-radius: 10px;
   transition: all 0.2s;

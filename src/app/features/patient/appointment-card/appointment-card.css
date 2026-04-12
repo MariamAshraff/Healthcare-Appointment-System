@@ -2,7 +2,7 @@
   display: block;
   font-family: 'Segoe UI', Roboto, sans-serif;
 }
-
+/* 5b94ff */
 .appointment-row {
   transition: all 0.2s ease;
   min-height: 80px;
@@ -22,7 +22,7 @@
 }
 
 .doctor-name {
-  color: #8e85eb !important;
+  color: #4077dd !important;
   font-weight: 600;
   transition: color 0.2s;
 }
@@ -39,7 +39,7 @@
 
 .bg-primary-light {
   background-color: #f0f4ff !important;
-  color: #a29bfe !important;
+  color: #4d67fd !important;
 }
 
 .bg-warning-light {

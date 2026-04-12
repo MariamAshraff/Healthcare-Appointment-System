@@ -33,13 +33,13 @@
   border-radius: 10px !important;
 }
 
-.sidebar {
+/* .sidebar {
   width: 260px !important;
   min-height: calc(100vh - 70px) !important;
   background-color: #ffffff !important;
   border-right: 1px solid #f1f5f9 !important;
   transition: all 0.3s ease !important;
-}
+} */
 
 .menu-title {
   font-size: 11px !important;
@@ -49,26 +49,30 @@
   text-transform: uppercase !important;
 }
 
-.sidebar .nav-link {
+/* .sidebar .nav-link {
   color: #64748b !important;
   font-weight: 500 !important;
   padding: 12px 15px !important;
   border-radius: 12px !important;
   transition: 0.2s !important;
   margin-bottom: 4px !important;
-}
+} */
 
-.sidebar .nav-link:hover {
+/* .sidebar .nav-link:hover {
   background-color: rgba(162, 155, 254, 0.08) !important;
   color: #a29bfe !important;
   transform: translateX(5px) !important;
-}
+} */
 
-.sidebar .nav-link.active {
+/* .sidebar .nav-link.active {
   background-color: rgba(162, 155, 254, 0.12) !important;
-  color: #a29bfe !important;
+  color: #86acf5 !important;
   font-weight: 700 !important;
   border-right: 4px solid #a29bfe !important;
+} */
+.nav-link-custom.active {
+  background: rgba(254, 155, 233, 0.1) !important;
+  color: #5b94ff !important;
 }
 
 .sub-menu-custom {
@@ -90,11 +94,6 @@
   border-radius: 50px !important;
   transition: 0.3s !important;
   cursor: pointer !important;
-}
-
-.nav-link-custom.active {
-  background: rgba(162, 155, 254, 0.1) !important;
-  color: #a29bfe !important;
 }
 
 .btn-dark {
@@ -171,4 +170,46 @@
 
 .notification-dropdown .text-info {
   color: #a29bfe !important;
+}
+/*  */
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logo-img {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 576px) {
+  .logo-img {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 992px) {
+  .logo-img {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+.logo-text {
+  font-size: 1.2rem;
+  /* color: #2e59d9; */
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+.text-left {
+  color: #5b94ff;
+}
+
+.text-right {
+  color: #fe95b8;
 }

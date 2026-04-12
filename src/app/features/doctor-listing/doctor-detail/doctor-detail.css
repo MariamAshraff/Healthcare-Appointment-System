@@ -8,11 +8,15 @@
 }
 
 .text-purple {
-  color: #a29bfe;
+  color: #5b94ff;
+}
+.breadcrumb-item a {
+  color: #5b94ff;
+  text-decoration: none;
 }
 
 .text-purple-dark {
-  background: linear-gradient(135deg, #a29bfe, #ff76ac);
+  background: linear-gradient(135deg, #347bff, #ff7ca8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 800;
@@ -60,7 +64,7 @@
 }
 
 .btn-primary-gradient {
-  background: linear-gradient(135deg, #a29bfe, #ff76ac) !important;
+  background: linear-gradient(100deg, #347bff, #ff7ca8) !important;
   color: #ffffff !important;
   border: none;
   font-weight: 600;
@@ -76,11 +80,6 @@
   opacity: 0.9;
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(162, 155, 254, 0.3);
-}
-
-.breadcrumb-item a {
-  color: #a29bfe;
-  text-decoration: none;
 }
 
 .price-container {
