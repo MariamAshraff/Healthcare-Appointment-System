@@ -1,0 +1,59 @@
+.register-container {
+  min-height: 100vh;
+  background-color: #f0f4f8;
+  display: flex;
+}
+
+.register-card {
+  width: 420px;
+  background: #ffffff;
+  border-radius: 20px;
+  border-top: 5px solid #004691;
+}
+
+.text-pink {
+  color: #004691;
+}
+.text-blue {
+  color: #004691;
+}
+.custom-input {
+  border: 2px solid #e9ecef;
+  border-radius: 10px;
+  padding: 10px;
+  transition: all 0.3s;
+}
+
+.custom-input:focus {
+  border-color: #004691;
+  box-shadow: none;
+}
+
+.btn-pink {
+  background-color: #004691;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  transition:
+    transform 0.2s,
+    background-color 0.2s;
+}
+
+.btn-pink:hover {
+  background-color: #0067d6;
+  transform: translateY(-1px);
+  color: white;
+}
+
+.custom-error-msg {
+  color: #dc3545;
+  font-size: 0.75rem;
+  margin-top: 4px;
+  display: block;
+  font-weight: 500;
+}
+
+a.text-blue:hover {
+  text-decoration: underline !important;
+  color: #0056b3 !important;
+}
