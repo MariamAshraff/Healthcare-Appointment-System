@@ -7,6 +7,7 @@ import { Main } from "./main/main";
 import { PatientsList } from "../patient/patients-list/patients-list";
 import { PatientProfile } from "../patient/profile/patient-profile/patient-profile";
 import { AllNotifications } from "../all-notifications/all-notifications";
+import { DoctorForm } from "../doctor/doctor-form/doctor-form";
 
 export const ADMIN_ROUTES: Routes = [
   {
@@ -20,7 +21,9 @@ export const ADMIN_ROUTES: Routes = [
       { path: 'doctor/:id', component: DoctorDetail },
       { path: 'appointments', component: Appointment },
       { path: 'patients/:id', component: PatientProfile },
-      { path: 'all-notifications', component: AllNotifications }
+      { path: 'all-notifications', component: AllNotifications },
+      { path: 'doctorform', component: DoctorForm },
+      { path: 'doctorform/:id', component: DoctorForm }
     ]
   }
 ];

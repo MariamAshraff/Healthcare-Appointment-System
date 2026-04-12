@@ -30,6 +30,10 @@ export class DoctorService {
     return this.http.get<IDoctor>(`${environment.baseUrl}/users/${id}`);
   }
 
+  addDoctor(doctor: IDoctor): Observable<IDoctor> {
+    return this.http.post<IDoctor>(`${environment.baseUrl}/users`, doctor)
+  }
+
   updateDoctor(id: string, newData: Partial<IDoctor>): Observable<IDoctor> {
     return this.http.patch<IDoctor>(`${environment.baseUrl}/users/${id}`, newData);
   }
