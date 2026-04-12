@@ -7,7 +7,7 @@ import { AuthService } from '../../../../core/service/auth-service';
 
 @Component({
   selector: 'app-patient-profile',
-  imports: [CommonModule, RouterLink,RouterModule],
+  imports: [CommonModule, RouterLink, RouterModule],
   templateUrl: './patient-profile.html',
   styleUrl: './patient-profile.css',
 })
@@ -15,15 +15,17 @@ import { AuthService } from '../../../../core/service/auth-service';
 export class PatientProfile implements OnInit {
 
   patient: IUser | null = null;
-  isAdmin:boolean=false
+  isAdmin: boolean = false
 
-  isDoctor:boolean=false
+  isDoctor: boolean = false
+
+  role: string = '';
 
   constructor(
     private patientService: PatientService,
     private route: ActivatedRoute,
     private authService: AuthService,
-  ) {}
+  ) { }
 
   ngOnInit(): void {
 
@@ -32,14 +34,14 @@ export class PatientProfile implements OnInit {
     this.authService.user$.subscribe({
       next: (user) => {
         if (!user) return;
-
+        this.role = user.role;
         const isAdminOrDoctor =
           user.role === 'admin' || user.role === 'doctor';
-        if(user.role=='admin')
-          this.isAdmin=true
+        if (user.role == 'admin')
+          this.isAdmin = true
 
-         if(user.role=='doctor')
-          this.isDoctor=true
+        if (user.role == 'doctor')
+          this.isDoctor = true
 
         if (idFromRoute && isAdminOrDoctor) {
           this.patientService.getById(idFromRoute).subscribe({
@@ -60,34 +62,34 @@ export class PatientProfile implements OnInit {
       }
     });
   }
-deactivatePatient(id: string) {
-  if (!this.patient) return;
+  deactivatePatient(id: string) {
+    if (!this.patient) return;
 
-  const updatedPatient = {
-    ...this.patient,
-    isActive: false
-  };
+    const updatedPatient = {
+      ...this.patient,
+      isActive: false
+    };
 
-  this.patientService.update(updatedPatient).subscribe({
-    next: (data) => {
-      this.patient = data;
-    }
-  });
-}
+    this.patientService.update(updatedPatient).subscribe({
+      next: (data) => {
+        this.patient = data;
+      }
+    });
+  }
   activatePatient(id: string) {
-  if (!this.patient) return;
+    if (!this.patient) return;
 
-  const updatedPatient = {
-    ...this.patient,
-    isActive: true
-  };
+    const updatedPatient = {
+      ...this.patient,
+      isActive: true
+    };
 
-  this.patientService.update(updatedPatient).subscribe({
-    next: (data) => {
-      this.patient = data;
-    }
-  });
-}
+    this.patientService.update(updatedPatient).subscribe({
+      next: (data) => {
+        this.patient = data;
+      }
+    });
+  }
 }
 
 

@@ -13,9 +13,17 @@
           <div class="form-header-gradient p-4">
             <h3 class="mb-0 text-white">
               <i class="fas fa-user-md me-2"></i>
-              {{ isEditMode ? 'Edit Doctor' : 'Add New Doctor' }}
+              @if(isEditMode && (authService.user$ |async)?.role === 'admin'){Edit Doctor}
+              @else if(isEditMode && (authService.user$ |async)?.role === 'doctor'){Edit Your Profile}
+              @else {Add New Doctor}
+              <!-- {{ isEditMode ? 'Edit Doctor' : 'Add New Doctor' }} -->
             </h3>
+            @if((authService.user$ |async)?.role === 'doctor'){
+            <p class="mb-0 small text-white-50">Keep your personal information up to date.</p>
+            }
+            @else {
             <p class="mb-0 small text-white-50">Fill in the details below to manage the doctor's information.</p>
+            }
           </div>
 
           <div class="card-body p-4 p-md-5 bg-white">
@@ -173,9 +181,12 @@
                       <input type="checkbox" formControlName="isBooked" class="form-check-input">
                       <label class="form-check-label small">Booked</label>
                     </div>
-                    <button type="button" class="btn btn-outline-danger btn-sm border-0" (click)="removeSlot(i)">
-                      <i class="fas fa-trash"></i>
+                    @if(doctorForm.get('isBooked')?.value){
+                    <button type="button" class="btn btn-delete-slot" (click)="removeSlot(i)">
+                      <i class="bi bi-trash"></i>
                     </button>
+                    }
+
                   </div>
                   @if ((slot.get('startTime')?.invalid || slot.get('endTime')?.invalid) &&
                   (slot.get('startTime')?.touched || slot.get('endTime')?.touched)) {

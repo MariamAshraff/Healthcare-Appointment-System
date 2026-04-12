@@ -25,19 +25,19 @@
 }
 
 .doctor-name {
-  color: #8e85eb !important;
+  color: #4077dd !important;
   font-weight: 600;
 }
 
 .doctor-name:hover {
   text-decoration: underline;
-  color: #a29bfe !important;
+  color: #4077dd !important;
 }
 
 /* Status Badges Colors */
 .bg-primary-light {
   background-color: #eef2ff !important;
-  color: #a29bfe !important;
+  color: #4d67fd !important;
 }
 
 .bg-success-light {
@@ -91,7 +91,7 @@
 
 /* Buttons & Dropdowns */
 .btn-primary-gradient {
-  background: linear-gradient(135deg, #a29bfe, #ff76ac) !important;
+  background: linear-gradient(135deg, #4077dd, #ff76ac) !important;
   color: white !important;
   border: none !important;
   border-radius: 10px;
@@ -107,9 +107,9 @@
 }
 
 .btn-light.rounded-circle:hover {
-  background: #a29bfe !important;
+  background: #4077dd !important;
   color: white !important;
-  border-color: #a29bfe !important;
+  border-color: #4077dd !important;
 }
 
 .btn-light.rounded-circle:hover i {

@@ -4,6 +4,7 @@ import { FormArray, FormBuilder, FormGroup, ReactiveFormsModule, Validators } fr
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { DoctorService } from '../../../core/service/doctor-service';
 import { ToastrService } from 'ngx-toastr';
+import { AuthService } from '../../../core/service/auth-service';
 
 @Component({
   selector: 'app-doctor-form',
@@ -25,7 +26,8 @@ export class DoctorForm implements OnInit {
     private doctorService: DoctorService,
     private route: ActivatedRoute,
     private router: Router,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    public authService: AuthService
   ) {
     this.initForm();
   }
