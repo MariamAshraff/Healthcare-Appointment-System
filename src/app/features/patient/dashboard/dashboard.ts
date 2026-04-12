@@ -6,10 +6,12 @@ import { AppointmentService } from '../../../core/service/appointment-service';
 import { AuthService } from '../../../core/service/auth-service';
 import { DoctorService } from '../../../core/service/doctor-service';
 import { AppointmentCard } from "../appointment-card/appointment-card";
+import { RouterLink } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [AppointmentCard],
+  imports: [AppointmentCard,RouterLink,CommonModule],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
 })
@@ -21,6 +23,7 @@ export class Dashboard implements OnInit {
   upcomingAppointments: IAppointment[] = [];
   todayAppointments: IAppointment[] = [];
   user?: IUser;
+  totalAppointmentsCount=0
 
   constructor(
     private appointmentService: AppointmentService,
@@ -40,6 +43,7 @@ export class Dashboard implements OnInit {
           this.appointmentService.getAllByPatientId(this.user.id).subscribe({
             next: (data) => {
               this.allappointments = data;
+              this.totalAppointmentsCount = data.length;
 
               this.pastAppointments =
                 this.appointmentService.getPastAppointments(data);
