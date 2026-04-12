@@ -19,6 +19,7 @@ export class Appointments implements OnInit {
   user?: IDoctor;
   selectedAppointmentId: string | null = null;
 
+
   constructor(private appointmentService: AppointmentService,
     private authService: AuthService,
   ) {

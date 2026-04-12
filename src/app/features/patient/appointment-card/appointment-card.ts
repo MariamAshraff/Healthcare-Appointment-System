@@ -18,7 +18,9 @@ import { ToastrService } from 'ngx-toastr';
 export class AppointmentCard implements OnInit {
   @Input() appointment!: IAppointment;
   @Output() OnDelete = new EventEmitter()
+  @Output() delete = new EventEmitter<string>();
   doctor: IDoctor | null = null;
+  appointmentIdToDelete: string | null = null;
 
   constructor(private doctorService: DoctorService,
     private appointmentService: AppointmentService,
@@ -40,29 +42,6 @@ export class AppointmentCard implements OnInit {
   onEdit(id?: string) {
     this.route.navigate(['/patient/appointmentForm', id]);
   }
-  // onDelete(id: string | undefined) {
-  //   this.appointmentService.delete(id!).subscribe({
-  //     next: () => {
-  //       this.Toast.success('Appointment deleted successfully');
-  //       this.OnDelete.emit();
-  //     },
-  //     error: () => {
-  //       this.Toast.error('Failed to delete appointment');
-  //     }
-  //   })
-  // }
-
-  // confirmDelete() {
-  //   this.appointmentService.delete(this.appointment?.id).subscribe({
-  //     next: () => {
-  //       this.Toast.success('Appointment deleted successfully');
-  //       this.OnDelete.emit();
-  //     },
-  //     error: () => {
-  //       this.Toast.error('Failed to delete appointment');
-  //     }
-  //   })
-  // }
 
   confirmDelete() {
     if (!this.appointment.id || !this.appointment.doctorId) return;
@@ -113,5 +92,14 @@ export class AppointmentCard implements OnInit {
       console.warn('Matching slot not found for day/time comparison');
       this.OnDelete.emit();
     }
+  }
+
+  selectedAppointmentId?: string = '';
+
+  openDeleteModal(appointmentId: string | undefined) {
+    if (appointmentId) {
+      this.delete.emit(appointmentId);
+    }
+
   }
 }
