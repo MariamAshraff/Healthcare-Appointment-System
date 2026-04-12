@@ -1,7 +1,7 @@
 import { IUser } from './../models/user';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, map, Observable } from 'rxjs';
 import { environment } from '../../../environments/environment.development';
 
 
@@ -29,7 +29,27 @@ export class PatientService {
     patient.role="patient";
     patient.isActive=true;
     return this.http.post<IUser>(`${environment.baseUrl}/users`, patient);
-   }
+  }
+
+  isEmailExists(email: string): Observable<boolean> {
+      return this.http.get<IUser[]>(`${environment.baseUrl}/users`).pipe(
+        map(users =>
+          users.some(user => user.email.toLowerCase() === email.toLowerCase())
+        )
+      );
+    }
+
+    signup(user: IUser): Observable<IUser | null> {
+      return this.isEmailExists(user.email).pipe(
+        map(exists => {
+          if (exists) {
+            return null;
+          }
+          this.Add(user).subscribe();
+          return user;
+        })
+      );
+    }
   delete(id: string): Observable<any> {
     return this.http.delete(`${environment.baseUrl}/users/${id}`);
   }
@@ -50,5 +70,4 @@ export class PatientService {
     patient
   );
 }
-
 }
