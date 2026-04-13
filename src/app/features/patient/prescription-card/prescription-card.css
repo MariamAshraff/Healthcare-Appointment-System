@@ -10,7 +10,7 @@
 }
 
 .appointment-row:hover {
-  background-color: #fdf2f4 !important;
+  background-color: var(--bg-hover) !important;
   transform: translateX(4px);
 }
 
@@ -30,23 +30,23 @@
 }
 
 .bg-success-light {
-  background-color: #e6f7ef !important;
-  color: #1cc88a !important;
+  background-color: var(--status-success-bg) !important;
+  color: var(--status-success-text) !important;
 }
 
 .bg-primary-light {
-  background-color: #f0f4ff !important;
-  color: #a29bfe !important;
+  background-color: var(--bg-nav-active) !important;
+  color: var(--text-primary-soft) !important;
 }
 
 .bg-warning-light {
-  background-color: #fff9db !important;
-  color: #fab005 !important;
+  background-color: var(--status-warning-bg) !important;
+  color: var(--status-warning-text) !important;
 }
 
 .bg-danger-light {
-  background-color: #fbe9e9 !important;
-  color: #ff7675 !important;
+  background-color: var(--status-danger-bg) !important;
+  color: var(--status-danger-text) !important;
 }
 
 .col-datetime {
@@ -59,7 +59,7 @@
 
 .clickable {
   cursor: pointer;
-  color: #a29bfe;
+  color: var(--text-primary-soft);
 }
 
 .clickable-profile {
@@ -83,7 +83,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(162, 155, 254, 0.2);
+  box-shadow: 0 4px 12px var(--sidebar-shadow);
 }
 
 .btn-modern-view:hover {

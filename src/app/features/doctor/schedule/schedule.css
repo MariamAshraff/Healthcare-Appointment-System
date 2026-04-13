@@ -1,10 +1,12 @@
 .main-card {
   border-radius: 20px;
   overflow: hidden;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-light);
 }
 
 .card-header-gradient {
-  background: linear-gradient(135deg, #347bff 0%, #ff7ca8 100%);
+  background: linear-gradient(135deg, var(--status-primary-text) 0%, var(--secondary-accent) 100%);
 }
 
 .day-btn {
@@ -12,26 +14,26 @@
   border: 2px solid transparent;
   padding: 8px 20px;
   border-radius: 12px;
-  color: #6c757d;
+  color: var(--text-small);
   font-weight: 600;
   transition: 0.3s;
   white-space: nowrap;
 }
 
 .day-btn:hover {
-  background: #fdf2f4;
-  color: #5b94ff;
+  background: var(--bg-hover);
+  color: var(--status-primary-text);
 }
 
 .day-btn.active {
-  background: #fdeef1;
-  color: #5b94ff;
-  border-color: #5b94ff;
+  background: var(--bg-header-2);
+  color: var(--status-primary-text);
+  border-color: var(--status-primary-text);
 }
 
 .btn-primary-gradient {
-  background: linear-gradient(135deg, #ff7ca8, #347bff);
-  color: white;
+  background: linear-gradient(135deg, var(--secondary-accent), var(--status-primary-text));
+  color: var(--text-on-btn);
   border: none;
   border-radius: 10px;
   transition: 0.3s;
@@ -43,57 +45,57 @@
 }
 
 .text-primary {
-  color: #5b94ff !important;
+  color: var(--status-primary-text) !important;
 }
 
 .slot-card {
-  background: white;
-  border: 1px solid #f0f0f0;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
   padding: 12px 18px;
   border-radius: 15px;
   min-width: 220px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--card-shadow);
   transition: all 0.3s ease;
 }
 
 .slot-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--sidebar-shadow);
 }
 
 .session-dot {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: #fdcb6e;
+  background: var(--status-warning-text);
 }
 
 .session-dot.morning {
-  background: #00cec9;
+  background: var(--status-success-text);
 }
 
 .btn-delete {
   background: none;
   border: none;
-  color: #ff7675;
+  color: var(--status-danger-text);
   transition: 0.2s;
   padding: 0 5px;
 }
 
 .btn-delete:hover {
-  color: #d63031;
+  color: var(--text-danger);
   transform: scale(1.2);
 }
 
 .btn-save {
-  background: #5b94ff;
-  color: white;
+  background: var(--status-primary-text);
+  color: var(--text-on-btn);
   border: none;
   transition: 0.3s;
 }
 
 .btn-save:hover {
-  background: #5b94ff;
+  background: var(--brand-blue-hover);
   transform: scale(1.02);
 }
 
@@ -118,8 +120,8 @@
 }
 
 .morning-bg {
-  background-color: #e3f2fd;
-  color: #0ea5e9;
+  background-color: var(--morning-bg);
+  color: var(--morning-text);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -129,8 +131,8 @@
 }
 
 .evening-bg {
-  background-color: #f3e8ff;
-  color: #a855f7;
+  background-color: var(--evening-bg);
+  color: var(--evening-text);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -140,13 +142,12 @@
 }
 
 .morning-border {
-  border-left: 4px solid #0ea5e9 !important;
+  border-left: 4px solid var(--morning-text) !important;
 }
 
 .evening-border {
-  border-left: 4px solid #a855f7 !important;
+  border-left: 4px solid var(--evening-text) !important;
 }
-
 
 .session-icon-wrapper i {
   font-size: 1.2rem;

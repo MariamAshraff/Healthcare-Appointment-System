@@ -115,7 +115,7 @@ h4.text-primary::after {
 } */
 .sidebar {
   min-height: calc(100vh - 70px);
-  background-color: #ffffff;
+  background-color: var(--bg-card);
   z-index: 100;
 }
 
@@ -163,13 +163,13 @@ h4.text-primary::after {
   min-width: inherit;
   max-width: inherit;
   overflow-y: auto;
-  border-right: 1px solid #f0f0f0;
-  background-color: #ffffff;
+  border-right: 1px solid var(--border-light);
+  background-color: var(--bg-card);
   z-index: 1000;
 }
 
 .sidebar .nav-link {
-  color: #2c3e50 !important;
+  color: var(--text-title) !important;
   font-weight: 500;
   padding: 12px 20px;
   margin: 4px 12px;
@@ -180,8 +180,8 @@ h4.text-primary::after {
 }
 
 .sidebar .nav-link:hover {
-  background-color: #fdeef1 !important;
-  color: #ff76ac !important;
+  background-color: var(--bg-header-2) !important;
+  color: var(--secondary-accent) !important;
   transform: translateX(5px);
 }
 
@@ -193,7 +193,7 @@ h4.text-primary::after {
 }
 
 .bg-light-soft {
-  background-color: #f8faff;
+  background-color: var(--bg-page);
   min-height: 100vh;
 }
 
@@ -201,17 +201,17 @@ h4.text-primary::after {
   #patientSidebar,
   #doctorSidebar,
   #adminSidebar {
-    background-color: white !important;
+    background-color: var(--bg-card) !important;
     position: absolute;
     width: 100%;
     z-index: 1050;
-    box-shadow: 0 10px 25px rgba(162, 155, 254, 0.1);
+    box-shadow: 0 10px 25px var(--sidebar-shadow);
     left: 0;
   }
 
   .nav-link {
     padding: 15px 25px;
-    border-bottom: 1px solid #f8f9fa;
+    border-bottom: 1px solid var(--border-extra-light);
     margin: 0 !important;
     border-radius: 0 !important;
   }
@@ -221,6 +221,7 @@ h4.text-primary::after {
   }
 }
 
+
 .sidebar .nav-link i {
   margin-right: 10px;
   font-size: 1.1rem;
@@ -228,7 +229,7 @@ h4.text-primary::after {
 }
 
 .sidebar .nav-link:hover i {
-  color: #ff76ac;
+  color: var(--secondary-accent);
 }
 
 .sidebar .nav-link.active i {

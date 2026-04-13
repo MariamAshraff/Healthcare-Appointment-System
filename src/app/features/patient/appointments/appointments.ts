@@ -18,6 +18,7 @@ export class Appointments implements OnInit {
   appointments: IAppointment[] | null = null
   user?: IUser;
   doctors?: IDoctor[];
+  selectedAppointmentId: string | null = null;
 
 
   constructor(private appointmentService: AppointmentService,
@@ -26,12 +27,9 @@ export class Appointments implements OnInit {
   ) {
   }
   ngOnInit(): void {
-    this.loading();
+    this.ReloadData();
   }
   ReloadData() {
-    this.loading();
-  }
-  private loading() {
     this.authService.user$.subscribe({
       next: (user) => {
         if (user) {
@@ -45,4 +43,24 @@ export class Appointments implements OnInit {
       }
     })
   }
+
+  prepareDelete(id: string) {
+    this.selectedAppointmentId = id;
+  }
+
+  confirmDelete() {
+    if (this.selectedAppointmentId) {
+      this.appointmentService.delete(this.selectedAppointmentId).subscribe({
+        next: () => {
+          this.ReloadData();
+          this.selectedAppointmentId = null;
+        },
+        error: (err) => {
+          console.error(err);
+          this.selectedAppointmentId = null;
+        }
+      });
+    }
+  }
+
 }
