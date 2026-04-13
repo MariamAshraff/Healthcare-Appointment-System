@@ -32,24 +32,24 @@ export class PatientService {
   }
 
   isEmailExists(email: string): Observable<boolean> {
-      return this.http.get<IUser[]>(`${environment.baseUrl}/users`).pipe(
-        map(users =>
-          users.some(user => user.email.toLowerCase() === email.toLowerCase())
-        )
-      );
-    }
+    return this.http.get<IUser[]>(`${environment.baseUrl}/users`).pipe(
+      map(users =>
+        users.some(user => user.email.toLowerCase() === email.toLowerCase())
+      )
+    );
+  }
 
-    signup(user: IUser): Observable<IUser | null> {
-      return this.isEmailExists(user.email).pipe(
-        map(exists => {
-          if (exists) {
-            return null;
-          }
-          this.Add(user).subscribe();
-          return user;
-        })
-      );
-    }
+  signup(user: IUser): Observable<IUser | null> {
+    return this.isEmailExists(user.email).pipe(
+      map(exists => {
+        if (exists) {
+          return null;
+        }
+        this.Add(user).subscribe();
+        return user;
+      })
+    );
+  }
   delete(id: string): Observable<any> {
     return this.http.delete(`${environment.baseUrl}/users/${id}`);
   }
@@ -69,6 +69,18 @@ export class PatientService {
       `${environment.baseUrl}/users/${patient.id}`,
       patient
     );
+  }
+
+  getNumberOfPatientInLastMonth(patient: IUser[]): IUser[] {
+    const today = new Date();
+    const thirtyDaysAgo = new Date();
+
+    thirtyDaysAgo.setDate(today.getDate() - 30);
+
+    return patient.filter(user => {
+      const userDate = new Date(user.createdAt);
+      return userDate >= thirtyDaysAgo && userDate <= today;
+    });
   }
 
 }

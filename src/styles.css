@@ -218,6 +218,16 @@
   --bg-primary-soft-strong: rgba(129, 118, 242, 0.25);
 
   --btn-login-shadow: rgba(96, 165, 250, 0.3);
+  --bg-page: #0f172a;
+  --bg-card: #1e293b;
+  --header-bg: #1e293b;
+  --text-title: #f1f5f9;
+  --text-muted: #94a3b8;
+  --border-light: #334155;
+  --bg-primary-soft: rgba(96, 165, 250, 0.1);
+  --notif-unread: rgba(255, 255, 255, 0.03);
+  --login-btn-color: #38bdf8;
+  --secondary-accent: #fb7185;
 }
 
 
