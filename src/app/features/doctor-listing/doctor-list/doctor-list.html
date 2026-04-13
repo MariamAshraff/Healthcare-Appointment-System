@@ -82,8 +82,6 @@
   </div>
   <div class="row g-4">
     @for (doctor of doctors; track doctor.id) {
-    <!-- <div class="col-12 col-md-6 col-lg-4 clickable-profile" [routerLink]="['/${role}/doctor', doctor.id]"> -->
-    <!--['/' + currentUser.role + '/details', currentUser.id]-->
     <div class="col-12 col-md-6 col-xxl-4 position-relative">
       <div class="card doctor-card border-0 shadow-sm h-100 p-3 clickable-profile"
         [routerLink]="['/doctor', doctor.id]">
