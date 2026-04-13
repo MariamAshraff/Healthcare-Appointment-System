@@ -53,6 +53,7 @@ export class DoctorForm implements OnInit {
       role: ['doctor'],
       rating: [0],
       reviewCount: [0],
+      createdAt: [new Date()],
       availableSlots: this.fb.array([])
     });
   }

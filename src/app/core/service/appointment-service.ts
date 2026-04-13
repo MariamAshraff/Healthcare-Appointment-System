@@ -84,43 +84,56 @@ export class AppointmentService {
   }
 
 
-private isSameDay(date1: Date, date2: Date): boolean {
-  return (
-    date1.getDay() === date2.getDay() &&
-    date1.getMonth() === date2.getMonth() &&
-    date1.getFullYear() === date2.getFullYear()
-  );
-}
+  private isSameDay(date1: Date, date2: Date): boolean {
+    return (
+      date1.getDay() === date2.getDay() &&
+      date1.getMonth() === date2.getMonth() &&
+      date1.getFullYear() === date2.getFullYear()
+    );
+  }
 
-getPastAppointments(appointments: IAppointment[]): IAppointment[] {
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
+  getPastAppointments(appointments: IAppointment[]): IAppointment[] {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
 
-  return appointments.filter(app => {
-    const appDate = new Date(app.date);
-    appDate.setHours(0, 0, 0, 0);
+    return appointments.filter(app => {
+      const appDate = new Date(app.date);
+      appDate.setHours(0, 0, 0, 0);
 
-    return appDate < today;
-  });
-}
+      return appDate < today;
+    });
+  }
 
-getUpcomingAppointments(appointments: IAppointment[]): IAppointment[] {
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
+  getUpcomingAppointments(appointments: IAppointment[]): IAppointment[] {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
 
-  return appointments.filter(app => {
-    const appDate = new Date(app.date);
-    appDate.setHours(0, 0, 0, 0);
+    return appointments.filter(app => {
+      const appDate = new Date(app.date);
+      appDate.setHours(0, 0, 0, 0);
 
-    return appDate > today;
-  });
-}
+      return appDate > today;
+    });
+  }
 
-getTodayAppointments(appointments: IAppointment[]): IAppointment[] {
-  const today = new Date();
+  getTodayAppointments(appointments: IAppointment[]): IAppointment[] {
+    const today = new Date();
 
-  return appointments.filter(app =>
-    this.isSameDay(new Date(app.date), today)
-  );
-}
+    return appointments.filter(app =>
+      this.isSameDay(new Date(app.date), today)
+    );
+  }
+
+
+  getNumberOfAppointmentInLastMonth(appointment: IAppointment[]): IAppointment[] {
+    const today = new Date();
+    const thirtyDaysAgo = new Date();
+
+    thirtyDaysAgo.setDate(today.getDate() - 30);
+
+    return appointment.filter(app => {
+      const appDate = new Date(app.createdAt);
+      return appDate >= thirtyDaysAgo && appDate <= today;
+    });
+  }
 }

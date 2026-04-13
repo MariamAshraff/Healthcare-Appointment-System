@@ -86,4 +86,16 @@ export class DoctorService {
   getDoctorBySpecialization(specialization: string): Observable<IDoctor[]> {
     return this.http.get<IDoctor[]>(`${environment.baseUrl}/users/role=doctor&specialization=${specialization}`);
   }
+
+  getNumberOfDoctorInLastMonth(doctors: IDoctor[]): IDoctor[] {
+    const today = new Date();
+    const thirtyDaysAgo = new Date();
+
+    thirtyDaysAgo.setDate(today.getDate() - 30);
+
+    return doctors.filter(doc => {
+      const docDate = new Date(doc.createdAt);
+      return docDate >= thirtyDaysAgo && docDate <= today;
+    });
+  }
 }
