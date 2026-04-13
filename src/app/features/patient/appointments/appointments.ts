@@ -62,6 +62,4 @@ export class Appointments implements OnInit {
       });
     }
   }
-
-
 }

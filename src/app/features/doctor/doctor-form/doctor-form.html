@@ -16,7 +16,6 @@
               @if(isEditMode && (authService.user$ |async)?.role === 'admin'){Edit Doctor}
               @else if(isEditMode && (authService.user$ |async)?.role === 'doctor'){Edit Your Profile}
               @else {Add New Doctor}
-              <!-- {{ isEditMode ? 'Edit Doctor' : 'Add New Doctor' }} -->
             </h3>
             @if((authService.user$ |async)?.role === 'doctor'){
             <p class="mb-0 small text-white-50">Keep your personal information up to date.</p>
