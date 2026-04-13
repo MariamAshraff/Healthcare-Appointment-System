@@ -23,7 +23,7 @@ export const ADMIN_ROUTES: Routes = [
       { path: 'patients/:id', component: PatientProfile },
       { path: 'all-notifications', component: AllNotifications },
       { path: 'doctorform', component: DoctorForm },
-      { path: 'doctorform/:id', component: DoctorForm }
+      { path: 'update-doctor/:id', component: DoctorForm }
     ]
   }
 ];
