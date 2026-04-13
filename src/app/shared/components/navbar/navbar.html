@@ -117,10 +117,17 @@
         </li>
         @if (authService.user$ | async; as currentUser) {
         <li>
+          @if(currentUser.role=='admin'){
+            <a class="dropdown-item d-flex align-items-center gap-2 py-2"
+            routerLink="/admin/dashboard">
+            <i class="bi bi-person text-muted"></i> Dashboard
+          </a>
+          }@else{
           <a class="dropdown-item d-flex align-items-center gap-2 py-2"
             [routerLink]="['/' + currentUser.role + '/details', currentUser.id]">
             <i class="bi bi-person text-muted"></i> My Profile
           </a>
+        }
         </li>
         }
 
