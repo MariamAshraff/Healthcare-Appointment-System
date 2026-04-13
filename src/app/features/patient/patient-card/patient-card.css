@@ -1,5 +1,7 @@
 .patient-card {
-  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease !important;
   border-radius: 20px !important;
   background-color: #ffffff !important;
   border: 1px solid #f1f5f9 !important;
@@ -8,7 +10,7 @@
 .patient-card:hover {
   transform: translateY(-5px) !important;
   box-shadow: 0 10px 25px rgba(162, 155, 254, 0.2) !important;
-  background-color: #f3f0ff !important;
+  background-color: #fdf2f8 !important;
 }
 
 .avatar-container img {
@@ -34,26 +36,27 @@
 
 .patient-details i {
   font-size: 0.9rem !important;
-  color: #a29bfe !important;
+  color: #4077dd !important;
 }
 
 .text-primary {
-  color: #a29bfe !important;
+  color: #4077dd !important;
   font-weight: 700 !important;
 }
 
 .btn-outline-primary {
-  color: #a29bfe !important;
-  border: 2px solid #a29bfe !important;
+  color: #4077dd !important;
+  border: 2px solid #4077dd !important;
   border-radius: 12px !important;
   font-weight: 600 !important;
   transition: all 0.3s ease !important;
 }
 
 .btn-outline-primary:hover {
-  background: linear-gradient(135deg, #a29bfe 0%, #ff76ac 100%) !important;
+  background: linear-gradient(135deg, #4077dd 0%, #ff76ac 100%) !important;
   color: white !important;
-  border-color: transparent !important;
+  border: none;
+  /* border-color: transparent !important; */
   transform: scale(1.05) !important;
   box-shadow: 0 5px 15px rgba(162, 155, 254, 0.4) !important;
 }

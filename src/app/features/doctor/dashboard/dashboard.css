@@ -65,7 +65,7 @@
   overflow-x: hidden;
 }
 
-/* ستايل السكرول بار للـ Past */
+
 .scrollable-past::-webkit-scrollbar {
   width: 5px;
 }

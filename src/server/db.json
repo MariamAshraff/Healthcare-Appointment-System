@@ -153,10 +153,11 @@
       "name": "Mohamed Ali",
       "email": "mohamed@patient.com",
       "password": "patient123",
-      "phone": "01033333333",
+      "phone": "01033333777",
       "role": "patient",
       "avatar": "images/patient/8.webp",
-      "createdAt": "2026-03-01"
+      "createdAt": "2026-03-01",
+      "isActive": true
     },
     {
       "id": "5",
@@ -1710,6 +1711,16 @@
       "availableSlots": [],
       "id": "HmEWzUIMvHo",
       "name": "madona Magdy"
+    },
+    {
+      "id": "Bvg_41v9P-U",
+      "name": "Mariam Ashraf",
+      "email": "mariam123@patient.com",
+      "password": "123456",
+      "phone": "",
+      "role": "patient",
+      "createdAt": "2026-04-13T08:41:09.283Z",
+      "isActive": true
     }
   ],
   "appointments": [

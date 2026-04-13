@@ -5,15 +5,19 @@
 }
 
 .sidebar-logo-text {
-  background: linear-gradient(135deg, #a29bfe, #ff76ac);
+  background: linear-gradient(135deg, #4077dd, #ff76ac);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   padding: 20px;
   letter-spacing: 1px;
 }
+h6 {
+  font-size: 0.7rem;
+  color: #002366;
+}
 
-h4.text-primary {
-  background: linear-gradient(135deg, #a29bfe, #ff76ac);
+/* h4.text-primary {
+  background: linear-gradient(135deg, #4077dd, #ff76ac);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: 'Poppins', sans-serif;
@@ -25,7 +29,6 @@ h4.text-primary {
   font-size: 1.25rem;
 }
 
-
 h4.text-primary::after {
   content: '';
   position: absolute;
@@ -33,9 +36,9 @@ h4.text-primary::after {
   left: 20px;
   width: 30px;
   height: 3px;
-  background: linear-gradient(135deg, #a29bfe, #ff76ac);
+  background: linear-gradient(135deg, #4077dd, #ff76ac);
   border-radius: 2px;
-}
+} */
 
 .sidebar-sticky {
   position: fixed;
@@ -69,9 +72,9 @@ h4.text-primary::after {
 
 .sidebar .nav-link.active {
   background-color: #f0f4ff !important;
-  color: #a29bfe !important;
+  color: #4077dd !important;
   font-weight: 700;
-  border-left: 5px solid #a29bfe;
+  border-left: 5px solid #4077dd;
 }
 
 .bg-light-soft {
@@ -80,7 +83,6 @@ h4.text-primary::after {
 }
 
 @media (max-width: 991.98px) {
-
   #patientSidebar,
   #doctorSidebar,
   #adminSidebar {
@@ -100,7 +102,7 @@ h4.text-primary::after {
   }
 
   .sidebar .nav-link.active {
-    border-left: 8px solid #a29bfe;
+    border-left: 8px solid #4077dd;
   }
 }
 
@@ -115,5 +117,5 @@ h4.text-primary::after {
 }
 
 .sidebar .nav-link.active i {
-  color: #a29bfe;
+  color: #4077dd;
 }

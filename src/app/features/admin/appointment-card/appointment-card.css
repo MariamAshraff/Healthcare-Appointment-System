@@ -43,20 +43,14 @@
   justify-content: flex-end !important;
 }
 
-
-.doctor-name {
-  color: #8e85eb !important;
-  font-weight: 600;
-}
-
-.doctor-name:hover {
+/* .doctor-name:hover {
   text-decoration: underline;
-  color: #a29bfe !important;
-}
+  color: #4b4ef7 !important;
+} */
 
 .bg-primary-light {
   background-color: #eef2ff !important;
-  color: #a29bfe !important;
+  color: #394fca !important;
 }
 
 .bg-success-light {

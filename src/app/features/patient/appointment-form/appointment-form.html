@@ -14,14 +14,14 @@
 
           @if (selectedDoctor) {
           <div class="d-flex align-items-center p-3 mb-4 rounded-4 price-container"
-            style="background-color: rgba(162, 155, 254, 0.08); border: 1px solid rgba(162, 155, 254, 0.1);">
+            style="background-color: rgba(254, 155, 246, 0.08); border: 1px solid rgba(162, 155, 254, 0.1);">
             <div class="avatar-wrapper me-3">
               <img [src]="selectedDoctor.avatar || 'assets/images/default-doctor.webp'" class="doctor-img shadow-sm"
                 width="65" height="65">
             </div>
             <div>
               <h5 class="mb-0 fw-bold text-dark-blue">{{ selectedDoctor.name }}</h5>
-              <div class="text-purple small fw-medium">{{ selectedDoctor.specialization }}</div>
+              <div class="blue-color small fw-medium">{{ selectedDoctor.specialization }}</div>
               <div class="mt-1">
                 <span class="badge bg-white text-dark shadow-sm py-1 px-2" style="font-size: 0.7rem;">
                   <i class="bi bi-star-fill text-warning me-1"></i> {{ selectedDoctor.rating }} Rating
@@ -92,7 +92,7 @@
                 </button>
               </div>
               <div class="col-6">
-                <button type="submit" class="btn btn-primary-gradient w-100 py-3 fw-bold rounded-3 shadow"
+                <button type="submit" class="btn btn-grad w-100 py-3 fw-bold rounded-3 shadow"
                   [disabled]="appointmentForm.invalid">
                   {{ isEditMode ? 'Update' : 'Confirm' }}
                 </button>
