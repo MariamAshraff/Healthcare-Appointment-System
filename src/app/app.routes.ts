@@ -68,7 +68,7 @@ export const routes: Routes = [
     path: 'home',
     component: Home
   },
-// register
+  // register
   {
     path: 'admin',
     canActivate: [authGuard],
@@ -98,8 +98,6 @@ export const routes: Routes = [
     path: 'doctor/:id',
     component: DoctorDetail
   },
-  { path: '**',
-    component:NotFound
-  }
+  { path: '**', component: NotFound }
 
 ];

@@ -10,10 +10,11 @@
       </p>
 
       <div class="d-flex justify-content-center gap-3 mb-5">
-        <button class="btn btn-white rounded-pill px-4 py-3 fw-bold d-flex align-items-center gap-2" [routerLink]="['/doctors']">
+        <button class="btn btn-white rounded-pill px-4 py-3 fw-bold d-flex align-items-center gap-2"
+          [routerLink]="['/doctors']">
           <i class="bi bi-calendar-check-fill"></i> Book Appointment
         </button>
-        <button class="btn btn-outline-white rounded-pill px-4 py-3 fw-bold" [routerLink]="['/${role}/dashboard']">
+        <button class="btn btn-outline-white rounded-pill px-4 py-3 fw-bold" [routerLink]="['/'+role]">
           Show Your Dashboard Now <i class="bi bi-arrow-right ms-2"></i>
         </button>
       </div>
@@ -149,7 +150,8 @@
 
     <div class="row align-items-center mb-5 pb-5">
       <div class="col-lg-6 mb-4 mb-lg-0">
-        <h2 class="display-5 fw-bold text-dark mb-4 playwrite-au-qld-Lol">Empowering Your Mind <br> and Emotional Health</h2>
+        <h2 class="display-5 fw-bold text-dark mb-4 playwrite-au-qld-Lol">Empowering Your Mind <br> and Emotional Health
+        </h2>
         <p class="text-secondary mb-4" style="max-width: 500px;">
           Discover personalized support, expert guidance, and tools to help you manage stress, improve emotional
           balance, and build resilience for a healthier, more fulfilling mental and emotional life.
