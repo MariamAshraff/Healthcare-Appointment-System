@@ -8,6 +8,7 @@ import { DoctorDetail } from './features/doctor-listing/doctor-detail/doctor-det
 import { authGuard } from './core/guards/auth-guard';
 import { roleGuard } from './core/guards/role-guard';
 import { Home } from './features/home/home';
+import { NotFound } from './shared/components/not-found/not-found';
 
 // export const routes: Routes = [
 //   {
@@ -67,7 +68,7 @@ export const routes: Routes = [
     path: 'home',
     component: Home
   },
-// register
+  // register
   {
     path: 'admin',
     canActivate: [authGuard],
@@ -97,6 +98,6 @@ export const routes: Routes = [
     path: 'doctor/:id',
     component: DoctorDetail
   },
-  { path: '**', redirectTo: 'login' }
+  { path: '**', component: NotFound }
 
 ];

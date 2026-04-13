@@ -17,7 +17,7 @@ export class Home implements OnInit {
    */
   doctors: IDoctor[] | null = null
   count: number = 1;
-  role?: string;
+  role?: "patient" | "doctor" | "admin" | "login";
   constructor(private DoctorService: DoctorService, public authService: AuthService) { }
   ngOnInit(): void {
     this.DoctorService.getAllDoctors().subscribe({
@@ -27,11 +27,12 @@ export class Home implements OnInit {
       error: (err) => console.error('Error fetching appointments', err)
     });
 
-    if (this.authService.isAuthenticated!) {
+    if (this.authService.getToken()) {
       this.role = this.authService.getRole();
     }
     else {
-      this.role = 'login'
+      this.role = "login";
     }
+
   }
 }

@@ -288,11 +288,13 @@
   align-items: center;
   justify-content: center;
 }
+
 .btn-grad:hover {
   background-position: right center;
   color: #fff;
   text-decoration: none;
 }
+
 .blue-color {
   color: #4077dd !important;
 }
@@ -300,5 +302,4 @@
 .custom-gradient-header {
   background: linear-gradient(135deg, #4361ee 70%, #ffc2d7 30%) !important;
   color: white;
-}
 }
