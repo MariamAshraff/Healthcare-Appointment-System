@@ -1,7 +1,7 @@
 :root {
-  --mediva-purple: var(--text-primary-soft);
-  --mediva-pink: var(--secondary-accent);
-  --soft-bg: var(--bg-page);
+  /* --mediva-purple: #a29bfe; */
+  --mediva-pink: #ff76ac;
+  --soft-bg: #f8faff;
 }
 
 .medical-record-card {
@@ -24,24 +24,23 @@
 
 .text-purple-dark,
 .color-primary {
-  background: var(--primary-gradient);
+  background: linear-gradient(135deg, #9badfe, #ff76ac);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
   font-weight: 700;
 }
 
-@supports not (-webkit-background-clip: text) {
-
+/* @supports not (-webkit-background-clip: text) {
   .text-purple-dark,
   .color-primary {
     color: var(--text-primary-soft) !important;
   }
-}
-
+} */
+/*
 .text-primary-soft {
-  color: var(--text-primary-soft) !important;
-}
+  color: #a29bfe !important;
+} */
 
 .bg-light-soft {
   background-color: var(--bg-hover) !important;
@@ -49,17 +48,16 @@
 }
 
 .bg-purple-light {
-  background-color: var(--bg-primary-soft) !important;
-  color: var(--text-primary-soft) !important;
+  background-color: rgba(162, 155, 254, 0.1) !important;
+  /* color: #a29bfe !important; */
 }
 
-.record-date {
-  color: var(--text-small) !important;
-}
+/* .record-date {
+  color: #7d8da1 !important;
+} */
 
 .btn-view-profile {
-  background-color: var(--bg-page) !important;
-  color: var(--text-primary-soft) !important;
+  background-color: #f8faff !important;
   border: none !important;
   border-radius: 50%;
   width: 35px;
@@ -68,6 +66,6 @@
 }
 
 .btn-view-profile:hover {
-  background-color: var(--vibrant-blue) !important;
-  color: var(--text-on-btn) !important;
+  background-color: #536ce7 !important;
+  color: white !important;
 }

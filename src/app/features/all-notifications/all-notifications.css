@@ -24,12 +24,12 @@
 }
 
 .notif-item:hover {
-  background-color: var(--bg-hover) !important;
+  background-color: rgba(155, 176, 254, 0.05) !important;
   transform: translateX(5px) !important;
 }
 
 .unread-bg {
-  background-color: var(--notif-unread) !important;
+  background-color: rgba(130, 168, 250, 0.08) !important;
 }
 
 .notif-icon-box {
@@ -48,8 +48,8 @@
 }
 
 .bg-primary-soft {
-  background-color: var(--bg-primary-soft) !important;
-  color: var(--text-primary-soft) !important;
+  background-color: rgba(162, 155, 254, 0.1) !important;
+  color: #4077dd !important;
 }
 
 .status-dot {
@@ -74,7 +74,7 @@
 }
 
 .text-primary {
-  color: var(--text-primary-soft) !important;
+  color: #4077dd !important;
 }
 
 .notif-title {

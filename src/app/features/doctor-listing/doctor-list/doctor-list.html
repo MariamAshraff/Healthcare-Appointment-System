@@ -68,7 +68,7 @@
 
             <div class="d-flex gap-2">
               <button type="button" class="btn btn-light w-100 btn-sm" data-bs-toggle="dropdown">Close</button>
-              <button type="submit" class="btn btn-primary-gradient w-100 btn-sm">Filter</button>
+              <button type="submit" class="btn btn-grad w-100 btn-sm">Filter</button>
             </div>
           </form>
         </div>
@@ -86,7 +86,7 @@
     <!--['/' + currentUser.role + '/details', currentUser.id]-->
     <div class="col-12 col-md-6 col-xxl-4 position-relative">
       <div class="card doctor-card border-0 shadow-sm h-100 p-3 clickable-profile"
-        [routerLink]="['/' + role + '/doctor', doctor.id]">
+        [routerLink]="['/doctor', doctor.id]">
 
         @if(role == 'admin'){
         <div class="dropdown position-absolute top-0 end-0 m-3" (click)="$event.stopPropagation()">

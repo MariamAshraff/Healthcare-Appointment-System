@@ -13,8 +13,8 @@
 }
 
 .form-header-gradient {
-  background: linear-gradient(135deg, var(--text-primary-soft) 0%, var(--secondary-accent) 100%);
-  color: var(--text-on-btn);
+  /* background: linear-gradient(135deg, #4077dd 0%, #ff76ac 100%); */
+  color: white;
   padding: 20px;
   font-weight: 700;
   text-align: center;
@@ -63,8 +63,8 @@
 }
 
 .btn-submit-gradient {
-  background: linear-gradient(135deg, var(--text-primary-soft), var(--secondary-accent)) !important;
-  color: var(--text-on-btn) !important;
+  //background: linear-gradient(135deg, #4077dd, #ff76ac) !important;
+  color: #ffffff !important;
   border: none;
   font-weight: 600;
   padding: 12px 30px;
@@ -91,5 +91,5 @@
 }
 
 .border-bottom-dashed {
-  border-bottom: 1px dashed var(--border-extra-light) !important;
+  border-bottom: 1px dashed #eee !important;
 }

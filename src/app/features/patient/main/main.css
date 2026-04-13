@@ -5,37 +5,17 @@
 }
 
 .sidebar-logo-text {
-  background: linear-gradient(135deg, var(--text-primary-soft) 0%, var(--secondary-accent) 100%);
+  background: linear-gradient(135deg, #4077dd, #ff76ac);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   padding: 20px;
   letter-spacing: 1px;
 }
 
-h4.text-primary {
-  background: linear-gradient(135deg, var(--text-primary-soft), var(--secondary-accent));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-family: 'Poppins', sans-serif;
-  letter-spacing: 0.5px;
-  position: relative;
-  display: inline-block;
-  padding: 15px 20px;
-  text-transform: uppercase;
-  font-size: 1.25rem;
+h6 {
+  font-size: 0.7rem;
+  color: #002366;
 }
-
-h4.text-primary::after {
-  content: '';
-  position: absolute;
-  bottom: 10px;
-  left: 20px;
-  width: 30px;
-  height: 3px;
-  background: linear-gradient(135deg, var(--text-primary-soft), var(--secondary-accent));
-  border-radius: 2px;
-}
-
 .sidebar-sticky {
   position: fixed;
   top: 70px;
@@ -67,10 +47,10 @@ h4.text-primary::after {
 }
 
 .sidebar .nav-link.active {
-  background-color: var(--bg-nav-active) !important;
-  color: var(--text-primary-soft) !important;
+  background-color: #f0f4ff !important;
+  color: #4077dd !important;
   font-weight: 700;
-  border-left: 5px solid var(--text-primary-soft);
+  border-left: 5px solid #4077dd;
 }
 
 .bg-light-soft {
@@ -79,7 +59,6 @@ h4.text-primary::after {
 }
 
 @media (max-width: 991.98px) {
-
   #patientSidebar,
   #doctorSidebar,
   #adminSidebar {
@@ -99,7 +78,7 @@ h4.text-primary::after {
   }
 
   .sidebar .nav-link.active {
-    border-left: 8px solid var(--text-primary-soft);
+    border-left: 8px solid #4077dd;
   }
 }
 
@@ -114,5 +93,5 @@ h4.text-primary::after {
 }
 
 .sidebar .nav-link.active i {
-  color: var(--text-primary-soft);
+  color: #4077dd;
 }

@@ -9,6 +9,11 @@
   color: #555;
   border-bottom: 1px solid #eee;
 }
+.doctor-name {
+  color: #4077dd !important;
+  font-weight: 600;
+  transition: color 0.2s;
+}
 
 .section-title {
   font-size: 1.1rem;

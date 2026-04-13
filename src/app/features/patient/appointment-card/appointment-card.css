@@ -31,7 +31,6 @@
 
 .doctor-name:hover {
   text-decoration: underline;
-  color: var(--text-primary-soft) !important;
 }
 
 .bg-primary-light {

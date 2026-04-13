@@ -65,3 +65,16 @@
 .rounded-5 {
   border-radius: 40px !important;
 }
+footer:not(.footer-section) {
+  background-color: #ffffff;
+  padding: 15px 0;
+}
+
+footer:not(.footer-section) p {
+  font-size: 14px;
+  color: #333;
+}
+
+footer:not(.footer-section) span {
+  color: #4c46af;
+}

@@ -14,14 +14,19 @@
   transform: translateX(4px);
 }
 
-.doctor-name {
-  color: var(--text-primary-soft) !important;
+/* .doctor-name {
+  color: #8e85eb !important;
   font-weight: 600;
+} */
+.doctor-name {
+  color: #4077dd !important;
+  font-weight: 600;
+  transition: color 0.2s;
 }
 
 .doctor-name:hover {
   text-decoration: underline;
-  color: var(--text-primary-soft) !important;
+  color: #326ad2 !important;
 }
 
 .bg-success-light {
@@ -67,8 +72,8 @@
 }
 
 .btn-modern-view {
-  background: var(--primary-gradient);
-  color: var(--text-on-btn) !important;
+  /* background: linear-gradient(135deg, #a29bfe, #ff76ac); */
+  color: white !important;
   border-radius: 10px;
   padding: 10px 24px;
   font-weight: 600;
@@ -84,5 +89,5 @@
 .btn-modern-view:hover {
   opacity: 0.9;
   transform: translateY(-2px);
-  box-shadow: 0 6px 15px var(--sidebar-shadow);
+  box-shadow: 0 6px 15px rgba(162, 155, 254, 0.3);
 }

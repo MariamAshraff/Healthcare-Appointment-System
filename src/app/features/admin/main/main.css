@@ -1,3 +1,118 @@
+/* .sidebar {
+  min-height: calc(100vh - 70px);
+  background-color: #ffffff;
+  z-index: 100;
+}
+
+h4.text-primary {
+  background: linear-gradient(135deg, #4077dd, #ff76ac);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  position: relative;
+  display: inline-block;
+  padding: 0;
+  margin-left: 24px;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+}
+
+h4.text-primary::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 35px;
+  height: 4px;
+  background: linear-gradient(135deg, #4077dd, #ff76ac);
+  border-radius: 10px;
+}
+
+.sidebar-sticky {
+  position: fixed;
+  top: 70px;
+  bottom: 0;
+  width: inherit;
+  min-width: inherit;
+  max-width: inherit;
+  overflow-y: auto;
+  background-color: #ffffff;
+  z-index: 1000;
+  border-right: none !important;
+}
+
+.sidebar .nav-link {
+  color: #64748b !important;
+  font-weight: 500;
+  padding: 12px 20px;
+  margin: 4px 0;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  text-decoration: none !important;
+  font-size: 0.95rem;
+}
+
+.sidebar .nav-link:hover {
+  background-color: rgba(162, 155, 254, 0.08) !important;
+  color: #4077dd !important;
+  transform: translateX(5px);
+}
+
+.sidebar .nav-link.active {
+  background-color: rgba(162, 155, 254, 0.15) !important;
+  color: #4077dd !important;
+  font-weight: 700;
+}
+
+.bg-light-soft {
+  background-color: #f8faff;
+  min-height: 100vh;
+}
+
+.sidebar .nav-link i {
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+
+.sidebar .nav-link.active i {
+  color: #4077dd;
+}
+
+@media (max-width: 991.98px) {
+  #adminSidebar {
+    background-color: white !important;
+    position: absolute;
+    width: 100%;
+    z-index: 1050;
+    box-shadow: 0 10px 25px rgba(162, 155, 254, 0.1);
+    left: 0;
+  }
+
+  .nav-link {
+    padding: 15px 25px;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    border-bottom: 1px solid #f8f9fa;
+  }
+}
+
+.sidebar .logo {
+  padding: 40px 24px 30px 24px !important;
+  margin-bottom: 10px !important;
+}
+
+.sidebar .nav.flex-column {
+  margin-top: 15px !important;
+}
+
+.sidebar-logo-text {
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+} */
 .sidebar {
   min-height: calc(100vh - 70px);
   background-color: var(--bg-card);
@@ -5,26 +120,30 @@
 }
 
 .sidebar-logo-text {
-  background: linear-gradient(135deg, var(--primary-accent), var(--secondary-accent));
+  background: linear-gradient(135deg, #4077dd, #ff76ac);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   padding: 20px;
   letter-spacing: 1px;
 }
 
-h4.text-primary {
-  background: linear-gradient(135deg, var(--primary-accent), var(--secondary-accent));
-  -webkit-background-clip: text;
+/* h6.text-primary {
+  background: #858d9c;
+  /* -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-family: 'Poppins', sans-serif;
-  letter-spacing: 0.5px;
+  font-family: 'Poppins', sans-serif; */
+/* letter-spacing: 0.5px;
   position: relative;
   display: inline-block;
   padding: 15px 20px;
   text-transform: uppercase;
-  font-size: 1.25rem;
+  font-size: 1.25rem; */
+/* } */
+h6 {
+  font-size: 0.7rem;
+  color: #002366;
 }
-
+/*
 h4.text-primary::after {
   content: '';
   position: absolute;
@@ -32,9 +151,9 @@ h4.text-primary::after {
   left: 20px;
   width: 30px;
   height: 3px;
-  background: linear-gradient(135deg, var(--primary-accent), var(--secondary-accent));
+  background: linear-gradient(135deg, #4077dd, #ff76ac);
   border-radius: 2px;
-}
+} */
 
 .sidebar-sticky {
   position: fixed;
@@ -67,10 +186,10 @@ h4.text-primary::after {
 }
 
 .sidebar .nav-link.active {
-  background-color: var(--bg-nav-active) !important;
-  color: var(--primary-accent) !important;
+  background-color: #f0f4ff !important;
+  color: #4077dd !important;
   font-weight: 700;
-  border-left: 5px solid var(--primary-accent);
+  border-left: 5px solid #4077dd;
 }
 
 .bg-light-soft {
@@ -79,7 +198,6 @@ h4.text-primary::after {
 }
 
 @media (max-width: 991.98px) {
-
   #patientSidebar,
   #doctorSidebar,
   #adminSidebar {
@@ -99,9 +217,10 @@ h4.text-primary::after {
   }
 
   .sidebar .nav-link.active {
-    border-left: 8px solid var(--primary-accent);
+    border-left: 8px solid #4077dd;
   }
 }
+
 
 .sidebar .nav-link i {
   margin-right: 10px;
@@ -114,5 +233,5 @@ h4.text-primary::after {
 }
 
 .sidebar .nav-link.active i {
-  color: var(--primary-accent);
+  color: #4077dd;
 }
