@@ -18,7 +18,7 @@
       "role": "doctor",
       "price": 600,
       "specialization": "cardiologist",
-      "experience": 10,
+      "experience": 11,
       "bio": "Experienced cardiologist with 10 years in heart care.",
       "avatar": "images/doctors/1.webp",
       "availableSlots": [

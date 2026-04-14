@@ -104,8 +104,8 @@
       <div class="d-flex align-items-center gap-2" role="button" data-bs-toggle="dropdown" aria-expanded="false"
         style="cursor: pointer;">
         <div class="text-end d-none d-sm-block">
-          <p class="mb-0 fw-bold small text-dark">{{ (authService.user$ | async)?.name }}</p>
-          <p class="mb-0 text-muted" style="font-size: 10px;">{{ authService.getRole() | uppercase }}</p>
+          <p class="mb-0 fw-bold small" style="color:var(--text-title);">{{ (authService.user$ | async)?.name }}</p>
+          <p class="mb-0" style="color:var(--text-small); font-size: 10px;">{{ authService.getRole() | uppercase }}</p>
         </div>
         <img
           [src]="(authService.user$ | async)?.avatar ||
