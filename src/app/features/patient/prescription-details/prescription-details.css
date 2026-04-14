@@ -9,6 +9,7 @@
   color: #555;
   border-bottom: 1px solid #eee;
 }
+
 .doctor-name {
   color: #4077dd !important;
   font-weight: 600;
@@ -51,16 +52,19 @@
 }
 
 @media print {
+
   .btn-print,
   .card-footer {
     display: none !important;
   }
+
   .container {
     width: 100% !important;
     max-width: none !important;
     margin: 0 !important;
     padding: 0 !important;
   }
+
   .prescription-card {
     box-shadow: none !important;
     border: none !important;
