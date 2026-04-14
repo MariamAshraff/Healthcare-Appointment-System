@@ -2,7 +2,7 @@
   <div class="container">
     <nav aria-label="breadcrumb" class="mb-4">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a routerLink="/doctors">Doctors</a></li>
+        <li class="breadcrumb-item"><a [routerLink]="['/'+role+'/doctors']">Doctors</a></li>
         <li class="breadcrumb-item active">{{ isEditMode ? 'Edit Doctor' : 'Add New Doctor' }}</li>
       </ol>
     </nav>
