@@ -24,14 +24,14 @@
           <form [formGroup]="filterForm" (ngSubmit)="applyFilters()">
 
             <div class="mb-3">
-              <label class="small fw-medium text-muted">Doctor Name</label>
+              <label class="small fw-medium" style="color:var(--text-small);">Doctor Name</label>
               <input type="text" formControlName="fullName" class="form-control form-control-sm bg-light border-0"
                 placeholder="Search by name...">
             </div>
 
             <div class="mb-3">
-              <label class="small fw-medium text-muted">Specialization</label>
-              <select formControlName="spec" class="form-select form-select-sm bg-light border-0">
+              <label class="small fw-medium" style="color:var(--text-small);">Specialization</label>
+              <select formControlName="spec" class="form-select form-select-sm border-0">
                 <option value="">All Specializations</option>
                 <option value="cardiologist">cardiologist</option>
                 <option value="Dermatology">Dermatology</option>
@@ -47,14 +47,14 @@
             </div>
 
             <div class="mb-3">
-              <label class="small fw-medium text-muted">Max Price ($)</label>
+              <label class="small fw-medium" style="color:var(--text-small);">Max Price ($)</label>
               <input type="number" formControlName="maxPrice" class="form-control form-control-sm bg-light border-0"
                 placeholder="Enter max budget...">
             </div>
 
             <div class="mb-4">
-              <label class="small fw-medium text-muted">Day</label>
-              <select formControlName="day" class="form-select form-select-sm bg-light border-0">
+              <label class="small fw-medium " style="color:var(--text-small);">Day</label>
+              <select formControlName="day" class="form-select form-select-sm border-0">
                 <option value="">Select Day</option>
                 <option value="Saturday">Saturday</option>
                 <option value="Sunday">Sunday</option>
@@ -84,12 +84,12 @@
     @for (doctor of doctors; track doctor.id) {
     <div class="col-12 col-md-6 col-xxl-4 position-relative">
       <div class="card doctor-card border-0 shadow-sm h-100 p-3 clickable-profile"
-        [routerLink]="['/doctor', doctor.id]">
+        [routerLink]="['/'+role+'/doctor', doctor.id]">
 
         @if(role == 'admin'){
         <div class="dropdown position-absolute top-0 end-0 m-3" (click)="$event.stopPropagation()">
           <button class="btn btn-options p-0 border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="bi bi-three-dots-vertical text-muted fs-5"></i>
+            <i class="bi bi-three-dots-vertical fs-5" style="color:var(--text-small);"></i>
           </button>
 
           <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0 py-1" style="min-width: 120px;">
@@ -127,19 +127,19 @@
               <h5 class="card-title doctor-name fw-bold text-dark-blue mb-1 text-truncate">
                 {{ doctor.name }}
               </h5>
-              <p class="text-muted small mb-1 text-truncate">{{ doctor.specialization }}</p>
+              <p class="small mb-1 text-truncate" style="color:var(--text-small);">{{ doctor.specialization }}</p>
 
               <div class="d-flex align-items-center mb-2">
                 <i class="bi bi-star-fill text-warning me-1 small"></i>
-                <span class="fw-bold small me-1">{{ doctor.rating }}</span>
-                <span class="text-muted small">({{ doctor.reviewCount }})</span>
+                <span class="fw-bold small me-1" style="color:var(--text-small);">{{ doctor.rating }}</span>
+                <span class="small" style="color:var(--text-small);">({{ doctor.reviewCount }})</span>
               </div>
 
               <div class="info-section">
                 <div class="d-flex align-items-center mb-1 small text-secondary">
                   <i class="bi bi-calendar-event me-2 text-purple"></i>
                   <span>Available:
-                    <span class="fw-medium text-dark">
+                    <span class="fw-medium " style="color:var(--text-title);">
                       {{ (doctor.availableSlots && doctor.availableSlots.length > 0) ? doctor.availableSlots[0].day :
                       'No slots' }}
                     </span>

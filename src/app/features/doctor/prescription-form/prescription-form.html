@@ -1,5 +1,5 @@
 <div class="container py-5">
-  <div class="booking-wrapper shadow-lg border-0 rounded-4 bg-white">
+  <div class="booking-wrapper shadow-lg border-0 rounded-4">
 
     <div class="booking-header text-center p-5 custom-gradient rounded-top-4">
       <div class="header-icon-circle mb-3">
@@ -19,18 +19,15 @@
           </div>
 
           <div class="form-floating">
-            <input type="text"
-                   class="form-control rounded-3"
-                   [class.is-invalid]="diagnosis?.invalid && diagnosis?.touched"
-                   formControlName="diagnosis"
-                   id="diagnosis"
-                   placeholder="Diagnosis">
+            <input type="text" class="form-control rounded-3"
+              [class.is-invalid]="diagnosis?.invalid && diagnosis?.touched" formControlName="diagnosis" id="diagnosis"
+              placeholder="Diagnosis">
             <label for="diagnosis">Main Diagnosis</label>
 
             @if (diagnosis?.invalid && diagnosis?.touched) {
-              <small class="custom-error-msg">
-                Diagnosis is required
-              </small>
+            <small class="custom-error-msg">
+              Diagnosis is required
+            </small>
             }
           </div>
         </div>
@@ -52,10 +49,8 @@
 
               <div class="d-flex justify-content-between align-items-center mb-3">
                 <span class="badge bg-primary px-3 py-2">Medication #{{ i + 1 }}</span>
-                <button type="button"
-                        class="btn btn-sm btn-link text-danger text-decoration-none"
-                        (click)="removeMedication(i)"
-                        *ngIf="medications.length > 1">
+                <button type="button" class="btn btn-sm btn-link text-danger text-decoration-none"
+                  (click)="removeMedication(i)" *ngIf="medications.length > 1">
                   Remove
                 </button>
               </div>
@@ -64,11 +59,11 @@
                 <div class="col-md-6">
                   <div class="form-floating">
                     <input type="text" class="form-control"
-                           [class.is-invalid]="med.get('name')?.invalid && med.get('name')?.touched"
-                           formControlName="name" placeholder="Drug Name">
+                      [class.is-invalid]="med.get('name')?.invalid && med.get('name')?.touched" formControlName="name"
+                      placeholder="Drug Name">
                     <label>Drug Name</label>
                     @if (med.get('name')?.invalid && med.get('name')?.touched) {
-                      <small class="custom-error-msg">Name is required</small>
+                    <small class="custom-error-msg">Name is required</small>
                     }
                   </div>
                 </div>
@@ -105,25 +100,20 @@
             <h5 class="section-title mb-0">Additional Instructions</h5>
           </div>
           <div class="form-floating">
-            <textarea class="form-control"
-                      formControlName="notes"
-                      placeholder="Notes"
-                      style="height: 120px"></textarea>
+            <textarea class="form-control" formControlName="notes" placeholder="Notes" style="height: 120px"></textarea>
             <label>Write any notes for the patient...</label>
           </div>
         </div>
 
         <div class="pt-3">
-          <button type="submit"
-                  class="btn btn-submit-custom w-100 shadow"
-                  [disabled]="prescriptionForm.invalid">
+          <button type="submit" class="btn btn-submit-custom w-100 shadow" [disabled]="prescriptionForm.invalid">
             SAVE
           </button>
 
           @if (prescriptionForm.invalid && prescriptionForm.touched) {
-            <p class="text-center text-muted mt-3 small">
-              Please fill all required fields to enable the submit button.
-            </p>
+          <p class="text-center mt-3 small" style="color: var(--text-small);">
+            Please fill all required fields to enable the submit button.
+          </p>
           }
         </div>
 

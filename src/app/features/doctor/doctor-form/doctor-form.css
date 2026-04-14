@@ -100,6 +100,8 @@
 }
 
 .slot-row {
+  background-color: var(--soft-bg);
+  border: 1px solid var(--border-light);
   transition: all 0.2s;
   border-bottom: 1px dashed var(--border-light);
 }
@@ -136,4 +138,16 @@
 
 .btn-delete-slot i {
   font-size: 0.9rem;
+}
+
+.breadcrumb-item a {
+  color: var(--text-primary-soft);
+}
+
+.breadcrumb-item.active {
+  color: var(--text-small);
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+  color: var(--text-muted);
 }

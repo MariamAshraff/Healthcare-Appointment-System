@@ -22,7 +22,6 @@ export const PATIENT_ROUTES: Routes = [
       { path: 'appointments', component: Appointments },
       { path: 'prescriptions', component: Prescriptions },
       { path: 'medicalRecords', component: MedicalRecordList },
-      //{ path: 'medicalRecords/:id', component: MedicalRecordList },
       { path: 'doctors', component: DoctorList },
       { path: 'doctor/:id', component: DoctorDetail },
       { path: 'prescriptions/:id', component: PrescriptionDetails },

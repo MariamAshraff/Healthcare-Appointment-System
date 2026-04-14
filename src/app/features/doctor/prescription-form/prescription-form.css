@@ -7,6 +7,10 @@
   color: var(--vibrant-blue);
 }
 
+.card-body {
+  background-color: transparent !important;
+}
+
 .header-icon-circle {
   width: 60px;
   height: 60px;
