@@ -114,6 +114,13 @@
           "endTime": "10:00",
           "session": "Evening",
           "isBooked": false
+        },
+        {
+          "day": "Wednesday",
+          "startTime": "09:00",
+          "endTime": "10:00",
+          "session": "Morning",
+          "isBooked": false
         }
       ],
       "rating": 4.8,
