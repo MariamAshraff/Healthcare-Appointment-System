@@ -26,7 +26,7 @@
             }
           </div>
 
-          <div class="card-body p-4 p-md-5 bg-white">
+          <div class="card-body p-4 p-md-5 " style="background-color: var(--bg-card);">
             <form [formGroup]="doctorForm" (ngSubmit)="onSubmit()">
 
               <h5 class="text-purple-dark mb-4 border-bottom-dashed pb-2">Profile Picture</h5>
@@ -157,7 +157,7 @@
 
               <div formArrayName="availableSlots" class="mb-4">
                 @for (slot of availableSlots.controls; track slot; let i = $index) {
-                <div [formGroupName]="i" class="row g-2 mb-2 p-3 bg-light rounded-3 align-items-end slot-row">
+                <div [formGroupName]="i" class="row g-2 mb-2 p-3 rounded-3 align-items-end slot-row">
                   <div class="col-md-3">
                     <label class="small fw-bold form-label">Day</label>
                     <select formControlName="day" class="form-select form-select-sm">
@@ -179,7 +179,7 @@
                   <div class="col-md-3 d-flex align-items-center justify-content-between">
                     <div class="form-check">
                       <input type="checkbox" formControlName="isBooked" class="form-check-input">
-                      <label class="form-check-label small">Booked</label>
+                      <label class="form-check-label small" style="color: var(--text-small);">Booked</label>
                     </div>
                     @if(doctorForm.get('isBooked')?.value){
                     <button type="button" class="btn btn-delete-slot" (click)="removeSlot(i)">
@@ -197,16 +197,18 @@
                 </div>
                 }
                 @if (availableSlots.length === 0) {
-                <div class="text-center py-4 border rounded-3 border-dashed bg-light">
-                  <p class="text-muted mb-0 small">No slots added yet. Click "Add Slot" to start.</p>
+                <div class="text-center py-4 border rounded-3 border-dashed empty-state">
+                  <p class=" mb-0 small">No slots added yet. Click "Add Slot" to start.</p>
                 </div>
                 }
               </div>
 
               <div class="d-flex justify-content-end gap-3 mt-5">
-                <button type="button" class="btn btn-light px-4 rounded-3 text-secondary"
+                <button type="button" class="btn px-4 rounded-3 text-secondary"
+                  style="background-color: var(--soft-bg); color: var(--text-small);"
                   routerLink="/admin/doctors">Cancel</button>
-                <button type="submit" class="btn btn-submit-gradient btn-grad px-5 shadow-sm" [disabled]="doctorForm.invalid">
+                <button type="submit" class="btn btn-submit-gradient btn-grad px-5 shadow-sm"
+                  [disabled]="doctorForm.invalid">
                   {{ isEditMode ? 'Update Doctor Profile' : 'Save New Doctor' }}
                 </button>
               </div>

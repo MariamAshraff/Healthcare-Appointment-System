@@ -16,7 +16,7 @@ export class DoctorDetail implements OnInit {
   doctor?: IDoctor;
   id: string = '';
   userRating: number = 0;
-
+  role?: string;
   constructor(private doctorService: DoctorService,
     private activateRoute: ActivatedRoute,
     private toast: ToastrService,
@@ -37,6 +37,13 @@ export class DoctorDetail implements OnInit {
         // console.error('Error fetching product details:', err);
       }
     });
+
+    if (this.authService.isAuthenticated()) {
+      this.role = this.authService.getRole();
+    }
+    else {
+      this.role = '';
+    }
   }
   rateDoctor(stars: number): void {
     if (!this.doctor) return;

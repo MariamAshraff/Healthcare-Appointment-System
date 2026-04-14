@@ -57,7 +57,7 @@ export class Login {
           }
         },
         error: (err) => {
-          console.error('Error:', err);
+          this.toastr.error('Invalid email or password. Please try again.', 'Login Failed');
         }
       })
     }

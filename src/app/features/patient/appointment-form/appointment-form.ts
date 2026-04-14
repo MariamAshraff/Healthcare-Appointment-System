@@ -31,36 +31,39 @@ export class AppointmentForm {
     private fb: FormBuilder,
     public router: Router,
     private appointmentService: AppointmentService,
-    private PatientService:PatientService
+    private PatientService: PatientService
   ) { }
 
   appointmentForm!: FormGroup;
   isEditMode = false;
   selectedDoctor: IDoctor | null = null;
   currentUserId?: string = '';
-  isDeactive:boolean=false
+  isDeactive: boolean = false
   today: string = new Date().toISOString().split('T')[0];
   filteredSlots: any[] = [];
-  user!:IUser
+  user!: IUser;
+  role?: string
 
   ngOnInit(): void {
     this.authService.user$.subscribe({
       next: (user) => {
         this.currentUserId = user?.id
-        if(user){
+        if (user) {
           this.PatientService.getById(user?.id).subscribe({
-             next: (user) => {
-               if(user?.isActive==false){
-                this.isDeactive=true;
+            next: (user) => {
+              if (user?.isActive == false) {
+                this.isDeactive = true;
               }
               else
-                this.isDeactive=false
-             }
+                this.isDeactive = false
+            }
 
-        })}
-        console.log(user?.isActive,this.user,user?.id)
+          })
+        }
+        console.log(user?.isActive, this.user, user?.id)
       }
     });
+
     this.initForm();
 
     const idFromUrl = this.route.snapshot.paramMap.get('id');

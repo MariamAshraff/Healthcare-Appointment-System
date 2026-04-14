@@ -43,22 +43,5 @@ export class Appointments implements OnInit {
     });
   }
 
-  prepareDelete(id: string) {
-    this.selectedAppointmentId = id;
-  }
 
-  confirmDelete() {
-    if (this.selectedAppointmentId) {
-      this.appointmentService.delete(this.selectedAppointmentId).subscribe({
-        next: () => {
-          this.ReloadData();
-          this.selectedAppointmentId = null;
-        },
-        error: (err) => {
-          console.error(err);
-          this.selectedAppointmentId = null;
-        }
-      });
-    }
-  }
 }

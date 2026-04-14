@@ -110,7 +110,8 @@
 }
 
 [data-theme='dark'] {
-  --bg-page: #121212;
+
+  /* --bg-page: #121212;
   --bg-card: #1e1e1e;
   --bg-header-1: #252525;
   --bg-header-2: #2d2325;
@@ -228,12 +229,142 @@
   --notif-unread: rgba(255, 255, 255, 0.03);
   --login-btn-color: #38bdf8;
   --secondary-accent: #fb7185;
+  --sidebar-text: #f1f5f9;
+  --sidebar-bg: #1e293b;
+
+  --text-title: #f1f5f9;
+  --text-small: #cbd5e1;
+  --text-muted: #94a3b8;
+  --deactive-title: #f1f5f9;
+
+  --bg-card: #1e293b;
+  --border-light: #334155;
+
+  --morning-bg: #0c2a42;
+  --morning-text: #38bdf8;
+  --evening-bg: #2d1b4d;
+  --evening-text: #c084fc;
+  */
+  --bg-page: #0f172a;
+  --bg-card: #1e293b;
+  --bg-header-1: #1e293b;
+  --bg-header-2: #2d1f2b;
+  --bg-hover: #2d2438;
+  --bg-nav-active: #1e3a5f;
+  --soft-bg: #1e293b;
+  --input-bg: #263348;
+  --stats-section-bg: #1e1f3b;
+  --error-bg-soft: #2c1a1a;
+  --morning-bg: #0c2a42;
+  --evening-bg: #2d1b4d;
+  --btn-delete-bg: #3d1a1a;
+
+  --text-title: #f1f5f9;
+  --text-muted: #94a3b8;
+  --text-small: #cbd5e1;
+  --text-primary-soft: #60a5fa;
+  --text-danger: #ff6b6b;
+  --text-on-btn: #ffffff;
+  --deactive-title: #e2e8f0;
+  --notif-time: #64748b;
+  --morning-text: #38bdf8;
+  --evening-text: #c084fc;
+
+  --primary-accent: #818cf8;
+  --secondary-accent: #fb7185;
+  --doctor-name-color: #a78bfa;
+
+  --brand-blue: #60a5fa;
+  --brand-blue-hover: #93c5fd;
+  --brand-blue-disabled: #1e3a8a;
+  --brand-pink: #f472b6;
+
+  --vibrant-blue: #758bff;
+  --vibrant-blue-hover: #a5b4ff;
+
+  --mediva-purple: var(--text-primary-soft);
+  --mediva-pink: var(--secondary-accent);
+
+  --primary-gradient: linear-gradient(135deg, #8176f2, #e85a95);
+  --hero-grad: linear-gradient(135deg, #1e293b 10%, #4c1d95 50%, #0f172a 100%);
+
+  --border-light: #334155;
+  --border-extra-light: #1e293b;
+  --border-hover: #7c3d52;
+  --deactive-border: #334155;
+  --input-border: #475569;
+
+  --card-shadow: rgba(0, 0, 0, 0.4);
+  --dropdown-shadow: rgba(0, 0, 0, 0.5);
+  --sidebar-shadow: rgba(0, 0, 0, 0.6);
+
+  --notif-dot-shadow: rgba(255, 118, 172, 0.8);
+  --bg-primary-soft: rgba(96, 165, 250, 0.1);
+  --glass-bg: rgba(30, 41, 59, 0.7);
+  --notif-unread: rgba(255, 255, 255, 0.03);
+
+  --status-primary-bg: #1e3a6e;
+  --status-primary-text: #93c5fd;
+  --status-success-bg: #14532d;
+  --status-success-text: #4ade80;
+  --status-warning-bg: #78350f;
+  --status-warning-text: #fcd34d;
+  --status-danger-bg: #7f1d1d;
+  --status-danger-text: #fca5a5;
+
+  --bg-success-soft: rgba(34, 197, 94, 0.15);
+  --text-success-soft: #4ade80;
+  --medical-blue: #38bdf8;
+  --bg-color: #0f172a;
+  --text-dark: #f1f5f9;
+
+  --status-active: #4ade80;
+  --status-inactive: #f87171;
+  --patient-color: #22d3ee;
+  --doctor-color: #a78bfa;
+  --admin-color: #fb923c;
+
+  --header-bg: #1e293b;
+  --login-btn-color: #60a5fa;
+  --nav-link-color: #94a3b8;
+
+  --header-border: #334155;
+  --header-shadow: rgba(0, 0, 0, 0.4);
+
+  --btn-ai-gradient: linear-gradient(135deg, #818cf8 0%, #fb7185 100%);
+  --btn-ai-shadow: rgba(129, 140, 248, 0.4);
+  --btn-ai-shadow-hover: rgba(129, 140, 248, 0.6);
+
+  --profile-border: #334155;
+
+  --menu-title-color: #475569;
+
+  --nav-active-bg: rgba(255, 118, 172, 0.15);
+  --nav-active-text: #60a5fa;
+
+  --submenu-border: rgba(129, 140, 248, 0.4);
+
+  --btn-dark-bg: #0f172a;
+
+  --notif-badge-shadow: rgba(255, 118, 172, 0.5);
+  --dropdown-shadow-strong: rgba(0, 0, 0, 0.7);
+
+  --notif-unread-soft: rgba(129, 140, 248, 0.08);
+  --bg-primary-soft-strong: rgba(129, 140, 248, 0.2);
+
+  --btn-login-shadow: rgba(96, 165, 250, 0.3);
+
 }
 
 
 
 * {
   font-family: 'Bitter', serif;
+}
+
+.empty-state {
+  background-color: var(--soft-bg);
+  color: var(--text-small);
 }
 
 .tangerine-bold {

@@ -8,6 +8,7 @@ import { DoctorService } from '../../../core/service/doctor-service';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink, RouterModule } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { ConfirmDialogService } from '../../../core/service/confirm-dialog-service';
 
 @Component({
   selector: 'app-appointment-card',
@@ -24,11 +25,14 @@ export class AppointmentCard implements OnInit {
   @Output() OnDelete = new EventEmitter()
   patient: IUser | null = null;
   appointmentIdToDelete: string | null = null;
+  doctor: IDoctor | null = null;
 
   constructor(private patientService: PatientService,
     private appointmentService: AppointmentService,
     private Toast: ToastrService,
-    private route: Router
+    private route: Router,
+    private confirmService: ConfirmDialogService,
+    private doctorService: DoctorService
   ) { }
 
 
@@ -38,6 +42,13 @@ export class AppointmentCard implements OnInit {
         next: (data) => {
           this.patient = data;
 
+        },
+        error: (err) => console.error('Error fetching doctor details', err)
+      });
+
+      this.doctorService.getDoctorById(this.appointment.doctorId).subscribe({
+        next: (data) => {
+          this.doctor = data;
         },
         error: (err) => console.error('Error fetching doctor details', err)
       });
@@ -78,14 +89,59 @@ export class AppointmentCard implements OnInit {
       }
     });
   }
-
-  selectedAppointmentId?: string = '';
-
-  openDeleteModal(appointmentId: string | undefined) {
-    if (appointmentId) {
-      this.delete.emit(appointmentId);
+  private updateDoctorAvailability() {
+    if (!this.doctor || !this.doctor.availableSlots) {
+      this.OnDelete.emit();
+      return;
     }
 
+    const updatedDoctor = { ...this.doctor };
+
+    const [appStart, appEnd] = this.appointment.timeSlot.split(' - ');
+
+    const appointmentDate = new Date(this.appointment.date);
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const appointmentDay = days[appointmentDate.getDay()];
+
+    const slotIndex = updatedDoctor.availableSlots.findIndex((s: any) =>
+      s.day === appointmentDay &&
+      s.startTime === appStart &&
+      s.endTime === appEnd
+    );
+
+    if (slotIndex > -1) {
+      updatedDoctor.availableSlots[slotIndex].isBooked = false;
+
+      this.doctorService.updateDoctor(updatedDoctor.id, updatedDoctor).subscribe({
+        next: () => {
+          this.Toast.success('Appointment cancelled and slot is free now');
+          this.OnDelete.emit();
+        },
+        error: (err) => {
+          console.error('Error updating doctor slot:', err);
+          this.OnDelete.emit();
+        }
+      });
+    } else {
+      console.warn('Matching slot not found for day/time comparison');
+      this.OnDelete.emit();
+    }
   }
 
+  async confirmDelete() {
+    const confirmed = await this.confirmService.confirm(
+      'Delete Doctor',
+      'Are you sure you want to remove this doctor from the system?'
+    );
+    if (confirmed) {
+      this.appointmentService.delete(this.appointment.id).subscribe({
+        next: () => {
+          this.updateDoctorAvailability();
+        },
+        error: (err) => {
+          this.Toast.error("Faild To Confirm Delete")
+        }
+      });
+    }
+  }
 }

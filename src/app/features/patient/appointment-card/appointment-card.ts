@@ -8,6 +8,7 @@ import { DoctorService } from '../../../core/service/doctor-service';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink, RouterModule } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { ConfirmDialogService } from '../../../core/service/confirm-dialog-service';
 
 @Component({
   selector: 'app-appointment-card',
@@ -25,7 +26,8 @@ export class AppointmentCard implements OnInit {
   constructor(private doctorService: DoctorService,
     private appointmentService: AppointmentService,
     private Toast: ToastrService,
-    private route: Router
+    private route: Router,
+    private confirmService: ConfirmDialogService
   ) { }
   ngOnInit(): void {
 
@@ -41,18 +43,6 @@ export class AppointmentCard implements OnInit {
 
   onEdit(id?: string) {
     this.route.navigate(['/patient/appointmentForm', id]);
-  }
-
-  confirmDelete() {
-    if (!this.appointment.id || !this.appointment.doctorId) return;
-
-    this.appointmentService.delete(this.appointment.id).subscribe({
-      next: () => {
-        this.updateDoctorAvailability();
-        // this.OnDelete.emit();
-      },
-      error: () => this.Toast.error('Failed to delete appointment')
-    });
   }
 
   private updateDoctorAvailability() {
@@ -94,12 +84,21 @@ export class AppointmentCard implements OnInit {
     }
   }
 
-  selectedAppointmentId?: string = '';
-
-  openDeleteModal(appointmentId: string | undefined) {
-    if (appointmentId) {
-      this.delete.emit(appointmentId);
+  async confirmDelete() {
+    const confirmed = await this.confirmService.confirm(
+      'Delete Doctor',
+      'Are you sure you want to remove this doctor from the system?'
+    );
+    if (confirmed) {
+      this.appointmentService.delete(this.appointment.id).subscribe({
+        next: () => {
+          this.updateDoctorAvailability();
+        },
+        error: (err) => {
+          this.Toast.error("Faild To Confirm Delete")
+        }
+      });
     }
-
   }
+
 }

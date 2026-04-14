@@ -7,6 +7,7 @@ import { AuthService } from '../../../core/service/auth-service';
 import { IUser } from '../../../core/models/user';
 import { IDoctor } from '../../../core/models/doctor';
 import { DoctorService } from '../../../core/service/doctor-service';
+import { ConfirmDialogService } from '../../../core/service/confirm-dialog-service';
 
 @Component({
   selector: 'app-appointments',
@@ -23,7 +24,8 @@ export class Appointments implements OnInit {
 
   constructor(private appointmentService: AppointmentService,
     private authService: AuthService,
-    private doctorService: DoctorService
+    private doctorService: DoctorService,
+    private confirmService: ConfirmDialogService
   ) {
   }
   ngOnInit(): void {
@@ -48,20 +50,6 @@ export class Appointments implements OnInit {
     this.selectedAppointmentId = id;
   }
 
-  confirmDelete() {
-    if (this.selectedAppointmentId) {
-      this.appointmentService.delete(this.selectedAppointmentId).subscribe({
-        next: () => {
-          this.ReloadData();
-          this.selectedAppointmentId = null;
-        },
-        error: (err) => {
-          console.error(err);
-          this.selectedAppointmentId = null;
-        }
-      });
-    }
-  }
 
 
 }

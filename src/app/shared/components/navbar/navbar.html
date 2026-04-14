@@ -34,6 +34,7 @@
         <i class="bi bi-bell"></i>
         <span class="notification-badge"></span>
       </button> -->
+      @if(authService.isAuthenticated()){
       <div class="dropdown">
         <button class="btn btn-icon-round position-relative" role="button" data-bs-toggle="dropdown"
           aria-expanded="false">
@@ -83,6 +84,7 @@
           </li>
         </ul>
       </div>
+      }
       <div class="header-icons d-flex gap-2 align-items-center">
         <button class="btn btn-icon-round theme-toggle" (click)="toggleTheme()"
           [title]="isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'">
@@ -118,8 +120,7 @@
         @if (authService.user$ | async; as currentUser) {
         <li>
           @if(currentUser.role=='admin'){
-            <a class="dropdown-item d-flex align-items-center gap-2 py-2"
-            routerLink="/admin/dashboard">
+          <a class="dropdown-item d-flex align-items-center gap-2 py-2" routerLink="/admin/dashboard">
             <i class="bi bi-person text-muted"></i> Dashboard
           </a>
           }@else{
@@ -127,7 +128,7 @@
             [routerLink]="['/' + currentUser.role + '/details', currentUser.id]">
             <i class="bi bi-person text-muted"></i> My Profile
           </a>
-        }
+          }
         </li>
         }
 

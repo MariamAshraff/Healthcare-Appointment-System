@@ -1,6 +1,5 @@
 import { Routes } from "@angular/router";
 import { Dashboard } from "./dashboard/dashboard";
-import { Prescriptions } from "./prescriptions/prescriptions";
 import { Schedule } from "./schedule/schedule";
 import { Appointments } from "./appointments/appointments";
 import { Main } from "./main/main";
@@ -20,7 +19,6 @@ export const DOCTOR_ROUTES: Routes = [
       { path: 'dashboard', component: Dashboard },
       { path: 'appointments', component: Appointments },
       { path: 'schedule/:id', component: Schedule },
-      { path: 'prescriptions', component: Prescriptions },
       { path: 'medicalRecords/:id', component: MedicalRecordList }, // /doctor/medicalRecords/id
       { path: 'details/:id', component: DoctorDetail },
       { path: 'patient/:id', component: PatientProfile },
