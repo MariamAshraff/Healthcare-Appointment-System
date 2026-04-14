@@ -16,7 +16,7 @@
       "password": "doctor123",
       "phone": "01011111111",
       "role": "doctor",
-      "price": 600,
+      "price": 699,
       "specialization": "cardiologist",
       "experience": 11,
       "bio": "Experienced cardiologist with 10 years in heart care.",
@@ -85,7 +85,7 @@
           "startTime": "10:00",
           "endTime": "10:20",
           "session": "Morning",
-          "isBooked": false
+          "isBooked": true
         },
         {
           "day": "Friday",
@@ -113,6 +113,27 @@
           "startTime": "09:00",
           "endTime": "10:00",
           "session": "Evening",
+          "isBooked": false
+        },
+        {
+          "day": "Thursday",
+          "startTime": "09:00",
+          "endTime": "10:00",
+          "session": "Morning",
+          "isBooked": false
+        },
+        {
+          "day": "Monday",
+          "startTime": "09:00",
+          "endTime": "10:00",
+          "session": "Morning",
+          "isBooked": false
+        },
+        {
+          "day": "Monday",
+          "startTime": "09:00",
+          "endTime": "10:00",
+          "session": "Morning",
           "isBooked": false
         }
       ],
@@ -161,10 +182,11 @@
       "name": "Mohamed Ali",
       "email": "mohamed@patient.com",
       "password": "patient123",
-      "phone": "01033333333",
+      "phone": "01033333555",
       "role": "patient",
       "avatar": "images/patient/8.webp",
-      "createdAt": "2026-03-01"
+      "createdAt": "2026-03-01",
+      "isActive": false
     },
     {
       "id": "5",
@@ -174,7 +196,8 @@
       "phone": "01044444444",
       "role": "patient",
       "avatar": "images/patient/user-02.jpg",
-      "createdAt": "2026-03-10"
+      "createdAt": "2026-03-10",
+      "isActive": true
     },
     {
       "id": "6",
@@ -1754,6 +1777,16 @@
       "role": "patient",
       "createdAt": "2026-04-12T14:30:23.758Z",
       "isActive": true
+    },
+    {
+      "id": "F1M4rcqrjf4",
+      "name": "Mohamed Ali",
+      "email": "mohamed1234@patient.com",
+      "password": "123456@mm",
+      "phone": "",
+      "role": "patient",
+      "createdAt": "2026-04-14T10:31:15.465Z",
+      "isActive": true
     }
   ],
   "appointments": [
@@ -1876,7 +1909,7 @@
       "timeSlot": "10:00 - 10:30",
       "patientId": "4",
       "doctorId": "2",
-      "status": "pending",
+      "status": "confirmed",
       "createdAt": "2026-04-12T12:57:50.670Z",
       "id": "NytU2iaeZwM"
     },
@@ -2345,7 +2378,7 @@
       "id": "9tA5QNlCsAE"
     },
     {
-      "date": "2026-04-17",
+      "date": "2026-04-14",
       "timeSlot": "10:00 - 10:20",
       "patientId": "4",
       "doctorId": "2",
@@ -2361,6 +2394,15 @@
       "status": "pending",
       "createdAt": "2026-04-14T08:08:07.124Z",
       "id": "F122KtNStIw"
+    },
+    {
+      "date": "2026-04-17",
+      "timeSlot": "10:00 - 10:20",
+      "patientId": "F1M4rcqrjf4",
+      "doctorId": "2",
+      "status": "pending",
+      "createdAt": "2026-04-14T10:31:54.203Z",
+      "id": "dqGkWLdWpak"
     }
   ],
   "prescriptions": [
@@ -3127,6 +3169,78 @@
       "status": "unread",
       "createdAt": "2026-04-14T08:08:07.324Z",
       "id": "QnJPqInWfus"
+    },
+    {
+      "recipientId": "4",
+      "message": "Your appointment status with Dr. Ahmed Hassan has been updated to confirmed.",
+      "type": "status_changed",
+      "appointmentId": "NytU2iaeZwM",
+      "status": "unread",
+      "createdAt": "2026-04-14T10:20:33.134Z",
+      "id": "ytwahfftHgs"
+    },
+    {
+      "recipientId": "111",
+      "message": "Appointment Update: Patient Mohamed Ali & Dr. Ahmed Hassan. Updated by: doctor. Status: confirmed.",
+      "type": "appointment_updated",
+      "appointmentId": "NytU2iaeZwM",
+      "status": "unread",
+      "createdAt": "2026-04-14T10:20:33.151Z",
+      "id": "_PPBlV9MZ6g"
+    },
+    {
+      "recipientId": "2",
+      "message": "Patient Mohamed Ali has booked an appointment with you on 2026-04-16.",
+      "type": "appointment_booked",
+      "appointmentId": null,
+      "status": "unread",
+      "createdAt": "2026-04-14T10:29:00.303Z",
+      "id": "mOzXQII_JnY"
+    },
+    {
+      "recipientId": "111",
+      "message": "New booking: Patient Mohamed Ali has booked an appointment with Dr. Ahmed Hassan on 2026-04-16.",
+      "type": "appointment_booked",
+      "appointmentId": null,
+      "status": "unread",
+      "createdAt": "2026-04-14T10:29:00.345Z",
+      "id": "5k9lLAA1zKw"
+    },
+    {
+      "recipientId": "2",
+      "message": "Patient Mohamed Ali has updated the appointment date/time to 2026-04-14 at 10:00 - 10:20.",
+      "type": "appointment_updated",
+      "appointmentId": "ImlzIIM_gi0",
+      "status": "unread",
+      "createdAt": "2026-04-14T10:29:29.961Z",
+      "id": "CNf8LD1GPkc"
+    },
+    {
+      "recipientId": "111",
+      "message": "Appointment Update: Patient Mohamed Ali & Dr. Ahmed Hassan. Updated by: patient. Status: pending.",
+      "type": "appointment_updated",
+      "appointmentId": "ImlzIIM_gi0",
+      "status": "unread",
+      "createdAt": "2026-04-14T10:29:29.983Z",
+      "id": "V8NYRCnMXac"
+    },
+    {
+      "recipientId": "2",
+      "message": "Patient Mohamed Ali has booked an appointment with you on 2026-04-17.",
+      "type": "appointment_booked",
+      "appointmentId": "dqGkWLdWpak",
+      "status": "unread",
+      "createdAt": "2026-04-14T10:31:54.244Z",
+      "id": "IwFZYYevnWw"
+    },
+    {
+      "recipientId": "111",
+      "message": "New booking: Patient Mohamed Ali has booked an appointment with Dr. Ahmed Hassan on 2026-04-17.",
+      "type": "appointment_booked",
+      "appointmentId": "dqGkWLdWpak",
+      "status": "unread",
+      "createdAt": "2026-04-14T10:31:54.280Z",
+      "id": "zz8tXKjkgFQ"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

@@ -129,7 +129,7 @@ export class DoctorForm implements OnInit {
       this.doctorService.updateDoctor(this.doctorId, doctorData).subscribe({
         next: () => {
           this.toastr.success('Doctor updated successfully');
-          this.router.navigate(['/admin/doctors']);
+          //this.router.navigate([`${this.role}/dashboard`]);
         },
         error: () => this.toastr.error('Update failed')
       });
@@ -137,7 +137,7 @@ export class DoctorForm implements OnInit {
       this.doctorService.addDoctor(doctorData).subscribe({
         next: () => {
           this.toastr.success('Doctor added successfully');
-          this.router.navigate(['/admin/doctors']);
+          //this.router.navigate([`${this.role}/dashboard`]);
         },
         error: () => this.toastr.error('Add Doctor failed')
       });
