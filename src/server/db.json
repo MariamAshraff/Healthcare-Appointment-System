@@ -18,7 +18,7 @@
       "role": "doctor",
       "price": 500,
       "specialization": "cardiologist",
-      "experience": 11,
+      "experience": 15,
       "bio": "Experienced cardiologist with 10 years in heart care.",
       "avatar": "images/doctors/1.webp",
       "availableSlots": [
@@ -71,7 +71,7 @@
           "day": "Tuesday",
           "startTime": "20:00",
           "endTime": "20:20",
-          "isBooked": true
+          "isBooked": false
         },
         {
           "day": "Tuesday",
@@ -116,7 +116,8 @@
           "isBooked": false
         },
         {
-          "day": "Thursday",
+          "day": "Wednesday",
+   
           "startTime": "09:00",
           "endTime": "10:00",
           "session": "Morning",
@@ -130,9 +131,10 @@
           "isBooked": false
         },
         {
-          "day": "Monday",
-          "startTime": "09:00",
-          "endTime": "10:00",
+          "day": "Saturday",
+          "startTime": "13:10",
+          "endTime": "13:25",
+          
           "session": "Morning",
           "isBooked": false
         },
@@ -145,7 +147,7 @@
         }
       ],
       "rating": 4.8,
-      "reviewCount": 123,
+      "reviewCount": 126,
       "createdAt": "2026-03-15"
     },
     {
@@ -181,7 +183,7 @@
         }
       ],
       "rating": 4.5,
-      "reviewCount": 85,
+      "reviewCount": 86,
       "createdAt": "2026-03-01"
     },
     {
@@ -1939,15 +1941,6 @@
       "id": "lva4JlIQRPA"
     },
     {
-      "date": "2026-04-14",
-      "timeSlot": "20:00 - 20:20",
-      "patientId": "4",
-      "doctorId": "2",
-      "status": "confirmed",
-      "createdAt": "2026-04-12T20:52:18.152Z",
-      "id": "6aAJDpYOTx4"
-    },
-    {
       "id": "A1B2C3D4_01",
       "patientId": "4",
       "doctorId": "2",
@@ -2347,6 +2340,16 @@
       "id": "F122KtNStIw"
     },
     {
+      "date": "2026-04-14",
+      "timeSlot": "10:00 - 10:20",
+      "patientId": "4",
+      "doctorId": "2",
+      "status": "completed",
+      "createdAt": "2026-04-14T10:51:03.913Z",
+      "id": "gHF6pBu6HhA"
+      
+    },
+    {
       "date": "2026-04-16",
       "timeSlot": "09:00 - 10:00",
       "patientId": "4",
@@ -2708,6 +2711,51 @@
       "id": "Vb6ywJcnKyE"
     },
     {
+      "recipientId": "111",
+      "message": "Appointment Update: Patient Mohamed Ali & Dr. Sara Mohamed. Updated by: patient. Status: pending.",
+      "type": "appointment_updated",
+      "appointmentId": null,
+      "status": "unread",
+      "createdAt": "2026-04-11T19:56:46.408Z",
+      "id": "rlgJTxIO4p4"
+    },
+    {
+      "recipientId": "2",
+      "message": "Patient Mohamed Ali has booked an appointment with you on 2026-04-12.",
+      "type": "appointment_booked",
+      "appointmentId": "MyIXKWVWliI",
+      "status": "unread",
+      "createdAt": "2026-04-12T12:55:51.179Z",
+      "id": "gZO-fKQkNsE"
+    },
+    {
+      "recipientId": "111",
+      "message": "New booking: Patient Mohamed Ali has booked an appointment with Dr. Ahmed Hassan on 2026-04-12.",
+      "type": "appointment_booked",
+      "appointmentId": "MyIXKWVWliI",
+      "status": "unread",
+      "createdAt": "2026-04-12T12:55:51.185Z",
+      "id": "aTaVXczElgY"
+    },
+    {
+      "recipientId": "2",
+      "message": "Patient Mohamed Ali has booked an appointment with you on 2026-04-17.",
+      "type": "appointment_booked",
+      "appointmentId": null,
+      "status": "unread",
+      "createdAt": "2026-04-12T12:56:22.626Z",
+      "id": "n066vEw7ca0"
+    },
+    {
+      "recipientId": "111",
+      "message": "New booking: Patient Mohamed Ali has booked an appointment with Dr. Ahmed Hassan on 2026-04-17.",
+      "type": "appointment_booked",
+      "appointmentId": null,
+      "status": "unread",
+      "createdAt": "2026-04-12T12:56:22.974Z",
+      "id": "9yeZv2qhZnM"
+    },
+    {
       "recipientId": "3",
       "message": "Patient Mohamed Ali has booked an appointment with you on 2026-04-13.",
       "type": "appointment_booked",
@@ -2735,6 +2783,15 @@
       "id": "HD5WW3OPrWI"
     },
     {
+      "recipientId": "111",
+      "message": "Appointment Update: Patient Mohamed Ali & Dr. Ahmed Hassan. Updated by: doctor. Status: confirmed.",
+      "type": "appointment_updated",
+      "appointmentId": null,
+      "status": "unread",
+      "createdAt": "2026-04-12T12:57:21.711Z",
+      "id": "0s9rRxJNrwA"
+    },
+    {
       "recipientId": "4",
       "message": "Your appointment status with Dr. Ahmed Hassan has been updated to completed.",
       "type": "status_changed",
@@ -2742,6 +2799,69 @@
       "status": "unread",
       "createdAt": "2026-04-12T12:57:28.793Z",
       "id": "vKJ9WN3lG48"
+    },
+    {
+      "recipientId": "111",
+      "message": "Appointment Update: Patient Mohamed Ali & Dr. Ahmed Hassan. Updated by: doctor. Status: completed.",
+      "type": "appointment_updated",
+      "appointmentId": null,
+      "status": "unread",
+      "createdAt": "2026-04-12T12:57:28.798Z",
+      "id": "jtz3IxvPQQc"
+    },
+    {
+      "recipientId": "2",
+      "message": "Patient Mohamed Ali has booked an appointment with you on 2026-04-12.",
+      "type": "appointment_booked",
+      "appointmentId": "NytU2iaeZwM",
+      "status": "unread",
+      "createdAt": "2026-04-12T12:57:50.696Z",
+      "id": "zVNUcW9x8_k"
+    },
+    {
+      "recipientId": "111",
+      "message": "New booking: Patient Mohamed Ali has booked an appointment with Dr. Ahmed Hassan on 2026-04-12.",
+      "type": "appointment_booked",
+      "appointmentId": "NytU2iaeZwM",
+      "status": "unread",
+      "createdAt": "2026-04-12T12:57:50.702Z",
+      "id": "Olv4OIs-PlU"
+    },
+    {
+      "recipientId": "2",
+      "message": "Patient Kareem Hamdy has booked an appointment with you on 2026-04-17.",
+      "type": "appointment_booked",
+      "appointmentId": "vBBd3KCk930",
+      "status": "unread",
+      "createdAt": "2026-04-12T12:59:49.987Z",
+      "id": "w11kUenKJkA"
+    },
+    {
+      "recipientId": "111",
+      "message": "New booking: Patient Kareem Hamdy has booked an appointment with Dr. Ahmed Hassan on 2026-04-17.",
+      "type": "appointment_booked",
+      "appointmentId": "vBBd3KCk930",
+      "status": "unread",
+      "createdAt": "2026-04-12T12:59:49.992Z",
+      "id": "yD1TUHGpW_M"
+    },
+    {
+      "recipientId": "2",
+      "message": "Patient Kareem Hamdy has booked an appointment with you on 2026-04-12.",
+      "type": "appointment_booked",
+      "appointmentId": "gf5GOxe5DQM",
+      "status": "unread",
+      "createdAt": "2026-04-12T13:00:10.871Z",
+      "id": "e0DsgaojGnE"
+    },
+    {
+      "recipientId": "111",
+      "message": "New booking: Patient Kareem Hamdy has booked an appointment with Dr. Ahmed Hassan on 2026-04-12.",
+      "type": "appointment_booked",
+      "appointmentId": "gf5GOxe5DQM",
+      "status": "unread",
+      "createdAt": "2026-04-12T13:00:10.876Z",
+      "id": "1A9H_Li99tQ"
     },
     {
       "recipientId": "6",
@@ -2780,8 +2900,35 @@
       "id": "kiRxgNDA4WM"
     },
     {
-      "recipientId": "8",
-      "message": "Patient Mohamed Ali has booked an appointment with you on 2026-04-17.",
+      "recipientId": "111",
+      "message": "New booking: Patient Mostafa Amgad has booked an appointment with Dr. Yasmin Nour on 2026-04-13.",
+      "type": "appointment_booked",
+      "appointmentId": "lva4JlIQRPA",
+      "status": "unread",
+      "createdAt": "2026-04-12T20:09:47.633Z",
+      "id": "fIEVc2oMjCg"
+    },
+    {
+      "recipientId": "2",
+      "message": "Patient Mohamed Ali has booked an appointment with you on 2026-04-14.",
+      "type": "appointment_booked",
+      "appointmentId": null,
+      "status": "unread",
+      "createdAt": "2026-04-12T20:52:18.175Z",
+      "id": "0WBM5x1eotY"
+    },
+    {
+      "recipientId": "111",
+      "message": "New booking: Patient Mohamed Ali has booked an appointment with Dr. Ahmed Hassan on 2026-04-14.",
+      "type": "appointment_booked",
+      "appointmentId": null,
+      "status": "unread",
+      "createdAt": "2026-04-12T20:52:18.180Z",
+      "id": "nNDjlc_JDcE"
+    },
+    {
+      "recipientId": "2",
+      "message": "Patient Mohamed Ali has booked an appointment with you on 2026-04-14.",
       "type": "appointment_booked",
       "appointmentId": null,
       "status": "unread",

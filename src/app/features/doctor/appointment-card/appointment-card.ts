@@ -37,6 +37,12 @@ export class AppointmentCard implements OnInit {
 
 
   ngOnInit(): void {
+
+    this.loading();
+
+  }
+
+  private loading() {
     if (this.appointment && this.appointment.patientId) {
       this.patientService.getById(this.appointment.patientId).subscribe({
         next: (data) => {
@@ -88,6 +94,7 @@ export class AppointmentCard implements OnInit {
         this.Toast.error('Failed to update status');
       }
     });
+    this.loading();
   }
   private updateDoctorAvailability() {
     if (!this.doctor || !this.doctor.availableSlots) {
