@@ -16,7 +16,7 @@
       "password": "doctor123",
       "phone": "01011111111",
       "role": "doctor",
-      "price": 649,
+      "price": 600,
       "specialization": "cardiologist",
       "experience": 11,
       "bio": "Experienced cardiologist with 10 years in heart care.",
@@ -174,8 +174,7 @@
       "phone": "01044444444",
       "role": "patient",
       "avatar": "images/patient/user-02.jpg",
-      "createdAt": "2026-03-10",
-      "isActive": true
+      "createdAt": "2026-03-10"
     },
     {
       "id": "6",
@@ -212,7 +211,7 @@
           "day": "Wednesday",
           "startTime": "16:00",
           "endTime": "17:00",
-          "isBooked": false
+          "isBooked": true
         }
       ],
       "rating": 4.9,
@@ -2352,6 +2351,15 @@
       "status": "pending",
       "createdAt": "2026-04-14T00:12:47.643Z",
       "id": "ImlzIIM_gi0"
+    },
+    {
+      "date": "2026-04-15",
+      "timeSlot": "16:00 - 17:00",
+      "patientId": "2",
+      "doctorId": "6",
+      "status": "pending",
+      "createdAt": "2026-04-14T08:08:07.124Z",
+      "id": "F122KtNStIw"
     }
   ],
   "prescriptions": [
@@ -3100,6 +3108,24 @@
       "status": "unread",
       "createdAt": "2026-04-14T00:13:08.852Z",
       "id": "jvfpyVS_t7I"
+    },
+    {
+      "recipientId": "6",
+      "message": "Patient Dr. Ahmed Hassan has booked an appointment with you on 2026-04-15.",
+      "type": "appointment_booked",
+      "appointmentId": "F122KtNStIw",
+      "status": "unread",
+      "createdAt": "2026-04-14T08:08:07.222Z",
+      "id": "tllu2cMXCD8"
+    },
+    {
+      "recipientId": "111",
+      "message": "New booking: Patient Dr. Ahmed Hassan has booked an appointment with Dr. Khaled Youssef on 2026-04-15.",
+      "type": "appointment_booked",
+      "appointmentId": "F122KtNStIw",
+      "status": "unread",
+      "createdAt": "2026-04-14T08:08:07.324Z",
+      "id": "QnJPqInWfus"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

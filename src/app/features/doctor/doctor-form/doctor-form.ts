@@ -20,6 +20,7 @@ export class DoctorForm implements OnInit {
   imagePreview: string | null = null;
   emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$";
   passwordPattern = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{6,}$";
+  role?: string;
 
   constructor(
     private fb: FormBuilder,
@@ -104,6 +105,16 @@ export class DoctorForm implements OnInit {
       },
       error: () => this.toastr.error('Failed to load doctor data')
     });
+
+    if (this.authService.getToken!) {
+      this.role = this.authService.getRole();
+      if (this.role === 'doctor') {
+        this.role = ''
+      }
+    }
+    else {
+      this.role = '';
+    }
   }
 
   onSubmit() {

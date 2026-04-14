@@ -64,11 +64,14 @@
                 <h3 class="fw-bold text-purple-dark blue-color mb-3">${{ doctor.price }}
                   <span class="fs-6 fw-normal" style="color:var(--text-small)">/ Visit</span>
                 </h3>
+                @if(role === 'patient'){
                 <button class="btn btn-primary-gradient btn-grad px-5 w-100" [routerLink]="authService.isAuthenticated()
                       ? ['/'+role+'/appointmentForm', doctor.id]
                       : ['/login']">
                   Book Appointment
                 </button>
+                }
+
               </div>
             </div>
           </div>
