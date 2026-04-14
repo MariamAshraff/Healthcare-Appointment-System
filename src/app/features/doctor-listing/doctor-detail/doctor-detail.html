@@ -22,7 +22,7 @@
                 <h2 class="fw-bold text-dark-blue mb-0 fs-3">{{ doctor.name }}</h2>
 
                 @if((authService.user$ | async)?.id === doctor.id || (authService.user$ | async)?.role === 'admin') {
-                <a [routerLink]="[`/${(authService.user$ | async)?.role}/update-doctor`, doctor.id]"
+                <a [routerLink]="[`/${(authService.user$ | async)?.role}/doctorform`, doctor.id]"
                   class="btn btn-outline-purple btn-sm rounded-circle shadow-sm" title="Edit Profile">
                   <i class="bi bi-pencil-fill"></i>
                 </a>
