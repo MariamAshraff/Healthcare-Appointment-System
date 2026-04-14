@@ -92,7 +92,7 @@
           "startTime": "10:00",
           "endTime": "10:20",
           "session": "Morning",
-          "isBooked": false
+          "isBooked": true
         },
         {
           "day": "Monday",
@@ -105,6 +105,13 @@
           "day": "Monday",
           "startTime": "10:00",
           "endTime": "11:00",
+          "session": "Evening",
+          "isBooked": false
+        },
+        {
+          "day": "Monday",
+          "startTime": "09:00",
+          "endTime": "10:00",
           "session": "Evening",
           "isBooked": false
         }
@@ -2335,6 +2342,15 @@
       "status": "pending",
       "createdAt": "2026-04-13T23:50:47.996Z",
       "id": "9tA5QNlCsAE"
+    },
+    {
+      "date": "2026-04-17",
+      "timeSlot": "10:00 - 10:20",
+      "patientId": "4",
+      "doctorId": "2",
+      "status": "pending",
+      "createdAt": "2026-04-14T00:12:47.643Z",
+      "id": "ImlzIIM_gi0"
     }
   ],
   "prescriptions": [
@@ -3047,6 +3063,42 @@
       "status": "unread",
       "createdAt": "2026-04-13T23:56:41.028Z",
       "id": "N6hq5bUtbB8"
+    },
+    {
+      "recipientId": "2",
+      "message": "Patient Mohamed Ali has booked an appointment with you on 2026-04-14.",
+      "type": "appointment_booked",
+      "appointmentId": "ImlzIIM_gi0",
+      "status": "unread",
+      "createdAt": "2026-04-14T00:12:47.664Z",
+      "id": "DfCcNsDjtEg"
+    },
+    {
+      "recipientId": "111",
+      "message": "New booking: Patient Mohamed Ali has booked an appointment with Dr. Ahmed Hassan on 2026-04-14.",
+      "type": "appointment_booked",
+      "appointmentId": "ImlzIIM_gi0",
+      "status": "unread",
+      "createdAt": "2026-04-14T00:12:47.671Z",
+      "id": "LgN2h-mtab4"
+    },
+    {
+      "recipientId": "2",
+      "message": "Patient Mohamed Ali has updated the appointment date/time to 2026-04-17 at 10:00 - 10:20.",
+      "type": "appointment_updated",
+      "appointmentId": "ImlzIIM_gi0",
+      "status": "unread",
+      "createdAt": "2026-04-14T00:13:08.824Z",
+      "id": "-dsQOhqLyoU"
+    },
+    {
+      "recipientId": "111",
+      "message": "Appointment Update: Patient Mohamed Ali & Dr. Ahmed Hassan. Updated by: patient. Status: pending.",
+      "type": "appointment_updated",
+      "appointmentId": "ImlzIIM_gi0",
+      "status": "unread",
+      "createdAt": "2026-04-14T00:13:08.852Z",
+      "id": "jvfpyVS_t7I"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
