@@ -86,8 +86,8 @@ export class AppointmentCard implements OnInit {
 
   async confirmDelete() {
     const confirmed = await this.confirmService.confirm(
-      'Delete Doctor',
-      'Are you sure you want to remove this doctor from the system?'
+      'Cancel appointment',
+      'Are you sure you want to Cancel this appointment'
     );
     if (confirmed) {
       this.appointmentService.delete(this.appointment.id).subscribe({
