@@ -16,7 +16,7 @@
       "password": "doctor123",
       "phone": "01011111111",
       "role": "doctor",
-      "price": 600,
+      "price": 649,
       "specialization": "cardiologist",
       "experience": 10,
       "bio": "Experienced cardiologist with 10 years in heart care.",
@@ -174,7 +174,8 @@
       "phone": "01044444444",
       "role": "patient",
       "avatar": "images/patient/user-02.jpg",
-      "createdAt": "2026-03-10"
+      "createdAt": "2026-03-10",
+      "isActive": true
     },
     {
       "id": "6",
