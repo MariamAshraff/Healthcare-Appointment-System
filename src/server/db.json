@@ -117,7 +117,7 @@
         },
         {
           "day": "Wednesday",
-   
+
           "startTime": "09:00",
           "endTime": "10:00",
           "session": "Morning",
@@ -134,7 +134,7 @@
           "day": "Saturday",
           "startTime": "13:10",
           "endTime": "13:25",
-          
+
           "session": "Morning",
           "isBooked": false
         },
@@ -2347,7 +2347,6 @@
       "status": "completed",
       "createdAt": "2026-04-14T10:51:03.913Z",
       "id": "gHF6pBu6HhA"
-      
     },
     {
       "date": "2026-04-16",
