@@ -205,7 +205,7 @@
               <div class="d-flex justify-content-end gap-3 mt-5">
                 <button type="button" class="btn px-4 rounded-3 text-secondary"
                   style="background-color: var(--soft-bg); color: var(--text-small);"
-                  routerLink="/admin/doctors">Cancel</button>
+                  [routerLink]="role === 'admin' ? '/admin/doctors' : '/doctor/details/' + doctorId">Cancel</button>
                 <button type="submit" class="btn btn-submit-gradient btn-grad px-5 shadow-sm"
                   [disabled]="doctorForm.invalid">
                   {{ isEditMode ? 'Update Doctor Profile' : 'Save New Doctor' }}

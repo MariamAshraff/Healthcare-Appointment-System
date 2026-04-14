@@ -128,8 +128,16 @@ export class DoctorForm implements OnInit {
     if (this.isEditMode && this.doctorId) {
       this.doctorService.updateDoctor(this.doctorId, doctorData).subscribe({
         next: () => {
+          this.role = this.authService.getRole();
+          console.log('Current Role:', this.role);
           this.toastr.success('Doctor updated successfully');
-          this.router.navigate(['/admin/doctors']);
+          if (this.role === 'admin') {
+            this.router.navigate(['/admin/doctors']);
+          }
+          else if (this.role === 'doctor') {
+            this.router.navigateByUrl('/doctor/details/' + this.doctorId);
+          }
+
         },
         error: () => this.toastr.error('Update failed')
       });
