@@ -23,13 +23,13 @@ export class MedicalRecordService {
   }
 
 
-    getAllByPatientId(patientId: string): Observable<MedicalRecord[]> {
-      return this.http.get<MedicalRecord[]>(`${environment.baseUrl}/medicalRecords`).pipe(
-        map(medicalRecords =>
-          medicalRecords.filter(app => String(app.patientId) === String(patientId))
-        )
-      );
-    }
+  getAllByPatientId(patientId: string): Observable<MedicalRecord[]> {
+    return this.http.get<MedicalRecord[]>(`${environment.baseUrl}/medicalRecords`).pipe(
+      map(medicalRecords =>
+        medicalRecords.filter(app => String(app.patientId) === String(patientId))
+      )
+    );
+  }
 
   getById(id: string): Observable<MedicalRecord> {
     return this.http.get<MedicalRecord>(`${environment.baseUrl}/medicalRecords/${id}`);
